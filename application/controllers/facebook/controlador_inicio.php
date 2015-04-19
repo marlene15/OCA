@@ -21,13 +21,18 @@ class Controlador_inicio extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url');
 		$this->load->model('facebook/modelo_inicio');
+		$this->load->database('facebook');
 
 	}
 
 	public function index()
-	{
-		$this->load->view('facebook/prueba');
+	{		
+		$consulta = $this->modelo_inicio->consulta();
+		if($consulta != FALSE)
+		{
+			$data = array('partido' => $consulta->Partido, 'nombre' => $consulta->Nombre);
+			$this->load->view('facebook/prueba',$data);
+		}
 	}
 }

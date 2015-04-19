@@ -17,21 +17,35 @@
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
 	<script src="<?= base_url();?>assets/plantilla/scripts/app.js" type="text/javascript"></script>
-	<script src="<?= base_url();?>assets/plantilla/scripts/index.js" type="text/javascript"></script>
+	<!--<script src="<?= base_url();?>assets/plantilla/scripts/index.js" type="text/javascript"></script>-->
 	<script src="<?= base_url();?>assets/plantilla/scripts/tasks.js" type="text/javascript"></script>        
 	<!-- END PAGE LEVEL SCRIPTS -->  
 	<script>
 		jQuery(document).ready(function() {    
 		   App.init(); // initlayout and core plugins
-		   Index.init();
-		   Index.initJQVMAP(); // init index page's custom scripts
-		   Index.initCalendar(); // init index page's custom scripts
-		   Index.initCharts(); // init index page's custom scripts
-		   Index.initChat();
-		   Index.initMiniCharts();
-		   Index.initDashboardDaterange();
-		   Index.initIntro();
+		   //Index.init();
+		   // Index.initJQVMAP(); // init index page's custom scripts
+		   // Index.initCalendar(); // init index page's custom scripts
+		   // Index.initCharts(); // init index page's custom scripts
+		   // Index.initChat();
+		   // Index.initMiniCharts();
+		   // Index.initDashboardDaterange();
+		   // Index.initIntro();
 		   Tasks.initDashboardWidget();
 		});
+	</script>
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	        var cambio = false;
+	        $('.sub-menu li a').each(function(index) {
+	            if(this.href.trim() == window.location){
+	                $(this).parent().addClass("active");
+	                cambio = true;
+	            }
+	        });
+	        if(!cambio){
+	            $('.sub-menu li:first').addClass("active");
+	        }
+	    });
 	</script>
 	<!-- END JAVASCRIPTS -->

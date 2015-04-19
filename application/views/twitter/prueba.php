@@ -20,7 +20,7 @@
 			</div>
 			<!-- AGREGAR EL CONTENIDO DE LA PÁGINA-->
 			<div id="dashboard">
-				<label><?php echo $partido; echo " -> ".$nombre; ?></label>
+				<label><?php echo "Comentarios neutros: ".$neutros; ?></label>
 			</div>
 		</div>
 	</div>

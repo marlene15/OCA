@@ -8,16 +8,20 @@ class Modelo_inicio extends CI_Model
 		//con esta línea cargamos la base de datos facebook
 		$db_facebook = $this->load->database('facebook', TRUE);
 	}	
-	function prueba_conexion()
-	{
-        //y de esta forma accedemos, no con $this->db->get,
-        //sino con $db_facebook->get que contiene la conexión
-        //a la base de datos prueba
-		$usuarios = $db_prueba->get('usuarios');
-		foreach($usuarios->result() as $fila)
+	
+	//Consulta que prueba la conexión a la base de datos
+	public function consulta()
+	{	
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$consulta = $db_facebook->query("SELECT * FROM candidatos WHERE Partido='PAN' and Nombre='Jorge Luis Preciado Rodríguez'");
+	
+		if($consulta->num_rows()>0)
 		{
-			$data[] = $fila;
+			return $consulta->row(); //Con el row solo se obtiene una fila de resultados
 		}
-		return $data;
+		else
+		{
+			return FALSE;
+		}
 	}
 }	

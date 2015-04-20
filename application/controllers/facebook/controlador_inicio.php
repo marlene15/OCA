@@ -36,7 +36,7 @@ class Controlador_inicio extends CI_Controller {
 		}
 	}
 
-
+//CANDIDATOS A GOBERNADOR
 	public function gobernadores()
 	{
 		$ignacioperalta = $this->modelo_inicio->Obtener_CGIgnacioPeralta();
@@ -61,4 +61,28 @@ class Controlador_inicio extends CI_Controller {
 			$this->load->view('facebook/gobernador',$data);
 		}
 	}
+
+//CANDIDATO A DIPUTADOS FEDERAL DISTRITIO I
+	public function DFDistritoI()
+		{
+			$josemanuel = $this->modelo_inicio->Obtener_CDFDIJosemanuel();
+			$enriquerojas = $this->modelo_inicio->Obtener_CDFDIEnriquerojas();
+			$indiravizcaino = $this->modelo_inicio->Obtener_CDFDIIndiravizcaino();
+			$silviadias = $this->modelo_inicio->Obtener_CDFDISilviaDias();
+			$angelesmarquez = $this->modelo_inicio->Obtener_CDFDIAngelesMarquez();
+			$rosalinagarcia = $this->modelo_inicio->Obtener_CDFDIRosalindaGarcia();
+			$claudiaibarra = $this->modelo_inicio->Obtener_CDFDIClaudiaIbarra();
+			
+			if($josemanuel != FALSE and $enriquerojas != FALSE and $indiravizcaino != FALSE and $silviadias != FALSE and $angelesmarquez != FALSE and $rosalinagarcia != FALSE and $claudiaibarra  != FALSE)
+			{
+				$data = array('megustaci' => $josemanuel->Megusta, 
+					          'megustacj' => $enriquerojas->Megusta,
+					          'megustacl' => $indiravizcaino->Megusta,
+					          'megustacm' => $silviadias->Megusta,
+					          'megustacd' => $angelesmarquez->Megusta, 
+					          'megustacf' => $rosalinagarcia->Megusta,
+					          'megustacg' => $claudiaibarra->Megusta);
+				$this->load->view('facebook/diputadofederal',$data);
+			}
+		}
 }

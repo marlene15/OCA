@@ -1,5 +1,5 @@
 <head lang="es">
-  <title>Candidatos a Gobernador</title> 
+  <title>Candidatos a Diputado Federal</title> 
   <?php $this->load->view('comunes/header'); ?>
   <meta charset="utf-8">
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.min.js"></script>
@@ -11,15 +11,14 @@
       
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Candidatos', 'likes'],
-          ['José Ignacio Peralta',<?php echo $megustaci; ?>],
-          ['Jorge Luis Preciado',<?php echo $megustacj; ?>],
-          ['Martha Zepeda del Toro',<?php echo $megustacm; ?>],
-          ['David Munro',<?php echo $megustacd; ?>],
-          ['Leoncio Morán',<?php echo $megustacl; ?>],
-          ['José Francisco Gallardo',<?php echo $megustacf; ?>],
-          ['Gerardo Galván Pinto',<?php echo $megustacg; ?>],
-          ['Carlos Barbazán Martínez',<?php echo $megustacc; ?>]
+          ['Candidatos', 'Me gusta'],
+          ['José Manuel Moreno González',<?php echo $megustaci ?>],
+          ['Enrique Rojas Orozco',<?php echo $megustacj ?>],
+          ['Indira Vizcaíno Silva',<?php echo $megustacm ?>],
+          ['Silvia Elena Díaz Márquez',<?php echo $megustacd ?>],
+          ['Ángeles Márquez Gileta',<?php echo $megustacl ?>],
+          ['Rosalina García Torres',<?php echo $megustacf ?>],
+          ['Claudia Jasmín Ibarra Ávalos',<?php echo $megustacg ?>]
         ]);
 
         var options = {
@@ -52,7 +51,7 @@
                 </div>
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
-                    <h1><center>Actividad de los Candidatos a Gobernador en Facebook</center></h1>
+                    <h1><center>Actividad de los Candidatos a Diputado Federal en Facebook</center></h1>
                     <center>
                         <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
                     </center>

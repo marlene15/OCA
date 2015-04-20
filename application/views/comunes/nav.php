@@ -37,7 +37,7 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/DFDistritoI');?>">
                                         <span class="title">Diputado Federal</span>
                                         <span class="selected"></span>
                                     </a>

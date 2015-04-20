@@ -75,7 +75,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 .label("Positivos")
                 .diameter(200)
                 .minValue(1)
-                .maxValue(100)
+                .maxValue(178)
                 .value(<?php echo $positivos ?>)
                 .render();
 
@@ -83,7 +83,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 .label("Negativos")
                 .diameter(200)
                 .minValue(1)
-                .maxValue(100)
+                .maxValue(178)
                 .value(<?php echo $negativos ?>)
                 .render();
 
@@ -91,7 +91,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 .label("Neutros")
                 .diameter(200)
                 .minValue(1)
-                .maxValue(100)
+                .maxValue(178)
                 .value(<?php echo $neutros ?>)
                 .render();
     }

@@ -160,6 +160,13 @@
                         </li>
                     </ul>
                 </li>
+                <li >
+                    <a href="#">
+                        <i class="icon-eye-open"></i> 
+                        <span class="title">Otros</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>

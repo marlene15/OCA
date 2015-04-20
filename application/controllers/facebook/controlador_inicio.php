@@ -75,13 +75,13 @@ class Controlador_inicio extends CI_Controller {
 			
 			if($josemanuel != FALSE and $enriquerojas != FALSE and $indiravizcaino != FALSE and $silviadias != FALSE and $angelesmarquez != FALSE and $rosalinagarcia != FALSE and $claudiaibarra  != FALSE)
 			{
-				$data = array('megustaci' => $josemanuel->Megusta, 
-					          'megustacj' => $enriquerojas->Megusta,
-					          'megustacl' => $indiravizcaino->Megusta,
-					          'megustacm' => $silviadias->Megusta,
-					          'megustacd' => $angelesmarquez->Megusta, 
-					          'megustacf' => $rosalinagarcia->Megusta,
-					          'megustacg' => $claudiaibarra->Megusta);
+				$data = array('megustaci' => $josemanuel->Megusta, 'seguidoresci' => $josemanuel->PersonasHablan,
+					          'megustacj' => $enriquerojas->Megusta, 'seguidorescj' => $enriquerojas->PersonasHablan,
+					          'megustacl' => $indiravizcaino->Megusta, 'seguidorescl' => $indiravizcaino->PersonasHablan,
+					          'megustacm' => $silviadias->Megusta, 'seguidorescm' => $silviadias->PersonasHablan,
+					          'megustacd' => $angelesmarquez->Megusta, 'seguidorescd' => $angelesmarquez->PersonasHablan,
+					          'megustacf' => $rosalinagarcia->Megusta, 'seguidorescf' => $rosalinagarcia->PersonasHablan,
+					          'megustacg' => $claudiaibarra->Megusta, 'seguidorescg' => $claudiaibarra->PersonasHablan);
 				$this->load->view('facebook/diputadofederal',$data);
 			}
 		}

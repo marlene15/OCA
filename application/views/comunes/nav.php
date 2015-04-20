@@ -31,7 +31,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/gobernadores');?>">
                                         <span class="title">Gobernador</span>
                                         <span class="selected"></span>
                                     </a>

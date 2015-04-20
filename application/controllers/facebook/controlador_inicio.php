@@ -35,4 +35,30 @@ class Controlador_inicio extends CI_Controller {
 			$this->load->view('facebook/prueba',$data);
 		}
 	}
+
+
+	public function gobernadores()
+	{
+		$ignacioperalta = $this->modelo_inicio->Obtener_CGIgnacioPeralta();
+		$jorgepreciado = $this->modelo_inicio->Obtener_CGJorgeLuis();
+		$leonciomoran = $this->modelo_inicio->Obtener_CGLeoncioMoran();
+		$marthazepeda = $this->modelo_inicio->Obtener_CGMarthaZepeda();
+		$davidmunro = $this->modelo_inicio->Obtener_CGDavidMunro();
+		$franciscogallardo = $this->modelo_inicio->Obtener_CGFranciscoGallardo();
+		$gerardogalvan = $this->modelo_inicio->Obtener_CGGerardoGalvan();
+		$carlosbarbazan = $this->modelo_inicio->Obtener_CGCarlosBarbazan();
+
+		if($ignacioperalta != FALSE and $jorgepreciado != FALSE and $leonciomoran != FALSE and $marthazepeda != FALSE and $davidmunro != FALSE and $franciscogallardo != FALSE and $gerardogalvan != FALSE and $carlosbarbazan != FALSE)
+		{
+			$data = array('megustaci' => $ignacioperalta->Megusta, 
+				          'megustacj' => $jorgepreciado->Megusta,
+				          'megustacl' => $leonciomoran->Megusta,
+				          'megustacm' => $marthazepeda->Megusta,
+				          'megustacd' => $davidmunro->Megusta, 
+				          'megustacf' => $franciscogallardo->Megusta,
+				          'megustacg' => $gerardogalvan->Megusta, 
+				          'megustacc' => $carlosbarbazan->Megusta);
+			$this->load->view('facebook/gobernador',$data);
+		}
+	}
 }

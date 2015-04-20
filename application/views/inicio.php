@@ -32,7 +32,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 </div>
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
-                <label>Principal</label>
+                    <div class="portlet-body form">
+                        <label>Principal</label>
+                    </div>
                 </div>              
             </div>
         </div>

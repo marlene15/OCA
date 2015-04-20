@@ -1,8 +1,8 @@
-
+    <div class="page-sidebar-wrapper">
         <!-- BEGIN SIDEBAR -->
         <div class="page-sidebar nav-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->        
-            <ul class="page-sidebar-menu">
+            <ul class="page-sidebar-menu" data-slide-speed="200" data-auto-scroll="true" data-keep-expanded="false">
                 <li>
                     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                     <div class="sidebar-toggler hidden-phone"></div>
@@ -64,13 +64,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/gobernadores');?>"> 
                                         <span class="title">Gobernador</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/dip_federales');?>"> 
                                         <span class="title">Diputado Federal</span>
                                         <span class="selected"></span>
                                     </a>
@@ -82,7 +82,7 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/alcaldias');?>"> 
                                         <span class="title">Alcaldía</span>
                                         <span class="selected"></span>
                                     </a>
@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('twitter/controlador_inicio/prueba');?>">
+                            <a href="<?php echo site_url('twitter/controlador_inicio/candidatos_valoracion');?>">
                                 <i class="icon-twitter"></i> 
                                 <span class="title">Twitter</span>
                                 <span class="selected"></span>
@@ -129,7 +129,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo site_url('twitter/controlador_inicio/mapa_coordenadas');?>">
                                 <i class="icon-twitter"></i> 
                                 <span class="title">Twitter</span>
                                 <span class="selected"></span>
@@ -161,7 +161,7 @@
                     </ul>
                 </li>
                 <li >
-                    <a href="#">
+                    <a href="<?php echo site_url('twitter/controlador_inicio/busqueda_tweets');?>">
                         <i class="icon-eye-open"></i> 
                         <span class="title">Otros</span>
                         <span class="selected"></span>
@@ -171,3 +171,4 @@
             <!-- END SIDEBAR MENU -->
         </div>
         <!-- END SIDEBAR -->
+    </div>

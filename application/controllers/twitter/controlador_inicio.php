@@ -100,15 +100,15 @@ class Controlador_inicio extends CI_Controller {
 		}
 	}
 
-	public function candidatos_clasifica()
+	public function candidatos_valoracion()
 	{		
 		$positivos_nacho = $this->modelo_inicio->positivos_nacho();
 		$negativos_nacho = $this->modelo_inicio->negativos_nacho();
 		$neutros_nacho = $this->modelo_inicio->neutros_nacho();
 		$data = array('positivos' => $positivos_nacho->positivos,
-					  'negativos' => $negativos_nacho->positivos,
-					  'neutros' => $neutros_nacho->positivos);
-		$this->load->view('twitter/candidatos',$data);	
+					  'negativos' => $negativos_nacho->negativos,
+					  'neutros' => $neutros_nacho->neutros);
+		$this->load->view('twitter/candidatos_valoracion',$data);	
 	}
 
 	public function prueba()
@@ -116,6 +116,16 @@ class Controlador_inicio extends CI_Controller {
 		$consulta = $this->modelo_inicio->prueba();
 		$data = array('neutros' => $consulta->neutros);
 		$this->load->view('twitter/prueba',$data);	
+	}
 
+	public function busqueda_tweets()
+	{
+		$this->load->view('twitter/busqueda_tweets');	
+	}
+
+	public function mapa_coordenadas()
+	{
+		$datos['coordenadas'] = $this->modelo_inicio->obtener_coordenadas();
+		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
 	}
 }

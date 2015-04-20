@@ -266,7 +266,7 @@
 		//Obtener comentarios negativos nacho
 		public function negativos_nacho()
 		{
-			$negativos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
@@ -283,7 +283,7 @@
 		//Obtener comentarios neutros nacho
 		public function neutros_nacho()
 		{
-			$neutros = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
@@ -316,7 +316,19 @@
 			}
 		}
 
+		//Obtener coordenadas
+		public function obtener_coordenadas()
+		{
+			$consulta = $this->db->query("SELECT DISTINCT latitud,longitud FROM coordenadas");
 
-
+			if($consulta->num_rows()>0)
+			{
+				return $consulta->result();
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
 	}
 ?>

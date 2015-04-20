@@ -158,7 +158,7 @@ class Modelo_inicio extends CI_Model
 	public function Obtener_CDFDIJosemanuel()
 	{
 		$db_facebook = $this->load->database('facebook', TRUE);
-		$josemanuel = $db_facebook->query("select Megusta from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
+		$josemanuel = $db_facebook->query("select Megusta from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='José Manuel Moreno González'");
 	
 		if($josemanuel->num_rows()>0)
 		{
@@ -174,7 +174,7 @@ class Modelo_inicio extends CI_Model
 	public function Obtener_CDFDIEnriquerojas()
 	{
 		$db_facebook = $this->load->database('facebook', TRUE);
-		$enriquerojas = $db_facebook->query("select Megusta from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
+		$enriquerojas = $db_facebook->query("select Megusta from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Enrique Rojas Orozco'");
 	
 		if($enriquerojas->num_rows()>0)
 		{
@@ -190,7 +190,7 @@ class Modelo_inicio extends CI_Model
 	public function Obtener_CDFDIIndiravizcaino()
 	{
 		$db_facebook = $this->load->database('facebook', TRUE);
-		$indiravizcaino = $db_facebook->query("select Megusta from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
+		$indiravizcaino = $db_facebook->query("select Megusta from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Indira Vizcaíno Silva'");
 	
 		if($indiravizcaino->num_rows()>0)
 		{
@@ -206,7 +206,7 @@ class Modelo_inicio extends CI_Model
 	public function Obtener_CDFDISilviaDias()
 	{
 		$db_facebook = $this->load->database('facebook', TRUE);
-		$silviadias = $db_facebook->query("select Megusta from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
+		$silviadias = $db_facebook->query("select Megusta from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Silvia Elena Díaz Márquez'");
 	
 		if($silviadias->num_rows()>0)
 		{
@@ -222,7 +222,7 @@ class Modelo_inicio extends CI_Model
 	public function Obtener_CDFDIAngelesMarquez()
 	{
 		$db_facebook = $this->load->database('facebook', TRUE);
-		$angelesmarquez = $db_facebook->query("select Megusta from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
+		$angelesmarquez = $db_facebook->query("select Megusta from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Ángeles Márquez Gileta'");
 	
 		if($angelesmarquez->num_rows()>0)
 		{
@@ -237,7 +237,7 @@ class Modelo_inicio extends CI_Model
 	public function Obtener_CDFDIRosalindaGarcia()
 	{
 		$db_facebook = $this->load->database('facebook', TRUE);
-		$rosalinagarcia = $db_facebook->query("select Megusta from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
+		$rosalinagarcia = $db_facebook->query("select Megusta from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Rosalina García Torres'");
 	
 		if($rosalinagarcia->num_rows()>0)
 		{
@@ -253,7 +253,7 @@ class Modelo_inicio extends CI_Model
 	public function Obtener_CDFDIClaudiaIbarra()
 	{
 		$db_facebook = $this->load->database('facebook', TRUE);
-		$claudiaibarra = $db_facebook->query("select Megusta from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
+		$claudiaibarra = $db_facebook->query("select Megusta from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Claudia Jasmín Ibarra Ávalos'");
 	
 		if($claudiaibarra->num_rows()>0)
 		{

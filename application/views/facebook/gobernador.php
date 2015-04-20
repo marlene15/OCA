@@ -1,8 +1,8 @@
 <head lang="es">
   <title>Candidatos a Gobernador</title> 
-  <?php $this->load->view('comunes/header'); ?>
-  <meta charset="utf-8">
+  
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.min.js"></script>
+  <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
   <script type="text/javascript">

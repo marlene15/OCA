@@ -316,14 +316,35 @@
 			}
 		}
 
-		//Obtener coordenadas
-		public function obtener_coordenadas()
+		//Obtener coordenadas de Colima que hablan sobre nacho
+		public function obtener_coordenadasC()
 		{
-			$consulta = $this->db->query("SELECT DISTINCT latitud,longitud FROM coordenadas");
-
-			if($consulta->num_rows()>0)
+			$resultado=$this->db->query("select DISTINCT latitud,longitud,municipio from coordenadas 
+										inner join twitt on twitt.id=coordenadas.id_twitt
+										where twitt.municipio='Colima' and 
+										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
+										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')");
+			if($resultado->num_rows()>0)
 			{
-				return $consulta->result();
+				return $resultado->result();
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+
+		//Obtener coordenadas de Villa de álvarez que hablan sobre nacho
+		public function obtener_coordenadasV()
+		{
+			$resultado=$this->db->query("select DISTINCT latitud,longitud,municipio from coordenadas 
+										inner join twitt on twitt.id=coordenadas.id_twitt
+										where twitt.municipio='Villa de Álvarez' and 
+										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
+										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')");
+			if($resultado->num_rows()>0)
+			{
+				return $resultado->result();
 			}
 			else
 			{

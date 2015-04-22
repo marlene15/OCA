@@ -38,7 +38,7 @@ class Controlador_inicio extends CI_Controller {
 		$martha = $this->modelo_inicio->obtener_cuenta_martha();
 		if($nacho != FALSE and $jorge != FALSE and $locho != FALSE and $martha != FALSE)
 		{
-			$data = array('usuarion' => $nacho->usuario, 'seguidoresn' => $nacho->seguidores, 
+			$datos = array('usuarion' => $nacho->usuario, 'seguidoresn' => $nacho->seguidores, 
 				          'siguiendon' => $nacho->siguiendo, 'tweetsn' => $nacho->tweets,
 				          'usuarioj' => $jorge->usuario, 'seguidoresj' => $jorge->seguidores, 
 				          'siguiendoj' => $jorge->siguiendo, 'tweetsj' => $jorge->tweets,
@@ -46,7 +46,7 @@ class Controlador_inicio extends CI_Controller {
 				          'siguiendol' => $locho->siguiendo, 'tweetsl' => $locho->tweets,
 				          'usuariom' => $martha->usuario, 'seguidoresm' => $martha->seguidores, 
 				          'siguiendom' => $martha->siguiendo, 'tweetsm' => $martha->tweets);
-			$this->load->view('twitter/gobernadores',$data);
+			$this->load->view('twitter/gobernadores',$datos);
 		}
 	}
 
@@ -61,7 +61,7 @@ class Controlador_inicio extends CI_Controller {
 		$juan = $this->modelo_inicio->obtener_cuenta_juan();
 		if($jose_manuel != FALSE and $kike != FALSE and $indira != FALSE and $norma != FALSE and $juan != FALSE)
 		{
-			$data = array('usuariojm' => $jose_manuel->usuario, 'seguidoresjm' => $jose_manuel->seguidores, 
+			$datos = array('usuariojm' => $jose_manuel->usuario, 'seguidoresjm' => $jose_manuel->seguidores, 
 				          'siguiendojm' => $jose_manuel->siguiendo, 'tweetsjm' => $jose_manuel->tweets,
 				          'usuariok' => $kike->usuario, 'seguidoresk' => $kike->seguidores, 
 				          'siguiendok' => $kike->siguiendo, 'tweetsk' => $kike->tweets,
@@ -71,7 +71,7 @@ class Controlador_inicio extends CI_Controller {
 				          'siguiendon' => $norma->siguiendo, 'tweetsn' => $norma->tweets,
 				          'usuarioj' => $juan->usuario, 'seguidoresj' => $juan->seguidores, 
 				          'siguiendoj' => $juan->siguiendo, 'tweetsj' => $juan->tweets);
-			$this->load->view('twitter/dip_federales',$data);	
+			$this->load->view('twitter/dip_federales',$datos);	
 		}	
 	}
 
@@ -86,7 +86,7 @@ class Controlador_inicio extends CI_Controller {
 		$marcos = $this->modelo_inicio->obtener_cuenta_marcos();
 		if($hector != FALSE and $maria != FALSE and $esmeralda != FALSE and $pico != FALSE and $marcos != FALSE)
 		{
-			$data = array('usuarioh' => $hector->usuario, 'seguidoresh' => $hector->seguidores, 
+			$datos = array('usuarioh' => $hector->usuario, 'seguidoresh' => $hector->seguidores, 
 				          'siguiendoh' => $hector->siguiendo, 'tweetsh' => $hector->tweets,
 				          'usuarioma' => $maria->usuario, 'seguidoresma' => $maria->seguidores, 
 				          'siguiendoma' => $maria->siguiendo, 'tweetsma' => $maria->tweets,
@@ -96,7 +96,7 @@ class Controlador_inicio extends CI_Controller {
 				          'siguiendop' => $pico->siguiendo, 'tweetsp' => $pico->tweets,
 				          'usuariomarc' => $marcos->usuario, 'seguidoresmarc' => $marcos->seguidores, 
 				          'siguiendomarc' => $marcos->siguiendo, 'tweetsmarc' => $marcos->tweets);
-			$this->load->view('twitter/alcaldias',$data);	
+			$this->load->view('twitter/alcaldias',$datos);	
 		}
 	}
 
@@ -105,10 +105,10 @@ class Controlador_inicio extends CI_Controller {
 		$positivos_nacho = $this->modelo_inicio->positivos_nacho();
 		$negativos_nacho = $this->modelo_inicio->negativos_nacho();
 		$neutros_nacho = $this->modelo_inicio->neutros_nacho();
-		$data = array('positivos' => $positivos_nacho->positivos,
+		$datos = array('positivos' => $positivos_nacho->positivos,
 					  'negativos' => $negativos_nacho->negativos,
 					  'neutros' => $neutros_nacho->neutros);
-		$this->load->view('twitter/candidatos_valoracion',$data);	
+		$this->load->view('twitter/candidatos_valoracion',$datos);	
 	}
 
 	public function prueba()
@@ -124,8 +124,10 @@ class Controlador_inicio extends CI_Controller {
 	}
 
 	public function mapa_coordenadas()
-	{
-		$datos['coordenadas'] = $this->modelo_inicio->obtener_coordenadas();
+	{	
+		$datos = array('coordenadasC' => $this->modelo_inicio->obtener_coordenadasC(),
+					  'coordenadasV' => $this->modelo_inicio->obtener_coordenadasV()
+					  );
 		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
 	}
 }

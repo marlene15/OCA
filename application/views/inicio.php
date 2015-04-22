@@ -28,11 +28,18 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <h3 class="page-title">
                             Principal <small>Contenido General</small>
                         </h3>
+                        <ul class="breadcrumb">
+                            <li>
+                                <i class="icon-home"></i>
+                                <a href="<?php echo site_url('inicio') ?>">Home</a> 
+                                <i class="icon-angle-right"></i>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
-                    <div class="portlet-body form">
+                    <div class="portlet-body form well">
                         <label>Principal</label>
                     </div>
                 </div>              

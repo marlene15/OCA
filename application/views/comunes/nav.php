@@ -161,6 +161,13 @@
                     </ul>
                 </li>
                 <li >
+                    <a href="javascript:;">
+                        <i class="icon-indent-left"></i> 
+                        <span class="title">¿Cómo vamos Colima?</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+                <li >
                     <a href="<?php echo site_url('twitter/controlador_inicio/busqueda_tweets');?>">
                         <i class="icon-eye-open"></i> 
                         <span class="title">Otros</span>

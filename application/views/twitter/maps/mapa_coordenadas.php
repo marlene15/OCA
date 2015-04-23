@@ -65,16 +65,16 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           <div>
                             <ul class="nav nav-tabs" id="myTab">
                                 <li class="active"><a data-toggle="tab" href="#colima">Colima</a></li>
-                                <li class=""><a data-toggle="tab" href="#villa">V. De Álvarez</a></li>
+                                <li><a data-toggle="tab" href="#villa">V. De Álvarez</a></li>
                             </ul>
-                              <div class="tab-content" id="myTabContent">
+                              <div class="tab-content responsive">
 
-                                <div id="colima" class="tab-pane fade active in"> 
+                                <div class="tab-pane active" id="colima"> 
                                     <br> 
                                     <div id="map_div" style="width: 100%; height: 500px;"></div>                                      
                                 </div>
 
-                                <div id="villa" class="tab-pane fade">
+                                <div class="tab-pane" id="villa">
                                     <div id="map_div2" style="width: 100%; height: 500px;"></div>                                        
                                 </div>
                             </div>

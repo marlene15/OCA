@@ -50,7 +50,7 @@
                                 </li>
                                 <li >
                                     <a href="#"> 
-                                        <span class="title">Alcaldía</span>
+                                        <span class="title">Presidente Municipal</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
@@ -83,7 +83,7 @@
                                 </li>
                                 <li >
                                     <a href="<?php echo site_url('twitter/controlador_inicio/alcaldias');?>"> 
-                                        <span class="title">Alcaldía</span>
+                                        <span class="title">Presidente Municipal</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
@@ -161,7 +161,7 @@
                     </ul>
                 </li>
                 <li >
-                    <a href="javascript:;">
+                    <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_gobernadores');?>">
                         <i class="icon-indent-left"></i> 
                         <span class="title">¿Cómo vamos Colima?</span>
                         <span class="selected"></span>

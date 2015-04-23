@@ -27,7 +27,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12">
                         <h3 class="page-title">
-                            Candidatos a la Alcaldía <small>Actividad en Twitter</small>
+                            Candidatos a Presidente Municipal <small>Actividad en Twitter</small>
                         </h3>
                     </div>
                 </div>

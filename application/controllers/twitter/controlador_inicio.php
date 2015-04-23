@@ -130,4 +130,9 @@ class Controlador_inicio extends CI_Controller {
 					  );
 		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
 	}
+
+	public function valoracion_gobernadores()
+	{
+		$this->load->view('twitter/valoracionGobernadores');
+	}
 }

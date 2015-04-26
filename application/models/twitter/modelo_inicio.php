@@ -246,6 +246,402 @@
 				return FALSE;
 			}
 		}
+		//DIPUTADOS LOCALES
+		//Obtener cuenta de HildaCeballos01
+		public function obtener_cuenta_hilda()
+		{
+			$hilda = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'HildaCeballos01'");
+		
+			if($hilda->num_rows()>0)
+			{
+				return $hilda->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		//Obtener cuenta de Rangel_G_
+		public function obtener_cuenta_rangel()
+		{
+			$rangel = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'Rangel_G_'");
+		
+			if($rangel->num_rows()>0)
+			{
+				return $rangel->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de Vivi_Ram_A
+		public function obtener_cuenta_viviana()
+		{
+			$viviana = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'Vivi_Ram_A'");
+		
+			if($viviana->num_rows()>0)
+			{
+				return $viviana->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de crispindiputado 
+		public function obtener_cuenta_crispin()
+		{
+			$crispin = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'crispindiputado'");
+		
+			if($crispin->num_rows()>0)
+			{
+				return $crispin->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de isisvillasil
+		public function obtener_cuenta_isis()
+		{
+			$isis = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'isisvillasil'");
+		
+			if($isis->num_rows()>0)
+			{
+				return $isis->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de JanethPazPonce
+		public function obtener_cuenta_janeth()
+		{
+			$janeth = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'JanethPazPonce'");
+		
+			if($janeth->num_rows()>0)
+			{
+				return $janeth->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de JuanitaAndres
+		public function obtener_cuenta_juanita()
+		{
+			$juanita = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'JuanitaAndres'");
+		
+			if($juanita->num_rows()>0)
+			{
+				return $juanita->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de LupeBenavidesF
+		public function obtener_cuenta_lupe()
+		{
+			$lupe = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'LupeBenavidesF'");
+		
+			if($lupe->num_rows()>0)
+			{
+				return $lupe->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de octaviotintos
+		public function obtener_cuenta_octavio()
+		{
+			$octavio = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'octaviotintos'");
+		
+			if($octavio->num_rows()>0)
+			{
+				return $octavio->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de saracernas
+		public function obtener_cuenta_sara()
+		{
+			$sara = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'saracernas'");
+		
+			if($sara->num_rows()>0)
+			{
+				return $sara->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de JoelPadilla2012
+		public function obtener_cuenta_joel()
+		{
+			$joel = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'JoelPadilla2012'");
+		
+			if($joel->num_rows()>0)
+			{
+				return $joel->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de MeylyPastora
+		public function obtener_cuenta_meyly()
+		{
+			$meyly = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'MeylyPastora'");
+		
+			if($meyly->num_rows()>0)
+			{
+				return $meyly->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de hectormlara
+		public function obtener_cuenta_hectorM()
+		{
+			$hector = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'hectormlara'");
+		
+			if($hector->num_rows()>0)
+			{
+				return $hector->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de eusebiomesina
+		public function obtener_cuenta_eusebio()
+		{
+			$eusebio = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'eusebiomesina'");
+		
+			if($eusebio->num_rows()>0)
+			{
+				return $eusebio->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de MesinaTena
+		public function obtener_cuenta_mesina()
+		{
+			$mesina = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'MesinaTena'");
+		
+			if($mesina->num_rows()>0)
+			{
+				return $mesina->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de PintoRgz
+		public function obtener_cuenta_pinto()
+		{
+			$pinto = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'PintoRgz'");
+		
+			if($pinto->num_rows()>0)
+			{
+				return $pinto->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de Armida_NG
+		public function obtener_cuenta_armida()
+		{
+			$armida = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'Armida_NG'");
+		
+			if($armida->num_rows()>0)
+			{
+				return $armida->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de amary_landa
+		public function obtener_cuenta_amary()
+		{
+			$amary = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'amary_landa'");
+		
+			if($amary->num_rows()>0)
+			{
+				return $amary->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de Sergio_SanchezO
+		public function obtener_cuenta_sergio()
+		{
+			$sergio = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'Sergio_SanchezO'");
+		
+			if($sergio->num_rows()>0)
+			{
+				return $sergio->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de Martha_Meza_ 
+		public function obtener_cuenta_marthaM()
+		{
+			$martha = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'Martha_Meza_'");
+		
+			if($martha->num_rows()>0)
+			{
+				return $martha->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de marserranos
+		public function obtener_cuenta_felicitas()
+		{
+			$felicitas = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'marserranos'");
+		
+			if($felicitas->num_rows()>0)
+			{
+				return $felicitas->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+		
+		//Obtener cuenta de SantiagoCh2Tec
+		public function obtener_cuenta_santiago()
+		{
+			$santiago = $this->db->query("select max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'SantiagoCh2Tec'");
+		
+			if($santiago->num_rows()>0)
+			{
+				return $santiago->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+
 		//Obtener valoracion de comentarios de nacho
 		public function valoracion_nacho()
 		{

@@ -68,7 +68,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                               <div class="tab-content" id="myTabContent">
 
                                 <div id="nacho" class="tab-pane fade active in"> 
-                                    <br>
                                     <center>
                                         <svg id="fillgauge1"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
                                         <svg id="fillgauge2" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>

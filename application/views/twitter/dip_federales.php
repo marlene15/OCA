@@ -14,6 +14,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <title>Dip. Federales</title> 
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
+  <script src="<?php echo base_url()?>assets/twitter/vk.js"></script>  
 </head>
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
@@ -34,8 +35,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
                     <div class="portlet-body form well">
-                        <div id="chart_div" style="height: 600px;"></div>
-                        <div id="chart_div2" style="height: 600px;"></div>
+                      <!--Código para el tab de pestañas-->   
+                      <div class="bs-example bs-example-tabs">
+                        <ul class="nav nav-tabs" id="myTab">
+                          <li class="active"><a data-toggle="tab" href="#d1">Distrito 1</a></li>
+                          <li class=""><a data-toggle="tab" href="#d2">Distrito 2</a></li>
+                        </ul>
+                          <div class="tab-content" id="myTabContent">
+
+                            <div id="d1" class="tab-pane fade active in"> 
+                                <div id="chart_div" style="height: 600px; width: 100%;"></div>                            
+                            </div>
+
+                            <div id="d2" class="tab-pane fade">
+                              <div id="chart_div2" style="height: 600px; width: 100%;"></div>                                   
+                            </div>
+                        </div>
+                      </div> <!--Cierra div del tab de pestañas-->        
                     </div>
                 </div>              
             </div>
@@ -43,13 +59,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     </div>
 
   <?php $this->load->view('comunes/footer'); ?> 
-</body>
-</html>
 
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
+    
     google.setOnLoadCallback(drawChart);
-
     function drawChart() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -82,7 +96,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '@oca_twitt \n Candidatos a Diputados Federales. Distrito I',
+        title: '',
         hAxis: {
           title: 'Candidatos'
         },         
@@ -109,13 +123,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
       chart.draw(view, options);          
     }
-  </script>
 
-  <script type="text/javascript">
-    google.load("visualization", "1", {packages: ["corechart"]});
-    google.setOnLoadCallback(drawChart);
-
-    function drawChart() {
+    google.setOnLoadCallback(drawChart2);
+    function drawChart2() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
@@ -146,7 +156,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '@oca_twitt \n Candidatos a Diputados Federales. Distrito II',
+        title: '',
         hAxis: {
           title: 'Candidatos'
         },         
@@ -169,8 +179,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           maxValue: 100
         }
       };  
-
+      
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
       chart.draw(view, options);          
     }
   </script>
+</body>
+</html>
+

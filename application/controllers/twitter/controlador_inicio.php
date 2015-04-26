@@ -75,6 +75,97 @@ class Controlador_inicio extends CI_Controller {
 		}	
 	}
 
+	public function dip_locales()
+	{
+		#Distrito 1
+		$hilda = $this->modelo_inicio->obtener_cuenta_hilda();
+		#Distrito 2
+		$rangel = $this->modelo_inicio->obtener_cuenta_rangel();
+		$viviana = $this->modelo_inicio->obtener_cuenta_viviana();
+		#Distrito 3
+		$crispin = $this->modelo_inicio->obtener_cuenta_crispin();
+		$isis = $this->modelo_inicio->obtener_cuenta_isis();
+		#Distrito 4
+		$janeth = $this->modelo_inicio->obtener_cuenta_janeth();
+		$juanita = $this->modelo_inicio->obtener_cuenta_juanita();
+		#Distrito 5
+		$lupe = $this->modelo_inicio->obtener_cuenta_lupe();
+		#Distrito 6
+		$octavio = $this->modelo_inicio->obtener_cuenta_octavio();
+		#Distrito 7
+		$sara = $this->modelo_inicio->obtener_cuenta_sara();
+		$joel = $this->modelo_inicio->obtener_cuenta_joel();
+		#Distrito 8
+		$meyly = $this->modelo_inicio->obtener_cuenta_meyly();
+		$hector = $this->modelo_inicio->obtener_cuenta_hectorM();
+		#Distrito 9
+		$eusebio = $this->modelo_inicio->obtener_cuenta_eusebio();
+		#Distrito 10
+		$mesina = $this->modelo_inicio->obtener_cuenta_mesina();
+		$pinto = $this->modelo_inicio->obtener_cuenta_pinto();
+		#Distrito 11
+		$armida = $this->modelo_inicio->obtener_cuenta_armida();
+		#Distrito 12
+		$amary = $this->modelo_inicio->obtener_cuenta_amary();
+		#Distrito 13
+		$sergio = $this->modelo_inicio->obtener_cuenta_sergio();
+		#Distrito 14
+		$martha = $this->modelo_inicio->obtener_cuenta_marthaM();
+		#Distrito 15
+		$felicitas = $this->modelo_inicio->obtener_cuenta_felicitas();
+		#Distrito 16
+		$santiago = $this->modelo_inicio->obtener_cuenta_santiago();
+		if($hilda != FALSE)
+		{
+			$datos = array('usuarioh' => $hilda->usuario, 'seguidoresh' => $hilda->seguidores, 
+				          'siguiendoh' => $hilda->siguiendo, 'tweetsh' => $hilda->tweets,
+				          'usuario_rangel' => $rangel->usuario, 'seguidores_rangel' => $rangel->seguidores, 
+				          'siguiendo_rangel' => $rangel->siguiendo, 'tweets_rangel' => $rangel->tweets,
+				          'usuario_viviana' => $viviana->usuario, 'seguidores_viviana' => $viviana->seguidores, 
+				          'siguiendo_viviana' => $viviana->siguiendo, 'tweets_viviana' => $viviana->tweets,
+				          'usuario_crispin' => $crispin->usuario, 'seguidores_crispin' => $crispin->seguidores, 
+				          'siguiendo_crispin' => $crispin->siguiendo, 'tweets_crispin' => $crispin->tweets,
+				          'usuario_isis' => $isis->usuario, 'seguidores_isis' => $isis->seguidores, 
+				          'siguiendo_isis' => $isis->siguiendo, 'tweets_isis' => $isis->tweets,
+				          'usuario_janeth' => $janeth->usuario, 'seguidores_janeth' => $janeth->seguidores, 
+				          'siguiendo_janeth' => $janeth->siguiendo, 'tweets_janeth' => $janeth->tweets,
+				          'usuario_juanita' => $juanita->usuario, 'seguidores_juanita' => $juanita->seguidores, 
+				          'siguiendo_juanita' => $juanita->siguiendo, 'tweets_juanita' => $juanita->tweets,
+				          'usuario_lupe' => $lupe->usuario, 'seguidores_lupe' => $lupe->seguidores, 
+				          'siguiendo_lupe' => $lupe->siguiendo, 'tweets_lupe' => $lupe->tweets,
+				          'usuario_octavio' => $octavio->usuario, 'seguidores_octavio' => $octavio->seguidores, 
+				          'siguiendo_octavio' => $octavio->siguiendo, 'tweets_octavio' => $octavio->tweets,
+				          'usuario_sara' => $sara->usuario, 'seguidores_sara' => $sara->seguidores, 
+				          'siguiendo_sara' => $sara->siguiendo, 'tweets_sara' => $sara->tweets,
+				          'usuario_joel' => $joel->usuario, 'seguidores_joel' => $joel->seguidores, 
+				          'siguiendo_joel' => $joel->siguiendo, 'tweets_joel' => $joel->tweets,
+				          'usuario_meyly' => $meyly->usuario, 'seguidores_meyly' => $meyly->seguidores, 
+				          'siguiendo_meyly' => $meyly->siguiendo, 'tweets_meyly' => $meyly->tweets,
+				          'usuario_hector' => $hector->usuario, 'seguidores_hector' => $hector->seguidores, 
+				          'siguiendo_hector' => $hector->siguiendo, 'tweets_hector' => $hector->tweets,
+				          'usuario_eusebio' => $eusebio->usuario, 'seguidores_eusebio' => $eusebio->seguidores, 
+				          'siguiendo_eusebio' => $eusebio->siguiendo, 'tweets_eusebio' => $eusebio->tweets,
+				          'usuario_mesina' => $mesina->usuario, 'seguidores_mesina' => $mesina->seguidores, 
+				          'siguiendo_mesina' => $mesina->siguiendo, 'tweets_mesina' => $mesina->tweets,
+				          'usuario_pinto' => $pinto->usuario, 'seguidores_pinto' => $pinto->seguidores, 
+				          'siguiendo_pinto' => $pinto->siguiendo, 'tweets_pinto' => $pinto->tweets,
+				          'usuario_armida' => $armida->usuario, 'seguidores_armida' => $armida->seguidores, 
+				          'siguiendo_armida' => $armida->siguiendo, 'tweets_armida' => $armida->tweets,
+				          'usuario_amary' => $amary->usuario, 'seguidores_amary' => $amary->seguidores, 
+				          'siguiendo_amary' => $amary->siguiendo, 'tweets_amary' => $amary->tweets,
+				          'usuario_sergio' => $sergio->usuario, 'seguidores_sergio' => $sergio->seguidores, 
+				          'siguiendo_sergio' => $sergio->siguiendo, 'tweets_sergio' => $sergio->tweets,
+				          'usuario_martha' => $martha->usuario, 'seguidores_martha' => $martha->seguidores, 
+				          'siguiendo_martha' => $martha->siguiendo, 'tweets_martha' => $martha->tweets,
+				          'usuario_felicitas' => $felicitas->usuario, 'seguidores_felicitas' => $felicitas->seguidores, 
+				          'siguiendo_felicitas' => $felicitas->siguiendo, 'tweets_felicitas' => $felicitas->tweets,
+				          'usuario_santiago' => $santiago->usuario, 'seguidores_santiago' => $santiago->seguidores, 
+				          'siguiendo_santiago' => $santiago->siguiendo, 'tweets_santiago' => $santiago->tweets
+				          );
+			$this->load->view('twitter/dip_locales',$datos);	
+		}	
+	}
+
 	public function alcaldias()
 	{
 		#Colima

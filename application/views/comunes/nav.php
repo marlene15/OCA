@@ -76,7 +76,7 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/dip_locales');?>"> 
                                         <span class="title">Diputado Local</span>
                                         <span class="selected"></span>
                                     </a>

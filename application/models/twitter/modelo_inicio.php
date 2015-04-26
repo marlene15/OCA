@@ -246,58 +246,69 @@
 				return FALSE;
 			}
 		}
-		//Obtener comentarios positivos nacho
-		public function positivos_nacho()
+		//Obtener valoracion de comentarios de nacho
+		public function valoracion_nacho()
 		{
 			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
-		
-			if($positivos->num_rows()>0)
-			{
-				return $positivos->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtener comentarios negativos nacho
-		public function negativos_nacho()
-		{
 			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
-		
-			if($negativos->num_rows()>0)
-			{
-				return $negativos->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtener comentarios neutros nacho
-		public function neutros_nacho()
-		{
 			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
-		
-			if($neutros->num_rows()>0)
-			{
-				return $neutros->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
 		}
 
+		//Obtener valoracion de comentarios de Jorge Luis
+		public function valoracion_jorge()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+										  (texto LIKE '%JL_Preciado_%' or texto LIKE '%DesdeAbajoConTrabajo%' 
+										  or texto LIKE '%ClaroQuePodemos%' or texto LIKE '%AlegrateYaSeVan%'
+										  or texto LIKE '%JorgeLuis %' or texto LIKE '%YaSeVan%')"  
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+										  (texto LIKE '%JL_Preciado_%' or texto LIKE '%DesdeAbajoConTrabajo%' 
+										  or texto LIKE '%ClaroQuePodemos%' or texto LIKE '%AlegrateYaSeVan%'
+										  or texto LIKE '%JorgeLuis %' or texto LIKE '%YaSeVan%')"  
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+										  (texto LIKE '%JL_Preciado_%' or texto LIKE '%DesdeAbajoConTrabajo%' 
+										  or texto LIKE '%ClaroQuePodemos%' or texto LIKE '%AlegrateYaSeVan%'
+										  or texto LIKE '%JorgeLuis %' or texto LIKE '%YaSeVan%')"  
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();			
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		
 		//Prueba de la conexión
 		public function prueba()
 		{

@@ -198,9 +198,9 @@ var App = function () {
 
                 e.preventDefault();
             });
-
+        
         // handle ajax links
-        jQuery('.page-sidebar').on('click', ' li > a.ajaxify', function (e) {
+        jQuery('.page-sidebar').on('click', ' li > a.ajaxify', function (e) {                
                 e.preventDefault();
                 App.scrollTop();
 

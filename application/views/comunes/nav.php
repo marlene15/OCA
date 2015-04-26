@@ -99,18 +99,70 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="<?php echo site_url('facebook/controlador_inicio');?>">
+                            <a href="javascript:;">
                                 <i class="icon-facebook"></i> 
                                 <span class="title">Facebook</span>
-                                <span class="selected"></span>
+                                <span class="arrow "></span>
                             </a>
+                            <ul class="sub-menu">
+                                <li >
+                                    <a href="#"> 
+                                        <span class="title">Gobernador</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#);?>"> 
+                                        <span class="title">Diputado Federal</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#"> 
+                                        <span class="title">Diputado Local</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#"> 
+                                        <span class="title">Presidente Municipal</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="<?php echo site_url('twitter/controlador_inicio/candidatos_valoracion');?>">
+                            <a href="javascript:;">
                                 <i class="icon-twitter"></i> 
                                 <span class="title">Twitter</span>
-                                <span class="selected"></span>
+                                <span class="arrow "></span>
                             </a>
+                            <ul class="sub-menu">
+                                <li >
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_gobernadores');?>"> 
+                                        <span class="title">Gobernador</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#"> 
+                                        <span class="title">Diputado Federal</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#"> 
+                                        <span class="title">Diputado Local</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#"> 
+                                        <span class="title">Presidente Municipal</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -161,7 +213,7 @@
                     </ul>
                 </li>
                 <li >
-                    <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_gobernadores');?>">
+                    <a href="#">
                         <i class="icon-indent-left"></i> 
                         <span class="title">¿Cómo vamos Colima?</span>
                         <span class="selected"></span>

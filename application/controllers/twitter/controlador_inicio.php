@@ -133,6 +133,15 @@ class Controlador_inicio extends CI_Controller {
 
 	public function valoracion_gobernadores()
 	{
-		$this->load->view('twitter/valoracionGobernadores');
+		$nacho = $this->modelo_inicio->valoracion_nacho();
+		$jorge = $this->modelo_inicio->valoracion_jorge();
+		$datos = array('nachoP' => $nacho['positivos'],
+					  'nachoNe' => $nacho['negativos'],
+					  'nachoN' => $nacho['neutros'],
+					  'jorgeP' => $jorge['positivos'],
+					  'jorgeNe' => $jorge['negativos'],
+					  'jorgeN' => $jorge['neutros']
+					  );
+		$this->load->view('twitter/valoracionGobernadores',$datos);
 	}
 }

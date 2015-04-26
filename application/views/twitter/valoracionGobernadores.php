@@ -39,20 +39,52 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                 <a href="<?php echo site_url('inicio') ?>">Home</a> 
                                 <i class="icon-angle-right"></i>
                             </li>
+                            <li>
+                                <i class="icon-user"></i>
+                                <a href="javascript:;">Candidato</a> 
+                                <i class="icon-angle-right"></i>
+                            </li>
+                            <li>
+                                <i class="icon-twitter"></i>
+                                <a href="javascript:;">Twitter</a> 
+                                <i class="icon-angle-right"></i>
+                            </li>
+                            <li>
+                                <i class="icon-briefcase"></i>
+                                <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_gobernadores');?>">Gobernador</a> 
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
                     <div class="portlet-body form well">
-                        <center>
-                            <svg id="fillgauge1"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
-                            <svg id="fillgauge2" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                            <svg id="fillgauge3" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                            <svg id="fillgauge4" width="19%" height="200" ></svg>
-                            <svg id="fillgauge5" width="19%" height="200" ></svg>
-                            <svg id="fillgauge6" width="19%" height="200" ></svg>
-                        </center>                      
+                        <!--Código para el tap de pestañas-->   
+                        <div class="bs-example bs-example-tabs">
+                            <ul class="nav nav-tabs" id="myTab">
+                              <li class="active"><a data-toggle="tab" href="#nacho">Nacho Peralta</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Jorge Luis Preciado</a></li>
+                            </ul>
+                              <div class="tab-content" id="myTabContent">
+
+                                <div id="nacho" class="tab-pane fade active in"> 
+                                    <br>
+                                    <center>
+                                        <svg id="fillgauge1"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
+                                        <svg id="fillgauge2" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
+                                        <svg id="fillgauge3" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
+                                    </center>                                                                           
+                                </div>
+
+                                <div id="jorge" class="tab-pane fade ">
+                                    <center>
+                                        <svg id="fillgauge4"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
+                                        <svg id="fillgauge5" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
+                                        <svg id="fillgauge6" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
+                                    </center>                                     
+                                </div>
+                            </div>
+                        </div>  <!--Cierra div de los tabs-->                                            
                     </div>
                 </div>              
             </div>
@@ -63,68 +95,47 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 </body>
 </html>
 
+<!--Datos de nacho-->
 <script language="JavaScript">
-    loadLiquidFillGauge("fillgauge1", 55);
     var config1 = liquidFillGaugeDefaultSettings();
-    config1.circleColor = "#FF7777";
-    config1.textColor = "#FF4444";
-    config1.waveTextColor = "#FFAAAA";
-    config1.waveColor = "#FFDDDD";
-    config1.circleThickness = 0.2;
-    config1.textVertPosition = 0.2;
-    config1.waveAnimateTime = 1000;
-    loadLiquidFillGauge("fillgauge2", 28, config1);
+    config1.circleColor = "#178BCA";
+    config1.textColor = "#045681";
+    config1.waveTextColor = "#81BEF7";
+    config1.waveColor = "#58ACFA";
+    config1.circleThickness = 0.15;
+    config1.textVertPosition = 0.8;
+    config1.waveAnimateTime = 1000;    
+    config1.textSize = 0.75;
+    config1.waveHeight = 0.05;    
+
     var config2 = liquidFillGaugeDefaultSettings();
-    config2.circleColor = "#D4AB6A";
-    config2.textColor = "#553300";
-    config2.waveTextColor = "#805615";
-    config2.waveColor = "#AA7D39";
-    config2.circleThickness = 0.1;
-    config2.circleFillGap = 0.2;
+    config2.circleColor = "#FF7777";
+    config2.textColor = "#FF4444";
+    config2.waveTextColor = "#FFAAAA";
+    config2.waveColor = "#FFDDDD";
+    config2.circleThickness = 0.15;
     config2.textVertPosition = 0.8;
-    config2.waveAnimateTime = 2000;
-    config2.waveHeight = 0.3;
-    config2.waveCount = 1;
-    loadLiquidFillGauge("fillgauge3", 60.1, config2);
+    config2.waveAnimateTime = 500;
+    config2.textSize = 0.75;
+    config2.waveHeight = 0.05;    
+
     var config3 = liquidFillGaugeDefaultSettings();
+    config3.circleColor = "#D4AB6A";
+    config3.textColor = "#553300";
+    config3.waveTextColor = "#805615";
+    config3.waveColor = "#AA7D39";
+    config3.circleThickness = 0.15;
     config3.textVertPosition = 0.8;
-    config3.waveAnimateTime = 5000;
-    config3.waveHeight = 0.15;
-    config3.waveAnimate = false;
-    config3.waveOffset = 0.25;
-    config3.valueCountUp = false;
-    config3.displayPercent = false;
-    loadLiquidFillGauge("fillgauge4", 50, config3);
-    var config4 = liquidFillGaugeDefaultSettings();
-    config4.circleThickness = 0.15;
-    config4.circleColor = "#808015";
-    config4.textColor = "#555500";
-    config4.waveTextColor = "#FFFFAA";
-    config4.waveColor = "#AAAA39";
-    config4.textVertPosition = 0.8;
-    config4.waveAnimateTime = 1000;
-    config4.waveHeight = 0.05;
-    config4.waveAnimate = true;
-    config4.waveRise = false;
-    config4.waveOffset = 0.25;
-    config4.textSize = 0.75;
-    config4.waveCount = 3;
-    loadLiquidFillGauge("fillgauge5", 60.44, config4);
-    var config5 = liquidFillGaugeDefaultSettings();
-    config5.circleThickness = 0.4;
-    config5.circleColor = "#6DA398";
-    config5.textColor = "#0E5144";
-    config5.waveTextColor = "#6DA398";
-    config5.waveColor = "#246D5F";
-    config5.textVertPosition = 0.52;
-    config5.waveAnimateTime = 5000;
-    config5.waveHeight = 0;
-    config5.waveAnimate = false;
-    config5.waveCount = 2;
-    config5.waveOffset = 0.25;
-    config5.textSize = 1.2;
-    config5.minValue = 30;
-    config5.maxValue = 150
-    config5.displayPercent = false;
-    loadLiquidFillGauge("fillgauge6", 120, config5);
+    config3.waveAnimateTime = 2000;
+    config3.textSize = 0.75;
+    config3.waveHeight = 0.15;   
+
+    //Datos nacho
+    loadLiquidFillGauge("fillgauge1", <?php echo $nachoP; ?>, config1);
+    loadLiquidFillGauge("fillgauge2", <?php echo $nachoNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge3", <?php echo $nachoN; ?>, config3);
+    //Datos jorge
+    loadLiquidFillGauge("fillgauge4", <?php echo $jorgeP; ?>, config1);
+    loadLiquidFillGauge("fillgauge5", <?php echo $jorgeNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge6", <?php echo $jorgeN; ?>, config3);
 </script>

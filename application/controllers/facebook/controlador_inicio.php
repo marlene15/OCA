@@ -243,15 +243,106 @@ class Controlador_inicio extends CI_Controller {
 //CANDIDATO A DIPUTADO LOCAL DISTRITO I al XVI
 	public function CDLDISTRITOIALXVI()
 		{
-			$Hildaceballos = $this->modelo_inicio->Obtener_CDLDIHildaceballos();
-			$Josecardenas = $this->modelo_inicio->Obtener_CDLDIJosecardenas();
-			$Leonardogutierrez = $this->modelo_inicio->Obtener_CDLDILeonardogutierrez();
+			//Distrito I
+			$Hildaceballos = $this->modelo_inicio->Obtener_CDLDIHC();
+			$Josecardenas = $this->modelo_inicio->Obtener_CDLDIJC();
+			$Leonardogutierrez = $this->modelo_inicio->Obtener_CDLDILG();
+			// //Distrito II
+			// $nicolascontreras = $this->modelo_inicio->Obtener_CDLDIINC();
+			// $guillermorangel = $this->modelo_inicio->Obtener_CDLDIIGR();
+			// $SandraRammirez = $this->modelo_inicio->Obtener_CDLDIISR();
+			// $joseGarcia = $this->modelo_inicio->Obtener_CDLDIIJG();
+			// $arturogarcia = $this->modelo_inicio->Obtener_CDLDIIAG();
+			// $lilianarodriguez = $this->modelo_inicio->Obtener_CDLDIILR();
+			// //Distrito III
+			// $crispinguerra = $this->modelo_inicio->Obtener_CDLDIIICG();
+			// $almaarreola = $this->modelo_inicio->Obtener_CDLDIIIAA();
+			// $marthafarias = $this->modelo_inicio->Obtener_CDLDIIIMF();
+			// $isisvillasernor = $this->modelo_inicio->Obtener_CDLDIIIIV();
+			// $octavioaguilar = $tis->modelo_inicio->Obtener_CDLDIIIOA();
+			// $patriciaperegrina = $this->modelo_inicio->Obtener_CDLDIIIPP();
+			// $gloriaarceo = $this->modelo_inicio->Obtener_CDLDIIIGA();
+			// //Distrito IV
+			// $janethpaz = $this->modelo_inicio->Obtener_CDLDIVJP();
+			// $juanaandres = $this->modelo_inicio->Obtener_CDLDIVJA();
+			// $sergioricardo = $this->modelo_inicio->Obtener_CDLDIVSR();
+			// $andresorozco = $this->modelo_inicio->Obtener_CDLDIVAO();
+			// //Distrito V
+			// $ramirotoscano = $this->modelo_inicio->Obtener_CDLDVRT();
+			// $josebenavides = $this->modelo_inicio->Obtener_CDLDVJB();
+			// $yulianaaguilar = $this->modelo_inicio->Obtener_CDLDVYA();
+			// //Distrito VI
+			// $SandrayolandaRammirez = $this->modelo_inicio->Obtener_CDLDVISYR();
+			// $octaviotintos = $this->modelo_inicio->Obtener_CDLDVIOT();
+			// $sergiosilva = $this->modelo_inicio->Obtener_CDLDVISS();
+			// $leticiamendoza = $this->modelo_inicio->Obtener_CDLDVILM();
+			// $getzemaniibarra = $this->modelo_inicio->Obtener_CDLDVIGI();
+			// //Distrito VII
+			// $franciscoceballo = $this->modelo_inicio->Obtener_CDLDVIIFC();
+			// $alfredohernandez = $this->modelo_inicio->Obtener_CDLDVIIAH();
+			// $saracernas = $this->modelo_inicio->Obtener_CDLDVIISC();
+			// $jooelpadilla = $this->modelo_inicio->Obtener_CDLDVIIJP();
+			// $socorrobayardo = $this->modelo_inicio->Obtener_CDLDVIISB();
+			// $erendiraandrade = $this->modelo_inicio->Obtener_CDLDVIIEA();
+			// //Distrito VIII
+			// $meylypastora = $this->modelo_inicio->Obtener_CDLDVIIIMP();
+			// $hectormagana = $this->modelo_inicio->Obtener_CDLDVIIIHM();
+			// $alfredoherrera = $this->modelo_inicio->Obtener_CDLDVIIIAH();
+			// $adelaidafernandez = $this->modelo_inicio->Obtener_CDLDVIIIAF();
+			// $juanjuarez = $this->modelo_inicio->Obtener_CDLDVIIIJJ();
+			// //Distrito IX
+			// $eusebiomesina = $this->modelo_inicio->Obtener_CDLDIXEM();
+			// $beatrizinsunza = $this->modelo_inicio->Obtener_CDLDIXBI();
+			// $selenelopez = $this->modelo_inicio->Obtener_CDLDIXSL();
+			// $angelicaochoa = $this->modelo_inicio->Obtener_CDLDIXAO();
+			// $mauriciobarreto = $this->modelo_inicio->Obtener_CDLDIXMB();
+			// //Distrito X
+			// $juanpinto = $this->modelo_inicio->Obtener_CDLDXJP();
+			// $ricardosevilla = $this->modelo_inicio->Obtener_CDLDXRS();
+			// $raquelcardenas = $this->modelo_inicio->Obtener_CDLDXRC();
+			// $marcorodarte = $this->modelo_inicio->Obtener_CDLDXMR();
+			// $salvadorjuarez = $this->modelo_inicio->Obtener_CDLDXSJ();
+			// //Distrito XI
+			// $miguelgarcia = $this->modelo_inicio->Obtener_CDLDXIMG();
+			// $armidanunes = $this->modelo_inicio->Obtener_CDLDXIAN();
+			// $aldovega = $this->modelo_inicio->Obtener_CDLDXIAV();
+			// $sebastianesparza = $this->modelo_inicio->Obtener_CDLDXISE();
+			// $teresahernandez = $this->modelo_inicio->Obtener_CDLDXITH();
+			// $dianatopete = $this->modelo_inicio->Obtener_CDLDXIDT();
+			// //Distrito XII
+			// $marthasosa = $this->modelo_inicio->Obtener_CDLDXIIMS();
+			// $rosarioyeme = $this->modelo_inicio->Obtener_CDLDXIIRY();
+			// $noraayala = $this->modelo_inicio->Obtener_CDLDXIINA();
+			// $sarahinoriega = $this->modelo_inicio->Obtener_CDLDXIISN();
+			// //Distrito XIII
+			// $sergiosanchez = $this->modelo_inicio->Obtener_CDLDXIIISS();
+			// $carlosvilla = $this->modelo_inicio->Obtener_CDLDXIIICV();
+			// //Distrito XIV
+			// $luisayala = $this->modelo_inicio->Obtener_CDLDXIVLA();
+			// $lilafigueroa = $this->modelo_inicio->Obtener_CDLDXIVLF();
+			// $marthameza = $this->modelo_inicio->Obtener_CDLDXIVMM();
+			// $veronicatorres = $this->modelo_inicio->Obtener_CDLDXIVVT();
+			// $gustavorerenteria =$this->modelo_inicio->Obtener_CDLDXIVGR();
+			// $josefinaroblada = $this->modelo_inicio->Obtener_CDLDXIVJR();
+			// $eliasnunez = $this->modelo_inicio->Obtener_CDLDXIVEN();
+			// //Distrito XV
+			// $felicitaspena = $this->modelo_inicio->Obtener_CDLDXVFP();
+			// $hildamoreno = $this->modelo_inicio->Obtener_CDLDXVHM();
+			// $almarincon = $this->modelo_inicio->Obtener_CDLDXVAR();
+			// //Distrito XVI
+			// $santiagochavez = $this->modelo_inicio->Obtener_CDLDXVISC();
+			// $judithgodinez = $this->modelo_inicio->Obtener_CDLDXVIJG();
+			// $sergiomendoza = $this->modelo_inicio->Obtener_CDLDXVISM();
+			// $angelesrodriguez = $this->modelo_inicio->Obtener_CDLDXVIAR();
+
 			
 			if($Hildaceballos != FALSE and $Josecardenas != FALSE and $Leonardogutierrez != FALSE)
 			{
-				$data = array('megustacdn' => $Hildaceballos->Megusta, 'seguidorescdn' => $Hildaceballos->PersonasHablan,
-					          'megustacdp' => $Josecardenas->Megusta, 'seguidorescdp' => $Josecardenas->PersonasHablan,
-					          'megustacde' => $Leonardogutierrez->Megusta, 'seguidorescde' => $Leonardogutierrez->PersonasHablan);
+				$data = array(
+							  //Distrito I
+							  'megustac1' => $Hildaceballos->Megusta, 'seguidoresc1' => $Hildaceballos->PersonasHablan,
+					          'megustac2' => $Josecardenas->Megusta, 'seguidoresc2' => $Josecardenas->PersonasHablan,
+					          'megustac3' => $Leonardogutierrez->Megusta, 'seguidoresc3' => $Leonardogutierrez->PersonasHablan);
 				$this->load->view('facebook/diputadolocal',$data);
 			}
 		}		

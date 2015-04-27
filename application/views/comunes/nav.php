@@ -43,13 +43,13 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/CDLDISTRITOIALXVI');?>">
                                         <span class="title">Diputado Local</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/CAlcaldias');?>">
                                         <span class="title">Presidente Municipal</span>
                                         <span class="selected"></span>
                                     </a>

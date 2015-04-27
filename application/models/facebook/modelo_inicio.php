@@ -346,11 +346,54 @@ class Modelo_inicio extends CI_Model
 	}
 	
 	//********CANDIDATOS A DIPUTADO LOCAL*********
+	
 	//Obteniendo los likes y los posts del candidato a DLDI Hilda Ceballos Llerenas
-	public function Obtener_CDLDIHildaceballos()
+	public function Obtener_CDLDIHC()
 	{
-		
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$Hildaceballos = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Local Distrito I') and Nombre='Hilda Ceballos Llerenas'");
+	
+		if($Hildaceballos->num_rows()>0)
+		{
+			return $Hildaceballos->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
+	//Obteniendo los likes y los posts del candidato a DLDI José Cárdenas Sánchez
+	public function Obtener_CDLDIJC()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$Josecardenas = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Local Distrito I') and Nombre='José Cárdenas Sánchez'");
+	
+		if($Josecardenas->num_rows()>0)
+		{
+			return $Josecardenas->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}		
+	}
+	//Obteniendo los likes y los posts del candidato a DLDI Leonardo Cesar Gutiérrez Chávez
+	public function Obtener_CDLDILG()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$Leonardogutierrez = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Local Distrito I') and Nombre='Leonardo Cesar Gutiérrez Chávez'");
+	
+		if($Leonardogutierrez->num_rows()>0)
+		{
+			return $Leonardogutierrez->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}			
+	}	
+
+
 
 	//********CANDIDATOS A PRESIDENTE MUNICIPAL DE COLIMA*********
 

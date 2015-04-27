@@ -208,7 +208,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -266,7 +266,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -322,7 +322,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -381,7 +381,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -438,7 +438,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -493,7 +493,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -551,7 +551,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -606,7 +606,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {
@@ -666,7 +666,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1300,
+        width: 1000,
         height: 600,
         series: {
           0: {

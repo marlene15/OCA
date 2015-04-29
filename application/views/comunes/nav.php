@@ -197,7 +197,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="#">
+                            <a href="<?php echo site_url('facebook/controlador_inicio/partidost');?>">
                                 <i class="icon-facebook"></i> 
                                 <span class="title">Facebook</span>
                                 <span class="selected"></span>

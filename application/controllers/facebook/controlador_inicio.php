@@ -247,93 +247,93 @@ class Controlador_inicio extends CI_Controller {
 			$Hildaceballos = $this->modelo_inicio->Obtener_CDLDIHC();
 			$Josecardenas = $this->modelo_inicio->Obtener_CDLDIJC();
 			$Leonardogutierrez = $this->modelo_inicio->Obtener_CDLDILG();
-			// //Distrito II
-			// $nicolascontreras = $this->modelo_inicio->Obtener_CDLDIINC();
-			// $guillermorangel = $this->modelo_inicio->Obtener_CDLDIIGR();
-			// $SandraRammirez = $this->modelo_inicio->Obtener_CDLDIISR();
-			// $joseGarcia = $this->modelo_inicio->Obtener_CDLDIIJG();
-			// $arturogarcia = $this->modelo_inicio->Obtener_CDLDIIAG();
-			// $lilianarodriguez = $this->modelo_inicio->Obtener_CDLDIILR();
-			// //Distrito III
-			// $crispinguerra = $this->modelo_inicio->Obtener_CDLDIIICG();
-			// $almaarreola = $this->modelo_inicio->Obtener_CDLDIIIAA();
-			// $marthafarias = $this->modelo_inicio->Obtener_CDLDIIIMF();
-			// $isisvillasernor = $this->modelo_inicio->Obtener_CDLDIIIIV();
-			// $octavioaguilar = $tis->modelo_inicio->Obtener_CDLDIIIOA();
-			// $patriciaperegrina = $this->modelo_inicio->Obtener_CDLDIIIPP();
-			// $gloriaarceo = $this->modelo_inicio->Obtener_CDLDIIIGA();
-			// //Distrito IV
-			// $janethpaz = $this->modelo_inicio->Obtener_CDLDIVJP();
-			// $juanaandres = $this->modelo_inicio->Obtener_CDLDIVJA();
-			// $sergioricardo = $this->modelo_inicio->Obtener_CDLDIVSR();
-			// $andresorozco = $this->modelo_inicio->Obtener_CDLDIVAO();
-			// //Distrito V
-			// $ramirotoscano = $this->modelo_inicio->Obtener_CDLDVRT();
-			// $josebenavides = $this->modelo_inicio->Obtener_CDLDVJB();
-			// $yulianaaguilar = $this->modelo_inicio->Obtener_CDLDVYA();
-			// //Distrito VI
-			// $SandrayolandaRammirez = $this->modelo_inicio->Obtener_CDLDVISYR();
-			// $octaviotintos = $this->modelo_inicio->Obtener_CDLDVIOT();
-			// $sergiosilva = $this->modelo_inicio->Obtener_CDLDVISS();
-			// $leticiamendoza = $this->modelo_inicio->Obtener_CDLDVILM();
-			// $getzemaniibarra = $this->modelo_inicio->Obtener_CDLDVIGI();
-			// //Distrito VII
-			// $franciscoceballo = $this->modelo_inicio->Obtener_CDLDVIIFC();
-			// $alfredohernandez = $this->modelo_inicio->Obtener_CDLDVIIAH();
-			// $saracernas = $this->modelo_inicio->Obtener_CDLDVIISC();
-			// $jooelpadilla = $this->modelo_inicio->Obtener_CDLDVIIJP();
-			// $socorrobayardo = $this->modelo_inicio->Obtener_CDLDVIISB();
-			// $erendiraandrade = $this->modelo_inicio->Obtener_CDLDVIIEA();
-			// //Distrito VIII
-			// $meylypastora = $this->modelo_inicio->Obtener_CDLDVIIIMP();
-			// $hectormagana = $this->modelo_inicio->Obtener_CDLDVIIIHM();
-			// $alfredoherrera = $this->modelo_inicio->Obtener_CDLDVIIIAH();
-			// $adelaidafernandez = $this->modelo_inicio->Obtener_CDLDVIIIAF();
-			// $juanjuarez = $this->modelo_inicio->Obtener_CDLDVIIIJJ();
-			// //Distrito IX
-			// $eusebiomesina = $this->modelo_inicio->Obtener_CDLDIXEM();
-			// $beatrizinsunza = $this->modelo_inicio->Obtener_CDLDIXBI();
-			// $selenelopez = $this->modelo_inicio->Obtener_CDLDIXSL();
-			// $angelicaochoa = $this->modelo_inicio->Obtener_CDLDIXAO();
-			// $mauriciobarreto = $this->modelo_inicio->Obtener_CDLDIXMB();
-			// //Distrito X
-			// $juanpinto = $this->modelo_inicio->Obtener_CDLDXJP();
-			// $ricardosevilla = $this->modelo_inicio->Obtener_CDLDXRS();
-			// $raquelcardenas = $this->modelo_inicio->Obtener_CDLDXRC();
-			// $marcorodarte = $this->modelo_inicio->Obtener_CDLDXMR();
-			// $salvadorjuarez = $this->modelo_inicio->Obtener_CDLDXSJ();
-			// //Distrito XI
-			// $miguelgarcia = $this->modelo_inicio->Obtener_CDLDXIMG();
-			// $armidanunes = $this->modelo_inicio->Obtener_CDLDXIAN();
-			// $aldovega = $this->modelo_inicio->Obtener_CDLDXIAV();
-			// $sebastianesparza = $this->modelo_inicio->Obtener_CDLDXISE();
-			// $teresahernandez = $this->modelo_inicio->Obtener_CDLDXITH();
-			// $dianatopete = $this->modelo_inicio->Obtener_CDLDXIDT();
-			// //Distrito XII
-			// $marthasosa = $this->modelo_inicio->Obtener_CDLDXIIMS();
-			// $rosarioyeme = $this->modelo_inicio->Obtener_CDLDXIIRY();
-			// $noraayala = $this->modelo_inicio->Obtener_CDLDXIINA();
-			// $sarahinoriega = $this->modelo_inicio->Obtener_CDLDXIISN();
-			// //Distrito XIII
-			// $sergiosanchez = $this->modelo_inicio->Obtener_CDLDXIIISS();
-			// $carlosvilla = $this->modelo_inicio->Obtener_CDLDXIIICV();
-			// //Distrito XIV
-			// $luisayala = $this->modelo_inicio->Obtener_CDLDXIVLA();
-			// $lilafigueroa = $this->modelo_inicio->Obtener_CDLDXIVLF();
-			// $marthameza = $this->modelo_inicio->Obtener_CDLDXIVMM();
-			// $veronicatorres = $this->modelo_inicio->Obtener_CDLDXIVVT();
-			// $gustavorerenteria =$this->modelo_inicio->Obtener_CDLDXIVGR();
-			// $josefinaroblada = $this->modelo_inicio->Obtener_CDLDXIVJR();
-			// $eliasnunez = $this->modelo_inicio->Obtener_CDLDXIVEN();
-			// //Distrito XV
-			// $felicitaspena = $this->modelo_inicio->Obtener_CDLDXVFP();
-			// $hildamoreno = $this->modelo_inicio->Obtener_CDLDXVHM();
-			// $almarincon = $this->modelo_inicio->Obtener_CDLDXVAR();
-			// //Distrito XVI
-			// $santiagochavez = $this->modelo_inicio->Obtener_CDLDXVISC();
-			// $judithgodinez = $this->modelo_inicio->Obtener_CDLDXVIJG();
-			// $sergiomendoza = $this->modelo_inicio->Obtener_CDLDXVISM();
-			// $angelesrodriguez = $this->modelo_inicio->Obtener_CDLDXVIAR();
+			//Distrito II
+			$nicolascontreras = $this->modelo_inicio->Obtener_CDLDIINC();
+			$guillermorangel = $this->modelo_inicio->Obtener_CDLDIIGR();
+			$SandraRammirez = $this->modelo_inicio->Obtener_CDLDIISR();
+			$joseGarcia = $this->modelo_inicio->Obtener_CDLDIIJG();
+			$arturogarcia = $this->modelo_inicio->Obtener_CDLDIIAG();
+			$lilianarodriguez = $this->modelo_inicio->Obtener_CDLDIILR();
+			//Distrito III
+			$crispinguerra = $this->modelo_inicio->Obtener_CDLDIIICG();
+			$almaarreola = $this->modelo_inicio->Obtener_CDLDIIIAA();
+			$marthafarias = $this->modelo_inicio->Obtener_CDLDIIIMF();
+			$isisvillasernor = $this->modelo_inicio->Obtener_CDLDIIIIV();
+			$octavioaguilar = $this->modelo_inicio->Obtener_CDLDIIIOA();
+			$patriciaperegrina = $this->modelo_inicio->Obtener_CDLDIIIPP();
+			$gloriaarceo = $this->modelo_inicio->Obtener_CDLDIIIGA();
+			//Distrito IV
+			$janethpaz = $this->modelo_inicio->Obtener_CDLDIVJP();
+			$juanaandres = $this->modelo_inicio->Obtener_CDLDIVJA();
+			$sergioricardo = $this->modelo_inicio->Obtener_CDLDIVSR();
+			$andresorozco = $this->modelo_inicio->Obtener_CDLDIVAO();
+			//Distrito V
+			$ramirotoscano = $this->modelo_inicio->Obtener_CDLDVRT();
+			$josebenavides = $this->modelo_inicio->Obtener_CDLDVJB();
+			$yulianaaguilar = $this->modelo_inicio->Obtener_CDLDVYA();
+			//Distrito VI
+			$SandrayolandaRammirez = $this->modelo_inicio->Obtener_CDLDVISYR();
+			$octaviotintos = $this->modelo_inicio->Obtener_CDLDVIOT();
+			$sergiosilva = $this->modelo_inicio->Obtener_CDLDVISS();
+			$leticiamendoza = $this->modelo_inicio->Obtener_CDLDVILM();
+			$getzemaniibarra = $this->modelo_inicio->Obtener_CDLDVIGI();
+			//Distrito VII
+			$franciscoceballo = $this->modelo_inicio->Obtener_CDLDVIIFC();
+			$alfredohernandez = $this->modelo_inicio->Obtener_CDLDVIIAH();
+			$saracernas = $this->modelo_inicio->Obtener_CDLDVIISC();
+			$jooelpadilla = $this->modelo_inicio->Obtener_CDLDVIIJP();
+			$socorrobayardo = $this->modelo_inicio->Obtener_CDLDVIISB();
+			$erendiraandrade = $this->modelo_inicio->Obtener_CDLDVIIEA();
+			//Distrito VIII
+			$meylypastora = $this->modelo_inicio->Obtener_CDLDVIIIMP();
+			$hectormagana = $this->modelo_inicio->Obtener_CDLDVIIIHM();
+			$alfredoherrera = $this->modelo_inicio->Obtener_CDLDVIIIAH();
+			$adelaidafernandez = $this->modelo_inicio->Obtener_CDLDVIIIAF();
+			$juanjuarez = $this->modelo_inicio->Obtener_CDLDVIIIJJ();
+			//Distrito IX
+			$eusebiomesina = $this->modelo_inicio->Obtener_CDLDIXEM();
+			$beatrizinsunza = $this->modelo_inicio->Obtener_CDLDIXBI();
+			$selenelopez = $this->modelo_inicio->Obtener_CDLDIXSL();
+			$angelicaochoa = $this->modelo_inicio->Obtener_CDLDIXAO();
+			$mauriciobarreto = $this->modelo_inicio->Obtener_CDLDIXMB();
+			//Distrito X
+			$juanpinto = $this->modelo_inicio->Obtener_CDLDXJP();
+			$ricardosevilla = $this->modelo_inicio->Obtener_CDLDXRS();
+			$raquelcardenas = $this->modelo_inicio->Obtener_CDLDXRC();
+			$marcorodarte = $this->modelo_inicio->Obtener_CDLDXMR();
+			$salvadorjuarez = $this->modelo_inicio->Obtener_CDLDXSJ();
+			//Distrito XI
+			$miguelgarcia = $this->modelo_inicio->Obtener_CDLDXIMG();
+			$armidanunes = $this->modelo_inicio->Obtener_CDLDXIAN();
+			$aldovega = $this->modelo_inicio->Obtener_CDLDXIAV();
+			$sebastianesparza = $this->modelo_inicio->Obtener_CDLDXISE();
+			$teresahernandez = $this->modelo_inicio->Obtener_CDLDXITH();
+			$dianatopete = $this->modelo_inicio->Obtener_CDLDXIDT();
+			//Distrito XII
+			$marthasosa = $this->modelo_inicio->Obtener_CDLDXIIMS();
+			$rosarioyeme = $this->modelo_inicio->Obtener_CDLDXIIRY();
+			$noraayala = $this->modelo_inicio->Obtener_CDLDXIINA();
+			$sarahinoriega = $this->modelo_inicio->Obtener_CDLDXIISN();
+			//Distrito XIII
+			$sergiosanchez = $this->modelo_inicio->Obtener_CDLDXIIISS();
+			$carlosvilla = $this->modelo_inicio->Obtener_CDLDXIIICV();
+			//Distrito XIV
+			$luisayala = $this->modelo_inicio->Obtener_CDLDXIVLA();
+			$lilafigueroa = $this->modelo_inicio->Obtener_CDLDXIVLF();
+			$marthameza = $this->modelo_inicio->Obtener_CDLDXIVMM();
+			$veronicatorres = $this->modelo_inicio->Obtener_CDLDXIVVT();
+			$gustavorerenteria =$this->modelo_inicio->Obtener_CDLDXIVGR();
+			$josefinaroblada = $this->modelo_inicio->Obtener_CDLDXIVJR();
+			$eliasnunez = $this->modelo_inicio->Obtener_CDLDXIVEN();
+			//Distrito XV
+			$felicitaspena = $this->modelo_inicio->Obtener_CDLDXVFP();
+			$hildamoreno = $this->modelo_inicio->Obtener_CDLDXVHM();
+			$almarincon = $this->modelo_inicio->Obtener_CDLDXVAR();
+			//Distrito XVI
+			$santiagochavez = $this->modelo_inicio->Obtener_CDLDXVISC();
+			$judithgodinez = $this->modelo_inicio->Obtener_CDLDXVIJG();
+			$sergiomendoza = $this->modelo_inicio->Obtener_CDLDXVISM();
+			$angelesrodriguez = $this->modelo_inicio->Obtener_CDLDXVIAR();
 
 			
 			if($Hildaceballos != FALSE and $Josecardenas != FALSE and $Leonardogutierrez != FALSE)
@@ -342,8 +342,126 @@ class Controlador_inicio extends CI_Controller {
 							  //Distrito I
 							  'megustac1' => $Hildaceballos->Megusta, 'seguidoresc1' => $Hildaceballos->PersonasHablan,
 					          'megustac2' => $Josecardenas->Megusta, 'seguidoresc2' => $Josecardenas->PersonasHablan,
-					          'megustac3' => $Leonardogutierrez->Megusta, 'seguidoresc3' => $Leonardogutierrez->PersonasHablan);
+					          'megustac3' => $Leonardogutierrez->Megusta, 'seguidoresc3' => $Leonardogutierrez->PersonasHablan,
+					          //Distrito II
+							  'megustac4' => $nicolascontreras->Megusta, 'seguidoresc4' => $nicolascontreras->PersonasHablan,
+					          'megustac5' => $guillermorangel->Megusta, 'seguidoresc5' => $guillermorangel->PersonasHablan,
+					          'megustac6' => $SandraRammirez->Megusta, 'seguidoresc6' => $SandraRammirez->PersonasHablan,
+							  'megustac7' => $joseGarcia->Megusta, 'seguidoresc7' => $joseGarcia->PersonasHablan,
+					          'megustac8' => $arturogarcia->Megusta, 'seguidoresc8' => $arturogarcia->PersonasHablan,
+					          'megustac9' => $lilianarodriguez->Megusta, 'seguidoresc9' => $lilianarodriguez->PersonasHablan,
+					          //Distrito III
+							  'megustac10' => $crispinguerra->Megusta, 'seguidoresc10' => $crispinguerra->PersonasHablan,
+					          'megustac11' => $almaarreola->Megusta, 'seguidoresc11' => $almaarreola->PersonasHablan,
+					          'megustac12' => $marthafarias->Megusta, 'seguidoresc12' => $marthafarias->PersonasHablan,
+							  'megustac13' => $isisvillasernor->Megusta, 'seguidoresc13' => $isisvillasernor->PersonasHablan,
+					          'megustac14' => $octavioaguilar->Megusta, 'seguidoresc14' => $octavioaguilar->PersonasHablan,
+					          'megustac15' => $patriciaperegrina->Megusta, 'seguidoresc15' => $patriciaperegrina->PersonasHablan,
+					          'megustac16' => $gloriaarceo->Megusta, 'seguidoresc16' => $gloriaarceo->PersonasHablan,
+					          //Distrito IV
+							  'megustac17' => $janethpaz->Megusta, 'seguidoresc17' => $janethpaz->PersonasHablan,
+					          'megustac18' => $juanaandres->Megusta, 'seguidoresc18' => $juanaandres->PersonasHablan,
+					          'megustac19' => $sergioricardo->Megusta, 'seguidoresc19' => $sergioricardo->PersonasHablan,
+					          'megustac20' => $andresorozco->Megusta, 'seguidoresc20' => $andresorozco->PersonasHablan,
+					          //Distrito V
+					          'megustac21' => $ramirotoscano->Megusta, 'seguidoresc21' => $ramirotoscano->PersonasHablan,
+					          'megustac22' => $josebenavides->Megusta, 'seguidoresc22' => $josebenavides->PersonasHablan,
+					          'megustac23' => $yulianaaguilar->Megusta, 'seguidoresc23' => $yulianaaguilar->PersonasHablan,
+					          //Distrito VI		         
+							  'megustac24' => $SandrayolandaRammirez->Megusta, 'seguidoresc24' => $SandrayolandaRammirez->PersonasHablan,
+					          'megustac25' => $octaviotintos->Megusta, 'seguidoresc25' => $octaviotintos->PersonasHablan,
+					          'megustac26' => $sergiosilva->Megusta, 'seguidoresc26' => $sergiosilva->PersonasHablan,
+					          'megustac27' => $leticiamendoza->Megusta, 'seguidoresc27' => $leticiamendoza->PersonasHablan,
+					          'megustac28' => $getzemaniibarra->Megusta, 'seguidoresc28' => $getzemaniibarra->PersonasHablan,
+					          //Distrito VII		         
+							  'megustac29' => $franciscoceballo->Megusta, 'seguidoresc29' => $franciscoceballo->PersonasHablan,
+					          'megustac30' => $alfredohernandez->Megusta, 'seguidoresc30' => $alfredohernandez->PersonasHablan,
+					          'megustac31' => $saracernas->Megusta, 'seguidoresc31' => $saracernas->PersonasHablan,
+					          'megustac32' => $jooelpadilla->Megusta, 'seguidoresc32' => $jooelpadilla->PersonasHablan,
+					          'megustac33' => $socorrobayardo->Megusta, 'seguidoresc33' => $socorrobayardo->PersonasHablan,
+     			      		  'megustac34' => $erendiraandrade->Megusta, 'seguidoresc34' => $erendiraandrade->PersonasHablan,
+							  //Distrito VIII	         
+							  'megustac35' => $meylypastora->Megusta, 'seguidoresc35' => $meylypastora->PersonasHablan,
+					          'megustac36' => $hectormagana->Megusta, 'seguidoresc36' => $hectormagana->PersonasHablan,
+					          'megustac37' => $alfredoherrera->Megusta, 'seguidoresc37' => $alfredoherrera->PersonasHablan,
+					          'megustac38' => $adelaidafernandez->Megusta, 'seguidoresc38' => $adelaidafernandez->PersonasHablan,
+					          'megustac39' => $juanjuarez->Megusta, 'seguidoresc39' => $juanjuarez->PersonasHablan,
+					          //Distrito IX
+							  'megustac40' => $eusebiomesina->Megusta, 'seguidoresc40' => $eusebiomesina->PersonasHablan,
+					          'megustac41' => $beatrizinsunza->Megusta, 'seguidoresc41' => $beatrizinsunza->PersonasHablan,
+					          'megustac42' => $selenelopez->Megusta, 'seguidoresc42' => $selenelopez->PersonasHablan,
+					          'megustac43' => $angelicaochoa->Megusta, 'seguidoresc43' => $angelicaochoa->PersonasHablan,
+					          'megustac44' => $mauriciobarreto->Megusta, 'seguidoresc44' => $mauriciobarreto->PersonasHablan,
+					          //Distrito X
+							  'megustac45' => $juanpinto->Megusta, 'seguidoresc45' => $juanpinto->PersonasHablan,
+					          'megustac46' => $ricardosevilla->Megusta, 'seguidoresc46' => $ricardosevilla->PersonasHablan,
+					          'megustac47' => $raquelcardenas->Megusta, 'seguidoresc47' => $raquelcardenas->PersonasHablan,
+					          'megustac48' => $marcorodarte->Megusta, 'seguidoresc48' => $marcorodarte->PersonasHablan,
+					          'megustac49' => $salvadorjuarez->Megusta, 'seguidoresc49' => $salvadorjuarez->PersonasHablan,
+					          //Distrito XI
+							  'megustac50' => $miguelgarcia->Megusta, 'seguidoresc50' => $miguelgarcia->PersonasHablan,
+					          'megustac51' => $armidanunes->Megusta, 'seguidoresc51' => $armidanunes->PersonasHablan,
+					          'megustac52' => $aldovega->Megusta, 'seguidoresc52' => $aldovega->PersonasHablan,
+					          'megustac53' => $sebastianesparza->Megusta, 'seguidoresc53' => $sebastianesparza->PersonasHablan,
+					          'megustac54' => $teresahernandez->Megusta, 'seguidoresc54' => $teresahernandez->PersonasHablan,
+					          'megustac55' => $dianatopete->Megusta, 'seguidoresc55' => $dianatopete->PersonasHablan,
+					          //Distrito XII
+					          'megustac56' => $marthasosa->Megusta, 'seguidoresc56' => $marthasosa->PersonasHablan,
+					          'megustac57' => $rosarioyeme->Megusta, 'seguidoresc57' => $rosarioyeme->PersonasHablan,
+					          'megustac58' => $noraayala->Megusta, 'seguidoresc58' => $noraayala->PersonasHablan,
+					          'megustac59' => $sarahinoriega->Megusta, 'seguidoresc59' => $sarahinoriega->PersonasHablan,
+					          //Distrito XIII
+					          'megustac60' => $sergiosanchez->Megusta, 'seguidoresc60' => $sergiosanchez->PersonasHablan,
+					          'megustac61' => $carlosvilla->Megusta, 'seguidoresc61' => $carlosvilla->PersonasHablan,					          
+					          //Distrito XIV
+							  'megustac62' => $luisayala->Megusta, 'seguidoresc62' => $luisayala->PersonasHablan,
+					          'megustac63' => $lilafigueroa->Megusta, 'seguidoresc63' => $lilafigueroa->PersonasHablan,
+					          'megustac64' => $marthameza->Megusta, 'seguidoresc64' => $marthameza->PersonasHablan,
+					          'megustac65' => $veronicatorres->Megusta, 'seguidoresc65' => $veronicatorres->PersonasHablan,
+					          'megustac66' => $gustavorerenteria->Megusta, 'seguidoresc66' => $gustavorerenteria->PersonasHablan,
+					          'megustac67' => $josefinaroblada->Megusta, 'seguidoresc67' => $josefinaroblada->PersonasHablan,
+					          'megustac68' => $eliasnunez->Megusta, 'seguidoresc68' => $eliasnunez->PersonasHablan,
+					          //Distrito XV
+					          'megustac69' => $felicitaspena->Megusta, 'seguidoresc69' => $felicitaspena->PersonasHablan,
+					          'megustac70' => $hildamoreno->Megusta, 'seguidoresc70' => $hildamoreno->PersonasHablan,
+					          'megustac71' => $almarincon->Megusta, 'seguidoresc71' => $almarincon->PersonasHablan,
+					          //Distrito XVI
+					          'megustac72' => $santiagochavez->Megusta, 'seguidoresc72' => $santiagochavez->PersonasHablan,
+					          'megustac73' => $judithgodinez->Megusta, 'seguidoresc73' => $judithgodinez->PersonasHablan,
+					          'megustac74' => $sergiomendoza->Megusta, 'seguidoresc74' => $sergiomendoza->PersonasHablan,
+					          'megustac75' => $angelesrodriguez->Megusta, 'seguidoresc75' => $angelesrodriguez->PersonasHablan					          
+					          );
+
 				$this->load->view('facebook/diputadolocal',$data);
 			}
-		}		
+		}
+	//CANDIDATOS POR PARTIDO
+	public function partidost()
+	{
+		$pan = $this->modelo_inicio->Obtener_CPAN();
+		$pri = $this->modelo_inicio->Obtener_CPRI();
+		$pna = $this->modelo_inicio->Obtener_CPNA();
+		$pv = $this->modelo_inicio->Obtener_CPV();
+		$prd = $this->modelo_inicio->Obtener_CPRD();
+		$pt = $this->modelo_inicio->Obtener_CPT();
+		$pmc = $this->modelo_inicio->Obtener_CPMC();
+		$pm = $this->modelo_inicio->Obtener_CPM();
+		$pes = $this->modelo_inicio->Obtener_CPES();
+		$ph = $this->modelo_inicio->Obtener_CPH();		
+
+		if($pan != FALSE and $pri != FALSE and $pna != FALSE and $pv != FALSE and $prd != FALSE and $pt != FALSE and $pmc != FALSE and $pm != FALSE and $pes != FALSE and $ph != FALSE)
+		{
+			$data = array('megustac1' => $pan->Megusta, 'seguidoresc1' => $pan->PersonasHablan, 
+				          'megustac2' => $pri->Megusta, 'seguidoresc2' => $pri->PersonasHablan,
+				          'megustac3' => $pna->Megusta, 'seguidoresc3' => $pna->PersonasHablan,
+				          'megustac4' => $pv->Megusta, 'seguidoresc4' => $pv->PersonasHablan,
+				          'megustac5' => $prd->Megusta, 'seguidoresc5' => $prd->PersonasHablan,				          
+				          'megustac6' => $pt->Megusta, 'seguidoresc6' => $pt->PersonasHablan,
+				          'megustac7' => $pmc->Megusta, 'seguidoresc7' => $pmc->PersonasHablan,
+				          'megustac8' => $pm->Megusta, 'seguidoresc8' => $pm->PersonasHablan,
+				          'megustac9' => $pes->Megusta, 'seguidoresc9' => $pes->PersonasHablan,
+				          'megustac10' => $ph->Megusta, 'seguidoresc10' => $ph->PersonasHablan);
+			$this->load->view('facebook/partidos',$data);
+		}
+	}		
 }

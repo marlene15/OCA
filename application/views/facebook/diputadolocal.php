@@ -4,7 +4,8 @@
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.min.js"></script>
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
-  <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script> 
+  <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script>
+  <script src="<?php echo base_url()?>assets/facebook/vk.js"></script>     
 </head>
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
@@ -202,7 +203,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart2() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -234,7 +235,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -251,8 +252,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
-      chart.draw(view, options);          
+      var chart2 = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+      chart2.draw(view, options);          
     }
   </script>  
   <!--GRAFICA DISTRITO III-->
@@ -260,7 +261,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart3() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -294,7 +295,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -311,8 +312,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div3'));
-      chart.draw(view, options);          
+      var chart3 = new google.visualization.ComboChart(document.getElementById('chart_div3'));
+      chart3.draw(view, options);          
     }
   </script>  
 <!--GRAFICA DISTRITO IV-->
@@ -320,7 +321,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart4() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -350,7 +351,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -367,8 +368,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div4'));
-      chart.draw(view, options);          
+      var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div4'));
+      chart4.draw(view, options);          
     }
   </script>  
 <!--GRAFICA DISTRITO V-->
@@ -376,7 +377,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart5() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -406,7 +407,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -423,8 +424,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div5'));
-      chart.draw(view, options);          
+      var chart5 = new google.visualization.ComboChart(document.getElementById('chart_div5'));
+      chart5.draw(view, options);          
     }
   </script>
 
@@ -433,7 +434,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart6() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -464,7 +465,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -481,8 +482,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div6'));
-      chart.draw(view, options);          
+      var chart6 = new google.visualization.ComboChart(document.getElementById('chart_div6'));
+      chart6.draw(view, options);          
     }
   </script>
 <!--GRAFICA DISTRITO VII-->
@@ -490,7 +491,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart7() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -522,7 +523,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -539,8 +540,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div7'));
-      chart.draw(view, options);          
+      var chart7 = new google.visualization.ComboChart(document.getElementById('chart_div7'));
+      chart7.draw(view, options);          
     }
   </script>
   <!--GRAFICA DISTRITO VIII-->
@@ -548,7 +549,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart8() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -579,7 +580,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -596,8 +597,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div8'));
-      chart.draw(view, options);          
+      var chart8 = new google.visualization.ComboChart(document.getElementById('chart_div8'));
+      chart8.draw(view, options);          
     }
   </script>  
    <!--GRAFICA DISTRITO IX-->
@@ -605,7 +606,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart9() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -636,7 +637,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -653,8 +654,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div9'));
-      chart.draw(view, options);          
+      var chart9 = new google.visualization.ComboChart(document.getElementById('chart_div9'));
+      chart9.draw(view, options);          
     }
   </script>        
 
@@ -663,7 +664,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart10() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -694,7 +695,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -711,8 +712,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div10'));
-      chart.draw(view, options);          
+      var chart10 = new google.visualization.ComboChart(document.getElementById('chart_div10'));
+      chart10.draw(view, options);          
     }
   </script> 
    <!--GRAFICA DISTRITO XI-->
@@ -720,7 +721,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart11() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -752,7 +753,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -769,8 +770,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div11'));
-      chart.draw(view, options);          
+      var chart11 = new google.visualization.ComboChart(document.getElementById('chart_div11'));
+      chart11.draw(view, options);          
     }
   </script>        
 
@@ -779,7 +780,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart12() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -809,7 +810,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -826,8 +827,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div12'));
-      chart.draw(view, options);          
+      var chart12 = new google.visualization.ComboChart(document.getElementById('chart_div12'));
+      chart12.draw(view, options);          
     }
   </script>   
   <!--GRAFICA DISTRITO XIII-->
@@ -835,7 +836,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart13() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -863,7 +864,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -880,8 +881,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div13'));
-      chart.draw(view, options);          
+      var chart13 = new google.visualization.ComboChart(document.getElementById('chart_div13'));
+      chart13.draw(view, options);          
     }
   </script>     
   <!--GRAFICA DISTRITO XIV-->
@@ -889,7 +890,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart14() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -922,7 +923,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -939,8 +940,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div14'));
-      chart.draw(view, options);          
+      var chart14 = new google.visualization.ComboChart(document.getElementById('chart_div14'));
+      chart14.draw(view, options);          
     }
   </script>       
   </script>     
@@ -949,7 +950,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart15() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -978,7 +979,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -995,8 +996,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div15'));
-      chart.draw(view, options);          
+      var chart15 = new google.visualization.ComboChart(document.getElementById('chart_div15'));
+      chart15.draw(view, options);          
     }
   </script>         
   </script>     
@@ -1005,7 +1006,7 @@
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart16() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Likes');
@@ -1035,7 +1036,7 @@
         hAxis: {
           title: 'Candidatos'
         },         
-        width: 1000,
+        //width: 1000,
         height: 600,
         series: {
           0: {
@@ -1052,8 +1053,8 @@
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div16'));
-      chart.draw(view, options);          
+      var chart16 = new google.visualization.ComboChart(document.getElementById('chart_div16'));
+      chart16.draw(view, options);          
     }
   </script>         
 </html>

@@ -69,7 +69,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
                               <li class="active"><a data-toggle="tab" href="#colima">Colima</a></li>
-                              <li class=""><a data-toggle="tab" href="#villa" id="v">Villa</a></li>
+                              <li class=""><a data-toggle="tab" href="#villa" id="v">Villa de Álvarez</a></li>
                             </ul>
                               <div class="tab-content" id="myTabContent">
 

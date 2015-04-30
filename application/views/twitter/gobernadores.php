@@ -55,39 +55,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<?php $this->load->view('comunes/header'); ?>
 	<script src="<?php echo base_url()?>assets/twitter/d3/d3.min.js"></script>
     <script src="<?php echo base_url()?>assets/twitter/d3/d3.js"></script> 
+	<script src="<?php echo base_url()?>assets/twitter/d3/d3.layout.cloud.js"></script>
     <!--Se usa para la primera gráfica-->
     <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
-</head>
-	<style>
-		path {  stroke: #fff; }
-		path:hover {  opacity:0.9; }
-		.axis {  font: 10px sans-serif; }
-		.legend tr{    border-bottom:1px solid grey; }
-		.legend tr:first-child{    border-top:1px solid grey; }
-
-		.axis path,
-		.axis line {
-		  fill: none;
-		  stroke: #000;
-		  shape-rendering: crispEdges;
-		}
-
-		.x.axis path {  display: none; }
-		.legend{
-		    margin-bottom:76px;
-		    display:inline-block;
-		    border-collapse: collapse;
-		    border-spacing: 0px;
-		}
-		.legend td{
-		    padding:4px 5px;
-		    vertical-align:bottom;
-		}
-		.legendFreq, .legendPerc{
-		    align:right;
-		    width:50px;
-		}
-	</style>
+    <!--Estilo para la gráfica de pastel-->
+    <link href="<?= base_url();?>assets/twitter/d3/estilo_pastel.css" rel="stylesheet" type="text/css"/>
+</head>	
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
@@ -102,6 +75,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <h3 class="page-title">
                             Candidatos a Gobernador <small>Actividad en Twitter</small>
                         </h3>
+                        <ul class="breadcrumb">
+                            <li>
+                                <i class="icon-table"></i>
+                                Cargo 
+                                <i class="icon-angle-right"></i>
+                            </li>
+                            <li>
+                                <i class="icon-twitter"></i>
+                                Twitter 
+                                <i class="icon-angle-right"></i>                                
+                            </li>
+                            <li>
+                                <i class="icon-user"></i>
+                                Gobernador
+                            </li>                            
+                        </ul>     
                     </div>
                 </div>
                 <!--CONTENIDO DE LA PÁGINA -->
@@ -113,16 +102,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 					        <ul class="nav nav-tabs" id="myTab">
 					          <li class="active"><a data-toggle="tab" href="#barras_circulo">Primera Gráfica</a></li>
 					          <li class=""><a data-toggle="tab" href="#barras">Segunda Gráfica</a></li>
+					          <!-- <li class=""><a data-toggle="tab" href="#nube" onclick="nube();">Nube de Palabras</a></li> -->
 					        </ul>
 					          <div class="tab-content" id="myTabContent">
 
 					            <div id="barras_circulo" class="tab-pane fade active in"> 
 					            	<br> 
-					              	<div id="barchart_values" style="height: 500px; width: 800px;"></div>			                           
+					              	<div id="barchart_values" style="height: 500px; width: 100%;"></div>			                           
 					            </div>
 
 					            <div id="barras" class="tab-pane fade ">
 					            	<div id='pastel'></div>  		              	            	
+					            </div>
+
+					            <div id="nube" class="tab-pane fade ">	
+					            	<button id="go" type="submit" onclick="nube();">Actualizar</button>
+					            	<br>
+					            	<center><div id="contenido_nube"></div></center>  				            					              	            	
 					            </div>
 					        </div>
 					      </div> 
@@ -131,6 +127,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             </div>
         </div>
     </div>
+</div>
 
 	<?php $this->load->view('comunes/footer'); ?> 
 	
@@ -332,10 +329,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 		        pC = pieChart(tF), // create the pie-chart.
 		        leg= legend(tF);  // create the legend.
 		}
-	</script>
-
-	<!--Guardar el json los datos-->
-	<script>
+	
+	//Guardar en Json los datos	
 		var freqData=[
 		{candidato:'Locho Morán', informacion:{Seguidores:<?php echo $string[0]['user']['followers_count'] ?>,Siguiendo:<?php echo $string[0]['user']['friends_count'] ?>,Tweets:<?php echo $string[0]['user']['statuses_count'] ?>}},
 		{candidato:'Nacho Peralta', informacion:{Seguidores:<?php echo $string2[0]['user']['followers_count'] ?>,Siguiendo:<?php echo $string2[0]['user']['friends_count'] ?>,Tweets:<?php echo $string2[0]['user']['statuses_count'] ?>}},
@@ -373,6 +368,78 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	    chart.draw(data, options);
 	  }
 	</script>
+
+	<script>
+	function nube()
+	{
+		//Limpiar div
+		var d = document.getElementById("contenido_nube");
+		while (d.hasChildNodes())
+		{
+			d.removeChild(d.firstChild);
+		}
+
+		<?php //Llenamos el array con las coordenadas        
+	        $aux=""; 
+	        for ($i=0; $i<count($hashtags); $i++)
+	        {
+	            $porciones = explode(" ", $hashtags[$i]->hashtags);
+	            for ($j=0; $j<count($porciones); $j++)
+	        	{
+	        		if ($porciones[$j] != "") 
+	        		{
+	        			$aux = $aux." ".$porciones[$j]; 
+	        		};
+	        		
+	        	};                    
+	        };    
+
+	      $test = preg_split('/[\s,]+/', $aux); //Coloca los hashtags en una sola línea, el separador son los espacios
+	      $palabras_contadas = array_count_values($test); //Cuenta la cantidad de veces que se repite una palabra
+
+	      $a2 = array();
+	      foreach ($palabras_contadas as $key => $value) { //Llena el array para convertirlo a json
+	      		if($key != "")
+	      		{
+	      			$a2[] = array(
+		                "text" => $key,
+		                "size" => $value*10
+		           	);
+	      		}		    
+			};
+			$palabras_JSON = json_encode($a2); //Convertimos el array a Json para poderlo colocar en la nube de palabras                   
+	    ?>
+		var fill = d3.scale.category20();
+		d3.layout.cloud().size([900, 500])
+		    .words(<?php echo $palabras_JSON ?>)
+		    .padding(3)
+		    .rotate(function() { return ~~(Math.random() * 2) * 90; })
+		    .font("Impact")
+		    .fontSize(function(d) { return d.size; })
+		    .on("end", draw)
+		    .start();
+
+		function draw(words) 
+		{
+		    d3.select("#contenido_nube").append("svg")
+		        .attr("width", "100%")
+		        .attr("height", 500)
+		      .append("g")
+		        .attr("transform", "translate(472,250)")
+		      .selectAll("text")
+		        .data(words)
+		      .enter().append("text")
+		        .style("font-size", function(d) { return d.size + "px"; })
+		        .style("font-family", "Impact")
+		        .style("fill", function(d, i) { return fill(i); })
+		        .attr("text-anchor", "middle")
+		        .attr("transform", function(d) {
+		          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+		        })
+		        .text(function(d) { return d.text; });
+		}
+	}
+	</script> 
 </body>
 </html>
 

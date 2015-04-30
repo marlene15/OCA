@@ -36,6 +36,9 @@ class Controlador_inicio extends CI_Controller {
 		$jorge = $this->modelo_inicio->obtener_cuenta_jorge();
 		$locho = $this->modelo_inicio->obtener_cuenta_locho();
 		$martha = $this->modelo_inicio->obtener_cuenta_martha();
+		//Hashtags relacionados con los gobernadores
+		$hashtags = $this->modelo_inicio->obtener_hashtags_gobernadores();
+
 		if($nacho != FALSE and $jorge != FALSE and $locho != FALSE and $martha != FALSE)
 		{
 			$datos = array('usuarion' => $nacho->usuario, 'seguidoresn' => $nacho->seguidores, 
@@ -45,7 +48,8 @@ class Controlador_inicio extends CI_Controller {
 				          'usuariol' => $locho->usuario, 'seguidoresl' => $locho->seguidores, 
 				          'siguiendol' => $locho->siguiendo, 'tweetsl' => $locho->tweets,
 				          'usuariom' => $martha->usuario, 'seguidoresm' => $martha->seguidores, 
-				          'siguiendom' => $martha->siguiendo, 'tweetsm' => $martha->tweets);
+				          'siguiendom' => $martha->siguiendo, 'tweetsm' => $martha->tweets,
+				          'hashtags' => $hashtags);
 			$this->load->view('twitter/gobernadores',$datos);
 		}
 	}
@@ -175,6 +179,22 @@ class Controlador_inicio extends CI_Controller {
 		#Manzanillo
 		$pico = $this->modelo_inicio->obtener_cuenta_pico();
 		$marcos = $this->modelo_inicio->obtener_cuenta_marcos();
+		#Villa de álvarez
+		$yulenny = $this->modelo_inicio->obtener_cuenta_yulenny();
+		$oswy = $this->modelo_inicio->obtener_cuenta_oswy();
+		#Comala
+		$salomon = $this->modelo_inicio->obtener_cuenta_salomon();
+		$mario = $this->modelo_inicio->obtener_cuenta_mario();
+		#Tecomán
+		$arturo = $this->modelo_inicio->obtener_cuenta_arturo();
+		#Cuahutémoc
+		$blanca = $this->modelo_inicio->obtener_cuenta_blanca();
+		#Minatitlán
+		$manuel = $this->modelo_inicio->obtener_cuenta_manuel();
+		#Armería
+		$esperanza = $this->modelo_inicio->obtener_cuenta_esperanza();
+		#Ixtlahuacán
+		$hiram = $this->modelo_inicio->obtener_cuenta_hiram();
 		if($hector != FALSE and $maria != FALSE and $esmeralda != FALSE and $pico != FALSE and $marcos != FALSE)
 		{
 			$datos = array('usuarioh' => $hector->usuario, 'seguidoresh' => $hector->seguidores, 
@@ -186,7 +206,25 @@ class Controlador_inicio extends CI_Controller {
 				          'usuariop' => $pico->usuario, 'seguidoresp' => $pico->seguidores, 
 				          'siguiendop' => $pico->siguiendo, 'tweetsp' => $pico->tweets,
 				          'usuariomarc' => $marcos->usuario, 'seguidoresmarc' => $marcos->seguidores, 
-				          'siguiendomarc' => $marcos->siguiendo, 'tweetsmarc' => $marcos->tweets);
+				          'siguiendomarc' => $marcos->siguiendo, 'tweetsmarc' => $marcos->tweets,
+				          'usuario_yulenny' => $yulenny->usuario, 'seguidores_yulenny' => $yulenny->seguidores, 
+				          'siguiendo_yulenny' => $yulenny->siguiendo, 'tweets_yulenny' => $yulenny->tweets,
+				          'usuario_oswy' => $oswy->usuario, 'seguidores_oswy' => $oswy->seguidores, 
+				          'siguiendo_oswy' => $oswy->siguiendo, 'tweets_oswy' => $oswy->tweets,
+				          'usuario_salomon' => $salomon->usuario, 'seguidores_salomon' => $salomon->seguidores, 
+				          'siguiendo_salomon' => $salomon->siguiendo, 'tweets_salomon' => $salomon->tweets,
+				          'usuario_mario' => $mario->usuario, 'seguidores_mario' => $mario->seguidores, 
+				          'siguiendo_mario' => $mario->siguiendo, 'tweets_mario' => $mario->tweets,
+				          'usuario_arturo' => $arturo->usuario, 'seguidores_arturo' => $arturo->seguidores, 
+				          'siguiendo_arturo' => $arturo->siguiendo, 'tweets_arturo' => $arturo->tweets,
+				          'usuario_blanca' => $blanca->usuario, 'seguidores_blanca' => $blanca->seguidores, 
+				          'siguiendo_blanca' => $blanca->siguiendo, 'tweets_blanca' => $blanca->tweets,
+				          'usuario_manuel' => $manuel->usuario, 'seguidores_manuel' => $manuel->seguidores, 
+				          'siguiendo_manuel' => $manuel->siguiendo, 'tweets_manuel' => $manuel->tweets,
+				          'usuario_esperanza' => $esperanza->usuario, 'seguidores_esperanza' => $esperanza->seguidores, 
+				          'siguiendo_esperanza' => $esperanza->siguiendo, 'tweets_esperanza' => $esperanza->tweets,
+				          'usuario_hiram' => $hiram->usuario, 'seguidores_hiram' => $hiram->seguidores, 
+				          'siguiendo_hiram' => $hiram->siguiendo, 'tweets_hiram' => $hiram->tweets);
 			$this->load->view('twitter/alcaldias',$datos);	
 		}
 	}
@@ -226,12 +264,28 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$nacho = $this->modelo_inicio->valoracion_nacho();
 		$jorge = $this->modelo_inicio->valoracion_jorge();
+		//Cuentas de nacho
+		//$priColima = $this->modelo_inicio->obtener_cuenta_priColima();
+		$jips2015 = $this->modelo_inicio->obtener_cuenta_jips2015();
+		$jipsColima = $this->modelo_inicio->obtener_cuenta_jipsColima();
+		$jipsVilla = $this->modelo_inicio->obtener_cuenta_jipsVilla();
+		$selfieNacho = $this->modelo_inicio->obtener_cuenta_selfieNacho();
 		$datos = array('nachoP' => $nacho['positivos'],
 					  'nachoNe' => $nacho['negativos'],
 					  'nachoN' => $nacho['neutros'],
 					  'jorgeP' => $jorge['positivos'],
 					  'jorgeNe' => $jorge['negativos'],
-					  'jorgeN' => $jorge['neutros']
+					  'jorgeN' => $jorge['neutros'],
+					  // 'usuario_priColima' => $priColima->usuario, 'seguidores_priColima' => $priColima->seguidores, 
+				   //    'siguiendo_priColima' => $priColima->siguiendo, 'tweets_priColima' => $priColima->tweets,
+				      'usuario_jips2015' => $jips2015->usuario, 'seguidores_jips2015' => $jips2015->seguidores, 
+				      'siguiendo_jips2015' => $jips2015->siguiendo, 'tweets_jips2015' => $jips2015->tweets,
+				      'usuario_jipsColima' => $jipsColima->usuario, 'seguidores_jipsColima' => $jipsColima->seguidores, 
+				      'siguiendo_jipsColima' => $jipsColima->siguiendo, 'tweets_jipsColima' => $jipsColima->tweets,
+				      'usuario_jipsVilla' => $jipsVilla->usuario, 'seguidores_jipsVilla' => $jipsVilla->seguidores, 
+				      'siguiendo_jipsVilla' => $jipsVilla->siguiendo, 'tweets_jipsVilla' => $jipsVilla->tweets,
+				      'usuario_selfieNacho' => $selfieNacho->usuario, 'seguidores_selfieNacho' => $selfieNacho->seguidores, 
+				      'siguiendo_selfieNacho' => $selfieNacho->siguiendo, 'tweets_selfieNacho' => $selfieNacho->tweets
 					  );
 		$this->load->view('twitter/valoracionGobernadores',$datos);
 	}

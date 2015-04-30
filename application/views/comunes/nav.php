@@ -213,7 +213,7 @@
                     </ul>
                 </li>
                 <li >
-                    <a href="#">
+                    <a href="<?php echo site_url('twitter/controlador_inicio/comoVamos');?>">
                         <i class="icon-indent-left"></i> 
                         <span class="title">¿Cómo vamos Colima?</span>
                         <span class="selected"></span>

@@ -289,4 +289,14 @@ class Controlador_inicio extends CI_Controller {
 					  );
 		$this->load->view('twitter/valoracionGobernadores',$datos);
 	}
+
+	//Como vamos Colima
+	public function comoVamos()
+	{
+		$comoVamos = $this->modelo_inicio->obtener_cuenta_comoVamos();
+		$datos = array('usuario_comoVamos' => $comoVamos->usuario, 'seguidores_comoVamos' => $comoVamos->seguidores, 
+				      'siguiendo_comoVamos' => $comoVamos->siguiendo, 'tweets_comoVamos' => $comoVamos->tweets
+					  );
+		$this->load->view('twitter/comoVamos',$datos);
+	}
 }

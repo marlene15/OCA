@@ -1040,5 +1040,23 @@
 			}
 		}
 
+		//Obtener cuenta de Comovamoscolima
+		public function obtener_cuenta_comoVamos()
+		{
+			$comoVamos = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
+									   siguiendo, tweets from cuentas where fecha 
+									   in (select max(fecha) from cuentas) and 
+									   usuario = 'Comovamoscolima'");
+		
+			if($comoVamos->num_rows()>0)
+			{
+				return $comoVamos->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+
 	}
 ?>

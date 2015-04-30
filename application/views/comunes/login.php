@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -7,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
 	<meta charset="utf-8" />
-<?php 
+	<?php 
 		header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 		header("Cache-Control: post-check=0, pre-check=0", false);
 	?>
@@ -15,18 +13,18 @@
 	<title>OCA</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<!-- BEGIN GLOBAL MANDATORY STYLES -->
-	<link href="<?= base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link href="<?= base_url();?>assets/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
-	<link href="<?= base_url();?>assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-	<link href="<?= base_url();?>assets/css/style-metro.css" rel="stylesheet" type="text/css"/>
-	<link href="<?= base_url();?>assets/css/style.css" rel="stylesheet" type="text/css"/>
-	<link href="<?= base_url();?>assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-	<link href="<?= base_url();?>assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-	<link href="<?= base_url();?>assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-	<link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/plugins/select2/select2_metro.css" />
+	<link href="<?= base_url();?>assets/plantilla/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="<?= base_url();?>assets/plantilla/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/plantilla/plugins/select2/select2_metro.css" />
 	<!-- END GLOBAL MANDATORY STYLES -->
 	<!-- BEGIN PAGE LEVEL STYLES -->
-	<link href="<?= base_url();?>assets/css/pages/login.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/css/pages/login.css" rel="stylesheet" type="text/css"/>
 	<!-- END PAGE LEVEL STYLES -->
 	<link rel="shortcut icon" href="<?= base_url();?>favicon.ico" />
 </head>
@@ -35,14 +33,14 @@
 <body class="login">
 	<!-- BEGIN LOGO -->
 	<div class="logo">
-		<img src="<?= base_url();?>assets/img/logo-big.png" alt="" /> 
+		<!-- <img src="<?= base_url();?>assets/plantilla/img/logo-big.png" alt="" />  -->
 	</div>
 	<!-- END LOGO -->
 	<!-- BEGIN LOGIN -->
 	<div class="content">
 		<!-- BEGIN LOGIN FORM -->
-	<!-- 	<?php echo validation_errors(); ?>
-        <?php echo form_open('login'); ?> -->
+		<?php echo validation_errors(); ?>
+        <?php echo form_open('login'); ?>
 		<form class="form-vertical login-form" action="index.html" method="post">
 			<h3 class="form-title">Ingresa a tu cuenta</h3>
 			<div class="alert alert-error hide">
@@ -80,32 +78,32 @@
 	<!-- END LOGIN -->
 	<!-- BEGIN COPYRIGHT -->
 	<div class="copyright">
-		2014 &copy; FourSoft.
+		2015 &copy; OCA
 	</div>
 	<!-- END COPYRIGHT -->
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-	<!-- BEGIN CORE PLUGINS -->   <script src="<?= base_url();?>assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
-	<script src="<?= base_url();?>assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<!-- BEGIN CORE PLUGINS -->   <script src="<?= base_url();?>assets/plantilla/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="<?= base_url();?>assets/plantilla/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-	<script src="<?= base_url();?>assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
-	<script src="<?= base_url();?>assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="<?= base_url();?>assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript" ></script>
+	<script src="<?= base_url();?>assets/plantilla/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="<?= base_url();?>assets/plantilla/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="<?= base_url();?>assets/plantilla/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript" ></script>
 	<!--[if lt IE 9]>
 	<script src="assets/plugins/excanvas.min.js"></script>
 	<script src="assets/plugins/respond.min.js"></script>  
 	<![endif]-->   
-	<script src="<?= base_url();?>assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-	<script src="<?= base_url();?>assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>  
-	<script src="<?= base_url();?>assets/plugins/jquery.cookie.min.js" type="text/javascript"></script>
-	<script src="<?= base_url();?>assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript" ></script>
+	<script src="<?= base_url();?>assets/plantilla/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="<?= base_url();?>assets/plantilla/plugins/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="<?= base_url();?>assets/plantilla/plugins/jquery.cookie.min.js" type="text/javascript"></script>
+	<script src="<?= base_url();?>assets/plantilla/plugins/uniform/jquery.uniform.min.js" type="text/javascript" ></script>
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
-	<script src="<?= base_url();?>assets/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>	
-	<script type="text/javascript" src="<?= base_url();?>assets/plugins/select2/select2.min.js"></script>     
+	<script src="<?= base_url();?>assets/plantilla/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>	
+	<script type="text/javascript" src="<?= base_url();?>assets/plantilla/plugins/select2/select2.min.js"></script>     
 	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
-	<script src="<?= base_url();?>assets/scripts/app.js" type="text/javascript"></script>
-	<script src="<?= base_url();?>assets/scripts/login.js" type="text/javascript"></script> 
+	<script src="<?= base_url();?>assets/plantilla/scripts/app.js" type="text/javascript"></script>
+	<script src="<?= base_url();?>assets/plantilla/scripts/login.js" type="text/javascript"></script> 
 	<!-- END PAGE LEVEL SCRIPTS --> 
 	<script>
 		jQuery(document).ready(function() {     

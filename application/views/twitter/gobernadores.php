@@ -132,7 +132,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             </div>
         </div>
     </div>
-</div>
 
 	<?php $this->load->view('comunes/footer'); ?> 
 	

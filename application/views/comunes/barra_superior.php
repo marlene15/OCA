@@ -20,7 +20,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:;" id="trigger_fullscreen"><i class="icon-move"></i> Pantalla Completa</a></li>
-                            <li><a href="#" ><i class="icon-key"></i> Salir</a></li>
+                            <li><a href="<?php echo site_url('login/logout'); ?>" ><i class="icon-key"></i> Salir</a></li>
                         </ul>
                     </li>
                     <!-- END USER LOGIN DROPDOWN -->

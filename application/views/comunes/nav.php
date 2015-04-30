@@ -222,7 +222,7 @@
                 <li >
                     <a href="<?php echo site_url('twitter/controlador_inicio/busqueda_tweets');?>">
                         <i class="icon-eye-open"></i> 
-                        <span class="title">Otros</span>
+                        <span class="title">Minería de datos</span>
                         <span class="selected"></span>
                     </a>
                 </li>

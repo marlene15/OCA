@@ -76,6 +76,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             Candidatos a Gobernador <small>Actividad en Twitter</small>
                         </h3>
                         <ul class="breadcrumb">
+                        	<li>
+                                <i class="icon-home"></i>
+                                <a href="<?php echo site_url('inicio'); ?>">Home</a> 
+                                <i class="icon-angle-right"></i>
+                            </li>
                             <li>
                                 <i class="icon-table"></i>
                                 Cargo 
@@ -88,7 +93,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </li>
                             <li>
                                 <i class="icon-user"></i>
-                                Gobernador
+                                <a href="<?php echo site_url('twitter/controlador_inicio/gobernadores'); ?>">Gobernador</a>                                 
                             </li>                            
                         </ul>     
                     </div>

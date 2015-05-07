@@ -213,6 +213,13 @@
                     </ul>
                 </li>
                 <li >
+                    <a href="#">
+                        <i class="icon-indent-left"></i> 
+                        <span class="title">Rumbo al 7 de Junio</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+                <li >
                     <a href="<?php echo site_url('twitter/controlador_inicio/comoVamos');?>">
                         <i class="icon-indent-left"></i> 
                         <span class="title">¿Cómo vamos Colima?</span>

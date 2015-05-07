@@ -41,13 +41,23 @@
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                           <ul class="nav nav-tabs" id="myTab">
-                            <li class="active"><a data-toggle="tab" href="#barras1">Partidos Políticos</a></li> 
+                            <li class="active"><a data-toggle="tab" href="#barras1">Likes</a></li> 
+                            <li class=""><a data-toggle="tab" href="#barras2">Post</a></li>                            
+                            <li class=""><a data-toggle="tab" href="#barras3">Nube de Palabras</a></li>                            
                           </ul>
                             <div class="tab-content" id="tabs">
                               <div id="barras1" class="tab-pane fade active in"> 
                                 <br> 
                                   <div id="chart_div"></div>
-                              </div>                   
+                              </div>
+                              <div id="barras2" class="tab-pane fade active in"> 
+                                <br> 
+                                  <div id="chart_div2"></div>
+                              </div>
+                              <div id="barras3" class="tab-pane fade active in"> 
+                                <br> 
+                                  <div id=""></div>
+                              </div>                                                                                
                             </div>
                         </div> 
                       </div>
@@ -58,4 +68,63 @@
     </div>
   <?php $this->load->view('comunes/footer'); ?> 
 </body>
+<!--GRÁFICA POR PARTIDO LIKES-->
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  // Some raw data (not necessarily accurate)
+  var data = google.visualization.arrayToDataTable([
+
+    ['Semana', 'PAN', 'PRI', 'PNA', 'PV', 'PRD', 'PT', 'PMC', 'PM', 'PES', 'PH'],
+    ['27/04/2015', <?php echo $megustac1 ?>, <?php echo $megustac2 ?>,<?php echo $megustac3 ?>, <?php echo $megustac4 ?>, <?php echo $megustac5 ?>, <?php echo $megustac6 ?>, <?php echo $megustac7 ?>, <?php echo $megustac8 ?>, <?php echo $megustac9 ?>, <?php echo $megustac10 ?>]
+    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
+    // ['2006/07',  157,      1167,        587,             807,           397,      623],
+    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
+  ]);
+
+  var options = {
+    vAxis: {title: "Partido"},
+    hAxis: {title: "Semana"},
+    seriesType: "bars",
+    height: 600,
+    series: {1: {type: "line"}}
+  };
+
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+</script>
+
+<!--GRÁFICA POR PARTIDO POSTS-->
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  // Some raw data (not necessarily accurate)
+  var data = google.visualization.arrayToDataTable([
+
+    ['Semana', 'PAN', 'PRI', 'PNA', 'PV', 'PRD', 'PT', 'PMC', 'PM', 'PES', 'PH'],
+    ['27/04/2015', <?php echo $seguidoresc1 ?>, <?php echo $seguidoresc2 ?>,<?php echo $seguidoresc3 ?>, <?php echo $seguidoresc4 ?>, <?php echo $seguidoresc5 ?>, <?php echo $seguidoresc6 ?>, <?php echo $seguidoresc7 ?>, <?php echo $seguidoresc8 ?>, <?php echo $seguidoresc9 ?>, <?php echo $seguidoresc10 ?>]
+    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
+    // ['2006/07',  157,      1167,        587,             807,           397,      623],
+    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
+  ]);
+
+  var options = {
+    vAxis: {title: "Partido"},
+    hAxis: {title: "Semana"},
+    seriesType: "bars",
+    height: 600,
+    series: {1: {type: "line"}}
+  };
+
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+  chart.draw(data, options);
+}
+</script>
 </html>

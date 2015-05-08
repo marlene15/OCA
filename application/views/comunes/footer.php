@@ -43,19 +43,30 @@
 		   //Tasks.initDashboardWidget();
 		});
 	</script>
-
 	<script type="text/javascript">
-	//     $(document).ready(function(){
-	//         var cambio = false;
-	//         $('.sub-menu li a').each(function(index) {
-	//             if(this.href.trim() == window.location){
-	//                 $(this).parent().addClass("active");
-	//                 cambio = true;
-	//             }
-	//         });
-	//         if(!cambio){
-	//             $('.sub-menu li:first').addClass("active");
-	//         }
-	//     });
+	    $(document).ready(function(){
+	        var cambio = false;
+	        $('.page-sidebar-menu li a').each(function(index) {
+	            if(this.href.trim() == window.location){
+	                $(this).parent().addClass("active");
+	                cambio = true;
+	            }
+	        });
+	        if(!cambio){
+	            $('.page-sidebar-menu li:first').addClass("active"); //Para seleccionar el primer li
+	        }
+
+	        var cambio2 = false;
+	        $('.sub-menu li a').each(function(index) {
+	            if(this.href.trim() == window.location){
+
+	                $(this).parent().addClass("active");
+	                $(this).parent().parent().parent().addClass("start open active");
+	                $(this).parent().parent().parent().parent().parent().addClass("start open");
+	                $(this).parent().parent().parent().parent().parent().addClass("start active");
+	                cambio2 = true;
+	            }
+	        });
+	    });	
 	</script>
 	<!-- END JAVASCRIPTS -->

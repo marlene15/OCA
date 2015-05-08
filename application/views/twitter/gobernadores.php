@@ -369,8 +369,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	{
 		var fill = d3.scale.category20b();
 
-		var w = window.innerWidth - 300,
-		        h = window.innerHeight;
+		var w = window.innerWidth - 300, h = window.innerHeight;
 
 		var max,
 		        fontSize;
@@ -399,8 +398,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 		};
 
 		function draw(data, bounds) {
-		    var w = window.innerWidth - 300,
-		        h = window.innerHeight;
+		    var w = window.innerWidth - 300, h = window.innerHeight;
 
 		    svg.attr("width", w).attr("height", h);
 

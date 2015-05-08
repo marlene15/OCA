@@ -3,13 +3,13 @@
         <div class="page-sidebar nav-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->        
             <ul class="page-sidebar-menu" data-slide-speed="200" data-auto-scroll="true" data-keep-expanded="false">
-                <li>
+                <div>
                     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                     <div class="sidebar-toggler hidden-phone"></div>
                     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                </li>
+                </div>
                 <br>
-                <li class="active start">
+                <li >
                     <a href="<?php echo site_url('inicio');?>">
                         <i class="icon-home"></i> 
                         <span class="title">Principal</span>
@@ -22,7 +22,7 @@
                         <span class="title">Cargo</span>
                         <span class="arrow "></span>
                     </a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu">                        
                         <li >
                             <a href="javascript:;">
                                 <i class="icon-facebook"></i> 

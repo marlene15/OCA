@@ -17,9 +17,25 @@ class Inicio extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->verificar_sesion();
+
+	}
+
 	public function index()
 	{
 		$this->load->view('inicio');
+	}
+	public function verificar_sesion()
+	{
+		$is_logged_in = $this->session->userdata('is_logged_in');
+
+		if (!isset($is_logged_in) || $is_logged_in != TRUE) {
+			redirect('login');
+			die();
+		}
 	}
 }
 

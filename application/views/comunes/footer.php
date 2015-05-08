@@ -8,7 +8,9 @@
             </span>
         </div>
     </div>
-    
+    <!--Para usar el calendario-->
+    <script src="<?php echo base_url()?>assets/calendar/jquery-1.8.3.min.js" type="text/javascript"></script>
+
 	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 	<!-- BEGIN CORE PLUGINS -->   
 	<script src="<?= base_url();?>assets/plantilla/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
@@ -33,6 +35,7 @@
 	<script src="<?= base_url();?>assets/plantilla/scripts/app.js" type="text/javascript"></script>
 	<!--<script src="<?= base_url();?>assets/plantilla/scripts/index.js" type="text/javascript"></script>-->
 	<script src="<?= base_url();?>assets/plantilla/scripts/tasks.js" type="text/javascript"></script>     
+
 	<!-- END PAGE LEVEL SCRIPTS -->  
 	<script>
 		jQuery(document).ready(function() {    
@@ -40,6 +43,7 @@
 		   //Tasks.initDashboardWidget();
 		});
 	</script>
+
 	<script type="text/javascript">
 	//     $(document).ready(function(){
 	//         var cambio = false;

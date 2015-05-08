@@ -18,9 +18,7 @@
 	$martha = '?screen_name=MarthaZepeda_&count=1'; //Variable, con patron url  (Twitter de nacho Martha Zepeda)	
 	
 	$twitter = new TwitterAPIExchange($settings); //Objeto del tipo API de la clase que importamos en la parte de arriva
-	/*echo $twitter->setGetfield($variablesGet)
-	             ->buildOauth($url, $requestMethod)
-	             ->performRequest();*/
+	
 	$string = json_decode($twitter->setGetfield($leoncio)
              ->buildOauth($url, $requestMethod)
              ->performRequest(),$assoc = TRUE);
@@ -48,19 +46,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 -->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!--> <html lang="es"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 	<title>Gobernador</title> 
-	<?php $this->load->view('comunes/header'); ?>
-	<script src="<?php echo base_url()?>assets/twitter/d3/d3.min.js"></script>
+	<?php $this->load->view('comunes/header'); ?>	
+
     <script src="<?php echo base_url()?>assets/twitter/d3/d3.js"></script> 
 	<script src="<?php echo base_url()?>assets/twitter/d3/d3.layout.cloud.js"></script>
     <!--Se usa para la primera gráfica-->
     <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
     <!--Estilo para la gráfica de pastel-->
     <link href="<?= base_url();?>assets/twitter/d3/estilo_pastel.css" rel="stylesheet" type="text/css"/>
-</head>	
+    <!--Para poder usar el calendario, importar las librerias-->
+    <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    
+ </head>	
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
@@ -98,32 +99,32 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </ul>     
                     </div>
                 </div>
-                <!--CONTENIDO DE LA PÁGINA -->
+                <!--CONTENIDO DE LA PÁGINA -->                
                 <div id="dashboard">
                     <div class="portlet-body form well">
 			        	<br>
 			        	<!--Código para el tap de pestañas-->   
 					      <div class="bs-example bs-example-tabs">
 					        <ul class="nav nav-tabs" id="myTab">
-					          <li class="active"><a data-toggle="tab" href="#barras_circulo">Primera Gráfica</a></li>
-					          <li class=""><a data-toggle="tab" href="#barras">Segunda Gráfica</a></li>
-					          <!-- <li class=""><a data-toggle="tab" href="#nube" onclick="nube();">Nube de Palabras</a></li> -->
+					          <li class="active"><a data-toggle="tab" href="#barras_circulo">Gráfica</a></li>
+					          <li class=""><a data-toggle="tab" href="#nube" onclick="nube();">Nube de Palabras</a></li>
 					        </ul>
 					          <div class="tab-content" id="myTabContent">
 
 					            <div id="barras_circulo" class="tab-pane fade active in"> 
-					            	<br> 
-					              	<div id="barchart_values" style="height: 500px; width: 100%;"></div>			                           
-					            </div>
-
-					            <div id="barras" class="tab-pane fade ">
-					            	<div id='pastel'></div>  		              	            	
+					            	<label class="control-label">Fecha de consulta:</label>
+					                <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+					                    <input size="16" type="text" value="" readonly name="fecha">
+					                    <span class="add-on"><i class="icon-remove"></i></span>
+										<span class="add-on"><i class="icon-th"></i></span>
+					                </div>
+					            	<div id='pastel'></div> 					              				                           
 					            </div>
 
 					            <div id="nube" class="tab-pane fade ">	
 					            	<button id="go" type="submit" onclick="nube();">Actualizar</button>
 					            	<br>
-					            	<center><div id="contenido_nube"></div></center>  				            					              	            	
+					            	<!-- <div id="vis"></div>  -->					            				            					              	            	
 					            </div>
 					        </div>
 					      </div> 
@@ -134,7 +135,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     </div>
 
 	<?php $this->load->view('comunes/footer'); ?> 
-	
+	<!--Para poder usar el calendario, importar las librerias-->
+	<script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>	
+
 	<script>
 		function dashboard(id, fData){
 		    var barColor = 'steelblue';
@@ -344,44 +348,105 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 		dashboard('#pastel',freqData);
 	</script>
 
-	<!--SEGUNDA GRAFICA-->
+	
+
 	<script type="text/javascript">
-	  google.load("visualization", "1.1", {packages:["bar"]});
-	  google.setOnLoadCallback(drawChart);
-	  //google.load("visualization", "1", {packages:["corechart"]});
-	  //google.setOnLoadCallback(drawChart);
-	  function drawChart() {
-	    var data = google.visualization.arrayToDataTable([
-	        ['Candidatos', 'Seguidores', 'Siguiendo', 'Tweets'],
-	        ['Nacho Peralta',<?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
-	        ['Locho Morán', <?php echo $seguidoresl ?>, <?php echo $siguiendol ?>, <?php echo $tweetsl ?>],
-	        ['Jorge Luis Preciado',<?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>],
-	        ['Martha Zepeda del Toro',<?php echo $seguidoresm ?>, <?php echo $siguiendom ?>, <?php echo $tweetsm ?>] 
-	      ]);
-	    
-	    var options = {
-	      colors: ['red', 'green', 'blue'], //Cambiar los colores de las barras
-	      chart: {
-	        title: '@oca_twitt',
-	        subtitle: 'Actividad de los candidatos en Twitter 06/04/2015'
+		$('.form_date').datetimepicker({
+	        language:  'es',
+	        weekStart: 1,
+	        todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0
+	    });
+	</script>	
 
-	      },
-	      bars: 'horizontal' // Required for Material Bar Charts.
-	    }; 
-	    var chart = new google.charts.Bar(document.getElementById('barchart_values'));
-	    chart.draw(data, options);
-	  }
-	</script>
+	<script type="text/javascript">
 
-	<script>
 	function nube()
 	{
-		//Limpiar div
-		var d = document.getElementById("contenido_nube");
-		while (d.hasChildNodes())
-		{
-			d.removeChild(d.firstChild);
+		var fill = d3.scale.category20b();
+
+		var w = window.innerWidth - 300,
+		        h = window.innerHeight;
+
+		var max,
+		        fontSize;
+
+		var layout = d3.layout.cloud()
+		        .timeInterval(Infinity)
+		        .size([w, h])
+		        .fontSize(function(d) {
+		            return fontSize(+d.value);
+		        })
+		        .text(function(d) {
+		            return d.key;
+		        })
+		        .on("end", draw);
+
+		var svg = d3.select("#vis").append("svg")
+		        .attr("width", w)
+		        .attr("height", h);
+
+		var vis = svg.append("g").attr("transform", "translate(" + [w >> 1, h >> 1] + ")");
+
+		update();
+
+		window.onresize = function(event) {
+		    update();
+		};
+
+		function draw(data, bounds) {
+		    var w = window.innerWidth - 300,
+		        h = window.innerHeight;
+
+		    svg.attr("width", w).attr("height", h);
+
+		    scale = bounds ? Math.min(
+		            w / Math.abs(bounds[1].x - w / 2),
+		            w / Math.abs(bounds[0].x - w / 2),
+		            h / Math.abs(bounds[1].y - h / 2),
+		            h / Math.abs(bounds[0].y - h / 2)) / 2 : 1;
+
+		    var text = vis.selectAll("text")
+		            .data(data, function(d) {
+		                return d.text.toLowerCase();
+		            });
+		    text.transition()
+		            .duration(1000)
+		            .attr("transform", function(d) {
+		                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+		            })
+		            .style("font-size", function(d) {
+		                return d.size + "px";
+		            });
+		    text.enter().append("text")
+		            .attr("text-anchor", "middle")
+		            .attr("transform", function(d) {
+		                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+		            })
+		            .style("font-size", function(d) {
+		                return d.size + "px";
+		            })
+		            .style("opacity", 1e-6)
+		            .transition()
+		            .duration(1000)
+		            .style("opacity", 1);
+		    text.style("font-family", function(d) {
+		        return d.font;
+		    })
+		            .style("fill", function(d) {
+		                return fill(d.text.toLowerCase());
+		            })
+		            .text(function(d) {
+		                return d.text;
+		            });
+
+		    vis.transition().attr("transform", "translate(" + [w >> 1, h >> 1] + ")scale(" + scale + ")");
 		}
+
 
 		<?php //Llenamos el array con las coordenadas        
 	        $aux=""; 
@@ -406,44 +471,26 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	      		if($key != "")
 	      		{
 	      			$a2[] = array(
-		                "text" => $key,
-		                "size" => $value*10
+		                "key" => $key,
+		                "value" => $value*10
 		           	);
 	      		}		    
 			};
 			$palabras_JSON = json_encode($a2); //Convertimos el array a Json para poderlo colocar en la nube de palabras                   
 	    ?>
-		var fill = d3.scale.category20();
-		d3.layout.cloud().size([900, 500])
-		    .words(<?php echo $palabras_JSON ?>)
-		    .padding(3)
-		    .rotate(function() { return ~~(Math.random() * 2) * 90; })
-		    .font("Impact")
-		    .fontSize(function(d) { return d.size; })
-		    .on("end", draw)
-		    .start();
 
-		function draw(words) 
-		{
-		    d3.select("#contenido_nube").append("svg")
-		        .attr("width", "100%")
-		        .attr("height", 500)
-		      .append("g")
-		        .attr("transform", "translate(472,250)")
-		      .selectAll("text")
-		        .data(words)
-		      .enter().append("text")
-		        .style("font-size", function(d) { return d.size + "px"; })
-		        .style("font-family", "Impact")
-		        .style("fill", function(d, i) { return fill(i); })
-		        .attr("text-anchor", "middle")
-		        .attr("transform", function(d) {
-		          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-		        })
-		        .text(function(d) { return d.text; });
+		function update() {			
+		    layout.font('impact').spiral('archimedean');
+		    fontSize = d3.scale['sqrt']().range([10, 100]);
+		    if (<?php echo $palabras_JSON ?>.length){
+		        fontSize.domain([+<?php echo $palabras_JSON ?>[<?php echo $palabras_JSON ?>.length - 1].value || 1, +<?php echo $palabras_JSON ?>[0].value]);
+		    }
+		    layout.stop().words(<?php echo $palabras_JSON ?>).start();
 		}
 	}
-	</script> 
+	</script>
+
+
 </body>
 </html>
 

@@ -5,12 +5,12 @@ class Login extends CI_Controller
      
         public function __construct()
         {
-        parent:: __construct();
-        $this->load->model('login_model');
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-        $this->load->library('session');
-        $this->load->helper('security');
+            parent:: __construct();
+            $this->load->model('login_model');
+            $this->load->helper('form');
+            $this->load->library('form_validation');
+            $this->load->library('session');
+            $this->load->helper('security');
         }
        
         public function index()
@@ -18,7 +18,7 @@ class Login extends CI_Controller
      
             if(!isset($_POST['username']))
             {
-            $this->load->view('comunes/login');
+                $this->load->view('comunes/login');
             }
             else
             {
@@ -27,7 +27,7 @@ class Login extends CI_Controller
            
                 if($this->form_validation->run() == FALSE) //si no supera las reglas de validación se recarga la vista del formulario
                 {
-                $this->load->view('comunes/login');
+                    $this->load->view('comunes/login');
                 }
                 else
                 {
@@ -37,59 +37,25 @@ class Login extends CI_Controller
                     {
                         $sesion_data = array(
                                         'username' => $_POST['username'],
-                                        'password' => $_POST['password']
+                                        'password' => $_POST['password'],
+                                        'is_logged_in' => true
                                             );
-                        $this->session->set_userdata($sesion_data);
-                     
-                    $this->load->view('inicio');
-
+                        $this->session->set_userdata($sesion_data);                     
+                        $this->load->view('inicio');
                     }
                     else
                     {
-                    // si es erroneo, devolvemos un mensaje de error
-                    $this->load->view('comunes/login');
+                        // si es erroneo, devolvemos un mensaje de error
+                        $this->load->view('comunes/login');
                     }
                 }
             }  
         }
-     
-        public function data()
-        {
-            if($this->session->userdata['username'] == TRUE)
-            {
-            echo $this->session->userdata['username'];
-            echo " ";
-            echo $this->session->userdata['password'];
-            }
-        }
-       
-       
-        public function destroy()
-        {
-        $this->login_model->close();
-     
-            $this->load->view('comunes/login');
-        }
-        
+             
         public function logout()
         {
              $this->session->sess_destroy();
              redirect('login');
-        }
-
-       
-        public function perfil()
-        {
-        $logged = $this->login_model->isLogged();
-           
-            if($logged == TRUE)
-            {
-            echo "BIENVENIDO";
-            }
-            else
-            {
-            $this->load->view('comunes/login');
-            }
         }
        
     }

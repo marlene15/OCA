@@ -23,7 +23,7 @@ class Controlador_inicio extends CI_Controller {
 		parent::__construct();
 		$this->load->model('facebook/modelo_inicio');
 		$this->load->database('facebook');
-
+		$this->verificar_sesion();
 	}
 
 	public function index()
@@ -33,6 +33,15 @@ class Controlador_inicio extends CI_Controller {
 		{
 			$data = array('partido' => $consulta->Partido, 'nombre' => $consulta->Nombre);
 			$this->load->view('facebook/prueba',$data);
+		}
+	}
+	public function verificar_sesion()
+	{
+		$is_logged_in = $this->session->userdata('is_logged_in');
+
+		if (!isset($is_logged_in) || $is_logged_in != TRUE) {
+			redirect('login');
+			die();
 		}
 	}
 

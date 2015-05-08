@@ -24,11 +24,22 @@ class Controlador_inicio extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('twitter/modelo_inicio');
 		$this->load->database('twitter');
+		$this->verificar_sesion();
 	}
 
 	public function index()
 	{
 		$this->load->view('twitter/gobernadores');
+	}
+	public function verificar_sesion()
+	{
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		
+
+		if (!isset($is_logged_in) || $is_logged_in != TRUE) {
+			redirect('login');
+			die();
+		}
 	}
 	public function gobernadores()
 	{
@@ -74,7 +85,10 @@ class Controlador_inicio extends CI_Controller {
 				          'usuarion' => $norma->usuario, 'seguidoresn' => $norma->seguidores, 
 				          'siguiendon' => $norma->siguiendo, 'tweetsn' => $norma->tweets,
 				          'usuarioj' => $juan->usuario, 'seguidoresj' => $juan->seguidores, 
-				          'siguiendoj' => $juan->siguiendo, 'tweetsj' => $juan->tweets);
+				          'siguiendoj' => $juan->siguiendo, 'tweetsj' => $juan->tweets,
+				          'fecha' => '',
+				          'vtab' => '',
+				          'existe' => 0);
 			$this->load->view('twitter/dip_federales',$datos);	
 		}	
 	}

@@ -11,10 +11,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-  <title>Dip. Federales</title> 
+  <title>Como vamos Colima</title> 
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
-  <script src="<?php echo base_url()?>assets/twitter/vk.js"></script>  
+  <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>  
 </head>
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
@@ -28,13 +28,17 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12">
                         <h3 class="page-title">
-                            Candidatos a Diputado Federal <small>Actividad en Twitter </small>
+                            Como vamos Colima <small>Actividad en Twitter </small>
                         </h3>
                         <ul class="breadcrumb">
-                          <li>
+                            <li>
                                 <i class="icon-home"></i>
-                                <a href="<?php echo site_url('twitter/controlador_inicio/comoVamos'); ?>">Como vamos Colima</a> 
+                                <a href="<?php echo site_url('inicio') ?>">Home</a> 
                                 <i class="icon-angle-right"></i>
+                            </li>
+                            <li>
+                                <i class="icon-home"></i>
+                                <a href="<?php echo site_url('twitter/controlador_inicio/comoVamos'); ?>">Como Vamos Colima</a> 
                             </li>                           
                         </ul>    
                     </div>
@@ -44,14 +48,16 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                     <div class="portlet-body form well">
                       <!--Código para el tab de pestañas-->   
                       <div class="bs-example bs-example-tabs">
-                        <ul class="nav nav-tabs" id="myTab">
-                          <li class="active"><a data-toggle="tab" href="#d1">Twitter</a></li>
-                          <li class=""><a data-toggle="tab" href="#d2">Facebook</a></li>
+                        <ul class="nav nav-tabs" id="myTab">                          
+                          <li class="active"><a data-toggle="tab" href="#barras1">Facebook</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras2">Twitter</a></li>
                         </ul>
                           <div class="tab-content" id="myTabContent">
-
-                            <div id="d1" class="tab-pane fade active in"> 
-                                <div id="chart_div" style="height: 600px; width: 100%;"></div>                            
+                            <div id="barras1" class="tab-pane fade active in"> 
+                                                            
+                            </div>
+                            <div id="barras2" class="tab-pane fade"> 
+                                <div id="chart_div2"></div>                            
                             </div>
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
@@ -64,10 +70,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <?php $this->load->view('comunes/footer'); ?> 
 
 <script type="text/javascript">
-    google.load("visualization", "1", {packages: ["corechart"]});
-    
+    google.load("visualization", "1", {packages: ["corechart"]});    
     google.setOnLoadCallback(drawChart);
-    function drawChart() {
+    function drawChart2() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
@@ -121,7 +126,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
       chart.draw(view, options);          
     }    
   </script>

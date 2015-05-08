@@ -41,7 +41,7 @@
 		<!-- BEGIN LOGIN FORM -->
 		<?php echo validation_errors(); ?>
         <?php echo form_open('login'); ?>
-		<form class="form-vertical login-form" action="index.html" method="post">
+		<form class="form-vertical login-form" action="<?php echo site_url('login'); ?>" method="post">
 			<h3 class="form-title">Ingresa a tu cuenta</h3>
 			<div class="alert alert-error hide">
 				<button class="close" data-dismiss="alert"></button>
@@ -72,8 +72,8 @@
 				</button>            
 			</div>
 		</form>
-<!-- 		<?php echo form_close();?>
- -->		<!-- END LOGIN FORM -->        
+		<?php echo form_close();?>
+	<!-- END LOGIN FORM -->        
 	</div>
 	<!-- END LOGIN -->
 	<!-- BEGIN COPYRIGHT -->

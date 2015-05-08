@@ -8,7 +8,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 -->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 	<title>Inicio</title> 
@@ -26,7 +26,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12">
                         <h3 class="page-title">
-                            Principal <small>Contenido General</small>
+                            Guarda Datos en la BD <small>Marlene A. Maciel T.</small>
                         </h3>
                         <ul class="breadcrumb">
                             <li>

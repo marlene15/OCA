@@ -11,11 +11,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--[if !IE]><!--> <html lang="es"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-  <title>Dip. Federales</title> 
+  <title>Dip. Locales</title> 
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
-  <script src="<?php echo base_url()?>assets/twitter/vk.js"></script>  
+  <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>  
 </head>
+
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
@@ -28,112 +29,136 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12">
                         <h3 class="page-title">
-                            Candidatos a Diputado Federal <small>Actividad en Twitter </small>
+                            Candidatos a Diputado Local <small>Actividad en Twitter </small>
                         </h3>
+                        <ul class="breadcrumb">
+                             <li>
+                                <i class="icon-home"></i>
+                                <a href="<?php echo site_url('inicio'); ?>">Home</a> 
+                                <i class="icon-angle-right"></i>
+                            </li>
+                            <li>
+                                <i class="icon-table"></i>
+                                Cargo 
+                                <i class="icon-angle-right"></i>
+                            </li>
+                            <li>
+                                <i class="icon-twitter"></i>
+                                Twitter 
+                                <i class="icon-angle-right"></i>                                
+                            </li>
+                            <li>
+                                <i class="icon-user"></i>
+                                <a href="<?php echo site_url('twitter/controlador_inicio/dip_locales');?>">Diputado Local</a>
+                            </li>                            
+                        </ul>
                     </div>
                 </div>
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
+                  <center>
                     <div class="portlet-body form well">
                       <!--Código para el tab de pestañas-->   
                       <div class="bs-example bs-example-tabs">
                         <ul class="nav nav-tabs" id="myTab">
-                          <li class="active"><a data-toggle="tab" href="#d1">Distrito 1</a></li>
-                          <li class=""><a data-toggle="tab" href="#d2">Distrito 2</a></li>
-                          <li class=""><a data-toggle="tab" href="#d3">Distrito 3</a></li>
-                          <li class=""><a data-toggle="tab" href="#d4">Distrito 4</a></li>
-                          <li class=""><a data-toggle="tab" href="#d5">Distrito 5</a></li>
-                          <li class=""><a data-toggle="tab" href="#d6">Distrito 6</a></li>
-                          <li class=""><a data-toggle="tab" href="#d7">Distrito 7</a></li>
-                          <li class=""><a data-toggle="tab" href="#d8">Distrito 8</a></li>
-                          <li class=""><a data-toggle="tab" href="#d9">Distrito 9</a></li>
-                          <li class=""><a data-toggle="tab" href="#d10">Distrito 10</a></li>
-                          <li class=""><a data-toggle="tab" href="#d11">Distrito 11</a></li>
-                          <li class=""><a data-toggle="tab" href="#d12">Distrito 12</a></li>
-                          <li class=""><a data-toggle="tab" href="#d13">Distrito 13</a></li>
-                          <li class=""><a data-toggle="tab" href="#d14">Distrito 14</a></li>
-                          <li class=""><a data-toggle="tab" href="#d15">Distrito 15</a></li>
-                          <li class=""><a data-toggle="tab" href="#d16">Distrito 16</a></li>                          
+                          <li class="active"><a data-toggle="tab" href="#barras1">Distrito 1</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras2">Distrito 2</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras3">Distrito 3</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras4">Distrito 4</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras5">Distrito 5</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras6">Distrito 6</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras7">Distrito 7</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras8">Distrito 8</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras9">Distrito 9</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras10">Distrito 10</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras11">Distrito 11</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras12">Distrito 12</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras13">Distrito 13</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras14">Distrito 14</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras15">Distrito 15</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras16">Distrito 16</a></li>                          
                         </ul>
-                          <div class="tab-content" id="myTabContent">
+                          <div class="tab-content" id="tabs">
 
-                            <div id="d1" class="tab-pane fade active in"> 
-                                <div id="chart_div" style="height: 600px; width: 100%;"></div>                            
+                            <div id="barras1" class="tab-pane fade active in"> 
+                                <div id="chart_div"></div>                            
                             </div>
 
-                            <div id="d2" class="tab-pane fade">
-                              <div id="chart_div2" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras2" class="tab-pane fade">
+                              <div id="chart_div2"></div>                                   
                             </div>
 
-                            <div id="d3" class="tab-pane fade">
-                              <div id="chart_div3" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras3" class="tab-pane fade">
+                              <div id="chart_div3"></div>                                   
                             </div>
 
-                            <div id="d4" class="tab-pane fade">
-                              <div id="chart_div4" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras4" class="tab-pane fade">
+                              <div id="chart_div4"></div>                                   
                             </div>
 
-                            <div id="d5" class="tab-pane fade">
-                              <div id="chart_div5" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras5" class="tab-pane fade">
+                              <div id="chart_div5"></div>                                   
                             </div>
 
-                            <div id="d6" class="tab-pane fade">
-                              <div id="chart_div6" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras6" class="tab-pane fade">
+                              <div id="chart_div6"></div>                                   
                             </div>
 
-                            <div id="d7" class="tab-pane fade">
-                              <div id="chart_div7" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras7" class="tab-pane fade">
+                              <div id="chart_div7"></div>                                   
                             </div>
 
-                            <div id="d8" class="tab-pane fade">
-                              <div id="chart_div8" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras8" class="tab-pane fade">
+                              <div id="chart_div8"></div>                                   
                             </div>
 
-                            <div id="d9" class="tab-pane fade">
-                              <div id="chart_div9" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras9" class="tab-pane fade">
+                              <div id="chart_div9"></div>                                   
                             </div>
 
-                            <div id="d10" class="tab-pane fade">
-                              <div id="chart_div10" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras10" class="tab-pane fade">
+                              <div id="chart_div10"></div>                                   
                             </div>
 
-                            <div id="d11" class="tab-pane fade">
-                              <div id="chart_div11" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras11" class="tab-pane fade">
+                              <div id="chart_div11"></div>                                   
                             </div>
 
-                            <div id="d12" class="tab-pane fade">
-                              <div id="chart_div12" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras12" class="tab-pane fade">
+                              <div id="chart_div12"></div>                                   
                             </div>
 
-                            <div id="d13" class="tab-pane fade">
-                              <div id="chart_div13" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras13" class="tab-pane fade">
+                              <div id="chart_div13"></div>                                   
                             </div>
 
-                            <div id="d14" class="tab-pane fade">
-                              <div id="chart_div14" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras14" class="tab-pane fade">
+                              <div id="chart_div14"></div>                                   
                             </div>
 
-                            <div id="d15" class="tab-pane fade">
-                              <div id="chart_div15" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras15" class="tab-pane fade">
+                              <div id="chart_div15"></div>                                   
                             </div>
 
-                            <div id="d16" class="tab-pane fade">
-                              <div id="chart_div16" style="height: 600px; width: 100%;"></div>                                   
+                            <div id="barras16" class="tab-pane fade">
+                              <div id="chart_div16"></div>                                   
                             </div>
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
                     </div>
+                  </center>
                 </div>              
             </div>
         </div>
     </div>
 
   <?php $this->load->view('comunes/footer'); ?> 
+</body>
 
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-
     google.setOnLoadCallback(drawChart);
+
     function drawChart() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -142,7 +167,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');    
       <?php echo "Hilda: ".$seguidoresh ?>    
       data.addRows([
-        ['PRI Hilda Ceballos de Moreno', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>]
+        ['PRI\nHilda Ceballos de Moreno', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -165,7 +190,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
+        //title: '',
         hAxis: {
           title: 'Candidatos'
         },         
@@ -192,8 +217,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
       chart.draw(view, options);          
     }
+    </script>
 
-    google.setOnLoadCallback(drawChart2);
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart2() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -250,11 +278,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
-      chart.draw(view, options);          
+      var chart2 = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+      chart2.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart3);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart3() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -311,11 +341,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div3'));
-      chart.draw(view, options);          
+      var chart3 = new google.visualization.ComboChart(document.getElementById('chart_div3'));
+      chart3.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart4);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart4() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -372,11 +404,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div4'));
-      chart.draw(view, options);          
+      var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div4'));
+      chart4.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart5);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart5() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -432,11 +466,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div5'));
-      chart.draw(view, options);          
+      var chart5 = new google.visualization.ComboChart(document.getElementById('chart_div5'));
+      chart5.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart6);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart6() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -492,11 +528,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div6'));
-      chart.draw(view, options);          
+      var chart6 = new google.visualization.ComboChart(document.getElementById('chart_div6'));
+      chart6.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart7);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart7() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -553,11 +591,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div7'));
-      chart.draw(view, options);          
+      var chart7 = new google.visualization.ComboChart(document.getElementById('chart_div7'));
+      chart7.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart8);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart8() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -614,11 +654,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div8'));
-      chart.draw(view, options);          
+      var chart87 = new google.visualization.ComboChart(document.getElementById('chart_div8'));
+      chart87.draw(view, options);          
     }
+    </script>
 
-    google.setOnLoadCallback(drawChart9);
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
+
     function drawChart9() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -674,11 +718,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div9'));
-      chart.draw(view, options);          
+      var chart9 = new google.visualization.ComboChart(document.getElementById('chart_div9'));
+      chart9.draw(view, options);          
     }
+    </script>
 
-    google.setOnLoadCallback(drawChart10);
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
+
     function drawChart10() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -735,11 +783,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div10'));
-      chart.draw(view, options);          
+      var chart10 = new google.visualization.ComboChart(document.getElementById('chart_div10'));
+      chart10.draw(view, options);          
     }
+    </script>
 
-    google.setOnLoadCallback(drawChart11);
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart11() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -795,11 +846,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div11'));
-      chart.draw(view, options);          
+      var chart11 = new google.visualization.ComboChart(document.getElementById('chart_div11'));
+      chart11.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart12);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart12() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -855,11 +908,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div12'));
-      chart.draw(view, options);          
+      var chart12 = new google.visualization.ComboChart(document.getElementById('chart_div12'));
+      chart12.draw(view, options);          
     }
+    </script>
 
-    google.setOnLoadCallback(drawChart13);
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart13() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -915,11 +971,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div13'));
-      chart.draw(view, options);          
+      var chart13 = new google.visualization.ComboChart(document.getElementById('chart_div13'));
+      chart13.draw(view, options);          
     }
-
-    google.setOnLoadCallback(drawChart14);
+    </script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
     function drawChart14() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -975,11 +1033,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div14'));
-      chart.draw(view, options);          
+      var chart14 = new google.visualization.ComboChart(document.getElementById('chart_div14'));
+      chart14.draw(view, options);          
     }
+    </script>
 
-    google.setOnLoadCallback(drawChart15);
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
+
     function drawChart15() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -1035,11 +1097,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div15'));
-      chart.draw(view, options);          
+      var chart15 = new google.visualization.ComboChart(document.getElementById('chart_div15'));
+      chart15.draw(view, options);          
     }
+    </script>
 
-    google.setOnLoadCallback(drawChart16);
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
+
     function drawChart16() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
@@ -1095,10 +1161,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
       };  
 
-      var chart = new google.visualization.ComboChart(document.getElementById('chart_div16'));
-      chart.draw(view, options);          
+      var chart16 = new google.visualization.ComboChart(document.getElementById('chart_div16'));
+      chart16.draw(view, options);          
     }
   </script>
-</body>
+
 </html>
 

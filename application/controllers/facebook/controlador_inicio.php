@@ -447,6 +447,7 @@ class Controlador_inicio extends CI_Controller {
 	//CANDIDATOS POR PARTIDO
 	public function partidost()
 	{
+		//1ra Fecha
 		$pan = $this->modelo_inicio->Obtener_CPAN();
 		$pri = $this->modelo_inicio->Obtener_CPRI();
 		$pna = $this->modelo_inicio->Obtener_CPNA();
@@ -457,7 +458,18 @@ class Controlador_inicio extends CI_Controller {
 		$pm = $this->modelo_inicio->Obtener_CPM();
 		$pes = $this->modelo_inicio->Obtener_CPES();
 		$ph = $this->modelo_inicio->Obtener_CPH();		
-
+		//2da Fecha
+		$pan2 = $this->modelo_inicio->Obtener_CPAN2();
+		$pri2 = $this->modelo_inicio->Obtener_CPRI2();
+		$pna2 = $this->modelo_inicio->Obtener_CPNA2();
+		$pv2 = $this->modelo_inicio->Obtener_CPV2();
+		$prd2 = $this->modelo_inicio->Obtener_CPRD2();
+		$pt2 = $this->modelo_inicio->Obtener_CPT2();
+		$pmc2 = $this->modelo_inicio->Obtener_CPMC2();
+		$pm2 = $this->modelo_inicio->Obtener_CPM2();
+		$pes2 = $this->modelo_inicio->Obtener_CPES2();
+		$ph2 = $this->modelo_inicio->Obtener_CPH2();
+		
 		if($pan != FALSE and $pri != FALSE and $pna != FALSE and $pv != FALSE and $prd != FALSE and $pt != FALSE and $pmc != FALSE and $pm != FALSE and $pes != FALSE and $ph != FALSE)
 		{
 			$data = array('megustac1' => $pan->Megusta, 'seguidoresc1' => $pan->PersonasHablan, 
@@ -469,7 +481,19 @@ class Controlador_inicio extends CI_Controller {
 				          'megustac7' => $pmc->Megusta, 'seguidoresc7' => $pmc->PersonasHablan,
 				          'megustac8' => $pm->Megusta, 'seguidoresc8' => $pm->PersonasHablan,
 				          'megustac9' => $pes->Megusta, 'seguidoresc9' => $pes->PersonasHablan,
-				          'megustac10' => $ph->Megusta, 'seguidoresc10' => $ph->PersonasHablan);
+				          'megustac10' => $ph->Megusta, 'seguidoresc10' => $ph->PersonasHablan,
+				          //2da Fecha
+				          'megustacc1' => $pan2->Megusta, 'seguidorescc1' => $pan2->PersonasHablan, 
+				          'megustacc2' => $pri2->Megusta, 'seguidorescc2' => $pri2->PersonasHablan,
+				          'megustacc3' => $pna2->Megusta, 'seguidorescc3' => $pna2->PersonasHablan,
+				          'megustacc4' => $pv2->Megusta, 'seguidorescc4' => $pv2->PersonasHablan,
+				          'megustacc5' => $prd2->Megusta, 'seguidorescc5' => $prd2->PersonasHablan,				          
+				          'megustacc6' => $pt2->Megusta, 'seguidorescc6' => $pt2->PersonasHablan,
+				          'megustacc7' => $pmc2->Megusta, 'seguidorescc7' => $pmc2->PersonasHablan,
+				          'megustacc8' => $pm2->Megusta, 'seguidorescc8' => $pm2->PersonasHablan,
+				          'megustacc9' => $pes2->Megusta, 'seguidorescc9' => $pes2->PersonasHablan,
+				          'megustacc10' => $ph2->Megusta, 'seguidorescc10' => $ph2->PersonasHablan
+				          );
 			$this->load->view('facebook/partidos',$data);
 		}
 	}		

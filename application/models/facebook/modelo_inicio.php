@@ -2363,5 +2363,155 @@ class Modelo_inicio extends CI_Model
 		{
 			return FALSE;
 		}				
+	}
+	//Obteniendo los likes y los posts del partido PAN
+	public function Obtener_CPAN2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pan2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PAN2'");
+	
+		if($pan2->num_rows()>0)
+		{
+			return $pan2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}	
+	//Obteniendo los likes y los posts del partido PRI
+	public function Obtener_CPRI2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pri2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PRI2'");
+	
+		if($pri2->num_rows()>0)
+		{
+			return $pri2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}
+	//Obteniendo los likes y los posts del partido PNA
+	public function Obtener_CPNA2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pna2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='NUEVA ALIANZA2'");
+	
+		if($pna2->num_rows()>0)
+		{
+			return $pna2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}	
+	//Obteniendo los likes y los posts del partido PV
+	public function Obtener_CPV2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pv2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='VERDE2'");
+	
+		if($pv2->num_rows()>0)
+		{
+			return $pv2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}	
+	//Obteniendo los likes y los posts del partido PRD
+	public function Obtener_CPRD2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$prd2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PRD2'");
+	
+		if($prd2->num_rows()>0)
+		{
+			return $prd2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
 	}		
+	//Obteniendo los likes y los posts del partido PT
+	public function Obtener_CPT2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pt2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PT2'");
+	
+		if($pt2->num_rows()>0)
+		{
+			return $pt2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}	
+	//Obteniendo los likes y los posts del partido PMC
+	public function Obtener_CPMC2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pmc2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='MOVIMIENTO CIUDADANO2'");
+	
+		if($pmc2->num_rows()>0)
+		{
+			return $pmc2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}
+	//Obteniendo los likes y los posts del partido PM
+	public function Obtener_CPM2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pm2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='MORENA2'");
+	
+		if($pm2->num_rows()>0)
+		{
+			return $pm2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}
+	//Obteniendo los likes y los posts del partido PES
+	public function Obtener_CPES2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$pes2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='ENCUENTRO SOCIAL2'");
+	
+		if($pes2->num_rows()>0)
+		{
+			return $pes2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}
+	//Obteniendo los likes y los posts del partido PH
+	public function Obtener_CPH2()
+	{
+		$db_facebook = $this->load->database('facebook', TRUE);
+		$ph2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PARTIDO HUMANISTA2'");
+	
+		if($ph2->num_rows()>0)
+		{
+			return $ph2->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}				
+	}			
 }	

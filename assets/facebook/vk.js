@@ -117,4 +117,16 @@ $(document).ready(function(){
 		},500)
 		$('#chart_div16').width('100%');	
 	});
+	$('[data-toggle=tab][href=#barras1]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization();
+		},500)
+		$('#chart_div').width('100%');	
+	});
+	$('[data-toggle=tab][href=#barras2]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization2();
+		},500)
+		$('#chart_div2').width('100%');	
+	});	
 });

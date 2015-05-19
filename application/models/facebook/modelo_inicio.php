@@ -2514,4 +2514,73 @@ class Modelo_inicio extends CI_Model
 			return FALSE;
 		}				
 	}			
+	//OBTENIENDO LA VALORACION DE LOS CANDIDATOS A GOBERBANDOR	
+	
+	//Obtener valoracion de comentarios de Jorge Luis
+		public function valoracion_jorge()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Jorge Luis Preciado'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Jorge Luis Preciado'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Jorge Luis Preciado'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+	//Obtener valoracion de comentarios de Jorge Luis
+		public function valoracion_nacho()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Ignacio Peralta'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Ignacio Peralta
+'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Ignacio Peralta'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+		//Obtener cuenta de Comovamoscolima
+		public function obtener_cuenta_comoVamos()
+		{
+			$comoVamost = $this->db->query("select Megusta, PersonasHablan from partido where (Cargo='Sociedad') and Partido='Como Vamos Colima'");
+		
+			if($comoVamost->num_rows()>0)
+			{
+				return $comoVamost->row(); //Con el row solo se obtiene una fila de resultados
+			}
+			else
+			{
+				return FALSE;
+			}
+		}				
 }	

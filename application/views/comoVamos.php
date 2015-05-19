@@ -15,6 +15,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
   <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>  
+  <script src="<?php echo base_url()?>assets/facebook/vk.js"></script>  
 </head>
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
@@ -28,12 +29,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12">
                         <h3 class="page-title">
-                            Como vamos Colima <small>Actividad en Twitter </small>
+                            Como vamos Colima <small>Actividad en Facebook y Twitter </small>
                         </h3>
                         <ul class="breadcrumb">
                             <li>
                                 <i class="icon-home"></i>
-                                <a href="<?php echo site_url('inicio') ?>">Home</a> 
+                                <a href="<?php echo site_url('facebook/controlador_inicio/comoVamos') ?>">Home</a> 
                                 <i class="icon-angle-right"></i>
                             </li>
                             <li>
@@ -54,10 +55,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </ul>
                           <div class="tab-content" id="myTabContent">
                             <div id="barras1" class="tab-pane fade active in"> 
-                                                            
+                                <div id="chart_div2"></div>                                                             
                             </div>
                             <div id="barras2" class="tab-pane fade"> 
+<<<<<<< HEAD:application/views/comoVamos.php
                                 <div id="chart_div2" style="height: 400px;"></div>                            
+=======
+                                <div id="chart_div"></div>                            
+>>>>>>> origin/master:application/views/twitter/comoVamos.php
                             </div>
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
@@ -68,7 +73,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     </div>
 
   <?php $this->load->view('comunes/footer'); ?> 
-
+        
+ 
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});    
     
@@ -99,6 +105,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         ]
       );  
       var options = {
+<<<<<<< HEAD:application/views/comoVamos.php
         title: '@Comovamoscolima',
         hAxis: {title: "Fecha"},
         seriesType: "bars",
@@ -106,7 +113,87 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       };
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
       chart.draw(data, options);  
+=======
+        title: '',
+        hAxis: {
+          title: 'Candidatos'
+        },         
+        height: 600,
+        series: {
+          0: {
+            type: 'bars',
+            color: '#33559B'
+          },
+          1: {
+            type: 'bars',
+            color: '#6F3697'
+          },
+          2: {
+            type: 'bars',
+            color: '#FF4524'
+          }
+        },
+        vAxis: {
+          maxValue: 100
+        }
+      };  
+
+      var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+      chart.draw(view, options);          
+>>>>>>> origin/master:application/views/twitter/comoVamos.php
     }    
+  </script>
+<!--GRAFICA COMO VAMOS COLIMA POR FACEBOOK-->
+  <script type="text/javascript">
+    google.load("visualization", "1", {packages: ["corechart"]});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Candidatos');
+      data.addColumn('number', 'Likes');
+      data.addColumn('number', 'Posts');       
+      data.addRows([
+        ['Como vamos Colima', <?php echo $megustac1 ?>, <?php echo $seguidoresc1 ?>]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,{
+                          calc: "stringify",
+                          sourceColumn: 1,
+                          type: "string",
+                          role: "annotation"
+                      }, 
+                      2,{
+                          calc: "stringify",
+                          sourceColumn: 2,
+                          type: "string",
+                          role: "annotation"
+                      }]);
+      var options = {
+        //title: '@oca_face',
+        hAxis: {
+          title: 'Candidatos'
+        },         
+        height: 600,
+        series: {
+          0: {
+            type: 'bars',
+            color: '#33559B'
+          },
+          1: {
+            type: 'bars',
+            color: '#6F3697'
+          }
+        },
+        vAxis: {
+          maxValue: 100
+        }
+      };  
+
+      var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+      chart.draw(view, options);          
+    }
   </script>
 </body>
 </html>

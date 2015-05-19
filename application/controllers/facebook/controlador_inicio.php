@@ -472,8 +472,8 @@ class Controlador_inicio extends CI_Controller {
 		
 		if($pan != FALSE and $pri != FALSE and $pna != FALSE and $pv != FALSE and $prd != FALSE and $pt != FALSE and $pmc != FALSE and $pm != FALSE and $pes != FALSE and $ph != FALSE)
 		{
-			$data = array('megustac1' => $pan->Megusta, 'seguidoresc1' => $pan->PersonasHablan, 
-				          'megustac2' => $pri->Megusta, 'seguidoresc2' => $pri->PersonasHablan,
+			$data = array('megustac1' => $pri->Megusta, 'seguidoresc1' => $pri->PersonasHablan, 
+				          'megustac2' => $pan->Megusta, 'seguidoresc2' => $pan->PersonasHablan,
 				          'megustac3' => $pna->Megusta, 'seguidoresc3' => $pna->PersonasHablan,
 				          'megustac4' => $pv->Megusta, 'seguidoresc4' => $pv->PersonasHablan,
 				          'megustac5' => $prd->Megusta, 'seguidoresc5' => $prd->PersonasHablan,				          
@@ -483,8 +483,8 @@ class Controlador_inicio extends CI_Controller {
 				          'megustac9' => $pes->Megusta, 'seguidoresc9' => $pes->PersonasHablan,
 				          'megustac10' => $ph->Megusta, 'seguidoresc10' => $ph->PersonasHablan,
 				          //2da Fecha
-				          'megustacc1' => $pan2->Megusta, 'seguidorescc1' => $pan2->PersonasHablan, 
-				          'megustacc2' => $pri2->Megusta, 'seguidorescc2' => $pri2->PersonasHablan,
+				          'megustacc1' => $pri2->Megusta, 'seguidorescc1' => $pri2->PersonasHablan, 
+				          'megustacc2' => $pan2->Megusta, 'seguidorescc2' => $pan2->PersonasHablan,
 				          'megustacc3' => $pna2->Megusta, 'seguidorescc3' => $pna2->PersonasHablan,
 				          'megustacc4' => $pv2->Megusta, 'seguidorescc4' => $pv2->PersonasHablan,
 				          'megustacc5' => $prd2->Megusta, 'seguidorescc5' => $prd2->PersonasHablan,				          
@@ -497,4 +497,31 @@ class Controlador_inicio extends CI_Controller {
 			$this->load->view('facebook/partidos',$data);
 		}
 	}		
+	//Valoracion de comentarios para gobernador
+	public function valoracion_gobernadores()
+	{
+		$nacho = $this->modelo_inicio->valoracion_nacho();
+		$jorge = $this->modelo_inicio->valoracion_jorge();
+
+		$datos = array(
+					  'nachoP' => $nacho['positivos'],
+					  'nachoNe' => $nacho['negativos'],
+					  'nachoN' => $nacho['neutros'],
+					  'jorgeP' => $jorge['positivos'],
+					  'jorgeNe' => $jorge['negativos'],
+					  'jorgeN' => $jorge['neutros']
+					  );
+		$this->load->view('facebook/valoracionGobernadores',$datos);
+	}	
+	//Como vamos Colima
+	public function comoVamos()
+	{
+		$comoVamost = $this->modelo_inicio->obtener_cuenta_comoVamos();
+
+		$datos = array(
+						'megustac1' => $comoVamost->Megusta, 
+						'seguidoresc1' => $comoVamost->PersonasHablan)
+						;
+		$this->load->view('twitter/comoVamos',$datos);
+	}	
 }

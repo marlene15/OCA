@@ -49,15 +49,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                       <!--Código para el tab de pestañas-->   
                       <div class="bs-example bs-example-tabs">
                         <ul class="nav nav-tabs" id="myTab">                          
-                          <li class="active"><a data-toggle="tab" href="#barras1">Facebook</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras2">Twitter</a></li>
+                          <li class="active"><a data-toggle="tab" href="#barras1" id="tab1">Facebook</a></li>
+                          <li class=""><a data-toggle="tab" href="#barras2" id="tab2">Twitter</a></li>
                         </ul>
                           <div class="tab-content" id="myTabContent">
                             <div id="barras1" class="tab-pane fade active in"> 
                                                             
                             </div>
                             <div id="barras2" class="tab-pane fade"> 
-                                <div id="chart_div2"></div>                            
+                                <div id="chart_div2" style="height: 400px;"></div>                            
                             </div>
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
@@ -71,63 +71,41 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});    
-    google.setOnLoadCallback(drawChart);
+    
+    ////////comoVamos
+    <?php //char2 
+        $a = array();
+        foreach ($comoVamos as $comoVamos) 
+        {
+            $a[] = array(
+                "fecha" => $comoVamos->fecha,
+                "seguidores" => $comoVamos->seguidores,
+                "siguiendo" => $comoVamos->siguiendo,
+                "tweets" => $comoVamos->tweets,
+                "promedio" => ($comoVamos->seguidores+$comoVamos->siguiendo+$comoVamos->tweets)/3
+            );
+        }                       
+    ?> 
+    ////////////////////////////////////////comoVamos
+    google.setOnLoadCallback(drawChart2); 
     function drawChart2() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Candidatos');
-      data.addColumn('number', 'Seguidores');
-      data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');        
-      data.addRows([
-        ['Como vamos Colima', <?php echo $seguidores_comoVamos ?>, <?php echo $siguiendo_comoVamos ?>, <?php echo $tweets_comoVamos ?>]
-      ]);
-
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1,{
-                          calc: "stringify",
-                          sourceColumn: 1,
-                          type: "string",
-                          role: "annotation"
-                      }, 
-                      2,{
-                          calc: "stringify",
-                          sourceColumn: 2,
-                          type: "string",
-                          role: "annotation"
-                      }, 
-                      3,{
-                          calc: "stringify",
-                          sourceColumn: 3,
-                          type: "string",
-                          role: "annotation"
-                      }]);
+      var data = google.visualization.arrayToDataTable(
+        [
+          ['Fecha', 'Seguidores', 'Siguiendo', 'Tweets', 'Promedio'],
+          <?php for ($i=0; $i<count($a); $i++) {
+              ?>
+              ['<?php echo $a[$i]['fecha'] ?>', <?php echo $a[$i]['seguidores'] ?>, <?php echo $a[$i]['siguiendo'] ?>, <?php echo $a[$i]['tweets'] ?>, <?php echo $a[$i]['promedio'] ?>],
+          <?php } ?>
+        ]
+      );  
       var options = {
-        title: '',
-        hAxis: {
-          title: 'Candidatos'
-        },         
-        height: 600,
-        series: {
-          0: {
-            type: 'bars',
-            color: '#33559B'
-          },
-          1: {
-            type: 'bars',
-            color: '#6F3697'
-          },
-          2: {
-            type: 'bars',
-            color: '#FF4524'
-          }
-        },
-        vAxis: {
-          maxValue: 100
-        }
-      };  
-
+        title: '@Comovamoscolima',
+        hAxis: {title: "Fecha"},
+        seriesType: "bars",
+        series: {3: {type: "line"}}
+      };
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
-      chart.draw(view, options);          
+      chart.draw(data, options);  
     }    
   </script>
 </body>

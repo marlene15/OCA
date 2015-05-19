@@ -13,6 +13,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <head>
 	<title>Inicio</title> 
 	<?php $this->load->view('comunes/header'); ?>
+    <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
     <script src="<?php echo base_url()?>assets/twitter/d3/d3.min.js"></script>
     <script src="<?php echo base_url()?>assets/twitter/d3/d3.js"></script> 
     <script src="<?php echo base_url()?>assets/twitter/d3/liquidFillGauge.js"></script> 
@@ -75,9 +76,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         <svg id="fillgauge1"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
                                         <svg id="fillgauge2" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
                                         <svg id="fillgauge3" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                        <br>
-                                        <div id='pastel'></div>  
-                                    </center>                                                                 
+                                        <br>                                           
+                                        <div id="grafica" style="width: 100%; height: 500px;"></div>   
+                                        <div id="chart_div" style="width: 100%; height: 500px;"></div>                            
+                                    </center>    
+                                    <svg id="barras" preserveAspectRatio="xMidYMid" viewBox="0 0 1000 400"> </svg>
+                                    <div id="tabla"></div>
                                 </div>
 
                                 <div id="jorge" class="tab-pane fade ">
@@ -151,16 +155,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             fData.forEach(function(d){d.total = d.informacion.Seguidores+d.informacion.Siguiendo+d.informacion.Tweets;});
             
             // function to handle histogram.
-            function histoGram(fD){
+            function histoGram(fD)
+            {
                 var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
                 hGDim.w = 450 - hGDim.l - hGDim.r, 
-                hGDim.h = 250 - hGDim.t - hGDim.b;
+                hGDim.h = 300 - hGDim.t - hGDim.b;
+                w = hGDim.w + hGDim.l + hGDim.r;
+                h = hGDim.h + hGDim.t + hGDim.b;
                     
                 //create svg for histogram.
-                var hGsvg = d3.select(id).append("svg")
-                    .attr("width", hGDim.w + hGDim.l + hGDim.r)
-                    .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
-                    .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
+                var hGsvg = d3.select("#barras").append("svg")                     
+                    // .attr("width", hGDim.w + hGDim.l + hGDim.r)
+                    // .attr("height", hGDim.h + hGDim.t + hGDim.b)
+                    .attr("viewBox", "0 0 " + 900 + " " + 300 )
+                    .attr("preserveAspectRatio", "xMidYMid meet")
+                    .attr("id", "Gbarras")
+                    .append("g")
+                        .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
 
                 // create function for x-axis mapping.
                 var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
@@ -240,9 +251,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
                         
                 // create svg for pie chart.
-                var piesvg = d3.select(id).append("svg")
-                    .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
-                    .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
+                var piesvg = d3.select("#barras").append("svg")
+                    .attr("viewBox", "5 -226 " + 25 + " " + 495 )
+                    .attr("preserveAspectRatio", "xMidYMid meet")
+                        // .attr("width", 249)
+                        // .attr("height", 300)                                     
+                    .append("g")    
+                        .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");                   
                 
                 // create function to draw the arcs of the pie slices.
                 var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
@@ -288,15 +303,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 var leg = {};
                     
                 // create table for legend.
-                var legend = d3.select(id).append("table").attr('class','legend');
+                var legend = d3.select("#barras").append("svg")
+                    .attr("viewBox", "5 -226 " + 25 + " " + 495 )
+                    .attr("preserveAspectRatio", "xMidYMid meet")
+                    .append("table")
+                        .attr('class','legend');
                 
                 // create one row per segment.
                 var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
                     
                 // create the first column for each segment.
-                tr.append("td").append("svg").attr("width", '16').attr("height", '16').append("rect")
-                    .attr("width", '16').attr("height", '16')
-                    .attr("fill",function(d){ return segColor(d.type); });
+                tr.append("td").append("svg")
+                    .attr("width", '16')
+                    .attr("height", '16')
+                    .append("rect")
+                        .attr("width", '16').attr("height", '16')
+                        .attr("fill",function(d){ return segColor(d.type); });
                     
                 // create the second column for each segment.
                 tr.append("td").text(function(d){ return d.type;});
@@ -348,8 +370,89 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         {candidato:'jipsvdea', informacion:{Seguidores:<?php echo $seguidores_jipsVilla ?>,Siguiendo:<?php echo $siguiendo_jipsVilla ?>,Tweets:<?php echo $tweets_jipsVilla ?>}},
         {candidato:'MiSelfiecoNacho', informacion:{Seguidores:<?php echo $seguidores_selfieNacho ?>,Siguiendo:<?php echo $siguiendo_selfieNacho ?>,Tweets:<?php echo $tweets_selfieNacho ?>}}
         ];
-        dashboard('#pastel',freqData);
+        dashboard('#barras',freqData);
+
+        //Sirve para hacer la nube de palabars responsiva
+    var aspect = 1000 / 600,
+    chart = $("#container");
+    $(window).on("resize", function() {
+        var targetWidth = chart.parent().width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+    });
     </script>
+
+    <?php //char2  
+        $a2 = array();
+        foreach ($jips_2015 as $jips_2015) 
+        {
+            $a2[] = array(
+                "fecha" => $jips_2015->fecha,
+                "seguidores" => $jips_2015->seguidores,
+                "siguiendo" => $jips_2015->siguiendo,
+                "tweets" => $jips_2015->tweets,
+                "promedio" => ($jips_2015->seguidores+$jips_2015->siguiendo+$jips_2015->tweets)/3
+            );
+        }                       
+    ?> 
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(
+        [
+          ['Fecha', 'Seguidores', 'Siguiendo', 'Tweets'],
+          <?php for ($i=0; $i<count($a2); $i++) {
+            ?>
+            ['<?php echo $a2[$i]['fecha'] ?>', <?php echo $a2[$i]['seguidores'] ?>, <?php echo $a2[$i]['siguiendo'] ?>, <?php echo $a2[$i]['tweets'] ?>],
+          <?php } ?>
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Día',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var options_fullStacked = {
+          isStacked: 'relative',
+          height: 400,
+          legend: {position: 'top', maxLines: 3},
+          vAxis: {
+            minValue: 0
+          }
+        };
+
+
+        var chart = new google.visualization.AreaChart(document.getElementById('grafica'));
+        chart.draw(data, options_fullStacked);
+      }
+    </script>
+
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'holis'],
+          ['2013',  1000,      400,600],
+          ['2014',  1170,      460,500],
+          ['2015',  660,       1120,760],
+          ['2016',  1030,      540,982]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
 </body>
 </html>
 

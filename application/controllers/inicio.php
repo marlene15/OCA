@@ -20,8 +20,10 @@ class Inicio extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('url');
+		$this->load->model('twitter/modelo_consultas');
+		$this->load->database('twitter');
 		$this->verificar_sesion();
-
 	}
 
 	public function index()
@@ -36,6 +38,16 @@ class Inicio extends CI_Controller {
 			redirect('login');
 			die();
 		}
+	}
+
+	//Como vamos Colima
+	public function comoVamos()
+	{
+		$resultado = $this->modelo_consultas->obtener_cuenta_comoVamos();		
+		$datos = array(
+						"comoVamos" => $resultado['comoVamos']
+	            	  );
+		$this->load->view('comoVamos',$datos);
 	}
 }
 

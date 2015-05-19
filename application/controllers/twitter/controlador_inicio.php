@@ -23,6 +23,7 @@ class Controlador_inicio extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('twitter/modelo_inicio');
+		$this->load->model('twitter/modelo_consultas');
 		$this->load->database('twitter');
 		$this->verificar_sesion();
 	}
@@ -41,56 +42,65 @@ class Controlador_inicio extends CI_Controller {
 			die();
 		}
 	}
+	
 	public function gobernadores()
 	{
-		$nacho = $this->modelo_inicio->obtener_cuenta_nacho();
-		$jorge = $this->modelo_inicio->obtener_cuenta_jorge();
-		$locho = $this->modelo_inicio->obtener_cuenta_locho();
-		$martha = $this->modelo_inicio->obtener_cuenta_martha();
-		//Hashtags relacionados con los gobernadores
-		$hashtags = $this->modelo_inicio->obtener_hashtags_gobernadores();
+		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
+		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 		
+		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+		$hashtags = $this->modelo_inicio->obtener_hashtags_gobernadores($ultima_fecha);
 
-		if($nacho != FALSE and $jorge != FALSE and $locho != FALSE and $martha != FALSE)
-		{
-			$datos = array('usuarion' => $nacho->usuario, 'seguidoresn' => $nacho->seguidores, 
-				          'siguiendon' => $nacho->siguiendo, 'tweetsn' => $nacho->tweets,
-				          'usuarioj' => $jorge->usuario, 'seguidoresj' => $jorge->seguidores, 
-				          'siguiendoj' => $jorge->siguiendo, 'tweetsj' => $jorge->tweets,
-				          'usuariol' => $locho->usuario, 'seguidoresl' => $locho->seguidores, 
-				          'siguiendol' => $locho->siguiendo, 'tweetsl' => $locho->tweets,
-				          'usuariom' => $martha->usuario, 'seguidoresm' => $martha->seguidores, 
-				          'siguiendom' => $martha->siguiendo, 'tweetsm' => $martha->tweets,
-				          'hashtags' => $hashtags);
-			$this->load->view('twitter/gobernadores',$datos);
-		}
+		$datos = array(
+	                "seguidoresn" => $gobernadores['nacho']->seguidores,
+	                "siguiendon" => $gobernadores['nacho']->siguiendo,
+	                "tweetsn" => $gobernadores['nacho']->tweets,
+	                "seguidoresj" => $gobernadores['jorge']->seguidores,
+	                "siguiendoj" => $gobernadores['jorge']->siguiendo,
+	                "tweetsj" => $gobernadores['jorge']->tweets,
+	                "seguidoresl" => $gobernadores['locho']->seguidores,
+	                "siguiendol" => $gobernadores['locho']->siguiendo,
+	                "tweetsl" => $gobernadores['locho']->tweets,
+	                "seguidoresm" => $gobernadores['martha']->seguidores,
+	                "siguiendom" => $gobernadores['martha']->siguiendo,
+	                "tweetsm" => $gobernadores['martha']->tweets,
+	                'ultima_fecha' => $fecha,
+	                'hashtags' => $hashtags
+	            );
+		$this->load->view('twitter/gobernadores',$datos);
 	}
 
 	public function dip_federales()
 	{
-		#Distrito 1
-		$jose_manuel = $this->modelo_inicio->obtener_cuenta_jose_manuel();
-		$kike = $this->modelo_inicio->obtener_cuenta_kike();
-		$indira = $this->modelo_inicio->obtener_cuenta_indira();
-		#Distrito 2
-		$norma = $this->modelo_inicio->obtener_cuenta_norma();
-		$juan = $this->modelo_inicio->obtener_cuenta_juan();
-		if($jose_manuel != FALSE and $kike != FALSE and $indira != FALSE and $norma != FALSE and $juan != FALSE)
-		{
-			$datos = array('usuariojm' => $jose_manuel->usuario, 'seguidoresjm' => $jose_manuel->seguidores, 
-				          'siguiendojm' => $jose_manuel->siguiendo, 'tweetsjm' => $jose_manuel->tweets,
-				          'usuariok' => $kike->usuario, 'seguidoresk' => $kike->seguidores, 
-				          'siguiendok' => $kike->siguiendo, 'tweetsk' => $kike->tweets,
-				          'usuarioi' => $indira->usuario, 'seguidoresi' => $indira->seguidores, 
-				          'siguiendoi' => $indira->siguiendo, 'tweetsi' => $indira->tweets,
-				          'usuarion' => $norma->usuario, 'seguidoresn' => $norma->seguidores, 
-				          'siguiendon' => $norma->siguiendo, 'tweetsn' => $norma->tweets,
-				          'usuarioj' => $juan->usuario, 'seguidoresj' => $juan->seguidores, 
-				          'siguiendoj' => $juan->siguiendo, 'tweetsj' => $juan->tweets,
-				          'fecha' => '',
-				          'vtab' => '',
-				          'existe' => 0);
-			$this->load->view('twitter/dip_federales',$datos);	
-		}	
+		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
+		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 
+		$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 			
+		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_federales();
+		
+		$datos = array(
+	                "seguidoresjm" => $dip1['jose']->seguidores,
+	                "siguiendojm" => $dip1['jose']->siguiendo,
+	                "tweetsjm" => $dip1['jose']->tweets,
+	                "seguidoresk" => $dip1['kike']->seguidores,
+	                "siguiendok" => $dip1['kike']->siguiendo,
+	                "tweetsk" => $dip1['kike']->tweets,
+	                "seguidoresi" => $dip1['indira']->seguidores,
+	                "siguiendoi" => $dip1['indira']->siguiendo,
+	                "tweetsi" => $dip1['indira']->tweets,
+	                "seguidoresn" => $dip2['norma']->seguidores,
+	                "siguiendon" => $dip2['norma']->siguiendo,
+	                "tweetsn" => $dip2['norma']->tweets,
+	                "seguidoresj" => $dip2['juan']->seguidores,
+	                "siguiendoj" => $dip2['juan']->siguiendo,
+	                "tweetsj" => $dip2['juan']->tweets,
+	                'ultima_fecha' => $fecha,
+	                'hashtags' => $hashtags
+	            );
+		$this->load->view('twitter/dip_federales',$datos);	
 	}
 
 	public function dip_locales()
@@ -133,6 +143,8 @@ class Controlador_inicio extends CI_Controller {
 		$felicitas = $this->modelo_inicio->obtener_cuenta_felicitas();
 		#Distrito 16
 		$santiago = $this->modelo_inicio->obtener_cuenta_santiago();
+
+		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_locales();
 		if($hilda != FALSE)
 		{
 			$datos = array('usuarioh' => $hilda->usuario, 'seguidoresh' => $hilda->seguidores, 
@@ -178,7 +190,8 @@ class Controlador_inicio extends CI_Controller {
 				          'usuario_felicitas' => $felicitas->usuario, 'seguidores_felicitas' => $felicitas->seguidores, 
 				          'siguiendo_felicitas' => $felicitas->siguiendo, 'tweets_felicitas' => $felicitas->tweets,
 				          'usuario_santiago' => $santiago->usuario, 'seguidores_santiago' => $santiago->seguidores, 
-				          'siguiendo_santiago' => $santiago->siguiendo, 'tweets_santiago' => $santiago->tweets
+				          'siguiendo_santiago' => $santiago->siguiendo, 'tweets_santiago' => $santiago->tweets,
+				          'hashtags' => $hashtags
 				          );
 			$this->load->view('twitter/dip_locales',$datos);	
 		}	
@@ -284,6 +297,9 @@ class Controlador_inicio extends CI_Controller {
 		$jipsColima = $this->modelo_inicio->obtener_cuenta_jipsColima();
 		$jipsVilla = $this->modelo_inicio->obtener_cuenta_jipsVilla();
 		$selfieNacho = $this->modelo_inicio->obtener_cuenta_selfieNacho();
+
+		$resultado = $this->modelo_consultas->obtener_cuenta_partidos(); 
+
 		$datos = array('nachoP' => $nacho['positivos'],
 					  'nachoNe' => $nacho['negativos'],
 					  'nachoN' => $nacho['neutros'],
@@ -299,18 +315,29 @@ class Controlador_inicio extends CI_Controller {
 				      'usuario_jipsVilla' => $jipsVilla->usuario, 'seguidores_jipsVilla' => $jipsVilla->seguidores, 
 				      'siguiendo_jipsVilla' => $jipsVilla->siguiendo, 'tweets_jipsVilla' => $jipsVilla->tweets,
 				      'usuario_selfieNacho' => $selfieNacho->usuario, 'seguidores_selfieNacho' => $selfieNacho->seguidores, 
-				      'siguiendo_selfieNacho' => $selfieNacho->siguiendo, 'tweets_selfieNacho' => $selfieNacho->tweets
+				      'siguiendo_selfieNacho' => $selfieNacho->siguiendo, 'tweets_selfieNacho' => $selfieNacho->tweets,
+				      "jips_2015" => $resultado['jips_2015']
 					  );
 		$this->load->view('twitter/valoracionGobernadores',$datos);
 	}
 
-	//Como vamos Colima
-	public function comoVamos()
+	public function partidos()
 	{
-		$comoVamos = $this->modelo_inicio->obtener_cuenta_comoVamos();
-		$datos = array('usuario_comoVamos' => $comoVamos->usuario, 'seguidores_comoVamos' => $comoVamos->seguidores, 
-				      'siguiendo_comoVamos' => $comoVamos->siguiendo, 'tweets_comoVamos' => $comoVamos->tweets
-					  );
-		$this->load->view('twitter/comoVamos',$datos);
+		$resultado = $this->modelo_consultas->obtener_cuenta_partidos(); 
+		$datos = array(
+						"pri" => $resultado['pri'],
+						"jips_2015" => $resultado['jips_2015'],
+						"JIPSColima" => $resultado['JIPSColima'],
+						"jipsvdea" => $resultado['jipsvdea'],
+						"MiSelfiecoNacho" => $resultado['MiSelfiecoNacho'],
+						"PANDColima" => $resultado['PANDColima'],
+						"cdepancolima" => $resultado['cdepancolima'],
+						"PRDcolima" => $resultado['PRDcolima'],
+						"MovCiudadanoCol" => $resultado['MovCiudadanoCol'],
+						"ColPartidoVerde" => $resultado['ColPartidoVerde'],
+						"PT_Colima" => $resultado['PT_Colima'],
+						"MorenaColima1" => $resultado['MorenaColima1']
+	            	  );
+		$this->load->view('twitter/partidos',$datos);
 	}
 }

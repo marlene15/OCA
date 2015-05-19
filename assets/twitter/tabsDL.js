@@ -3,17 +3,13 @@ $(document).ready(function(){
 	$('[data-toggle=tab][href=#barras1]').on('click',function(){
 		setTimeout(function(){
 			drawChart();
-		},500)
-		$('#barras1').show(500);
-		$('#barras2').hide(250);
-		$('#chart_div').width('100%');
+		},500)		
+		$('#chart_div').width('100%');	
 	});
 	$('[data-toggle=tab][href=#barras2]').on('click',function(){
 		setTimeout(function(){
 			drawChart2();
 		},500)
-		$('#barras2').show(500);
-		$('#barras1').hide(250);
 		$('#chart_div2').width('100%');	
 	});
 	$('[data-toggle=tab][href=#barras3]').on('click',function(){

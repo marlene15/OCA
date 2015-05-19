@@ -5,161 +5,7 @@
 		{
 			parent:: __construct();
 		}
-		//Obtiene los datos de la cuenta de nacho
-		public function obtener_cuenta_nacho()
-		{
-			$nacho = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'nachoperaltacol'");
 		
-			if($nacho->num_rows()>0)
-			{
-				return $nacho->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtiene los datos de la cuenta de jorge
-		public function obtener_cuenta_jorge()
-		{
-			$jorge = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'JL_Preciado_'");
-		
-			if($jorge->num_rows()>0)
-			{
-				return $jorge->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}		
-		//Obtiene los datos de la cuenta de locho
-		public function obtener_cuenta_locho()
-		{
-			$locho = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'leonciomoranL8'");
-		
-			if($locho->num_rows()>0)
-			{
-				return $locho->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtiene los datos de la cuenta de martha
-		public function obtener_cuenta_martha()
-		{
-			$martha = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'MarthaZepeda_'");
-		
-			if($martha->num_rows()>0)
-			{
-				return $martha->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-
-		#Diputados federales
-		//Obtiene los datos de la cuenta de jose_manuel
-		public function obtener_cuenta_jose_manuel()
-		{
-			$jose = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'soygp'");
-		
-			if($jose->num_rows()>0)
-			{
-				return $jose->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtiene los datos de la cuenta de kike
-		public function obtener_cuenta_kike()
-		{
-			$kike = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'kikerojas007'");
-		
-			if($kike->num_rows()>0)
-			{
-				return $kike->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtiene los datos de la cuenta de indira
-		public function obtener_cuenta_indira()
-		{
-			$indira = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'indira_vizcaino'");
-		
-			if($indira->num_rows()>0)
-			{
-				return $indira->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtiene los datos de la cuenta de norma
-		public function obtener_cuenta_norma()
-		{
-			$norma = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'NormaGdeV'");
-		
-			if($norma->num_rows()>0)
-			{
-				return $norma->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
-		//Obtiene los datos de la cuenta de juan
-		public function obtener_cuenta_juan()
-		{
-			$juan = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'olave_nery'");
-		
-			if($juan->num_rows()>0)
-			{
-				return $juan->row(); //Con el row solo se obtiene una fila de resultados
-			}
-			else
-			{
-				return FALSE;
-			}
-		}
 		//PRESIDENTES MUNICIPALES
 		//Obtiene los datos de la cuenta de hector
 		public function obtener_cuenta_hector()
@@ -929,7 +775,10 @@
 			$hashtags=$this->db->query("SELECT hashtags FROM `twitt` WHERE (hashtags LIKE '%nachoperaltacol%' or hashtags 
 										LIKE '%jips%' or hashtags LIKE '%JuntosNadieNosPara%' or hashtags LIKE '%JIPS2015%' 
 										or hashtags LIKE '%MiSelfiecoNacho%'or hashtags LIKE '%DesdeAbajoConTrabajo%' 
-										or hashtags LIKE '%ClaroQuePodemos %' or hashtags LIKE '%JorgeLuis%' or hashtags 
+										or hashtags LIKE '%ConNachoSeguro%' or hashtags LIKE '%NachoGobernador%' or hashtags LIKE '%VotaPri%'
+										or hashtags LIKE '%NachoVotoSeguro%' or hashtags LIKE '%NachoColimaEstaContigo%' or hashtags LIKE '%NachoGano%'
+										or hashtags LIKE '%FormulaGanadora%'
+										or hashtags LIKE '%ClaroQuePodemos %' or hashtags LIKE '%NachoPropone%' or hashtags LIKE '%JorgeLuis%' or hashtags 
 										LIKE '%AlegrateYaSeVan%' or hashtags LIKE '%YaSeVan%' or hashtags LIKE '%JL_Preciado_%' 
 										or hashtags LIKE '%HagámosloNosotros%' or hashtags LIKE '%TúTienesElPodio%' or hashtags 
 										LIKE '%EncuentroSocial%' or hashtags LIKE '%PartidoEncuentroSocial%' or hashtags 
@@ -937,8 +786,107 @@
 										or hashtags LIKE '%UnidadHumanista%' or hashtags LIKE '%Humanista%' or hashtags LIKE 
 										'%TodosConL8cho%' or hashtags LIKE '%CambiarLaHistoria%' or hashtags LIKE '%MovimientoCiudadano%' 
 										or hashtags LIKE '%leonciomoranL8%'or hashtags LIKE '%PRDcolima%' or hashtags LIKE 
-										'%PRD%'or texto LIKE '%ComoTú%'or hashtags LIKE '%SomosPRD%'or hashtags LIKE '%SabemosGobernar%' 
-										or hashtags LIKE '%NuevaIzquierda%'or hashtags LIKE '%MarthaZepeda_%') and hashtags <>''");
+										'%PRD%'or texto LIKE '%ComoTú%' or texto LIKE '%ComoTu%' or texto LIKE '%EsHoraDelPRD%' 
+										or hashtags LIKE '%SomosPRD%'or hashtags LIKE '%SabemosGobernar%' 
+										or hashtags LIKE '%NuevaIzquierda%'or hashtags LIKE '%MarthaZepeda_%' or hashtags LIKE '%DebateColima%') 
+										and hashtags <>''");
+			if($hashtags->num_rows()>0)
+			{
+				return $hashtags->result();
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+
+		//Obtener hashtags Dip_federales
+		public function obtener_hashtags_dip_federales()
+		{
+			$hashtags=$this->db->query("SELECT hashtags FROM `twitt` WHERE (hashtags LIKE '%soygp%' or hashtags 
+										LIKE '%kikerojas007%' or hashtags LIKE '%indira_vizcaino%' or hashtags LIKE '%NormaGdeV%' 
+										or hashtags LIKE '%olave_nery%'or hashtags LIKE '%TrabajandoPorLoQueMásQuieres%' 										
+										or hashtags LIKE '%KikeSí%' or hashtags LIKE '%KikeEsMejor%' or hashtags 
+										LIKE '%PRI_Colima%' or hashtags LIKE '%ConIndiraYoSi%' or hashtags LIKE '%ComoTú%' 
+										or hashtags LIKE '%Elecciones2015%' or hashtags LIKE '%NormaGalindo%' or hashtags LIKE '%NormaDiputadaFederal%'
+										or hashtags LIKE '%TrabajemosyDecidamosJuntos%') and hashtags <>''");
+			if($hashtags->num_rows()>0)
+			{
+				return $hashtags->result();
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+
+		//Obtener hashtags Dip_locales
+		public function obtener_hashtags_dip_locales()
+		{
+			$hashtags=$this->db->query("SELECT hashtags FROM `twitt` WHERE (
+										hashtags LIKE '%HildaCeballos01%' 
+										or hashtags LIKE '%Distrito1%' 
+										or hashtags LIKE '%BrigadaEmetista%' 
+										or hashtags LIKE '%yadiraturquesa%' 
+										or hashtags LIKE '%NuevaAlianza%'
+										or hashtags LIKE '%turquesa%' 										
+										or hashtags LIKE '%VotaTurquesa%' 
+										or hashtags LIKE '%juventudturquesa%' 
+										or hashtags LIKE '%EligeTurquesa%' 
+										or hashtags LIKE '%VotaNuevaAlianza%' 
+										or hashtags LIKE '%Rangel_G_%' 
+										or hashtags LIKE '%TUPALABRACUENTA%' 
+										or hashtags LIKE '%TuPalabraCuenta %' 
+										or hashtags LIKE '%YoConMemo%'
+										or hashtags LIKE '%Vivi_Ram_A%'
+										or hashtags LIKE '%Trabajarporlafamilia%'
+										or hashtags LIKE '%crispindiputado%'
+										or hashtags LIKE '%TrabajoporTi%'
+										or hashtags LIKE '%TrabajoParaTi%'
+										or hashtags LIKE '%IsisColimaVerde%'
+										or hashtags LIKE '%VamosVerdes%'
+										or hashtags LIKE '%AlmaDelia_D3%'
+										or hashtags LIKE '%AlmaDeliaVotoSeguro%'
+										or hashtags LIKE '%ConAlmaYCorazónPorTi%'
+										or hashtags LIKE '%VotaAlmaDelia%'
+										or hashtags LIKE '%YoSoyAD3%'
+										or hashtags LIKE '%JanethPazPonce%'
+										or hashtags LIKE '%TrabajamosParaTi%'
+										or hashtags LIKE '%DistritoIV%'
+										or hashtags LIKE '%JanethDiputada%'
+										or hashtags LIKE '%JuanitaAndres%'
+										or hashtags LIKE '%ResultadosParaTi%'
+										or hashtags LIKE '%LupeBenavidesF%'
+										or hashtags LIKE '%octaviotintos%'
+										or hashtags LIKE '%HonestamenteTeVoyAServir%'
+										or hashtags LIKE '%YoPropongo%'
+										or hashtags LIKE '%saracernas%'
+										or hashtags LIKE '%TuVozEsMiVoz%'
+										or hashtags LIKE '%DiputadaDistrito7%'
+										or hashtags LIKE '%PorLasCausasDeLaGente%'
+										or hashtags LIKE '%JoelPadilla2012%'
+										or hashtags LIKE '%MeylyPastora%'
+										or hashtags LIKE '%Atrévete%'
+										or hashtags LIKE '%MeylyDiputadaLocal%'
+										or hashtags LIKE '%VIII%'
+										or hashtags LIKE '%hectormlara%'
+										or hashtags LIKE '%DistritoVIII%'
+										or hashtags LIKE '%HM%'
+										or hashtags LIKE '%eusebiomesina%'
+										or hashtags LIKE '%MesinaTena%'
+										or hashtags LIKE '%PintoRgz%'
+										or hashtags LIKE '%BeneficiosParaTodos%'
+										or hashtags LIKE '%Armida_NG%'
+										or hashtags LIKE '%ArmidaDiputada%'
+										or hashtags LIKE '%VotaPRI%'
+										or hashtags LIKE '%martha_sosa1%'
+										or hashtags LIKE '%Sergio_SanchezO%'
+										or hashtags LIKE '%ComoDebeDeSer%'
+										or hashtags LIKE '%Martha_Meza_%'
+										or hashtags LIKE '%VerdeSíCumple%'
+										or hashtags LIKE '%FDiputada%'
+										or hashtags LIKE '%SantiagoCh2Tec%'
+										or hashtags LIKE '%ConSantiatoSí%') and hashtags <>''");
 			if($hashtags->num_rows()>0)
 			{
 				return $hashtags->result();
@@ -1040,17 +988,13 @@
 			}
 		}
 
-		//Obtener cuenta de Comovamoscolima
-		public function obtener_cuenta_comoVamos()
+		public function obtener_ultima_fecha()
 		{
-			$comoVamos = $this->db->query("SELECT max(hora) as hora, fecha, usuario, seguidores, 
-									   siguiendo, tweets from cuentas where fecha 
-									   in (select max(fecha) from cuentas) and 
-									   usuario = 'Comovamoscolima'");
-		
-			if($comoVamos->num_rows()>0)
+			$ultima_fecha = $this->db->query("SELECT max(fecha) as ultima_fecha from cuentas");
+
+			if($ultima_fecha->num_rows()>0)
 			{
-				return $comoVamos->row(); //Con el row solo se obtiene una fila de resultados
+				return $ultima_fecha->row(); //Con el row solo se obtiene una fila de resultados
 			}
 			else
 			{

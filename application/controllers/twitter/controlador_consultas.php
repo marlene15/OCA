@@ -20,8 +20,9 @@ class Controlador_consultas extends CI_Controller {
 
 	public function __construct()
 	{
-		parent::__construct();
-		$this->load->model('twitter/modelo_consultas');
+		parent::__construct();		
+		$this->load->model('twitter/modelo_consultas');		
+		$this->load->model('twitter/modelo_inicio');
 		$this->load->database('twitter');
 		$this->verificar_sesion();
 	}
@@ -39,7 +40,7 @@ class Controlador_consultas extends CI_Controller {
 	{
 		$this->load->library('fechas');
 		//Colocar nuevo formato a la fecha para guardar en la base como date
-		$fecha = $this->input->post('fecha');
+		$fecha = $this->input->post('fecha');	
 		$vtab = $this->input->post('vtab');
 		$fecha_nueva="";
 		if($fecha!=null)
@@ -49,19 +50,22 @@ class Controlador_consultas extends CI_Controller {
 		else{
 			$fecha_nueva='NULL';
 		}
-		$hoy = date('Y-m-d');
 		$ExisteFecha = $this->modelo_consultas->ExisteFecha($fecha_nueva);
 		$existe = 0;
-		if ($ExisteFecha==1) { //Si existe la fecha consultada 
+		if ($ExisteFecha==1) 
+		{ //Si existe la fecha consultada 
 			$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($fecha_nueva); 
 			$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($fecha_nueva);
 			$existe = 1;
 		}
-		else{//Si no existe la fecha consultada se cargan los datos de el día anterior
-			$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($hoy); 
-			$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($hoy); 
+		else
+		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente
+			$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
+			$ultima_fecha = $ultima_fecha->ultima_fecha;
+			$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 
+			$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 			
+			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 			$existe = 2;
-			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($hoy);
 		}
 		
 		$datos = array(
@@ -81,9 +85,57 @@ class Controlador_consultas extends CI_Controller {
 	                "siguiendoj" => $dip2['juan']->siguiendo,
 	                "tweetsj" => $dip2['juan']->tweets,
 	                'fecha' => $fecha,
-	                'vtab' => $vtab,
-	                'existe' => $existe
+	                'existe' => $existe,
+	                'vtab' => $vtab
 	            );
-		$this->load->view('twitter/dip_federales',$datos);
+		$this->load->view('twitter/chars/char_dipFederales',$datos);
+	}
+
+	public function gobernadores()
+	{
+		$this->load->library('fechas');
+		//Colocar nuevo formato a la fecha para guardar en la base como date
+		$fecha = $this->input->post('fecha');	
+		$vtab = $this->input->post('vtab');
+		$fecha_nueva="";
+		if($fecha!=null)
+		{
+			$fecha_nueva=$this->fechas->fecha_dd_mes_aaaa($fecha);
+		}
+		else{
+			$fecha_nueva='NULL';
+		}
+		$ExisteFecha = $this->modelo_consultas->ExisteFecha($fecha_nueva);
+		$existe = 0;
+		if ($ExisteFecha==1) 
+		{ //Si existe la fecha consultada 
+			$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($fecha_nueva); 
+			$existe = 1;
+		}
+		else
+		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente
+			$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
+			$ultima_fecha = $ultima_fecha->ultima_fecha;
+			$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 		
+			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+			$existe = 2;
+		}		
+		$datos = array(
+	                "seguidoresn" => $gobernadores['nacho']->seguidores,
+	                "siguiendon" => $gobernadores['nacho']->siguiendo,
+	                "tweetsn" => $gobernadores['nacho']->tweets,
+	                "seguidoresj" => $gobernadores['jorge']->seguidores,
+	                "siguiendoj" => $gobernadores['jorge']->siguiendo,
+	                "tweetsj" => $gobernadores['jorge']->tweets,
+	                "seguidoresl" => $gobernadores['locho']->seguidores,
+	                "siguiendol" => $gobernadores['locho']->siguiendo,
+	                "tweetsl" => $gobernadores['locho']->tweets,
+	                "seguidoresm" => $gobernadores['martha']->seguidores,
+	                "siguiendom" => $gobernadores['martha']->siguiendo,
+	                "tweetsm" => $gobernadores['martha']->tweets,
+	                'ultima_fecha' => $fecha,
+	                "vtab" => $vtab
+	            );
+		$this->load->view('twitter/chars/char_gobernadores',$datos);
 	}
 }

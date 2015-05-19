@@ -55,14 +55,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </ul>
                           <div class="tab-content" id="myTabContent">
                             <div id="barras1" class="tab-pane fade active in"> 
-                                <div id="chart_div2"></div>                                                             
+                                <div id="chart_div"></div>                                                             
                             </div>
                             <div id="barras2" class="tab-pane fade"> 
-<<<<<<< HEAD:application/views/comoVamos.php
-                                <div id="chart_div2" style="height: 400px;"></div>                            
-=======
-                                <div id="chart_div"></div>                            
->>>>>>> origin/master:application/views/twitter/comoVamos.php
+                                <div id="chart_div2" style="height: 400px;"></div>    
                             </div>
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
@@ -105,7 +101,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         ]
       );  
       var options = {
-<<<<<<< HEAD:application/views/comoVamos.php
         title: '@Comovamoscolima',
         hAxis: {title: "Fecha"},
         seriesType: "bars",
@@ -113,7 +108,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       };
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
       chart.draw(data, options);  
-=======
         title: '',
         hAxis: {
           title: 'Candidatos'
@@ -140,7 +134,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
       chart.draw(view, options);          
->>>>>>> origin/master:application/views/twitter/comoVamos.php
     }    
   </script>
 <!--GRAFICA COMO VAMOS COLIMA POR FACEBOOK-->
@@ -172,9 +165,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                       }]);
       var options = {
         //title: '@oca_face',
-        hAxis: {
-          title: 'Candidatos'
-        },         
+        hAxis: {title: 'Candidatos'},         
         height: 600,
         series: {
           0: {

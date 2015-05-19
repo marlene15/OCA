@@ -40,7 +40,7 @@ class Inicio extends CI_Controller {
 		}
 	}
 
-	//Como vamos Colima
+	//Como vamos Colima general
 	public function comoVamos()
 	{
 		$resultado = $this->modelo_consultas->obtener_cuenta_comoVamos();		

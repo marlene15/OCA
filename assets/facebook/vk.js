@@ -129,4 +129,52 @@ $(document).ready(function(){
 		},500)
 		$('#chart_div2').width('100%');	
 	});	
+	$('[data-toggle=tab][href=#barras3]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization3();
+		},500)
+		$('#chart_div3').width('100%');	
+	});		
+	$('[data-toggle=tab][href=#barras4]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization4();
+		},500)
+		$('#chart_div4').width('100%');	
+	});	
+	$('[data-toggle=tab][href=#barras5]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization5();
+		},500)
+		$('#chart_div5').width('100%');	
+	});		
+	$('[data-toggle=tab][href=#barras6]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization6();
+		},500)
+		$('#chart_div6').width('100%');	
+	});		
+	$('[data-toggle=tab][href=#barras7]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization7();
+		},500)
+		$('#chart_div7').width('100%');	
+	});			
+	$('[data-toggle=tab][href=#barras8]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization8();
+		},500)
+		$('#chart_div8').width('100%');	
+	});
+	$('[data-toggle=tab][href=#barras9]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization9();
+		},500)
+		$('#chart_div9').width('100%');	
+	});					
+	$('[data-toggle=tab][href=#barras10]').on('click',function(){
+		setTimeout(function(){
+			drawVisualization10();
+		},500)
+		$('#chart_div10').width('100%');	
+	});					
 });

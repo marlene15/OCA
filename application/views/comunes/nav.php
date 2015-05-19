@@ -106,7 +106,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/valoracion_gobernadores');?>"> 
                                         <span class="title">Gobernador</span>
                                         <span class="selected"></span>
                                     </a>
@@ -221,6 +221,7 @@
                 </li>
                 <li >
                     <a href="<?php echo site_url('twitter/controlador_inicio/comoVamos');?>">
+                    <a href="<?php echo site_url('facebook/controlador_inicio/comoVamos');?>">
                         <i class="icon-indent-left"></i> 
                         <span class="title">¿Cómo vamos Colima?</span>
                         <span class="selected"></span>

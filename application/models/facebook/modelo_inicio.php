@@ -2549,8 +2549,7 @@ class Modelo_inicio extends CI_Model
 										 NombreCandidato = 'Ignacio Peralta'"
 										);
 			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
-										 NombreCandidato = 'Ignacio Peralta
-'"
+										 NombreCandidato = 'Ignacio Peralta'"
 										);
 			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
 										 NombreCandidato = 'Ignacio Peralta'"
@@ -2572,15 +2571,18 @@ class Modelo_inicio extends CI_Model
 		//Obtener cuenta de Comovamoscolima
 		public function obtener_cuenta_comoVamos()
 		{
-			$comoVamost = $this->db->query("select Megusta, PersonasHablan from partido where (Cargo='Sociedad') and Partido='Como Vamos Colima'");
-		
-			if($comoVamost->num_rows()>0)
+			$comoVamos2 = $this->db->query("select Megusta, PersonasHablan, Fecha from partido where (Cargo='Sociedad') and Partido='Como Vamos Colima' ORDER BY Fecha ASC");
+
+			if($comoVamos2->num_rows()>0)
 			{
-				return $comoVamost->row(); //Con el row solo se obtiene una fila de resultados
+				$a2 = array(
+	                "comoVamos2" => $comoVamos2->result()
+	            );
+	            return $a2;
 			}
 			else
 			{
 				return FALSE;
 			}
-		}				
+		}					
 }	

@@ -512,16 +512,5 @@ class Controlador_inicio extends CI_Controller {
 					  'jorgeN' => $jorge['neutros']
 					  );
 		$this->load->view('facebook/valoracionGobernadores',$datos);
-	}	
-	//Como vamos Colima
-	public function comoVamos()
-	{
-		$comoVamost = $this->modelo_inicio->obtener_cuenta_comoVamos();
-
-		$datos = array(
-						'megustac1' => $comoVamost->Megusta, 
-						'seguidoresc1' => $comoVamost->PersonasHablan)
-						;
-		$this->load->view('twitter/comoVamos',$datos);
-	}	
+	}		
 }

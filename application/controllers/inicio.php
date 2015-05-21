@@ -25,7 +25,6 @@ class Inicio extends CI_Controller {
 		$this->load->database('twitter');
 		$this->verificar_sesion();
 	}
-
 	public function index()
 	{
 		$this->load->view('inicio');
@@ -40,12 +39,24 @@ class Inicio extends CI_Controller {
 		}
 	}
 
+	public function otra(){
+		$this->load->database('facebook');
+		$this->load->model('facebook/modelo_inicio');
+		return($this->modelo_inicio->obtener_cuenta_comoVamos());
+	}
 	//Como vamos Colima general
 	public function comoVamos()
 	{
-		$resultado = $this->modelo_consultas->obtener_cuenta_comoVamos();		
+		$resultado = $this->modelo_consultas->obtener_cuenta_comoVamos();	
+		$resultado2 = $this->otra();
+		// $datosF = array(
+		// 				"Fecha" => $resultado2['comoVamos2'][0]->Fecha,
+		// 				"Megusta" => $resultado2['comoVamos2'][0]->Megusta,		
+		// 				"PersonasHablan" => $resultado2['comoVamos2'][0]->PersonasHablan						
+		// 	);
 		$datos = array(
-						"comoVamos" => $resultado['comoVamos']
+						"comoVamos" => $resultado['comoVamos'],
+						"comoVamos2" => $resultado2['comoVamos2']
 	            	  );
 		$this->load->view('comoVamos',$datos);
 	}

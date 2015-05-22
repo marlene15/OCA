@@ -513,4 +513,13 @@ class Controlador_inicio extends CI_Controller {
 					  );
 		$this->load->view('facebook/valoracionGobernadores',$datos);
 	}		
+	//Rumbo al 7 de Junio
+	public function rumbo()
+	{
+		$resultado = $this->modelo_inicio->obtener_cuenta_rumboal7dejunio();	
+		$datos = array(
+						"rumbo" => $resultado['rumbo']
+	            	  );
+		$this->load->view('facebook/rumbo',$datos);
+	}	
 }

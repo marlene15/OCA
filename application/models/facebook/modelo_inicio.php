@@ -2584,5 +2584,22 @@ class Modelo_inicio extends CI_Model
 			{
 				return FALSE;
 			}
-		}					
+		}		
+		//Obtener cuenta de Comovamoscolima
+		public function obtener_cuenta_rumboal7dejunio()
+		{
+			$rumbo = $this->db->query("select Megusta, PersonasHablan, Fecha from partido where (Cargo='Sociedad') and Partido='Rumbo al 7 de junio' ORDER BY Fecha ASC");
+
+			if($rumbo->num_rows()>0)
+			{
+				$a2 = array(
+	                "rumbo" => $rumbo->result()
+	            );
+	            return $a2;
+			}
+			else
+			{
+				return FALSE;
+			}
+		}						
 }	

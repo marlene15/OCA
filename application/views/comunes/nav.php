@@ -208,7 +208,7 @@
                     </ul>
                 </li>
                 <li >
-                    <a href="#">
+                        <a href="<?php echo site_url('facebook/controlador_inicio/rumbo');?>">
                         <i class="icon-indent-left"></i> 
                         <span class="title">Rumbo al 7 de Junio</span>
                         <span class="selected"></span>

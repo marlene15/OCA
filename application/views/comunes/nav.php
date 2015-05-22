@@ -227,7 +227,7 @@
                     </a>
                 </li>
                 <li >
-                    <a href="<?php echo site_url('twitter/controlador_inicio/busqueda_tweets');?>">
+                    <a href="<?php echo site_url('inicio/mineria_deDatos');?>">
                         <i class="icon-eye-open"></i> 
                         <span class="title">Minería de datos</span>
                         <span class="selected"></span>

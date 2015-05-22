@@ -60,6 +60,11 @@ class Inicio extends CI_Controller {
 	            	  );
 		$this->load->view('comoVamos',$datos);
 	}
+	//Para agregar los datos de minería, datos que no verán los usuarios comunes
+	public function mineria_deDatos()
+	{
+		$this->load->view('mineria_deDatos');	
+	}
 }
 
 /* End of file welcome.php */

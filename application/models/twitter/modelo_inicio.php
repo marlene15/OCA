@@ -871,7 +871,6 @@
 										or hashtags LIKE '%VIII%'
 										or hashtags LIKE '%hectormlara%'
 										or hashtags LIKE '%DistritoVIII%'
-										or hashtags LIKE '%HM%'
 										or hashtags LIKE '%eusebiomesina%'
 										or hashtags LIKE '%MesinaTena%'
 										or hashtags LIKE '%PintoRgz%'
@@ -887,6 +886,74 @@
 										or hashtags LIKE '%FDiputada%'
 										or hashtags LIKE '%SantiagoCh2Tec%'
 										or hashtags LIKE '%ConSantiatoSí%') and hashtags <>''");
+			if($hashtags->num_rows()>0)
+			{
+				return $hashtags->result();
+			}
+			else
+			{
+				return FALSE;
+			}
+		}
+
+		//Obtener hashtags Dip_locales
+		public function obtener_hashtags_alcaldes()
+		{
+			$hashtags=$this->db->query("SELECT hashtags FROM `twitt` WHERE (
+										hashtags LIKE '%DipEsperanzaA%' 
+										or hashtags LIKE '%OVPresidente%' 
+										or hashtags LIKE '%renovaciondinamica%'
+										or hashtags LIKE '%vamoscontodo%'
+										or hashtags LIKE '%RenovarladinamicadelaCiudad%' 										
+										or hashtags LIKE '%yoconoscarsi%' 
+										or hashtags LIKE '%hectorinsua%' 
+										or hashtags LIKE '%ElCambioQueQuiereLaGente%' 
+										or hashtags LIKE '%VotaHectorInsua%' 
+										or hashtags LIKE '%VotaPan%' 
+										or hashtags LIKE '%VotaUtil%' 
+										or hashtags LIKE '%meabaroa%'
+										or hashtags LIKE '%ImpactoUrbano%'
+										or hashtags LIKE '%ImpactoEconómico%'
+										or hashtags LIKE '%CeroCorrucpión%'
+										or hashtags LIKE '%ImpactoRural%'
+										or hashtags LIKE '%ImpactoSocial%'
+										or hashtags LIKE '%GobiernoCiudadano%'
+										or hashtags LIKE '%MovimientoCiudadano%'
+										or hashtags LIKE '%CuentasClaras%'
+										or hashtags LIKE '%EsmePresidenta%'
+										or hashtags LIKE '%EsNuestroMomento%'
+										or hashtags LIKE '%YoMeMuevo%'
+										or hashtags LIKE '%EsmeraldaSíCumple%'
+										or hashtags LIKE '%EsmeraldaEsGarantía%'
+										or hashtags LIKE '%EsmeraldaPresidenta%'
+										or hashtags LIKE '%salo_salazar1%'
+										or hashtags LIKE '%ResultadosParaComala%'
+										or hashtags LIKE '%ResultadosParaTi%'
+										or hashtags LIKE '%MarioCarrillo01%'
+										or hashtags LIKE '%HagámosloNosotros%'
+										or hashtags LIKE '%BlancaPRI2015%'
+										or hashtags LIKE '%TeMerecesUnMejorCuauhtémoc%'
+										or hashtags LIKE '%SeMerecenUnMejorCuauhtémoc%'
+										or hashtags LIKE '%UrsuaBlanca%'
+										or hashtags LIKE '%VotoConsciente%'
+										or hashtags LIKE '%SiCambioYoCambiaMéxico%'
+										or hashtags LIKE '%pasalavoz%'
+										or hashtags LIKE '%hiram1447%'
+										or hashtags LIKE '%PicoZepeda%'
+										or hashtags LIKE '%PicoPresidente%'
+										or hashtags LIKE '%TeQuieroManzanilloMejor%'
+										or hashtags LIKE '%BarajasYescas%'
+										or hashtags LIKE '%GenteNuevaTrabajaMejor%'
+										or hashtags LIKE '%romo_ochoa%'
+										or hashtags LIKE '%DipManuelPR%'
+										or hashtags LIKE '%DipArturoGarcia%'
+										or hashtags LIKE '%OswyDelgado%'
+										or hashtags LIKE '%CercaDeTiGanaremos%'
+										or hashtags LIKE '%OswyDelgado%'
+										or hashtags LIKE '%CercaDeTi%'
+										or hashtags LIKE '%Yulenny_Cortes%'
+										or hashtags LIKE '%ConYulennyTúGanas%'
+										or hashtags LIKE '%JaimeSoteloG%') and hashtags <>''");
 			if($hashtags->num_rows()>0)
 			{
 				return $hashtags->result();

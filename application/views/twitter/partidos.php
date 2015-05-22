@@ -413,7 +413,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
 
     ////////////////////////////////////////PAN
-    google.setOnLoadCallback(drawChart2); 
     function drawChart2() {
       var data6 = google.visualization.arrayToDataTable(
         [
@@ -454,7 +453,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
 
     ////////////////////////////////////////PRD
-    google.setOnLoadCallback(drawChart3); 
     function drawChart3() {
       var data7 = google.visualization.arrayToDataTable(
         [
@@ -476,7 +474,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
 
     ////////////////////////////////////////MOVIMIENTO CIUDADANO
-    google.setOnLoadCallback(drawChart4); 
     function drawChart4() {
       var data9 = google.visualization.arrayToDataTable(
         [
@@ -498,7 +495,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
 
     ////////////////////////////////////////VERDE
-    google.setOnLoadCallback(drawChart5); 
     function drawChart5() {
       var data10 = google.visualization.arrayToDataTable(
         [
@@ -520,7 +516,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
 
     ////////////////////////////////////////PT
-    google.setOnLoadCallback(drawChart6); 
     function drawChart6() {
       var data11 = google.visualization.arrayToDataTable(
         [
@@ -542,7 +537,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
 
     ////////////////////////////////////////MORENA
-    google.setOnLoadCallback(drawChart7); 
     function drawChart7() {
       var data12 = google.visualization.arrayToDataTable(
         [

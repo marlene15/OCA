@@ -15,11 +15,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
   <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>  
+  <!--Para poder usar el calendario, importar las librerias-->
+  <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
   <!--Para usar la nube-->
   <script src="<?php echo base_url()?>assets/twitter/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/twitter/d3/d3.layout.cloud.js"></script>
 </head>
-
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
@@ -61,91 +62,496 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div id="dashboard">
                   <center>
                     <div class="portlet-body form well">
+                      <div id="alert"></div> 
+                      <div id="alert2"></div> 
                       <!--Código para el tab de pestañas-->   
                       <div class="bs-example bs-example-tabs">
                         <ul class="nav nav-tabs" id="myTab">
                           <li class="active"><a data-toggle="tab" href="#barras1">Distrito 1</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras2">Distrito 2</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras3">Distrito 3</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras4">Distrito 4</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras5">Distrito 5</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras6">Distrito 6</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras7">Distrito 7</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras8">Distrito 8</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras9">Distrito 9</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras10">Distrito 10</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras11">Distrito 11</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras12">Distrito 12</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras13">Distrito 13</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras14">Distrito 14</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras15">Distrito 15</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras16">Distrito 16</a></li> 
-                          <li class=""><a data-toggle="tab" href="#nube" onclick="nube();">Nube de Palabras</a></li>                         
+                          <li><a data-toggle="tab" href="#barras2">Distrito 2</a></li>
+                          <li><a data-toggle="tab" href="#barras3">Distrito 3</a></li>
+                          <li><a data-toggle="tab" href="#barras4">Distrito 4</a></li>
+                          <li><a data-toggle="tab" href="#barras5">Distrito 5</a></li>
+                          <li><a data-toggle="tab" href="#barras6">Distrito 6</a></li>
+                          <li><a data-toggle="tab" href="#barras7">Distrito 7</a></li>
+                          <li><a data-toggle="tab" href="#barras8">Distrito 8</a></li>
+                          <li><a data-toggle="tab" href="#barras9">Distrito 9</a></li>
+                          <li><a data-toggle="tab" href="#barras10">Distrito 10</a></li>
+                          <li><a data-toggle="tab" href="#barras11">Distrito 11</a></li>
+                          <li><a data-toggle="tab" href="#barras12">Distrito 12</a></li>
+                          <li><a data-toggle="tab" href="#barras13">Distrito 13</a></li>
+                          <li><a data-toggle="tab" href="#barras14">Distrito 14</a></li>
+                          <li><a data-toggle="tab" href="#barras15">Distrito 15</a></li>
+                          <li><a data-toggle="tab" href="#barras16">Distrito 16</a></li> 
+                          <li><a data-toggle="tab" href="#nube" onclick="nube();">Nube de Palabras</a></li>                         
                         </ul>
                           <div class="tab-content" id="tabs">
 
                             <div id="barras1" class="tab-pane fade active in"> 
-                                <div id="chart_div"></div>                            
+                                <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab1" value="1">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div"></div>  
+                                    <div id="con"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras2" class="tab-pane fade">
-                              <div id="chart_div2"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha2">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab2" value="2">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta2">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div2"></div>  
+                                    <div id="con2"></div>                            
+                                  </div>
+                                </div>
+                              </div>
+
                             </div>
 
                             <div id="barras3" class="tab-pane fade">
-                              <div id="chart_div3"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha3">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab3" value="3">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta3">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div3"></div>  
+                                    <div id="con3"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras4" class="tab-pane fade">
-                              <div id="chart_div4"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha4">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab4" value="4">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta4">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div4"></div>  
+                                    <div id="con4"></div>                            
+                                  </div>
+                                </div>
+                              </div>
+
                             </div>
 
                             <div id="barras5" class="tab-pane fade">
-                              <div id="chart_div5"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha5">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab5" value="5">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta5">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div5"></div>  
+                                    <div id="con5"></div>                            
+                                  </div>
+                                </div>
+                              </div>
+
                             </div>
 
                             <div id="barras6" class="tab-pane fade">
-                              <div id="chart_div6"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha6">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab6" value="6">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta6">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div6"></div>  
+                                    <div id="con6"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras7" class="tab-pane fade">
-                              <div id="chart_div7"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha7">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab7" value="7">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta7">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div7"></div>  
+                                    <div id="con7"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras8" class="tab-pane fade">
-                              <div id="chart_div8"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha8">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab8" value="8">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta8">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div8"></div>  
+                                    <div id="con8"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras9" class="tab-pane fade">
-                              <div id="chart_div9"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha9">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab9" value="9">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta9">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div9"></div>  
+                                    <div id="con9"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras10" class="tab-pane fade">
-                              <div id="chart_div10"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha10">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab10" value="10">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta10">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div10"></div>  
+                                    <div id="con10"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras11" class="tab-pane fade">
-                              <div id="chart_div11"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha11">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab11" value="11">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta11">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div11"></div>  
+                                    <div id="con11"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras12" class="tab-pane fade">
-                              <div id="chart_div12"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha12">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab12" value="12">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta12">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div12"></div>  
+                                    <div id="con12"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras13" class="tab-pane fade">
-                              <div id="chart_div13"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha13">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab13" value="13">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta13">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div13"></div>  
+                                    <div id="con13"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras14" class="tab-pane fade">
-                              <div id="chart_div14"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha14">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab14" value="14">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta14">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div14"></div>  
+                                    <div id="con14"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras15" class="tab-pane fade">
-                              <div id="chart_div15"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha15">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab15" value="15">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta15">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div15"></div>  
+                                    <div id="con15"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="barras16" class="tab-pane fade">
-                              <div id="chart_div16"></div>                                   
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">                                    
+                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
+                                      <br/><br/>
+                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha16">
+                                        <span class="add-on"><i class="icon-remove"></i></span>
+                                        <span class="add-on"><i class="icon-th"></i></span>
+                                      </div>                                
+                                      <div style="float:left">                                 
+                                        <input type="hidden" name="vtab" id="vtab16" value="16">
+                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta16">Consultar</button>
+                                      </div>                                    
+                                  </div>
+                                </div>
+                              </div>                                
+
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div id="chart_div16"></div>  
+                                    <div id="con16"></div>                            
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                             <div id="nube" class="tab-pane fade ">  
@@ -172,21 +578,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     </div>
 
   <?php $this->load->view('comunes/footer'); ?> 
+  <!--Para poder usar el calendario, importar las librerias-->
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>  
 </body>
 
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
     google.setOnLoadCallback(drawChart);
-
     function drawChart() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');      
       data.addRows([
-        ['PRI\nHilda Ceballos de Moreno', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>]
+        ['PRI Hilda Ceballos de Moreno', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>],
+        ['NUEVA ALIANZA Yadira Carrillo Montero', <?php echo $seguidores_yadira ?>, <?php echo $siguiendo_yadira ?>, <?php echo $tweets_yadira ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -246,8 +654,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['NUEVA ALIANZA Guillermo Rangel Lozano', <?php echo $seguidores_rangel ?>, <?php echo $siguiendo_rangel ?>, <?php echo $tweets_rangel ?>],
         ['VERDE Viviana Ramírez Anguiano', <?php echo $seguidores_viviana ?>, <?php echo $siguiendo_viviana ?>, <?php echo $tweets_viviana ?>]
@@ -309,11 +716,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
-      data.addRows([
+      data.addColumn('number', 'Tweets');     
+      data.addRows([        
         ['PAN Crispín Guerra', <?php echo $seguidores_crispin ?>, <?php echo $siguiendo_crispin ?>, <?php echo $tweets_crispin ?>],
-        ['VERDE Isis Villaseñor Silva', <?php echo $seguidores_isis ?>, <?php echo $siguiendo_isis ?>, <?php echo $tweets_isis ?>]
+        ['VERDE Isis Villaseñor Silva', <?php echo $seguidores_isis ?>, <?php echo $siguiendo_isis ?>, <?php echo $tweets_isis ?>],
+        ['PRI Alma Delia Arreola Cruz', <?php echo $seguidores_alma ?>, <?php echo $siguiendo_alma ?>, <?php echo $tweets_alma ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -372,8 +779,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PAN Janeth Paz Ponce', <?php echo $seguidores_janeth ?>, <?php echo $siguiendo_janeth ?>, <?php echo $tweets_janeth ?>],
         ['PRI Juana Andrés Rivera', <?php echo $seguidores_juanita ?>, <?php echo $siguiendo_juanita ?>, <?php echo $tweets_juanita ?>]
@@ -435,8 +841,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PRI José Guadalupe Benavides Florián', <?php echo $seguidores_lupe ?>, <?php echo $siguiendo_lupe ?>, <?php echo $tweets_lupe ?>]
       ]);
@@ -484,7 +889,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           maxValue: 100
         }
       };  
-
       var chart5 = new google.visualization.ComboChart(document.getElementById('chart_div5'));
       chart5.draw(view, options);          
     }
@@ -497,8 +901,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PRI Octavio Tintos Trujillo', <?php echo $seguidores_octavio ?>, <?php echo $siguiendo_octavio ?>, <?php echo $tweets_octavio ?>]
       ]);
@@ -559,8 +962,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PRD Sara Elizabeth Cernas Verduzco', <?php echo $seguidores_sara ?>, <?php echo $siguiendo_sara ?>, <?php echo $tweets_sara ?>],
         ['PT Joel Padilla Peña', <?php echo $seguidores_joel ?>, <?php echo $siguiendo_joel ?>, <?php echo $tweets_joel ?>]
@@ -622,8 +1024,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PAN Meyly Beltrán Rolón', <?php echo $seguidores_meyly ?>, <?php echo $siguiendo_meyly ?>, <?php echo $tweets_meyly ?>],
         ['PRI Héctor Magaña Lara', <?php echo $seguidores_hector ?>, <?php echo $siguiendo_hector ?>, <?php echo $tweets_hector ?>]
@@ -687,8 +1088,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PRI Eusebio Mesina Reyes', <?php echo $seguidores_eusebio ?>, <?php echo $siguiendo_eusebio ?>, <?php echo $tweets_eusebio ?>]
       ]);
@@ -751,8 +1151,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PAN Adriana Lucía Mesina Tena', <?php echo $seguidores_mesina ?>, <?php echo $siguiendo_mesina ?>, <?php echo $tweets_mesina ?>],
         ['PRI Juan Carlos Pinto Rodríguez', <?php echo $seguidores_pinto ?>, <?php echo $siguiendo_pinto ?>, <?php echo $tweets_pinto ?>]
@@ -815,8 +1214,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PRI Armida Núñez García', <?php echo $seguidores_armida ?>, <?php echo $siguiendo_armida ?>, <?php echo $tweets_armida ?>]
       ]);
@@ -877,9 +1275,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
+        ['PAN Martha Leticia Sosa Govea', <?php echo $seguidores_marthaS ?>, <?php echo $siguiendo_marthaS ?>, <?php echo $tweets_marthaS ?>],
         ['PRD Ana María Sánchez Landa', <?php echo $seguidores_amary ?>, <?php echo $siguiendo_amary ?>, <?php echo $tweets_amary ?>]
       ]);
 
@@ -941,7 +1339,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
       data.addRows([
         ['PRI Sergio Sánchez Ochoa', <?php echo $seguidores_sergio ?>, <?php echo $siguiendo_sergio ?>, <?php echo $tweets_sergio ?>]
       ]);
@@ -1003,7 +1400,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
       data.addRows([
         ['VERDE Martha Alicia Meza Oregon', <?php echo $seguidores_martha ?>, <?php echo $siguiendo_martha ?>, <?php echo $tweets_martha ?>]
       ]);
@@ -1066,8 +1462,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PRI Felícitas Peña Cisneros', <?php echo $seguidores_felicitas ?>, <?php echo $siguiendo_felicitas ?>, <?php echo $tweets_felicitas ?>]
       ]);
@@ -1130,8 +1525,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('string', 'Candidatos');
       data.addColumn('number', 'Seguidores');
       data.addColumn('number', 'Siguiendo');
-      data.addColumn('number', 'Tweets');    
-      <?php echo "Hilda: ".$seguidoresh ?>    
+      data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PRI Santiago Chávez Chávez', <?php echo $seguidores_santiago ?>, <?php echo $siguiendo_santiago ?>, <?php echo $tweets_santiago ?>]
       ]);
@@ -1185,83 +1579,310 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
   </script>
 
+ 
+  <!--Para usar el calendario-->
   <script type="text/javascript">
-    function nube()
-    {
-      //Limpiar div
-      var d = document.getElementById("contenido_nube");
-      while (d.hasChildNodes())
-      {
-        d.removeChild(d.firstChild);
-      }
+    $('.form_date').datetimepicker({
+          language:  'es',
+          weekStart: 1,
+          todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      minView: 2,
+      forceParse: 0
+      });
+  </script> 
 
-      <?php //Llenamos el array con las coordenadas        
-            $aux=""; 
-            for ($i=0; $i<count($hashtags); $i++)
-            {
-                $porciones = explode(" ", $hashtags[$i]->hashtags);
-                for ($j=0; $j<count($porciones); $j++)
-              {
-                if ($porciones[$j] != "") 
-                {
-                  $aux = $aux." ".$porciones[$j]; 
-                };
-                
-              };                    
-            };    
-
-          $test = preg_split('/[\s,]+/', $aux); //Coloca los hashtags en una sola línea, el separador son los espacios
-          $palabras_contadas = array_count_values($test); //Cuenta la cantidad de veces que se repite una palabra
-
-          $a2 = array();
-          foreach ($palabras_contadas as $key => $value) { //Llena el array para convertirlo a json
-              if($key != "")
-              {
-                $a2[] = array(
-                      "text" => $key,
-                      "size" => $value*15
-                );
-              }       
+  <script type="text/javascript">
+    $(document).ready(function(){                                        
+      $("#consulta").click(function(event) {
+        var fecha = document.getElementById("fecha").value;  
+        var vtab = document.getElementById("vtab1").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
         };
-        $palabras_JSON = json_encode($a2); //Convertimos el array a Json para poderlo colocar en la nube de palabras                   
-        ?>
-      var fill = d3.scale.category20();
-      d3.layout.cloud().size([1000, 400])
-          .words(<?php echo $palabras_JSON ?>)
-          .padding(3)
-          .rotate(function() { return ~~(Math.random() * 2) * 90; })
-          .font("Impact")
-          .fontSize(function(d) { return d.size; })
-          .on("end", draw)
-          .start();
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con').html(html);   
+          }
+        });            
+      }); 
 
-      function draw(words) 
-      {
-          d3.select("#contenido_nube").append("svg")
-              .attr("viewBox", "-15 0 " + 1000 + " " + 500 )
-                .attr("preserveAspectRatio", "xMidYMid meet")
-            .append("g")
-              .attr("transform", "translate(472,250)")
-            .selectAll("text")
-              .data(words)
-            .enter().append("text")
-              .style("font-size", function(d) { return d.size + "px"; })
-              .style("font-family", "Impact")
-              .style("fill", function(d, i) { return fill(i); })
-              .attr("text-anchor", "middle")
-              .attr("transform", function(d) {
-                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-              })
-              .text(function(d) { return d.text; });
-      }
-    }
-    //Sirve para hacer la nube de palabars responsiva
-    var aspect = 1000 / 400,
-      chart = $("#contenido_nube");
-    $(window).on("resize", function() {
-        var targetWidth = chart.parent().width();
-        chart.attr("width", targetWidth);
-        chart.attr("height", targetWidth / aspect);
+      $("#consulta2").click(function(event) {
+        var fecha = document.getElementById("fecha2").value; 
+        var vtab = document.getElementById("vtab2").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con2').html(html);
+          }
+        });
+      });
+
+      $("#consulta3").click(function(event) {
+        var fecha = document.getElementById("fecha3").value; 
+        var vtab = document.getElementById("vtab3").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con3').html(html);
+          }
+        });
+      });
+
+      $("#consulta4").click(function(event) {
+        var fecha = document.getElementById("fecha4").value; 
+        var vtab = document.getElementById("vtab4").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con4').html(html);
+          }
+        });
+      });
+
+      $("#consulta5").click(function(event) {
+        var fecha = document.getElementById("fecha5").value; 
+        var vtab = document.getElementById("vtab5").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con5').html(html);
+          }
+        });
+      });
+
+      $("#consulta6").click(function(event) {
+        var fecha = document.getElementById("fecha6").value; 
+        var vtab = document.getElementById("vtab6").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con6').html(html);
+          }
+        });
+      });
+
+      $("#consulta7").click(function(event) {
+        var fecha = document.getElementById("fecha7").value; 
+        var vtab = document.getElementById("vtab7").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con7').html(html);
+          }
+        });
+      });
+
+      $("#consulta8").click(function(event) {
+        var fecha = document.getElementById("fecha8").value; 
+        var vtab = document.getElementById("vtab8").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con8').html(html);
+          }
+        });
+      });
+
+      $("#consulta9").click(function(event) {
+        var fecha = document.getElementById("fecha9").value; 
+        var vtab = document.getElementById("vtab9").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con9').html(html);
+          }
+        });
+      });
+
+      $("#consulta10").click(function(event) {
+        var fecha = document.getElementById("fecha10").value; 
+        var vtab = document.getElementById("vtab10").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con10').html(html);
+          }
+        });
+      });
+
+      $("#consulta11").click(function(event) {
+        var fecha = document.getElementById("fecha11").value; 
+        var vtab = document.getElementById("vtab11").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con11').html(html);
+          }
+        });
+      });
+
+      $("#consulta12").click(function(event) {
+        var fecha = document.getElementById("fecha12").value; 
+        var vtab = document.getElementById("vtab12").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con12').html(html);
+          }
+        });
+      });
+
+      $("#consulta13").click(function(event) {
+        var fecha = document.getElementById("fecha13").value; 
+        var vtab = document.getElementById("vtab13").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con13').html(html);
+          }
+        });
+      });
+
+      $("#consulta14").click(function(event) {
+        var fecha = document.getElementById("fecha14").value; 
+        var vtab = document.getElementById("vtab14").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con14').html(html);
+          }
+        });
+      });
+
+      $("#consulta15").click(function(event) {
+        var fecha = document.getElementById("fecha15").value; 
+        var vtab = document.getElementById("vtab15").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con15').html(html);
+          }
+        });
+      });
+
+      $("#consulta16").click(function(event) {
+        var fecha = document.getElementById("fecha16").value; 
+        var vtab = document.getElementById("vtab16").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con16').html(html);
+          }
+        });
+      });
     });
   </script>
 

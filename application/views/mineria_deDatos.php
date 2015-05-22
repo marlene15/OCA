@@ -18,7 +18,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <script src="<?= base_url();?>assets/twitter/raphael/raphael-min.js"></script>
     <script src="<?= base_url();?>assets/twitter/morris/morris.min.js"></script>
 </head>
-<body class="page-header-fixed page-quick-sidebar-over-content">
+<body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
     <div class="page-container">
@@ -26,11 +26,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         <div class="page-content">
             <div class="container-fluid"> 
                 <div class="row-fluid">
-                    <div class="span12">
-                        <h3 class="page-title">
+                    <div class="span12" id="encabezado">
+                        <h3 class="page-title" id="titulo">
                             Minería de Datos
                         </h3>
-                        <ul class="breadcrumb">
+                        <ul class="breadcrumb" id="ul_menu">
                           <li>
                                 <i class="icon-home"></i>
                                 <a href="<?php echo site_url('inicio'); ?>">Home</a> 

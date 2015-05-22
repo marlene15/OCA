@@ -13,8 +13,18 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <head>
 	<title>Inicio</title> 
 	<?php $this->load->view('comunes/header'); ?>
+    <style type="text/css">     
+        #titulo_proyecto{
+          font-family: 'Museo';
+          font-size: 40px;
+        }
+        #titulo_proyecto2{
+          font-family: 'Museo';
+          font-size: 80px;
+        }
+    </style>
 </head>
-<body class="page-header-fixed">
+<body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
 
@@ -22,26 +32,39 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <div class="page-container">
         <?php $this->load->view('comunes/nav'); ?>
         <div class="page-content">
-            <div class="container-fluid">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3 class="page-title">
-                            Principal <small>Contenido General</small>
-                        </h3>
-                        <ul class="breadcrumb">
-                            <li>
-                                <i class="icon-home"></i>
-                                <a href="<?php echo site_url('inicio') ?>">Home</a> 
-                                <i class="icon-angle-right"></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="container-fluid">                
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
-                    <div class="portlet-body form well">
-                        <label>Principal</label>
-                    </div>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <center>
+                                <h3 class="page-title">
+                                    Colocar el Logo
+                                </h3>
+                            </center>                            
+                        </div>
+                        <div class="span6">
+                            <center>
+                                <h3 class="page-title" id="titulo_proyecto">
+                                    Observatorio social media Elecciones Colima 2015
+                                </h3>
+                                <br/><br/>
+                                <h1 class="page-title" id="titulo_proyecto2">
+                                    OCA
+                                </h1>
+                            </center>
+                        </div>
+                    </div>  
+                    <br/><br/>
+                    <div class="row-fluid">                        
+                        <div class="span12">
+                            <center>
+                                <h3 class="page-title" id="titulo_proyecto">
+                                    Un onservatorio
+                                </h3>
+                            </center>
+                        </div>
+                    </div>                   
                 </div>              
             </div>
         </div>

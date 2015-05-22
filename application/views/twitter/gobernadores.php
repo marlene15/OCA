@@ -21,8 +21,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script> 
     <!--Para poder usar el calendario, importar las librerias-->
     <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <style type="text/css">		
+	    #myTab{
+	      margin-top: -38px;
+	    }
+	</style>
  </head>	
-<body class="page-header-fixed">
+<body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
 
@@ -32,11 +37,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row-fluid">
-                    <div class="span12">
-                        <h3 class="page-title">
+                    <div class="span12" id="encabezado">
+                        <h3 class="page-title" id="titulo">
                             Candidatos a Gobernador <small>Actividad en Twitter</small>
                         </h3>
-                        <ul class="breadcrumb">
+                        <ul class="breadcrumb" id="ul_menu">
                         	<li>
                                 <i class="icon-home"></i>
                                 <a href="<?php echo site_url('inicio'); ?>">Home</a> 
@@ -75,9 +80,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 		                            <div class="container-fluid">
 		                            	<div class="row-fluid">
 		                                  <div class="span12">                                    
-		                                      <label class="control-label">Fecha de consulta: </label>
+		                                      <label class="control-label">Fecha a consulta: </label>
 		                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-		                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
+		                                        <input class="form-control" size="10" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
 		                                        <span class="add-on"><i class="icon-remove"></i></span>
 		                                        <span class="add-on"><i class="icon-th"></i></span>
 		                                      </div>                                
@@ -92,7 +97,19 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 		                            <div class="container-fluid">
 		                                <div class="row-fluid">
 		                                  <div class="span12">  
-		                                    <div id="chart_div"></div>  
+		                                    <div class="span8" id="chart_div" style="height: 300px;"></div> 
+		                                    <div class="span3">                                 
+					                                      <label class="control-label">Fecha a consulta: </label>
+					                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+					                                        <input class="form-control" size="20" style="width:150px" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
+					                                        <span class="add-on"><i class="icon-remove"></i></span>
+					                                        <span class="add-on"><i class="icon-th"></i></span>
+					                                      </div>                                
+					                                      <div style="float:left">                                 
+					                                        <input type="hidden" name="vtab" id="vtab1" value="1">
+					                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+					                                      </div>  
+		                                    </div> 
 		                                    <div id="con"></div>                            
 		                                  </div>
 		                                </div>
@@ -139,6 +156,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	    });
 	</script>	
 
+	
+
 	<script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});    
     google.setOnLoadCallback(drawChart);
@@ -175,10 +194,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
+      	title : '<?php echo $ultima_fecha ?>',
         hAxis: {
           title: 'Candidatos'
         },         
-        height: 600,
+        height: 300,
         series: {
           0: {
             type: 'bars',
@@ -194,7 +214,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+        	title: 'Cantidad'
         }
       };  
 

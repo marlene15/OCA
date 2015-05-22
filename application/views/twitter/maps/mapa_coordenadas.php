@@ -27,9 +27,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           .gm-style label {
             width: auto; display:inline;
           }
+          #myTab{
+          margin-top: -38px;
+        }
     </style>
 </head>
-<body class="page-header-fixed">
+<body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
 
@@ -39,11 +42,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row-fluid">
-                    <div class="span12">
-                        <h3 class="page-title">
+                    <div class="span12" id="encabezado"> 
+                        <h3 class="page-title" id="titulo">
                             Tweets <small>Sobre Nacho Peralta en Colima</small>
                         </h3>
-                        <ul class="breadcrumb">
+                        <ul class="breadcrumb" id="ul_menu">
                             <li>
                                 <i class="icon-home"></i>
                                     <a href="<?php echo site_url('inicio') ?>">Home</a>                                     

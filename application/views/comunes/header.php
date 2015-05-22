@@ -15,12 +15,14 @@
 	<link href="<?= base_url();?>assets/plantilla/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	<link href="<?= base_url();?>assets/plantilla/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
 	<link href="<?= base_url();?>assets/plantilla/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/plantilla/fonts/font.css" rel="stylesheet" type="text/css"/>
 	<!--<link href="<?= base_url();?>assets/plantilla/css/style-metro.css" rel="stylesheet" type="text/css"/>-->
 	
 	<link href="<?= base_url();?>assets/plantilla/css/style.css" rel="stylesheet" type="text/css"/>
 	<link href="<?= base_url();?>assets/plantilla/css/style-responsive.css" rel="stylesheet" type="text/css"/>
 	<link href="<?= base_url();?>assets/plantilla/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 	<link href="<?= base_url();?>assets/plantilla/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<link href="<?= base_url();?>assets/css.css" rel="stylesheet" type="text/css"/>
 	<!-- END GLOBAL MANDATORY STYLES -->
 	<!-- BEGIN PAGE LEVEL PLUGIN STYLES --> 
 	<!--<link href="<?= base_url();?>assets/plantilla/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>

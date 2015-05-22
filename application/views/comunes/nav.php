@@ -1,14 +1,9 @@
-    <div class="page-sidebar-wrapper">
+    <div class="page-sidebar-wrapper navbar-fixed-top">
         <!-- BEGIN SIDEBAR -->
         <div class="page-sidebar nav-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->        
             <ul class="page-sidebar-menu" data-slide-speed="200" data-auto-scroll="true" data-keep-expanded="false">
-                <div>
-                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                    <div class="sidebar-toggler hidden-phone"></div>
-                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                </div>
-                <br>
+                <br/><br/>
                 <li >
                     <a href="<?php echo site_url('inicio');?>">
                         <i class="icon-home"></i> 
@@ -233,6 +228,11 @@
                         <span class="selected"></span>
                     </a>
                 </li>
+                <div>
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    <div class="sidebar-toggler hidden-phone" title="Expande menú"></div>
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                </div>
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>

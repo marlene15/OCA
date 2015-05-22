@@ -22,3 +22,14 @@
   font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../fonts/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }
+
+@font-face {
+  font-family: 'Museo';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Museo_Slab_500_2-webfont.eot');
+  src: url('../fonts/Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Museo_Slab_500_2-webfont.woff') format('woff'),
+       url('../fonts/Museo_Slab_500_2-webfont.ttf') format('truetype'),
+       url('../fonts/Museo_Slab_500_2-webfont.svg#webfont') format('svg');
+}

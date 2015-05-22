@@ -36,28 +36,29 @@ if (<?php echo $vtab ?>==1) {
                             role: "annotation"
                         }]);
         var options = {
-          hAxis: {
-            title: 'Candidatos'
-          },         
-          height: 600,
-          series: {
-            0: {
-              type: 'bars',
-              color: '#DF0101'
-            },
-            1: {
-              type: 'bars',
-              color: '#0101DF'
-            },
-            2: {
-              type: 'bars',
-              color: '#868A08'
-            }
+        title : '<?php echo $ultima_fecha ?>',
+        hAxis: {
+          title: 'Candidatos'
+        },         
+        height: 600,
+        series: {
+          0: {
+            type: 'bars',
+            color: '#DF0101'
           },
-          vAxis: {
-            maxValue: 100
+          1: {
+            type: 'bars',
+            color: '#0101DF'
+          },
+          2: {
+            type: 'bars',
+            color: '#868A08'
           }
-        };   
+        },
+        vAxis: {
+          title: 'Cantidad'
+        }
+      };     
 
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
         chart.draw(view, options);          

@@ -12,16 +12,16 @@
     <?php $this->load->view('comunes/barra_superior'); ?>
 
     <!-- BEGIN CONTAINER -->
-    <div class="page-container">
+    <div class="page-container page-sidebar-closed">
         <?php $this->load->view('comunes/nav'); ?>
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row-fluid">
-                    <div class="span12">
-                        <h3 class="page-title">
+                    <div class="span12" id="encabezado">
+                        <h3 class="page-title" id="titulo">
                           Candidatos a Diputado Local <small>Actividad en Facebook</small>
                         </h3>
-                        <ul class="breadcrumb">
+                        <ul class="breadcrumb" id="ul_menu">
                             <li>
                                 <i class="icon-table"></i>
                                 Cargo 

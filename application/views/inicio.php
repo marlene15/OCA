@@ -20,7 +20,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
         #titulo_proyecto2{
           font-family: 'Museo';
-          font-size: 80px;
+          font-size: 40px;
+        }
+        #logo{
+          width: 340px;
+          height: 200px;
         }
     </style>
 </head>
@@ -39,7 +43,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <div class="span6">
                             <center>
                                 <h3 class="page-title">
-                                    Colocar el Logo
+                                    <img id="logo" src="/Residencia/OCA/imagenes/logon.jpg" />
                                 </h3>
                             </center>                            
                         </div>
@@ -59,8 +63,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                     <div class="row-fluid">                        
                         <div class="span12">
                             <center>
-                                <h3 class="page-title" id="titulo_proyecto">
-                                    Un onservatorio
+                                <h3 class="page-title" id="titulo_proyecto" align="justify">
+                                    El Observatorio soCial mediA: elecciones Colima 2015 - OCA -Face y - OCA Twitt, es un proyecto
+                                    acádemico, que surgió en el Instituto Tecnológico de Colima a partir del interés de llevar a 
+                                    cabo una investigáción sobre la forma en la cual los ciudadanos del estado de Colima utilizan 
+                                    los canales de comunicación como: Twitter y Facebook para expresar su opinión con respecto al 
+                                    proceso de campaña de los diferentes candidatos y durante los comicios.
+                
                                 </h3>
                             </center>
                         </div>

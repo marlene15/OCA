@@ -209,14 +209,14 @@
                 </li>
                 <li >
                         <a href="<?php echo site_url('facebook/controlador_inicio/rumbo');?>">
-                        <i class="icon-indent-left"></i> 
+                        <i class="icon-road"></i> 
                         <span class="title">Rumbo al 7 de Junio</span>
                         <span class="selected"></span>
                     </a>
                 </li>
                 <li >
                     <a href="<?php echo site_url('inicio/comoVamos');?>">
-                        <i class="icon-indent-left"></i> 
+                        <i class="icon-group"></i> 
                         <span class="title">¿Cómo vamos Colima?</span>
                         <span class="selected"></span>
                     </a>

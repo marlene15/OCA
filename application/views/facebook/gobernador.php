@@ -5,9 +5,14 @@
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script>
   <script src="<?php echo base_url()?>assets/facebook/vk.js"></script>   
+  <style type="text/css">   
+      #myTab{
+        margin-top: 2px;
+      }
+  </style>  
 </head>
 
-<body class="page-header-fixed">
+<body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
 
@@ -17,11 +22,11 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row-fluid">
-                    <div class="span12">
-                        <h3 class="page-title">
+                    <div class="span12" id="encabezado">
+                        <h3 class="page-title" id="titulo">
                           Candidatos a Gobernador <small>Actividad en Facebook</small>
                         </h3>
-                        <ul class="breadcrumb">
+                        <ul class="breadcrumb" id="ul_menu">
                             <li>
                                 <i class="icon-table"></i>
                                 Cargo 

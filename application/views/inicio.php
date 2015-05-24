@@ -40,23 +40,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
                     <div class="row-fluid">
-                        <div class="span6">
-                            <center>
-                                <h3 class="page-title">
-                                    <img id="logo" src="/Residencia/OCA/imagenes/logon.jpg" />
-                                </h3>
-                            </center>                            
-                        </div>
-                        <div class="span6">
-                            <center>
-                                <h3 class="page-title" id="titulo_proyecto">
-                                    Observatorio social media Elecciones Colima 2015
-                                </h3>
-                                <br/><br/>
-                                <h1 class="page-title" id="titulo_proyecto2">
-                                    OCA
-                                </h1>
-                            </center>
+                        <div class="span12">
+                            <div class="span6">
+                                <center>
+                                    <img src="<?php echo base_url()?>assets/imagenes/logon.jpg" class="img-responsive center-block" height="500" width="500">                          
+                                </center>
+                            </div>
+                            <div class="span6">
+                                <center>
+                                    <h3 class="page-title" id="titulo_proyecto">
+                                        Observatorio social media Elecciones Colima 2015
+                                    </h3>
+                                    <br/><br/>
+                                    <h1 class="page-title" id="titulo_proyecto2">
+                                        OCA
+                                    </h1>
+                                </center>
+                            </div>
                         </div>
                     </div>  
                     <br/><br/>

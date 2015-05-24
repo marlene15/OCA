@@ -377,7 +377,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         <button id="go" type="submit" onclick="nube();" class="btn btn-success btn-lg" title="Actualizar" style="float:left">Actualizar</button>
                                         <br/><br/>
                                         <div id="container">
-                                          <!-- <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>     -->
+                                          <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>    
                                         </div>                           
                                       </div>
                                     </div>
@@ -936,7 +936,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   </script>
 
   
-
   <!--Para usar el calendario-->
   <script type="text/javascript">
     $('.form_date').datetimepicker({

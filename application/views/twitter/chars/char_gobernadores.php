@@ -36,11 +36,10 @@ if (<?php echo $vtab ?>==1) {
                             role: "annotation"
                         }]);
         var options = {
-        title : '<?php echo $ultima_fecha ?>',
         hAxis: {
           title: 'Candidatos'
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -66,4 +65,13 @@ if (<?php echo $vtab ?>==1) {
       drawChart();
       $('#chart_div').width('100%');  
   };      
+  if (<?php echo $existe ?> ==2) {
+    $('#alert').show();
+    $('#alert').html('<div id="alert" class="alert fade in"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $ultima_fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+  }
+  else
+  {
+    $('#alert').hide();      
+  }
+  $('#fecha_contenedor').html('<?php echo $ultima_fecha ?>');
   </script>

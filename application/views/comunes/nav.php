@@ -230,7 +230,7 @@
                 </li>
                 <div>
                     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                    <div class="sidebar-toggler hidden-phone" title="Expande menú"></div>
+                    <div class="sidebar-toggler hidden-phone" title="Expande menú" onclick="recarga()"></div>
                     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                 </div>
             </ul>

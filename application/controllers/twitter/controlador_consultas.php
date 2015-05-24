@@ -80,6 +80,7 @@ class Controlador_consultas extends CI_Controller {
 	                "siguiendom" => $gobernadores['martha']->siguiendo,
 	                "tweetsm" => $gobernadores['martha']->tweets,
 	                'ultima_fecha' => $fecha,
+	                'existe' => $existe,
 	                "vtab" => $vtab
 	            );
 		$this->load->view('twitter/chars/char_gobernadores',$datos);

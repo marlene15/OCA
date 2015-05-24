@@ -143,7 +143,8 @@ var App = function () {
             var available_height = $(window).height() - $('.footer').height();
             if (content.height() <  available_height) {
                 content.attr('style', 'min-height:' + available_height + 'px !important');
-            }
+            }          
+
         } else {
             if (body.hasClass('page-sidebar-fixed')) {
                 height = _calculateFixedSidebarViewportHeight();
@@ -153,7 +154,8 @@ var App = function () {
             if (height >= content.height()) {
                 content.attr('style', 'min-height:' + height + 'px !important');
             } 
-        }          
+        }      
+
     }
 
     var handleSidebarMenu = function () {

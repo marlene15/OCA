@@ -17,7 +17,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD4NI8lkdewy-_qWG5wDhTR9KjTN9Sn_xs&sensor=true">
     </script> 
     <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script>    
-    <script src="<?php echo base_url()?>assets/twitter/vk.js"></script>    
+    <script src="<?php echo base_url()?>assets/twitter/vk.js"></script> 
+    <!--Para usar los contenedores widget-->
+    <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css">    
     <?php $this->load->view('comunes/header'); ?>
     <!--Para que salga correctamente el mapa-->
     <style type="text/css">
@@ -44,7 +46,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12" id="encabezado"> 
                         <h3 class="page-title" id="titulo">
-                            Tweets <small>Sobre Nacho Peralta en Colima</small>
+                            Tweets en Colima
                         </h3>
                         <ul class="breadcrumb" id="ul_menu">
                             <li>
@@ -76,18 +78,46 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </ul>
                               <div class="tab-content" id="myTabContent">
 
-                                <div id="colima"> 
-                                    <br>
-                                    <center>
-                                        <div id="map_div" style="width: 100%; height: 500px;"></div> <!--Primer mapa-->  
-                                    </center>                                                                           
+                                <div id="colima" class="tab-pane fade active in"> 
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-map-marker"></i>
+                                                        <h3>Colima</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <center>
+                                                            <div id="map_div" style="width: 100%; height: 500px;"></div> <!--Primer mapa-->  
+                                                        </center> 
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div id="villa">
-                                    <center>
-                                        <div id="map_div2" style="width: 100%; height: 500px;"></div> <!--Segundo mapa-->   
-                                    </center>                                     
+                                <div id="villa" class="tab-pane fade"> 
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-map-marker"></i>
+                                                        <h3>Villa de Álvarez</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <center>
+                                                            <div id="map_div2" style="width: 100%; height: 500px;"></div> <!--Segundo mapa-->   
+                                                        </center> 
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>  <!--Cierra div de los tabs-->  
                     </div>
@@ -162,7 +192,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         );
       function drawChart2() 
       {
-
         var map2 = new google.visualization.Map(document.getElementById('map_div2'));
         var options = { showTip: true };
         map2.draw(data2, options);

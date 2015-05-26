@@ -20,6 +20,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <!--Para usar la nube-->
   <script src="<?php echo base_url()?>assets/twitter/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/twitter/d3/d3.layout.cloud.js"></script>
+  <!--Para usar los contenedores widget-->
+  <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css"> 
+  <style type="text/css">
+      .widget-content {
+        padding: 10px 10px 10px;
+      }
+  </style>
 </head>
 <body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
@@ -69,60 +76,125 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           <li class=""><a data-toggle="tab" href="#nube" onclick="nube();">Nube de Palabras</a></li>
                         </ul>
                           <div class="tab-content" id="myTabContent"> <!--Inicia tab de pestañas-->
+                            
                             <div id="barras1" class="tab-pane fade active in"> 
                               <div class="container-fluid">
                                 <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label">Fecha de consulta: </label>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab1" value="1">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
                                   <div class="span12">  
-                                    <div id="chart_div"></div>  
-                                    <div id="con"></div>                            
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div"></div>                            
+                                          <div id="con"></div>  <!--Grafica despues de la consulta-->
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab1" value="1">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>                         
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Jose Manuel Moreno</center></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Kike Rojas</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRD.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Indira Vizcaino</center></td>
+                                          </tr>                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
                                 </div>
-                              </div>                          
+                              </div>
                             </div>
 
                             <div id="barras2" class="tab-pane fade">
                               <div class="container-fluid">
                                 <div class="row-fluid">
                                   <div class="span12">
-                                      <label class="control-label">Fecha de consulta:</label>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                          <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha2">
-                                          <span class="add-on"><i class="icon-remove"></i></span>
-                                          <span class="add-on"><i class="icon-th"></i></span>                                          
-                                      </div>   
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab2" value="2">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta2">Consultar</button>
-                                      </div> 
-                                  </div>                                
-                                </div>
-                              </div>
 
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div2"></div>  
-                                    <div id="con2"></div>                            
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor2"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div2"></div>                            
+                                          <div id="con2"></div>  <!--Grafica despues de la consulta-->
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                              <span class="add-on"><i class="icon-remove"></i></span>
+                                              <span class="add-on"><i class="icon-th"></i></span>
+                                              <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha2">                                          
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab2" value="2">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta2">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Norma Galindo</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PMC.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Juan Carlos Olave</center></td>
+                                          </tr>                         
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
-                                </div>
-                              </div>                               
+                                </div>                                
+                              </div>
                             </div>
 
                             <div id="nube" class="tab-pane fade ">  
@@ -141,10 +213,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
                     </div>
-                </div>              
-            </div>
-        </div>
-    </div>
+                  </div>              
+              </div>
+          </div>
+      </div>
 
   <?php $this->load->view('comunes/footer'); ?> 
   <!--Para poder usar el calendario, importar las librerias-->
@@ -161,9 +233,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');        
       data.addRows([
-        ['PAN José Manuel Moreno González', <?php echo $seguidoresjm ?>, <?php echo $siguiendojm ?>, <?php echo $tweetsjm ?>],
-        ['PRI Enrique Rojas Orozco', <?php echo $seguidoresk ?>, <?php echo $siguiendok ?>, <?php echo $tweetsk ?>],
-        ['PRD Indira Vizcaíno Silva', <?php echo $seguidoresi ?>, <?php echo $siguiendoi ?>, <?php echo $tweetsi ?>]
+        ['PAN', <?php echo $seguidoresjm ?>, <?php echo $siguiendojm ?>, <?php echo $tweetsjm ?>],
+        ['Coalición \n PRI-PVE', <?php echo $seguidoresk ?>, <?php echo $siguiendok ?>, <?php echo $tweetsk ?>],
+        ['PRD', <?php echo $seguidoresi ?>, <?php echo $siguiendoi ?>, <?php echo $tweetsi ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -185,12 +257,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           type: "string",
                           role: "annotation"
                       }]);
-      var options = {
+
+      var options = {       
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
-        series: {
+        height: 400,
+         series: {
           0: {
             type: 'bars',
             color: '#33559B'
@@ -205,13 +279,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
+      };
 
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
       chart.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart();
+    });
   </script>
 
   <script type="text/javascript">
@@ -223,8 +307,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');        
       data.addRows([
-        ['PRI Norma Galindo Matías', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
-        ['MOVIMIENTO CIUDADANO Juan Carlos Olave Neri', <?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>]
+        ['Coalición \n PRI-PVE', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
+        ['MC', <?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -246,12 +330,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           type: "string",
                           role: "annotation"
                       }]);
-      var options = {
+      var options = {       
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
-        series: {
+        height: 400,
+         series: {
           0: {
             type: 'bars',
             color: '#33559B'
@@ -266,13 +351,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
+      };
       
       var chart2 = new google.visualization.ComboChart(document.getElementById('chart_div2'));
       chart2.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div2");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart2();
+    });
   </script>
 
   <!--Para usar el calendario-->
@@ -329,84 +424,19 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     });
   </script>
 
+  
+
+  <!--Funcion para ajustar la grafica al expander el menú-->
   <script type="text/javascript">
-    function nube()
+    function recarga()
     {
-      //Limpiar div
-      var d = document.getElementById("contenido_nube");
-      while (d.hasChildNodes())
-      {
-        d.removeChild(d.firstChild);
-      }
-
-      <?php //Llenamos el array con las coordenadas        
-            $aux=""; 
-            for ($i=0; $i<count($hashtags); $i++)
-            {
-                $porciones = explode(" ", $hashtags[$i]->hashtags);
-                for ($j=0; $j<count($porciones); $j++)
-              {
-                if ($porciones[$j] != "") 
-                {
-                  $aux = $aux." ".$porciones[$j]; 
-                };
-                
-              };                    
-            };    
-
-          $test = preg_split('/[\s,]+/', $aux); //Coloca los hashtags en una sola línea, el separador son los espacios
-          $palabras_contadas = array_count_values($test); //Cuenta la cantidad de veces que se repite una palabra
-
-          $a2 = array();
-          foreach ($palabras_contadas as $key => $value) { //Llena el array para convertirlo a json
-              if($key != "")
-              {
-                $a2[] = array(
-                      "text" => $key,
-                      "size" => $value*10
-                );
-              }       
-        };
-        $palabras_JSON = json_encode($a2); //Convertimos el array a Json para poderlo colocar en la nube de palabras                   
-        ?>
-      var fill = d3.scale.category20();
-      d3.layout.cloud().size([1000, 400])
-          .words(<?php echo $palabras_JSON ?>)
-          .padding(3)
-          .rotate(function() { return ~~(Math.random() * 2) * 90; })
-          .font("Impact")
-          .fontSize(function(d) { return d.size; })
-          .on("end", draw)
-          .start();
-
-      function draw(words) 
-      {
-          d3.select("#contenido_nube").append("svg")
-              .attr("viewBox", "-15 0 " + 1000 + " " + 500 )
-                .attr("preserveAspectRatio", "xMidYMid meet")
-            .append("g")
-              .attr("transform", "translate(472,250)")
-            .selectAll("text")
-              .data(words)
-            .enter().append("text")
-              .style("font-size", function(d) { return d.size + "px"; })
-              .style("font-family", "Impact")
-              .style("fill", function(d, i) { return fill(i); })
-              .attr("text-anchor", "middle")
-              .attr("transform", function(d) {
-                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-              })
-              .text(function(d) { return d.text; });
-      }
+      setTimeout(function(){
+        drawChart();
+        drawChart2();
+      },100)    
+      $('#chart_div').width('100%');  
+      $('#chart_div2').width('100%');  
     }
-    //Sirve para hacer la nube de palabars responsiva
-    var aspect = 1000 / 400,
-      chart = $("#contenido_nube");
-    $(window).on("resize", function() {
-        var targetWidth = chart.parent().width();
-        chart.attr("width", targetWidth);
-        chart.attr("height", targetWidth / aspect);
-    });
   </script>
 </body>
 </html>

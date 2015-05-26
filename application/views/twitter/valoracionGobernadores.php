@@ -22,6 +22,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     </style>
     <!--Estilo para la gráfica de pastel-->
     <link href="<?= base_url();?>assets/twitter/d3/estilo_pastel.css" rel="stylesheet" type="text/css"/>
+    <!--Para usar los contenedores widget-->
+    <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css"> 
 </head>
 <body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
@@ -72,26 +74,101 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                               <div class="tab-content" id="myTabContent">
 
                                 <div id="nacho" class="tab-pane fade active in"> 
-                                    <center> 
-                                        <svg id="fillgauge1"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
-                                        <svg id="fillgauge2" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                        <svg id="fillgauge3" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                        <br>        
-                                        <div id="chart_div2" style="width: 100%; height: 500px;"></div>                                    
-                                        <div id="grafica" style="width: 100%; height: 500px;"></div>   
-                                        <div id="chart_div" style="width: 100%; height: 500px;"></div>                            
-                                    </center>    
-                                    <svg id="barras" preserveAspectRatio="xMidYMid" viewBox="0 0 1000 400"> </svg>
-                                    <div id="tabla"></div>
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-comments-alt"></i>
+                                                        <h3>Valoración de Comentarios</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge1" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Positivos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge2" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Negativos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge3" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Neutros</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                            <br/>
+                                                        </div>   
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-bar-chart"></i>
+                                                        <h3>Menciones al día</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">   
+                                                        <div id="chart_div"></div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div id="jorge" class="tab-pane fade ">
-                                    <center>
-                                        <svg id="fillgauge4"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
-                                        <svg id="fillgauge5" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                        <svg id="fillgauge6" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                    </center>                                     
+                                <div id="jorge" class="tab-pane fade active in"> 
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-comments-alt"></i>
+                                                        <h3>Valoración de Comentarios</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge4" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Positivos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge5" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Negativos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge6" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Neutros</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                            <br/>
+                                                        </div>   
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>  <!--Cierra div de los tabs-->                                            
                     </div>
@@ -145,6 +222,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     loadLiquidFillGauge("fillgauge4", <?php echo $jorgeP; ?>, config1);
     loadLiquidFillGauge("fillgauge5", <?php echo $jorgeNe; ?>, config2);
     loadLiquidFillGauge("fillgauge6", <?php echo $jorgeN; ?>, config3);
+
+    //Sirve para hacer la nube de palabars responsiva
+    var aspect = 1000 / 400,
+      chart = $("#fillgauge1");
+    $(window).on("resize", function() {
+        var targetWidth = chart.parent().width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+    });
 </script>
 
     <script type="text/javascript">
@@ -176,14 +262,33 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             title: '@nanchoperaltacol',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
-            series: {2: {type: "line"}}
+            series: {2: {type: "line"}},
+            height: 400
           };
-          var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
           chart.draw(data, options);          
         }
+        //Sirve para hacer la grafica responsiva
+        var aspect = 1000 / 400,
+          chart = $("#chart_div");
+        $(window).on("resize", function() {   
+            var targetWidth = chart.width();
+            chart.attr("width", targetWidth);
+            chart.attr("height", targetWidth / aspect);
+            drawChart();
+        });
     </script>
 
-
+    <!--Funcion para ajustar la grafica al expander el menú-->
+      <script type="text/javascript">
+        function recarga()
+        {
+          setTimeout(function(){
+            drawChart();
+          },100)    
+          $('#chart_div').width('100%');   
+        }
+      </script>
 </body>
 </html>
 

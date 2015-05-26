@@ -276,6 +276,7 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    padding: 10px 10px 10px;
 }
 
 .widget-header+.widget-content {

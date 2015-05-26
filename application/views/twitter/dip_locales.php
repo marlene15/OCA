@@ -20,6 +20,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <!--Para usar la nube-->
   <script src="<?php echo base_url()?>assets/twitter/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/twitter/d3/d3.layout.cloud.js"></script>
+  <!--Para usar los contenedores widget-->
+  <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css"> 
 </head>
 <body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
@@ -87,472 +89,905 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </ul>
                           <div class="tab-content" id="tabs">
 
-                            <div id="barras1" class="tab-pane fade active in"> 
-                                <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab1" value="1">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
+                          <div id="barras1" class="tab-pane fade active in"> 
                               <div class="container-fluid">
                                 <div class="row-fluid">
                                   <div class="span12">  
-                                    <div id="chart_div"></div>  
-                                    <div id="con"></div>                            
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div"></div>  
+                                          <div id="con"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab1" value="1">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Hilda Ceballos </center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Yadira Carrillo</center></td>
+                                          </tr>                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
 
-                            <div id="barras2" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha2">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab2" value="2">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta2">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
+                            <div id="barras2" class="tab-pane fade"> 
                               <div class="container-fluid">
                                 <div class="row-fluid">
                                   <div class="span12">  
-                                    <div id="chart_div2"></div>  
-                                    <div id="con2"></div>                            
-                                  </div>
-                                </div>
-                              </div>
 
-                            </div>
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor2"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div2"></div>  
+                                          <div id="con2"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
 
-                            <div id="barras3" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha3">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab3" value="3">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta3">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div3"></div>  
-                                    <div id="con3"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div id="barras4" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha4">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab4" value="4">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta4">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div4"></div>  
-                                    <div id="con4"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-
-                            </div>
-
-                            <div id="barras5" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha5">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab5" value="5">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta5">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div5"></div>  
-                                    <div id="con5"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-
-                            </div>
-
-                            <div id="barras6" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha6">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab6" value="6">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta6">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div6"></div>  
-                                    <div id="con6"></div>                            
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha2">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab2" value="2">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta2">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Viviana Ramirez</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Guillermo Rangel</center></td>
+                                          </tr>                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
 
-                            <div id="barras7" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha7">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab7" value="7">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta7">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
+                            <div id="barras3" class="tab-pane fade"> 
                               <div class="container-fluid">
                                 <div class="row-fluid">
                                   <div class="span12">  
-                                    <div id="chart_div7"></div>  
-                                    <div id="con7"></div>                            
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor3"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div3"></div>  
+                                          <div id="con3"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha3">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab3" value="3">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta3">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Crispín Guerra</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Isis Villaseñor</center></td>
+                                          </tr>  
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>AlmaDeliaArreolaCruz</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> 
+
+                            <div id="barras4" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor4"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div4"></div>  
+                                          <div id="con4"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha4">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab4" value="4">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta4">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Janeth Paz</center></td>
+                                          </tr>  
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Juanita Andrés</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
 
-                            <div id="barras8" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha8">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab8" value="8">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta8">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
+                            <div id="barras5" class="tab-pane fade"> 
                               <div class="container-fluid">
                                 <div class="row-fluid">
                                   <div class="span12">  
-                                    <div id="chart_div8"></div>  
-                                    <div id="con8"></div>                            
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor5"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div5"></div>  
+                                          <div id="con5"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha5">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab5" value="5">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta5">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Lupe Benavides Dip</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> 
+
+                            <div id="barras6" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor6"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div6"></div>  
+                                          <div id="con6"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha6">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab6" value="6">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta6">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>OCTAVIO TINTOS</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>    
+
+                            <div id="barras7" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor7"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div7"></div>  
+                                          <div id="con7"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha7">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab7" value="7">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta7">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRD.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Sara Cernas Verduzco</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Joel Padilla Peña</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>  
+
+                            <div id="barras8" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor8"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div8"></div>  
+                                          <div id="con8"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha8">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab8" value="8">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta8">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Meyly Meyly</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Héctor Magaña Lara</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>  
+
+                            <div id="barras9" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor9"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div9"></div>  
+                                          <div id="con9"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha9">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab9" value="9">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta9">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Eusebio Mesina Reyes</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>  
+
+                            <div id="barras10" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor10"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div10"></div>  
+                                          <div id="con10"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha10">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab10" value="10">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta10">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>adriana mesina tena</center></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Juan Carlos Pinto</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>   
+
+                            <div id="barras11" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor11"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div11"></div>  
+                                          <div id="con11"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha11">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab11" value="11">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta11">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Armida Núñez García</center></td>
+                                          </tr>                                        
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>  
+
+                            <div id="barras12" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor12"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div12"></div>  
+                                          <div id="con12"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha12">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab12" value="12">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta12">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Martha Sosa</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRD.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>ANA MARIA SANCHEZ LA</center></td>
+                                          </tr>                                       
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>     
+
+                            <div id="barras13" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor13"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div13"></div>  
+                                          <div id="con13"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha13">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab13" value="13">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta13">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Sergio Sanchez Ochoa</center></td>
+                                          </tr>                                       
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>    
+
+                            <div id="barras14" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor14"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div14"></div>  
+                                          <div id="con14"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha14">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab14" value="14">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta14">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Martha Meza Oregon</center></td>
+                                          </tr>                                       
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
 
-                            <div id="barras9" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha9">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab9" value="9">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta9">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
+                            <div id="barras15" class="tab-pane fade"> 
                               <div class="container-fluid">
                                 <div class="row-fluid">
                                   <div class="span12">  
-                                    <div id="chart_div9"></div>  
-                                    <div id="con9"></div>                            
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor15"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div15"></div>  
+                                          <div id="con15"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha15">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab15" value="15">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta15">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Felicitas Peña</center></td>
+                                          </tr>                                       
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
 
-                            <div id="barras10" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha10">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab10" value="10">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta10">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
+                            <div id="barras16" class="tab-pane fade"> 
                               <div class="container-fluid">
                                 <div class="row-fluid">
                                   <div class="span12">  
-                                    <div id="chart_div10"></div>  
-                                    <div id="con10"></div>                            
+
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor16"><?php echo $ultima_fecha ?></h3>                                                    
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div16"></div>  
+                                          <div id="con16"></div> 
+                                        </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                            <i class="icon-calendar"></i>
+                                            <h3>Fecha a consultar</h3>                                                    
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha16">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab16" value="16">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta16">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Twitter</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Santiago Chavez</center></td>
+                                          </tr>                                       
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-
-                            <div id="barras11" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha11">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab11" value="11">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta11">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div11"></div>  
-                                    <div id="con11"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div id="barras12" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha12">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab12" value="12">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta12">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div12"></div>  
-                                    <div id="con12"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div id="barras13" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha13">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab13" value="13">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta13">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div13"></div>  
-                                    <div id="con13"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div id="barras14" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha14">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab14" value="14">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta14">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div14"></div>  
-                                    <div id="con14"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div id="barras15" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha15">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab15" value="15">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta15">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div15"></div>  
-                                    <div id="con15"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div id="barras16" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha16">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab16" value="16">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta16">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div16"></div>  
-                                    <div id="con16"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            </div>                           
 
                             <div id="nube" class="tab-pane fade ">  
                                 <div class="container-fluid">
@@ -593,8 +1028,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');      
       data.addRows([
-        ['PRI Hilda Ceballos de Moreno', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>],
-        ['NUEVA ALIANZA Yadira Carrillo Montero', <?php echo $seguidores_yadira ?>, <?php echo $siguiendo_yadira ?>, <?php echo $tweets_yadira ?>]
+        ['PRI', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>],
+        ['PNAL', <?php echo $seguidores_yadira ?>, <?php echo $siguiendo_yadira ?>, <?php echo $tweets_yadira ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -617,11 +1052,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        //title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -637,13 +1072,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
 
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
       chart.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart();
+    });
     </script>
 
     <script type="text/javascript">
@@ -656,8 +1101,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['NUEVA ALIANZA Guillermo Rangel Lozano', <?php echo $seguidores_rangel ?>, <?php echo $siguiendo_rangel ?>, <?php echo $tweets_rangel ?>],
-        ['VERDE Viviana Ramírez Anguiano', <?php echo $seguidores_viviana ?>, <?php echo $siguiendo_viviana ?>, <?php echo $tweets_viviana ?>]
+        ['PVE', <?php echo $seguidores_viviana ?>, <?php echo $siguiendo_viviana ?>, <?php echo $tweets_viviana ?>],
+        ['PNAL', <?php echo $seguidores_rangel ?>, <?php echo $siguiendo_rangel ?>, <?php echo $tweets_rangel ?>]        
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -680,11 +1125,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -700,13 +1145,23 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
 
       var chart2 = new google.visualization.ComboChart(document.getElementById('chart_div2'));
       chart2.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div2");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart2();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -718,9 +1173,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([        
-        ['PAN Crispín Guerra', <?php echo $seguidores_crispin ?>, <?php echo $siguiendo_crispin ?>, <?php echo $tweets_crispin ?>],
-        ['VERDE Isis Villaseñor Silva', <?php echo $seguidores_isis ?>, <?php echo $siguiendo_isis ?>, <?php echo $tweets_isis ?>],
-        ['PRI Alma Delia Arreola Cruz', <?php echo $seguidores_alma ?>, <?php echo $siguiendo_alma ?>, <?php echo $tweets_alma ?>]
+        ['PAN', <?php echo $seguidores_crispin ?>, <?php echo $siguiendo_crispin ?>, <?php echo $tweets_crispin ?>],
+        ['PVE', <?php echo $seguidores_isis ?>, <?php echo $siguiendo_isis ?>, <?php echo $tweets_isis ?>],
+        ['PRI', <?php echo $seguidores_alma ?>, <?php echo $siguiendo_alma ?>, <?php echo $tweets_alma ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -743,11 +1198,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -763,13 +1218,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
-
       var chart3 = new google.visualization.ComboChart(document.getElementById('chart_div3'));
       chart3.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div3");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart3();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -781,8 +1245,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PAN Janeth Paz Ponce', <?php echo $seguidores_janeth ?>, <?php echo $siguiendo_janeth ?>, <?php echo $tweets_janeth ?>],
-        ['PRI Juana Andrés Rivera', <?php echo $seguidores_juanita ?>, <?php echo $siguiendo_juanita ?>, <?php echo $tweets_juanita ?>]
+        ['PAN', <?php echo $seguidores_janeth ?>, <?php echo $siguiendo_janeth ?>, <?php echo $tweets_janeth ?>],
+        ['PRI', <?php echo $seguidores_juanita ?>, <?php echo $siguiendo_juanita ?>, <?php echo $tweets_juanita ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -805,11 +1269,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -825,13 +1289,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
-
       var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div4'));
       chart4.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div4");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart4();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -843,7 +1316,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PRI José Guadalupe Benavides Florián', <?php echo $seguidores_lupe ?>, <?php echo $siguiendo_lupe ?>, <?php echo $tweets_lupe ?>]
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_lupe ?>, <?php echo $siguiendo_lupe ?>, <?php echo $tweets_lupe ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -866,11 +1339,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -886,12 +1359,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
       var chart5 = new google.visualization.ComboChart(document.getElementById('chart_div5'));
       chart5.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div5");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart5();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -903,7 +1386,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PRI Octavio Tintos Trujillo', <?php echo $seguidores_octavio ?>, <?php echo $siguiendo_octavio ?>, <?php echo $tweets_octavio ?>]
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_octavio ?>, <?php echo $siguiendo_octavio ?>, <?php echo $tweets_octavio ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -926,11 +1409,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -946,13 +1429,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
-
       var chart6 = new google.visualization.ComboChart(document.getElementById('chart_div6'));
       chart6.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div6");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart6();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -964,8 +1456,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PRD Sara Elizabeth Cernas Verduzco', <?php echo $seguidores_sara ?>, <?php echo $siguiendo_sara ?>, <?php echo $tweets_sara ?>],
-        ['PT Joel Padilla Peña', <?php echo $seguidores_joel ?>, <?php echo $siguiendo_joel ?>, <?php echo $tweets_joel ?>]
+        ['PRD', <?php echo $seguidores_sara ?>, <?php echo $siguiendo_sara ?>, <?php echo $tweets_sara ?>],
+        ['PT', <?php echo $seguidores_joel ?>, <?php echo $siguiendo_joel ?>, <?php echo $tweets_joel ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -988,11 +1480,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1008,13 +1500,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart7 = new google.visualization.ComboChart(document.getElementById('chart_div7'));
       chart7.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div7");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart7();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -1026,8 +1527,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PAN Meyly Beltrán Rolón', <?php echo $seguidores_meyly ?>, <?php echo $siguiendo_meyly ?>, <?php echo $tweets_meyly ?>],
-        ['PRI Héctor Magaña Lara', <?php echo $seguidores_hector ?>, <?php echo $siguiendo_hector ?>, <?php echo $tweets_hector ?>]
+        ['PAN', <?php echo $seguidores_meyly ?>, <?php echo $siguiendo_meyly ?>, <?php echo $tweets_meyly ?>],
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_hector ?>, <?php echo $siguiendo_hector ?>, <?php echo $tweets_hector ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1050,11 +1551,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1070,13 +1571,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart87 = new google.visualization.ComboChart(document.getElementById('chart_div8'));
       chart87.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div8");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart8();
+    });
     </script>
 
     <script type="text/javascript">
@@ -1090,7 +1600,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PRI Eusebio Mesina Reyes', <?php echo $seguidores_eusebio ?>, <?php echo $siguiendo_eusebio ?>, <?php echo $tweets_eusebio ?>]
+        ['PRI', <?php echo $seguidores_eusebio ?>, <?php echo $siguiendo_eusebio ?>, <?php echo $tweets_eusebio ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1113,11 +1623,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1133,13 +1643,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
-
       var chart9 = new google.visualization.ComboChart(document.getElementById('chart_div9'));
       chart9.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div9");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart9();
+    });
     </script>
 
     <script type="text/javascript">
@@ -1153,8 +1672,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PAN Adriana Lucía Mesina Tena', <?php echo $seguidores_mesina ?>, <?php echo $siguiendo_mesina ?>, <?php echo $tweets_mesina ?>],
-        ['PRI Juan Carlos Pinto Rodríguez', <?php echo $seguidores_pinto ?>, <?php echo $siguiendo_pinto ?>, <?php echo $tweets_pinto ?>]
+        ['PAN', <?php echo $seguidores_mesina ?>, <?php echo $siguiendo_mesina ?>, <?php echo $tweets_mesina ?>],
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_pinto ?>, <?php echo $siguiendo_pinto ?>, <?php echo $tweets_pinto ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1177,11 +1696,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1197,13 +1716,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart10 = new google.visualization.ComboChart(document.getElementById('chart_div10'));
       chart10.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div10");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart10();
+    });
     </script>
 
     <script type="text/javascript">
@@ -1216,7 +1744,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PRI Armida Núñez García', <?php echo $seguidores_armida ?>, <?php echo $siguiendo_armida ?>, <?php echo $tweets_armida ?>]
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_armida ?>, <?php echo $siguiendo_armida ?>, <?php echo $tweets_armida ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1239,11 +1767,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1259,13 +1787,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart11 = new google.visualization.ComboChart(document.getElementById('chart_div11'));
       chart11.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div11");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart11();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -1277,8 +1814,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PAN Martha Leticia Sosa Govea', <?php echo $seguidores_marthaS ?>, <?php echo $siguiendo_marthaS ?>, <?php echo $tweets_marthaS ?>],
-        ['PRD Ana María Sánchez Landa', <?php echo $seguidores_amary ?>, <?php echo $siguiendo_amary ?>, <?php echo $tweets_amary ?>]
+        ['PAN', <?php echo $seguidores_marthaS ?>, <?php echo $siguiendo_marthaS ?>, <?php echo $tweets_marthaS ?>],
+        ['PRD', <?php echo $seguidores_amary ?>, <?php echo $siguiendo_amary ?>, <?php echo $tweets_amary ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1301,11 +1838,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1321,13 +1858,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart12 = new google.visualization.ComboChart(document.getElementById('chart_div12'));
       chart12.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div12");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart12();
+    });
     </script>
 
     <script type="text/javascript">
@@ -1340,7 +1886,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');    
       data.addRows([
-        ['PRI Sergio Sánchez Ochoa', <?php echo $seguidores_sergio ?>, <?php echo $siguiendo_sergio ?>, <?php echo $tweets_sergio ?>]
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_sergio ?>, <?php echo $siguiendo_sergio ?>, <?php echo $tweets_sergio ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1363,11 +1909,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1383,13 +1929,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart13 = new google.visualization.ComboChart(document.getElementById('chart_div13'));
       chart13.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div13");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart13();
+    });
     </script>
     <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -1401,7 +1956,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');    
       data.addRows([
-        ['VERDE Martha Alicia Meza Oregon', <?php echo $seguidores_martha ?>, <?php echo $siguiendo_martha ?>, <?php echo $tweets_martha ?>]
+        ['PVE', <?php echo $seguidores_martha ?>, <?php echo $siguiendo_martha ?>, <?php echo $tweets_martha ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1424,11 +1979,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1444,13 +1999,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart14 = new google.visualization.ComboChart(document.getElementById('chart_div14'));
       chart14.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div14");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart14();
+    });
     </script>
 
     <script type="text/javascript">
@@ -1464,7 +2028,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PRI Felícitas Peña Cisneros', <?php echo $seguidores_felicitas ?>, <?php echo $siguiendo_felicitas ?>, <?php echo $tweets_felicitas ?>]
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_felicitas ?>, <?php echo $siguiendo_felicitas ?>, <?php echo $tweets_felicitas ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1487,11 +2051,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1507,13 +2071,22 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart15 = new google.visualization.ComboChart(document.getElementById('chart_div15'));
       chart15.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div15");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart15();
+    });
     </script>
 
     <script type="text/javascript">
@@ -1527,7 +2100,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['PRI Santiago Chávez Chávez', <?php echo $seguidores_santiago ?>, <?php echo $siguiendo_santiago ?>, <?php echo $tweets_santiago ?>]
+        ['Coalición \n PRI-PVE-PNAL', <?php echo $seguidores_santiago ?>, <?php echo $siguiendo_santiago ?>, <?php echo $tweets_santiago ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1550,11 +2123,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           role: "annotation"
                       }]);
       var options = {
-        title: '',
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
-        height: 600,
+        height: 400,
         series: {
           0: {
             type: 'bars',
@@ -1570,16 +2143,25 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-          maxValue: 100
+          title: 'C A N T I D A D',
+          titleTextStyle: { fontName: 'Arial Black'}
         }
-      };  
-
+      };
       var chart16 = new google.visualization.ComboChart(document.getElementById('chart_div16'));
       chart16.draw(view, options);          
     }
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div16");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart16();
+    });
   </script>
 
- 
+  
 
   <!--Para usar el calendario-->
   <script type="text/javascript">
@@ -1885,6 +2467,47 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         });
       });
     });
+  </script>
+
+  <!--Funcion para ajustar la grafica al expander el menú-->
+  <script type="text/javascript">
+    function recarga()
+    {
+      setTimeout(function(){
+        drawChart();
+        drawChart2();
+        drawChart3();
+        drawChart4();
+        drawChart5();
+        drawChart6();
+        drawChart7();
+        drawChart8();
+        drawChart9();
+        drawChart10();
+        drawChart11();
+        drawChart12();
+        drawChart13();
+        drawChart14();
+        drawChart15();
+        drawChart16();
+      },100)    
+      $('#chart_div').width('100%');  
+      $('#chart_div2').width('100%'); 
+      $('#chart_div3').width('100%');  
+      $('#chart_div4').width('100%');
+      $('#chart_div5').width('100%');  
+      $('#chart_div6').width('100%');
+      $('#chart_div7').width('100%');  
+      $('#chart_div8').width('100%');
+      $('#chart_div9').width('100%');  
+      $('#chart_div10').width('100%');
+      $('#chart_div11').width('100%');  
+      $('#chart_div12').width('100%');
+      $('#chart_div13').width('100%');  
+      $('#chart_div14').width('100%');
+      $('#chart_div15').width('100%');  
+      $('#chart_div16').width('100%'); 
+    }
   </script>
 
 </html>

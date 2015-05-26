@@ -736,19 +736,168 @@
 		//Obtener coordenadas de Colima que hablan sobre nacho
 		public function obtener_coordenadasC()
 		{
-			$resultado=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
+			$resultado_gobernadores=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
 										where twitt.municipio='Colima' and 
-										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
-										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')");
-			if($resultado->num_rows()>0)
-			{
-				return $resultado->result();
-			}
-			else
-			{
-				return FALSE;
-			}
+										  (texto LIKE '%nachoperaltacol%' or texto 
+										  LIKE '%jips%' or texto LIKE '%JuntosNadieNosPara%' or texto LIKE '%JIPS2015%' 
+										  or texto LIKE '%MiSelfiecoNacho%'or texto LIKE '%DesdeAbajoConTrabajo%' 
+										  or texto LIKE '%ConNachoSeguro%' or texto LIKE '%NachoGobernador%' or texto LIKE '%VotaPri%'
+										  or texto LIKE '%NachoVotoSeguro%' or texto LIKE '%NachoColimaEstaContigo%' or texto LIKE '%NachoGano%'
+										  or texto LIKE '%FormulaGanadora%'
+										  or texto LIKE '%ClaroQuePodemos %' or texto LIKE '%NachoPropone%' or texto LIKE '%JorgeLuis%' or texto 
+										  LIKE '%AlegrateYaSeVan%' or texto LIKE '%YaSeVan%' or texto LIKE '%JL_Preciado_%' 
+										  or texto LIKE '%HagámosloNosotros%' or texto LIKE '%TúTienesElPodio%' or texto 
+										  LIKE '%EncuentroSocial%' or texto LIKE '%PartidoEncuentroSocial%' or texto 
+										  LIKE '%PASALAVOZ%' or texto LIKE '%SoyHumanista%' or texto LIKE '%PartidoHumanista%' 
+										  or texto LIKE '%UnidadHumanista%' or texto LIKE '%Humanista%' or texto LIKE 
+										  '%TodosConL8cho%' or texto LIKE '%CambiarLaHistoria%' or texto LIKE '%MovimientoCiudadano%' 
+										  or texto LIKE '%leonciomoranL8%'or texto LIKE '%PRDcolima%' or texto LIKE 
+										  '%PRD%'or texto LIKE '%ComoTú%' or texto LIKE '%ComoTu%' or texto LIKE '%EsHoraDelPRD%' 
+										  or texto LIKE '%SomosPRD%'or texto LIKE '%SabemosGobernar%' 
+										  or texto LIKE '%NuevaIzquierda%'or texto LIKE '%MarthaZepeda_%' or texto LIKE '%DebateColima%')");
+			
+			$resultado_dipFederales=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
+										inner join twitt on twitt.id=coordenadas.id_twitt
+										where twitt.municipio='Colima' and 
+										(texto LIKE '%soygp%' or texto 
+										LIKE '%kikerojas007%' or texto LIKE '%indira_vizcaino%' or texto LIKE '%NormaGdeV%' 
+										or texto LIKE '%olave_nery%'or texto LIKE '%TrabajandoPorLoQueMásQuieres%' 										
+										or texto LIKE '%KikeSí%' or texto LIKE '%KikeEsMejor%' or texto 
+										LIKE '%PRI_Colima%' or texto LIKE '%ConIndiraYoSi%' or texto LIKE '%ComoTú%' 
+										or texto LIKE '%Elecciones2015%' or texto LIKE '%NormaGalindo%' or texto LIKE '%NormaDiputadaFederal%'
+										or texto LIKE '%TrabajemosyDecidamosJuntos%')");
+
+			$resultado_dipLocales=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
+										inner join twitt on twitt.id=coordenadas.id_twitt
+										where twitt.municipio='Colima' and 
+										(texto LIKE '%HildaCeballos01%' 
+										or texto LIKE '%Distrito1%' 
+										or texto LIKE '%BrigadaEmetista%' 
+										or texto LIKE '%yadiraturquesa%' 
+										or texto LIKE '%NuevaAlianza%'
+										or texto LIKE '%turquesa%' 										
+										or texto LIKE '%VotaTurquesa%' 
+										or texto LIKE '%juventudturquesa%' 
+										or texto LIKE '%EligeTurquesa%' 
+										or texto LIKE '%VotaNuevaAlianza%' 
+										or texto LIKE '%Rangel_G_%' 
+										or texto LIKE '%TUPALABRACUENTA%' 
+										or texto LIKE '%TuPalabraCuenta %' 
+										or texto LIKE '%YoConMemo%'
+										or texto LIKE '%Vivi_Ram_A%'
+										or texto LIKE '%Trabajarporlafamilia%'
+										or texto LIKE '%crispindiputado%'
+										or texto LIKE '%TrabajoporTi%'
+										or texto LIKE '%TrabajoParaTi%'
+										or texto LIKE '%IsisColimaVerde%'
+										or texto LIKE '%VamosVerdes%'
+										or texto LIKE '%AlmaDelia_D3%'
+										or texto LIKE '%AlmaDeliaVotoSeguro%'
+										or texto LIKE '%ConAlmaYCorazónPorTi%'
+										or texto LIKE '%VotaAlmaDelia%'
+										or texto LIKE '%YoSoyAD3%'
+										or texto LIKE '%JanethPazPonce%'
+										or texto LIKE '%TrabajamosParaTi%'
+										or texto LIKE '%DistritoIV%'
+										or texto LIKE '%JanethDiputada%'
+										or texto LIKE '%JuanitaAndres%'
+										or texto LIKE '%ResultadosParaTi%'
+										or texto LIKE '%LupeBenavidesF%'
+										or texto LIKE '%octaviotintos%'
+										or texto LIKE '%HonestamenteTeVoyAServir%'
+										or texto LIKE '%YoPropongo%'
+										or texto LIKE '%saracernas%'
+										or texto LIKE '%TuVozEsMiVoz%'
+										or texto LIKE '%DiputadaDistrito7%'
+										or texto LIKE '%PorLasCausasDeLaGente%'
+										or texto LIKE '%JoelPadilla2012%'
+										or texto LIKE '%MeylyPastora%'
+										or texto LIKE '%Atrévete%'
+										or texto LIKE '%MeylyDiputadaLocal%'
+										or texto LIKE '%VIII%'
+										or texto LIKE '%hectormlara%'
+										or texto LIKE '%DistritoVIII%'
+										or texto LIKE '%eusebiomesina%'
+										or texto LIKE '%MesinaTena%'
+										or texto LIKE '%PintoRgz%'
+										or texto LIKE '%BeneficiosParaTodos%'
+										or texto LIKE '%Armida_NG%'
+										or texto LIKE '%ArmidaDiputada%'
+										or texto LIKE '%VotaPRI%'
+										or texto LIKE '%martha_sosa1%'
+										or texto LIKE '%Sergio_SanchezO%'
+										or texto LIKE '%ComoDebeDeSer%'
+										or texto LIKE '%Martha_Meza_%'
+										or texto LIKE '%VerdeSíCumple%'
+										or texto LIKE '%FDiputada%'
+										or texto LIKE '%SantiagoCh2Tec%'
+										or texto LIKE '%ConSantiatoSí%')");
+
+			$resultado_Presidentes=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
+										inner join twitt on twitt.id=coordenadas.id_twitt
+										where twitt.municipio='Colima' and 
+										(texto LIKE '%DipEsperanzaA%' 
+										or texto LIKE '%OVPresidente%' 
+										or texto LIKE '%renovaciondinamica%'
+										or texto LIKE '%vamoscontodo%'
+										or texto LIKE '%RenovarladinamicadelaCiudad%' 										
+										or texto LIKE '%yoconoscarsi%' 
+										or texto LIKE '%hectorinsua%' 
+										or texto LIKE '%ElCambioQueQuiereLaGente%' 
+										or texto LIKE '%VotaHectorInsua%' 
+										or texto LIKE '%VotaPan%' 
+										or texto LIKE '%VotaUtil%' 
+										or texto LIKE '%meabaroa%'
+										or texto LIKE '%ImpactoUrbano%'
+										or texto LIKE '%ImpactoEconómico%'
+										or texto LIKE '%CeroCorrucpión%'
+										or texto LIKE '%ImpactoRural%'
+										or texto LIKE '%ImpactoSocial%'
+										or texto LIKE '%GobiernoCiudadano%'
+										or texto LIKE '%MovimientoCiudadano%'
+										or texto LIKE '%CuentasClaras%'
+										or texto LIKE '%EsmePresidenta%'
+										or texto LIKE '%EsNuestroMomento%'
+										or texto LIKE '%YoMeMuevo%'
+										or texto LIKE '%EsmeraldaSíCumple%'
+										or texto LIKE '%EsmeraldaEsGarantía%'
+										or texto LIKE '%EsmeraldaPresidenta%'
+										or texto LIKE '%salo_salazar1%'
+										or texto LIKE '%ResultadosParaComala%'
+										or texto LIKE '%ResultadosParaTi%'
+										or texto LIKE '%MarioCarrillo01%'
+										or texto LIKE '%HagámosloNosotros%'
+										or texto LIKE '%BlancaPRI2015%'
+										or texto LIKE '%TeMerecesUnMejorCuauhtémoc%'
+										or texto LIKE '%SeMerecenUnMejorCuauhtémoc%'
+										or texto LIKE '%UrsuaBlanca%'
+										or texto LIKE '%VotoConsciente%'
+										or texto LIKE '%SiCambioYoCambiaMéxico%'
+										or texto LIKE '%pasalavoz%'
+										or texto LIKE '%hiram1447%'
+										or texto LIKE '%PicoZepeda%'
+										or texto LIKE '%PicoPresidente%'
+										or texto LIKE '%TeQuieroManzanilloMejor%'
+										or texto LIKE '%BarajasYescas%'
+										or texto LIKE '%GenteNuevaTrabajaMejor%'
+										or texto LIKE '%romo_ochoa%'
+										or texto LIKE '%DipManuelPR%'
+										or texto LIKE '%DipArturoGarcia%'
+										or texto LIKE '%OswyDelgado%'
+										or texto LIKE '%CercaDeTiGanaremos%'
+										or texto LIKE '%OswyDelgado%'
+										or texto LIKE '%CercaDeTi%'
+										or texto LIKE '%Yulenny_Cortes%'
+										or texto LIKE '%ConYulennyTúGanas%'
+										or texto LIKE '%JaimeSoteloG%')");
+			$a = array(
+                "gobernadores" => $resultado_gobernadores->result(),
+                "dipFederales" => $resultado_dipFederales->result(),
+                "dipLocales" => $resultado_dipLocales->result(),
+                "presidentes" => $resultado_Presidentes->result()
+	        );	            
+	        return $a;
 		}
 
 		//Obtener coordenadas de Villa de álvarez que hablan sobre nacho
@@ -769,9 +918,9 @@
 			}
 		}
 
-		//Obtener hashtags Gobernadores
-		public function obtener_hashtags_gobernadores()
-		{
+		//Obtener hashtags Gobernadores para la Nube de palabras
+		public function obtener_hashtags_gobernadores($mes)
+		{	
 			$hashtags=$this->db->query("SELECT hashtags FROM `twitt` WHERE (hashtags LIKE '%nachoperaltacol%' or hashtags 
 										LIKE '%jips%' or hashtags LIKE '%JuntosNadieNosPara%' or hashtags LIKE '%JIPS2015%' 
 										or hashtags LIKE '%MiSelfiecoNacho%'or hashtags LIKE '%DesdeAbajoConTrabajo%' 
@@ -789,7 +938,7 @@
 										'%PRD%'or texto LIKE '%ComoTú%' or texto LIKE '%ComoTu%' or texto LIKE '%EsHoraDelPRD%' 
 										or hashtags LIKE '%SomosPRD%'or hashtags LIKE '%SabemosGobernar%' 
 										or hashtags LIKE '%NuevaIzquierda%'or hashtags LIKE '%MarthaZepeda_%' or hashtags LIKE '%DebateColima%') 
-										and hashtags <>''");
+										and MONTH(fecha) = '$mes'and hashtags <>''");
 			if($hashtags->num_rows()>0)
 			{
 				return $hashtags->result();

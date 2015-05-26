@@ -15,12 +15,20 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	<?php $this->load->view('comunes/header'); ?>
     <style type="text/css">     
         #titulo_proyecto{
-          font-family: 'Museo';
-          font-size: 40px;
+            font-family: 'Museo';
+            font-size: 50px;
         }
         #titulo_proyecto2{
-          font-family: 'Museo';
-          font-size: 40px;
+            font-family: 'Museo';
+            font-size: 40px;
+        }
+        #titulo_proyecto3{
+            font-family: 'Museo';
+            font-size: 80px;
+        }
+        #texto_inicio{
+            font-family: 'Museo';
+            font-size: 20px;
         }
         #logo{
           width: 340px;
@@ -40,39 +48,48 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
                     <div class="row-fluid">
-                        <div class="span12">
+                        <div class="span12">                            
                             <div class="span6">
+                                </br>
                                 <center>
-                                    <img src="<?php echo base_url()?>assets/imagenes/logon.jpg" class="img-responsive center-block" height="500" width="500">                          
+                                    <img src="<?php echo base_url()?>assets/imagenes/logon.jpg" class="img-responsive center-block" height="400" width="400">                          
                                 </center>
                             </div>
                             <div class="span6">
+                                </br></br></br>
                                 <center>
                                     <h3 class="page-title" id="titulo_proyecto">
-                                        Observatorio social media Elecciones Colima 2015
+                                        Observatorio Social Media
+                                    </h3>
+                                    <h3 class="page-title" id="titulo_proyecto2">
+                                        Elecciones Colima 2015
                                     </h3>
                                     <br/><br/>
-                                    <h1 class="page-title" id="titulo_proyecto2">
+                                    <h1 class="page-title" id="titulo_proyecto3">
                                         OCA
                                     </h1>
                                 </center>
                             </div>
                         </div>
                     </div>  
-                    <br/><br/>
-                    <div class="row-fluid">                        
-                        <div class="span12">
-                            <center>
-                                <h3 class="page-title" id="titulo_proyecto" align="justify">
-                                    El Observatorio soCial mediA: elecciones Colima 2015 - OCA -Face y - OCA Twitt, es un proyecto
-                                    acádemico, que surgió en el Instituto Tecnológico de Colima a partir del interés de llevar a 
-                                    cabo una investigáción sobre la forma en la cual los ciudadanos del estado de Colima utilizan 
-                                    los canales de comunicación como: Twitter y Facebook para expresar su opinión con respecto al 
-                                    proceso de campaña de los diferentes candidatos y durante los comicios.
-                
-                                </h3>
-                            </center>
+                    <br/>
+                    <div class="row-fluid">   
+                        <div class="span1"></div>                     
+                        <div class="span10">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <center><p align="justify" id="texto_inicio">OCA Face y OCA Twitt</p></center>
+                                    <p align="justify" id="texto_inicio">
+                                        <br/>
+                                        Es un proyecto acádemico, que surgió en el Instituto Tecnológico de Colima a partir del interés 
+                                        de llevar a cabo una investigáción sobre la forma en la cual los ciudadanos del estado de Colima utilizan 
+                                        los canales de comunicación como:  Facebook y Twitter para expresar su opinión con respecto al 
+                                        proceso de campaña de los diferentes candidatos y durante los comicios.
+                                    </p>                                        
+                                </div>
+                            </div>
                         </div>
+                        <div class="span1"></div>
                     </div>                   
                 </div>              
             </div>

@@ -48,9 +48,11 @@ class Controlador_inicio extends CI_Controller {
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
 		$ultima_fecha = $ultima_fecha->ultima_fecha;
-		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 		
+		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 	
+		//echo "Ultima fecha: ".$ultima_fecha;	
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
-		$hashtags = $this->modelo_inicio->obtener_hashtags_gobernadores();
+		$mes='03';
+		$hashtags = $this->modelo_inicio->obtener_hashtags_gobernadores($mes);
 
 		$datos = array(
 	                "seguidoresn" => $gobernadores['nacho']->seguidores,
@@ -327,9 +329,14 @@ class Controlador_inicio extends CI_Controller {
 
 	public function mapa_coordenadas()
 	{	
-		$datos = array('coordenadasC' => $this->modelo_inicio->obtener_coordenadasC(),
-					  'coordenadasV' => $this->modelo_inicio->obtener_coordenadasV()
-					  );
+		$colima = $this->modelo_inicio->obtener_coordenadasC(); 
+		$datos = array(
+						"pri" => $colima['gobernadores'],
+						"jips_2015" => $colima['dipFederales'],
+						"JIPSColima" => $colima['dipLocales'],
+						"jipsvdea" => $colima['presidentes'],
+						"coordenadasV" => $this->modelo_inicio->obtener_coordenadasV()
+	            	  );
 		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
 	}
 

@@ -70,7 +70,7 @@
   	.page-content { 
   		margin-left: 225px; 
 		margin-top: 0px;
-		min-height: 790px; 
+		min-height: 750px; 
 	}
 
 	.page-sidebar-fixed .page-content {
@@ -84,7 +84,6 @@
 	/***
 	Footer
 	***/
-
 	/* fixed sidebar */
 	.page-sidebar-fixed .footer {
 	  margin-left: 225px;

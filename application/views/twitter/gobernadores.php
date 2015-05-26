@@ -23,11 +23,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <!--Para usar los contenedores widget-->
     <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css">    
-    <style type="text/css">
-	    .widget-content {
-	    	padding: 10px 10px 10px;
-	    }
-	</style>
  </head>	
 <body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
@@ -83,7 +78,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                   		<div class="span12">  
                                     		<div class="span9">  
 	                            				<div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-													<div class="widget-header">
+													<div class="widget-header" style="background: #B20034">
 					                                	<i class="icon-bar-chart"></i>
 					                                	<h3 id="fecha_contenedor"><?php echo $ultima_fecha ?></h3>						                                				
 					                                </div>
@@ -95,9 +90,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	                            			</div>
 	                            			<div class="span3">
 	                            				<div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
-													<div class="widget-header">
+													<div class="widget-header" style="background: #B20034">
 														<i class="icon-calendar"></i>
-					                                	<h3>Fecha a consulta</h3>						                                				
+					                                	<h3>Fecha a consultar</h3>						                                				
 					                                </div>
 													<div class="widget-content">
 														<center>
@@ -138,49 +133,32 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 												</table>	                            				
 	                            			</div>
 	                            		</div>	                            		
-	                            	</div>
-
-	                            	<div class="row-fluid">
-                            			<!--Tabla con candidatos sin cuentas-->
-                            			<div class="span4"> 
-                            				<div class="span12">Candidatos que NO tienen cuenta de Twitter</div>
-                            				<table class="table table-hover table-bordered">
-												<tbody>												
-												  <tr>
-												    <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="25" height="25"></center></td>
-												    <td class="success"><center>David Munro González</center></td>
-												  </tr>
-												  <tr>
-												    <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/MORENA.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
-												    <td class="success"><center>José Francisco Gallardo Rodríguez</center></td>
-												  </tr>	
-												  <tr>
-												    <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PES.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
-												    <td class="success"><center>Gerardo Galván Pinto</center></td>
-												  </tr>	
-												  <tr>
-												    <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/HUMANISTA.png" class="img-responsive center-block" width="30" height="30"></center></td>
-												    <td class="success"><center>Carlos Barbazán Martínez</center></td>
-												  </tr>												  
-												</tbody>
-											</table>	                            				
-                            			</div>
-                            			<div class="span12"></div>
-	                            	</div>
-	                            	
+	                            	</div>	                            	                            	
 		                        </div>
 		                        <!--Segundo tab-->
 					            <div id="nube" class="tab-pane fade ">	
 	                                <div class="row-fluid">
-	                                  <div class="span12">  
-	                                    <button id="go" type="submit" onclick="nube();" class="btn btn-success btn-lg" title="Actualizar">Actualizar</button>
-						            	<br/><br/>
-						            	<div id="container">
-						            		<center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>  	
-						            	</div>                           
-	                                  </div>
-	                                </div>                      
-	                            </div>					            					            				            					              	            	
+	                                  	<div class="span10">
+							            	<div id="container">
+							            		<center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>  
+							            		<center><div id="nube_consulta" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>   		 		
+							            	</div>                           
+	                                  	</div>
+
+	                                  	<div class="span2">
+	                                  		</br></br>
+	                                	    <div class="btn-toolbar" align="left"> 
+										      	<div class="btn-group-vertical">
+											        <a class="btn btn-success btn-lg active" id="consulta_nube"> Marzo</a>
+											        <a class="btn btn-primary btn-lg" id="consulta_nube2"> Abril</a>
+											        <a class="btn btn-primary btn-lg" id="consulta_nube3"> Mayo</a>
+											        <a disabled readonly class="btn btn-primary btn-lg"> Junio</a>
+										      	</div>
+										    </div>
+										</div> 										
+	                                </div>                                                  
+	                            </div>	
+
 					        </div>
 					    </div>
 					</div> 
@@ -220,7 +198,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');        
       data.addRows([
       	['PAN', <?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>],
-        ['PRI, PVE, PNA', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
+        ['Coalición \n PRI-PVE-PNA', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
         ['PRD', <?php echo $seguidoresm ?>, <?php echo $siguiendom ?>, <?php echo $tweetsm ?>],
         ['MC', <?php echo $seguidoresl ?>, <?php echo $siguiendol ?>, <?php echo $tweetsl ?>]        
       ]);
@@ -246,7 +224,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                       }]);
       var options = {      	
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S',
+          titleTextStyle: {color: 'black', fontName: 'Arial Black'}
         },         
         height: 400,
         series: {
@@ -264,14 +243,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         },
         vAxis: {
-        	title: 'Cantidad'
+        	title: 'C A N T I D A D',
+        	titleTextStyle: { fontName: 'Arial Black'}
         }
       };  
 
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
       chart.draw(view, options);          
     }
-    //Sirve para hacer la nube de palabars responsiva
+    //Sirve para hacer la grafica responsiva
 	var aspect = 1000 / 400,
     chart = $("#chart_div");
 	$(window).on("resize", function() {		
@@ -301,6 +281,85 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           }
         });            
       }); 
+
+      $("#consulta_nube").click(function(event) {
+      	$("#consulta_nube").addClass('active btn-success');
+      	$("#consulta_nube2").removeClass('active btn-success');
+      	$("#consulta_nube3").removeClass('active btn-success');
+      	$("#consulta_nube4").removeClass('active btn-success');      	
+        var parametros = {
+                "mes" : '03'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      }); 
+
+      $("#consulta_nube2").click(function(event) {
+      	$("#consulta_nube2").addClass('active btn-success');
+      	$("#consulta_nube").removeClass('active btn-success');
+      	$("#consulta_nube").addClass('btn-primary');
+      	$("#consulta_nube3").removeClass('active btn-success');
+      	$("#consulta_nube4").removeClass('active btn-success');       	
+        var parametros = {
+                "mes" : '04'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube3").click(function(event) {
+      	$("#consulta_nube3").addClass('active btn-success');
+      	$("#consulta_nube2").removeClass('active btn-success');
+      	$("#consulta_nube").removeClass('active btn-success');
+      	$("#consulta_nube").addClass('btn-primary');
+      	$("#consulta_nube4").removeClass('active btn-success'); 
+        var parametros = {
+                "mes" : '05'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube4").click(function(event) {
+      	$("#consulta_nube4").addClass('active btn-success');
+      	$("#consulta_nube2").removeClass('active btn-success');
+      	$("#consulta_nube3").removeClass('active btn-success');
+      	$("#consulta_nube").removeClass('active btn-success'); 
+      	$("#consulta_nube").addClass('btn-primary');
+        var parametros = {
+                "mes" : '06'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
 
     });
   </script>

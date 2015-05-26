@@ -10,10 +10,10 @@ if (<?php echo $vtab ?>==1) {
         data.addColumn('number', 'Siguiendo');
         data.addColumn('number', 'Tweets');        
         data.addRows([
-          ['PRI Nacho Peralta', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
-          ['PAN Jorge L. Preciado', <?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>],
-          ['M. CIUDADANO Locho Morán', <?php echo $seguidoresl ?>, <?php echo $siguiendol ?>, <?php echo $tweetsl ?>],
-          ['PRD Martha Zepeda', <?php echo $seguidoresm ?>, <?php echo $siguiendom ?>, <?php echo $tweetsm ?>]
+          ['PAN', <?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>],
+          ['PRI, PVE, PNA', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
+          ['PRD', <?php echo $seguidoresm ?>, <?php echo $siguiendom ?>, <?php echo $tweetsm ?>],
+          ['MC', <?php echo $seguidoresl ?>, <?php echo $siguiendol ?>, <?php echo $tweetsl ?>]        
         ]);
 
         var view = new google.visualization.DataView(data);
@@ -35,9 +35,9 @@ if (<?php echo $vtab ?>==1) {
                             type: "string",
                             role: "annotation"
                         }]);
-        var options = {
+        var options = {       
         hAxis: {
-          title: 'Candidatos'
+          title: 'C A N D I D A T O S'
         },         
         height: 400,
         series: {
@@ -55,9 +55,9 @@ if (<?php echo $vtab ?>==1) {
           }
         },
         vAxis: {
-          title: 'Cantidad'
+          title: 'C A N T I D A D'
         }
-      };     
+      };       
 
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
         chart.draw(view, options);          

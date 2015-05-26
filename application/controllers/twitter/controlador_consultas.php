@@ -494,4 +494,15 @@ class Controlador_consultas extends CI_Controller {
 	            );
 		$this->load->view('twitter/chars/char_Alcaldias',$datos);	
 	}
+
+	public function nube_gobernadores()
+	{
+		$mes = $this->input->post('mes');	
+		$hashtags = $this->modelo_inicio->obtener_hashtags_gobernadores($mes);
+		$datos = array(
+	                "hashtags" => $hashtags,
+	                "mes" => $mes
+	            );
+		$this->load->view('twitter/chars/char_nube',$datos);
+	}
 }

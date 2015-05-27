@@ -14,7 +14,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <title>Como vamos Colima</title> 
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
-  <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>  
+  <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>
+  <!--Para poder usar el calendario, importar las librerias-->
+  <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <!--Para usar los contenedores widget-->
+  <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css">   
 </head>
 <body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
@@ -52,13 +56,60 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                           <li class="active"><a data-toggle="tab" href="#barras1" id="tab1">Facebook</a></li>
                           <li><a data-toggle="tab" href="#barras2" id="tab2">Twitter</a></li>
                         </ul>
-                          <div class="tab-content" id="myTabContent">
+                          <div class="tab-content" id="myTabContent"> 
                             <div id="barras1" class="tab-pane fade active in"> 
                                 <div id="chart_div" style="height: 400px;"></div>   
                             </div>
+
                             <div id="barras2" class="tab-pane fade"> 
-                                <div id="chart_div2" style="height: 400px;"></div>    
+                                <div class="container-fluid">
+                                    <div class="row-fluid">
+                                      <div class="span12">
+                                        <div class="span9">                                          
+                                            <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                <div class="widget-header" style="background: #B20034">
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>ComoVamosColima</h3>                                                    
+                                                </div>
+                                                <div class="widget-content">                                          
+                                                    <center>
+                                                        <div id="chart_div2" style="height: 400px;"></div>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                        </div>
+
+                                        <div class="span3">
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                            <div class="widget-header" style="background: #B20034" align="left">
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
+                                            </div>
+                                            <div class="widget-content">
+                                              <center>
+                                                <label>Fecha de inicio</label>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div> 
+                                                <label>Fecha de término</label>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div>
+                                                <input type="hidden" name="vtab" id="vtab1" value="1">
+                                                <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                              </center>
+                                            </div> 
+                                          </div>  
+                                        </div>
+                                      </div> 
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
                     </div>
@@ -67,7 +118,24 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         </div>
     </div>
 
-  <?php $this->load->view('comunes/footer'); ?>      
+  <?php $this->load->view('comunes/footer'); ?>  
+  <!--Para poder usar el calendario, importar las librerias-->
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>  
+
+  <!--Para usar el calendario-->
+  <script type="text/javascript">
+    $('.form_date').datetimepicker({
+          language:  'es',
+          weekStart: 1,
+          todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      minView: 2,
+      forceParse: 0
+      });
+  </script>     
  
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});     
@@ -140,6 +208,28 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
       chart.draw(data, options);              
     }    
+    //Sirve para hacer la grafica responsiva
+    var aspect = 1000 / 400,
+      chart = $("#chart_div2");
+    $(window).on("resize", function() {   
+        var targetWidth = chart.width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+        drawChart2();
+    });
+  </script>
+
+  <!--Funcion para ajustar la grafica al expander el menú-->
+  <script type="text/javascript">
+    function recarga()
+    {
+      setTimeout(function(){
+        drawChart();
+        drawChart2();
+      },100)    
+      $('#chart_div').width('100%');  
+      $('#chart_div2').width('100%');  
+    }
   </script>
 
 </body>

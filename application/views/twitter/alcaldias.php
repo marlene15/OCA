@@ -632,36 +632,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                   </div>
                                 </div>
                               </div>
-                            </div>
-
-                            <!-- <div id="barras3" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">                                    
-                                      <label class="control-label" style="float:left">Fecha de consulta: </label>
-                                      <br/><br/>
-                                      <div class="controls input-append date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
-                                        <input class="form-control" size="16" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha3">
-                                        <span class="add-on"><i class="icon-remove"></i></span>
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                      </div>                                
-                                      <div style="float:left">                                 
-                                        <input type="hidden" name="vtab" id="vtab3" value="3">
-                                        <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta3">Consultar</button>
-                                      </div>                                    
-                                  </div>
-                                </div>
-                              </div>                                
-
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div3"></div>  
-                                    <div id="con3"></div>                            
-                                  </div>
-                                </div>
-                              </div>
-                            </div> -->  
+                            </div> 
 
                             <div id="nube" class="tab-pane fade ">  
                                 <div class="container-fluid">

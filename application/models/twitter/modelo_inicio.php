@@ -733,12 +733,12 @@
 			}
 		}
 
-		//Obtener coordenadas de Colima que hablan sobre nacho
-		public function obtener_coordenadasC()
+		//Obtener coordenadas de los comentarios sobre politica
+		public function obtener_coordenadas($municipio)
 		{
 			$resultado_gobernadores=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='Colima' and 
+										where twitt.municipio='$municipio' and 
 										  (texto LIKE '%nachoperaltacol%' or texto 
 										  LIKE '%jips%' or texto LIKE '%JuntosNadieNosPara%' or texto LIKE '%JIPS2015%' 
 										  or texto LIKE '%MiSelfiecoNacho%'or texto LIKE '%DesdeAbajoConTrabajo%' 
@@ -759,7 +759,7 @@
 			
 			$resultado_dipFederales=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='Colima' and 
+										where twitt.municipio='$municipio' and 
 										(texto LIKE '%soygp%' or texto 
 										LIKE '%kikerojas007%' or texto LIKE '%indira_vizcaino%' or texto LIKE '%NormaGdeV%' 
 										or texto LIKE '%olave_nery%'or texto LIKE '%TrabajandoPorLoQueMásQuieres%' 										
@@ -770,7 +770,7 @@
 
 			$resultado_dipLocales=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='Colima' and 
+										where twitt.municipio='$municipio' and 
 										(texto LIKE '%HildaCeballos01%' 
 										or texto LIKE '%Distrito1%' 
 										or texto LIKE '%BrigadaEmetista%' 
@@ -836,7 +836,7 @@
 
 			$resultado_Presidentes=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='Colima' and 
+										where twitt.municipio='$municipio' and 
 										(texto LIKE '%DipEsperanzaA%' 
 										or texto LIKE '%OVPresidente%' 
 										or texto LIKE '%renovaciondinamica%'
@@ -898,24 +898,6 @@
                 "presidentes" => $resultado_Presidentes->result()
 	        );	            
 	        return $a;
-		}
-
-		//Obtener coordenadas de Villa de álvarez que hablan sobre nacho
-		public function obtener_coordenadasV()
-		{
-			$resultado=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
-										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='Villa de Álvarez' and 
-										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
-										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')");
-			if($resultado->num_rows()>0)
-			{
-				return $resultado->result();
-			}
-			else
-			{
-				return FALSE;
-			}
 		}
 
 		//Obtener hashtags Gobernadores para la Nube de palabras

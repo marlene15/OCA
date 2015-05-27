@@ -74,7 +74,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
                               <li class="active"><a data-toggle="tab" href="#colima">Colima</a></li>
-                              <li class=""><a data-toggle="tab" href="#villa" id="v">Villa de Álvarez</a></li>
+                              <li class=""><a data-toggle="tab" href="#villa">Villa de Álvarez</a></li>
+                              <li class=""><a data-toggle="tab" href="#manzanillo">Manzanillo</a></li>
+                              <li class=""><a data-toggle="tab" href="#tecoman">Tecomán</a></li>
                             </ul>
                               <div class="tab-content" id="myTabContent">
 
@@ -118,6 +120,46 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div>
 
+                                <div id="manzanillo" class="tab-pane fade"> 
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-map-marker"></i>
+                                                        <h3>Manzanillo</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <center>
+                                                            <div id="map_div3" style="width: 100%; height: 500px;"></div> <!--Segundo mapa-->   
+                                                        </center> 
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tecoman" class="tab-pane fade"> 
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-map-marker"></i>
+                                                        <h3>Tecomán</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <center>
+                                                            <div id="map_div4" style="width: 100%; height: 500px;"></div> <!--Segundo mapa-->   
+                                                        </center> 
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>  <!--Cierra div de los tabs-->  
                     </div>
@@ -135,18 +177,44 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     //Datos Colima
     <?php //Llenamos el array con las coordenadas
         $a = array();
-        foreach ($coordenadasC as $coordenadasC) 
+        foreach ($gobernadores_colima as $gobernadores_colima) 
         {
             $a[] = array(
-                "Lat" => $coordenadasC->latitud,
-                "Long" => $coordenadasC->longitud
+                "Lat" => $gobernadores_colima->latitud,
+                "Long" => $gobernadores_colima->longitud
             );
-        }                          
+        }  
+
+        $a2 = array();
+        foreach ($dipFederales_colima as $dipFederales_colima) 
+        {
+            $a2[] = array(
+                "Lat" => $dipFederales_colima->latitud,
+                "Long" => $dipFederales_colima->longitud
+            );
+        }
+
+        $a3 = array();
+        foreach ($dipLocales_colima as $dipLocales_colima) 
+        {
+            $a3[] = array(
+                "Lat" => $dipLocales_colima->latitud,
+                "Long" => $dipLocales_colima->longitud
+            );
+        }
+
+        $a4 = array();
+        foreach ($presidentes_colima as $presidentes_colima) 
+        {
+            $a4[] = array(
+                "Lat" => $presidentes_colima->latitud,
+                "Long" => $presidentes_colima->longitud
+            );
+        }                        
     ?>
 
       function drawChart() 
-      {
-        
+      {        
         //Datos Colima
         var data = google.visualization.arrayToDataTable(
             [
@@ -154,6 +222,18 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
               <?php for ($i=0; $i<count($a); $i++) {
               ?>
               [<?php echo $a[$i]['Lat'] ?>, <?php echo $a[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a2); $i++) {
+              ?>
+              [<?php echo $a2[$i]['Lat'] ?>, <?php echo $a2[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a3); $i++) {
+              ?>
+              [<?php echo $a3[$i]['Lat'] ?>, <?php echo $a3[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a4); $i++) {
+              ?>
+              [<?php echo $a4[$i]['Lat'] ?>, <?php echo $a4[$i]['Long'] ?>],
               <?php } ?>
             ]
         );
@@ -165,17 +245,41 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 <!--Mapa de Villa de álvarez-->
 <script type="text/javascript">
-
-    // google.load("visualization", "1", {packages:["map"]});
-    // google.setOnLoadCallback(drawChart2);
     //Datos villa de álvarez
     <?php //Llenamos el array con las coordenadas
-        $a2 = array();
-        foreach ($coordenadasV as $coordenadasV) 
+        $a5 = array();
+        foreach ($gobernadores_villa as $gobernadores_villa) 
         {
-            $a2[] = array(
-                "Lat" => $coordenadasV->latitud,
-                "Long" => $coordenadasV->longitud
+            $a5[] = array(
+                "Lat" => $gobernadores_villa->latitud,
+                "Long" => $gobernadores_villa->longitud
+            );
+        }  
+
+        $a6 = array();
+        foreach ($dipFederales_villa as $dipFederales_villa) 
+        {
+            $a6[] = array(
+                "Lat" => $dipFederales_villa->latitud,
+                "Long" => $dipFederales_villa->longitud
+            );
+        }
+
+        $a7 = array();
+        foreach ($dipLocales_villa as $dipLocales_villa) 
+        {
+            $a7[] = array(
+                "Lat" => $dipLocales_villa->latitud,
+                "Long" => $dipLocales_villa->longitud
+            );
+        }
+
+        $a8 = array();
+        foreach ($presidentes_villa as $presidentes_villa) 
+        {
+            $a8[] = array(
+                "Lat" => $presidentes_villa->latitud,
+                "Long" => $presidentes_villa->longitud
             );
         }                          
     ?>
@@ -184,9 +288,21 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         var data2 = google.visualization.arrayToDataTable(
             [
               ['Lat', 'Long'],
-              <?php for ($i=0; $i<count($a2); $i++) {
+              <?php for ($i=0; $i<count($a5); $i++) {
               ?>
-              [<?php echo $a2[$i]['Lat'] ?>, <?php echo $a2[$i]['Long'] ?>],
+              [<?php echo $a5[$i]['Lat'] ?>, <?php echo $a5[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a6); $i++) {
+              ?>
+              [<?php echo $a6[$i]['Lat'] ?>, <?php echo $a6[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a7); $i++) {
+              ?>
+              [<?php echo $a7[$i]['Lat'] ?>, <?php echo $a7[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a8); $i++) {
+              ?>
+              [<?php echo $a8[$i]['Lat'] ?>, <?php echo $a8[$i]['Long'] ?>],
               <?php } ?>
             ]
         );
@@ -195,6 +311,146 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         var map2 = new google.visualization.Map(document.getElementById('map_div2'));
         var options = { showTip: true };
         map2.draw(data2, options);
+      }
+</script>
+
+<!--Mapa de Manzanillo-->
+<script type="text/javascript">
+    //Datos Manzanillo
+    <?php //Llenamos el array con las coordenadas
+        $a9 = array();
+        foreach ($gobernadores_manzanillo as $gobernadores_manzanillo) 
+        {
+            $a9[] = array(
+                "Lat" => $gobernadores_manzanillo->latitud,
+                "Long" => $gobernadores_manzanillo->longitud
+            );
+        }  
+
+        $a10 = array();
+        foreach ($dipFederales_manzanillo as $dipFederales_manzanillo) 
+        {
+            $a10[] = array(
+                "Lat" => $dipFederales_manzanillo->latitud,
+                "Long" => $dipFederales_manzanillo->longitud
+            );
+        }
+
+        $a11 = array();
+        foreach ($dipLocales_manzanillo as $dipLocales_manzanillo) 
+        {
+            $a11[] = array(
+                "Lat" => $dipLocales_manzanillo->latitud,
+                "Long" => $dipLocales_manzanillo->longitud
+            );
+        }
+
+        $a12 = array();
+        foreach ($presidentes_manzanillo as $presidentes_manzanillo) 
+        {
+            $a12[] = array(
+                "Lat" => $presidentes_manzanillo->latitud,
+                "Long" => $presidentes_manzanillo->longitud
+            );
+        }                          
+    ?>
+        //Datos Manzanillo
+        var data3 = google.visualization.arrayToDataTable(
+            [
+              ['Lat', 'Long'],
+              <?php for ($i=0; $i<count($a9); $i++) {
+              ?>
+              [<?php echo $a9[$i]['Lat'] ?>, <?php echo $a9[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a10); $i++) {
+              ?>
+              [<?php echo $a10[$i]['Lat'] ?>, <?php echo $a10[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a11); $i++) {
+              ?>
+              [<?php echo $a11[$i]['Lat'] ?>, <?php echo $a11[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a12); $i++) {
+              ?>
+              [<?php echo $a12[$i]['Lat'] ?>, <?php echo $a12[$i]['Long'] ?>],
+              <?php } ?>
+            ]
+        );
+      function drawChart3() 
+      {
+        var map3 = new google.visualization.Map(document.getElementById('map_div3'));
+        var options = { showTip: true };
+        map3.draw(data3, options);
+      }
+</script>
+
+<!--Mapa de Tecomán-->
+<script type="text/javascript">
+    //Datos Tecomán
+    <?php //Llenamos el array con las coordenadas
+        $a13 = array();
+        foreach ($gobernadores_tecoman as $gobernadores_tecoman) 
+        {
+            $a13[] = array(
+                "Lat" => $gobernadores_tecoman->latitud,
+                "Long" => $gobernadores_tecoman->longitud
+            );
+        }  
+
+        $a14 = array();
+        foreach ($dipFederales_tecoman as $dipFederales_tecoman) 
+        {
+            $a14[] = array(
+                "Lat" => $dipFederales_tecoman->latitud,
+                "Long" => $dipFederales_tecoman->longitud
+            );
+        }
+
+        $a15 = array();
+        foreach ($dipLocales_tecoman as $dipLocales_tecoman) 
+        {
+            $a15[] = array(
+                "Lat" => $dipLocales_tecoman->latitud,
+                "Long" => $dipLocales_tecoman->longitud
+            );
+        }
+
+        $a16 = array();
+        foreach ($presidentes_tecoman as $presidentes_tecoman) 
+        {
+            $a16[] = array(
+                "Lat" => $presidentes_tecoman->latitud,
+                "Long" => $presidentes_tecoman->longitud
+            );
+        }                          
+    ?>
+        //Datos Manzanillo
+        var data4 = google.visualization.arrayToDataTable(
+            [
+              ['Lat', 'Long'],
+              <?php for ($i=0; $i<count($a13); $i++) {
+              ?>
+              [<?php echo $a13[$i]['Lat'] ?>, <?php echo $a13[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a14); $i++) {
+              ?>
+              [<?php echo $a14[$i]['Lat'] ?>, <?php echo $a14[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a15); $i++) {
+              ?>
+              [<?php echo $a15[$i]['Lat'] ?>, <?php echo $a15[$i]['Long'] ?>],
+              <?php } ?>
+              <?php for ($i=0; $i<count($a16); $i++) {
+              ?>
+              [<?php echo $a16[$i]['Lat'] ?>, <?php echo $a16[$i]['Long'] ?>],
+              <?php } ?>
+            ]
+        );
+      function drawChart4() 
+      {
+        var map4 = new google.visualization.Map(document.getElementById('map_div4'));
+        var options = { showTip: true };
+        map4.draw(data4, options);
       }
 </script>
 </body>

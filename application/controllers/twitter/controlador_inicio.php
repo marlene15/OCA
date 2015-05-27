@@ -329,13 +329,30 @@ class Controlador_inicio extends CI_Controller {
 
 	public function mapa_coordenadas()
 	{	
-		$colima = $this->modelo_inicio->obtener_coordenadasC(); 
+		$colima = $this->modelo_inicio->obtener_coordenadas('Colima'); 
+		$villa = $this->modelo_inicio->obtener_coordenadas('Villa de Álvarez'); 
+		$manzanillo = $this->modelo_inicio->obtener_coordenadas('Manzanillo');
+		$tecoman = $this->modelo_inicio->obtener_coordenadas('Tecomán');
 		$datos = array(
-						"pri" => $colima['gobernadores'],
-						"jips_2015" => $colima['dipFederales'],
-						"JIPSColima" => $colima['dipLocales'],
-						"jipsvdea" => $colima['presidentes'],
-						"coordenadasV" => $this->modelo_inicio->obtener_coordenadasV()
+						"gobernadores_colima" => $colima['gobernadores'],
+						"dipFederales_colima" => $colima['dipFederales'],
+						"dipLocales_colima" => $colima['dipLocales'],
+						"presidentes_colima" => $colima['presidentes'],
+
+						"gobernadores_villa" => $villa['gobernadores'],
+						"dipFederales_villa" => $villa['dipFederales'],
+						"dipLocales_villa" => $villa['dipLocales'],
+						"presidentes_villa" => $villa['presidentes'],
+
+						"gobernadores_manzanillo" => $manzanillo['gobernadores'],
+						"dipFederales_manzanillo" => $manzanillo['dipFederales'],
+						"dipLocales_manzanillo" => $manzanillo['dipLocales'],
+						"presidentes_manzanillo" => $manzanillo['presidentes'],
+
+						"gobernadores_tecoman" => $tecoman['gobernadores'],
+						"dipFederales_tecoman" => $tecoman['dipFederales'],
+						"dipLocales_tecoman" => $tecoman['dipLocales'],
+						"presidentes_tecoman" => $tecoman['presidentes']
 	            	  );
 		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
 	}

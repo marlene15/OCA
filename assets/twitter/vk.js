@@ -1,12 +1,14 @@
 $(document).ready(function(){
 	//Mapas
-	$('#villa').hide();
 	$('[data-toggle=tab][href=#colima]').on('click',function(){
 		setTimeout(function(){
 			drawChart();
 		},550)
+		$('#map_div').width('100%');
 		$('#colima').show(500);
 		$('#villa').hide(250);
+		$('#manzanillo').hide(250);
+		$('#tecoman').hide(250);
 	});
 	$('[data-toggle=tab][href=#villa]').on('click',function(){
 		setTimeout(function(){
@@ -15,5 +17,27 @@ $(document).ready(function(){
 		$('#map_div2').width('100%');
 		$('#villa').show(500);
 		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
+		$('#tecoman').hide(250);
+	});
+	$('[data-toggle=tab][href=#manzanillo]').on('click',function(){
+		setTimeout(function(){
+			drawChart3();
+		},550)
+		$('#map_div3').width('100%');
+		$('#manzanillo').show(500);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#tecoman').hide(250);
+	});
+	$('[data-toggle=tab][href=#tecoman]').on('click',function(){
+		setTimeout(function(){
+			drawChart4();
+		},550)
+		$('#map_div4').width('100%');
+		$('#tecoman').show(500);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
 	});
 });

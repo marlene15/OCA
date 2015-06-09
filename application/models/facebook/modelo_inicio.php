@@ -25,326 +25,6 @@ class Modelo_inicio extends CI_Model
 		}
 	}
 
-	//Obteniendo los likes del candidato a gobernador Ignacio Peralta
-	public function Obtener_CGIgnacioPeralta()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$ignacioperalta = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='José Ignacio Peralta Sánchez'");
-
-		if($ignacioperalta->num_rows()>0)
-		{
-			return $ignacioperalta->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a gobernador Jorge Luis Preciado
-	public function Obtener_CGJorgeLuis()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$jorgepreciado = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='Jorge Luis Preciado Rodríguez'");
-	
-		if($jorgepreciado->num_rows()>0)
-		{
-			return $jorgepreciado->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a gobernador Leoncio Moran
-	public function Obtener_CGLeoncioMoran()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$leonciomoran = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='Leoncio Morán Sánchez'");
-	
-		if($leonciomoran->num_rows()>0)
-		{
-			return $leonciomoran->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a gobernador Martha zepeda
-	public function Obtener_CGMarthaZepeda()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$marthazepeda = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='Martha Zepeda del Toro'");
-	
-		if($marthazepeda->num_rows()>0)
-		{
-			return $marthazepeda->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a gobernador David Munro
-	public function Obtener_CGDavidMunro()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$davidmunro = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='David Munro González'");
-	
-		if($davidmunro->num_rows()>0)
-		{
-			return $davidmunro->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a gobernador Francisco Gallardo
-	public function Obtener_CGFranciscoGallardo()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$franciscogallardo = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='José Francisco Gallardo Rodríguez'");
-	
-		if($franciscogallardo->num_rows()>0)
-		{
-			return $franciscogallardo->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a gobernador Gerardo Galvan
-	public function Obtener_CGGerardoGalvan()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$gerardogalvan = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='Gerardo Galván Pinto'");
-	
-		if($gerardogalvan->num_rows()>0)
-		{
-			return $gerardogalvan->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-
-	//Obteniendo los likes del candidato a gobernador Carlos Barbazan
-	public function Obtener_CGCarlosBarbazan()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$carlosbarbazan = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Gobernador') and Nombre='Carlos Barbazán Martínez'");
-	
-		if($carlosbarbazan->num_rows()>0)
-		{
-			return $carlosbarbazan->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a DF Jose Manuel
-	public function Obtener_CDFDIJosemanuel()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$josemanuel = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='José Manuel Moreno González'");
-	
-		if($josemanuel->num_rows()>0)
-		{
-			return $josemanuel->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}	
-
-	//Obteniendo los likes del candidato a DF Enrique rojas
-	public function Obtener_CDFDIEnriquerojas()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$enriquerojas = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Enrique Rojas Orozco'");
-				
-		if($enriquerojas->num_rows()>0)
-		{
-			return $enriquerojas->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}	
-
-	//Obteniendo los likes del candidato a DF JIndira Vizcaino
-	public function Obtener_CDFDIIndiravizcaino()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$indiravizcaino = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Indira Vizcaíno Silva'");
-	
-		if($indiravizcaino->num_rows()>0)
-		{
-			return $indiravizcaino->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a DF Silvia Dias
-	public function Obtener_CDFDISilviaDias()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$silviadias = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Silvia Elena Díaz Márquez'");
-	
-		if($silviadias->num_rows()>0)
-		{
-			return $silviadias->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes del candidato a DF Angeles Marquez
-	public function Obtener_CDFDIAngelesMarquez()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$angelesmarquez = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Ángeles Márquez Gileta'");
-	
-		if($angelesmarquez->num_rows()>0)
-		{
-			return $angelesmarquez->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-	//Obteniendo los likes del candidato a DF Rosalinda Garcia
-	public function Obtener_CDFDIRosalindaGarcia()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$rosalinagarcia = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Rosalina García Torres'");
-	
-		if($rosalinagarcia->num_rows()>0)
-		{
-			return $rosalinagarcia->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes y los post del candidato a DFDI Claudia Ibarra
-	public function Obtener_CDFDIClaudiaIbarra()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$claudiaibarra = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito I') and Nombre='Claudia Jasmín Ibarra Ávalos'");
-	
-		if($claudiaibarra->num_rows()>0)
-		{
-			return $claudiaibarra->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes y los post del candidato a DFDII Norma Galindo Matías
-	public function Obtener_CDFDIINormagalindo()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$normagalindo = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito II') and Nombre='Norma Galindo Matías'");
-	
-		if($normagalindo->num_rows()>0)
-		{
-			return $normagalindo->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes y los posts del candidato a DFDII Pedro Fernández Rodríguez
-	public function Obtener_CDFDIIPedrofernandez()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pedrofernandez = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito II') and Nombre='Pedro Fernández Rodríguez'");
-	
-		if($pedrofernandez->num_rows()>0)
-		{
-			return $pedrofernandez->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-	
-	//Obteniendo los likes y los posts del candidato a DFDII Elías Eduardo Valencia Cervantes
-	public function Obtener_CDFDIIEliasvalencia()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$eliasvalencia = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito II') and Nombre='Elías Eduardo Valencia Cervantes'");
-	
-		if($eliasvalencia->num_rows()>0)
-		{
-			return $eliasvalencia->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-	
-	//Obteniendo los likes y los posts del candidato a DFDII Juan Carlos Olave
-	public function Obtener_CDFDIIJuancarlos()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$juancarlos = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito II') and Nombre='Juan Carlos Olave'");
-	
-		if($juancarlos->num_rows()>0)
-		{
-			return $juancarlos->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-
-	//Obteniendo los likes y los posts del candidato a DFDII Marisa Mesina Polanco
-	public function Obtener_CDFDIIMarisamesina()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$marisamesina = $db_facebook->query("select Megusta, PersonasHablan from candidatos where (Cargo='Diputado Federal Distrito II') and Nombre='Marisa Mesina Polanco'");
-	
-		if($marisamesina->num_rows()>0)
-		{
-			return $marisamesina->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}
-	}
-	
 	//********CANDIDATOS A DIPUTADO LOCAL*********
 	
 	//Obteniendo los likes y los posts del candidato a DLDI Hilda Ceballos Llerenas
@@ -2588,7 +2268,7 @@ class Modelo_inicio extends CI_Model
 		//Obtener cuenta de Comovamoscolima
 		public function obtener_cuenta_rumboal7dejunio()
 		{
-			$rumbo = $this->db->query("select Megusta, PersonasHablan, Fecha from partido where (Cargo='Sociedad') and Partido='Rumbo al 7 de junio' ORDER BY Fecha ASC");
+			$rumbo = $this->db->query("select Megusta, PersonasHablan, fecha from partido where (Cargo='Sociedad') and Partido='Rumbo al 7 de junio' ORDER BY Fecha ASC");
 
 			if($rumbo->num_rows()>0)
 			{
@@ -2602,4 +2282,204 @@ class Modelo_inicio extends CI_Model
 				return FALSE;
 			}
 		}						
+	public function obtener_ultima_fecha()
+	{
+		// $db_facebook = $this->load->database('facebook', TRUE);
+		$ultima_fecha = $this->db->query("SELECT max(fecha) as ultima_fecha from candidatos");
+
+		if($ultima_fecha->num_rows()>0)
+		{
+			return $ultima_fecha->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+
+	public function obtener_ultima_fecha2()
+	{
+		// $db_facebook = $this->load->database('facebook', TRUE);
+		$ultima_fecha = $this->db->query("SELECT max(fecha) as ultima_fecha from partido");
+
+		if($ultima_fecha->num_rows()>0)
+		{
+			return $ultima_fecha->row(); //Con el row solo se obtiene una fila de resultados
+		}
+		else
+		{
+			return FALSE;
+		}
+	}	
+	#Obtener datos de los Gobernadores
+	public function obtener_cuenta_gobernadores($fecha)
+	{
+		$nacho = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'José Ignacio Peralta Sánchez'");
+		$jorge = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Jorge Luis Preciado Rodríguez'");
+		$locho = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Leoncio Morán Sánchez'");
+		$martha = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Martha Zepeda del Toro'");
+		$david = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'David Munro González'");
+		$francisco = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'José Francisco Gallardo Rodríguez'");
+		$gerardo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Gerardo Galván Pinto'");
+		$carlos = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Carlos Barbazán Martínez'");
+
+		if($nacho->num_rows()>0 and $jorge->num_rows()>0 and $locho->num_rows()>0 and $martha->num_rows()>0 and $david->num_rows()>0 and $francisco->num_rows()>0 and $gerardo->num_rows()>0 and $carlos->num_rows()>0)
+		{
+			$nacho = $nacho->row();
+			$jorge = $jorge->row();
+			$locho = $locho->row();
+			$martha = $martha->row();
+			$david = $david->row();
+			$francisco = $francisco->row();
+			$gerardo = $gerardo->row();
+			$carlos = $carlos->row();
+			$a = array(
+                "nacho" => $nacho,
+                "jorge" => $jorge,
+                "locho" => $locho,
+                "martha" => $martha,
+                "david" => $david,
+				"francisco" => $francisco,
+				"gerardo" => $gerardo,
+				"carlos" => $carlos
+            );
+            return $a;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+
+	//Obtener datos de los diputados federales
+	public function obtener_cuenta_dipitadofederal($fecha)
+	{
+		//Distrito I
+		$josemanuel = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'José Manuel Moreno González'");
+		$enriquerojas = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Enrique Rojas Orozco'");
+		$indiravizcaino = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Indira Vizcaíno Silva'");
+		$silviadias = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Silvia Elena Díaz Márquez'");
+		$angelesmarquez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Ángeles Márquez Gileta'");
+		$rosalinagarcia = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Rosalina García Torres'");
+		$claudiaibarra = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Claudia Jasmín Ibarra Ávalos'");
+		//Distrito II
+		$normagalindo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Norma Galindo Matías'");
+		$pedrofernandez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Pedro Fernández Rodríguez'");
+		$eliasvalencia = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Elías Eduardo Valencia Cervantes'");
+		$juancarlos = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Juan Carlos Olave'");
+		$marisamesina = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+								  where fecha = '$fecha' and Nombre = 'Marisa Mesina Polanco'");
+
+		if($josemanuel->num_rows()>0 and $enriquerojas->num_rows()>0 and $indiravizcaino->num_rows()>0 and $silviadias->num_rows()>0 and $angelesmarquez->num_rows()>0 and $rosalinagarcia->num_rows()>0 and $claudiaibarra->num_rows()>0 and $normagalindo->num_rows()>0 and $pedrofernandez->num_rows()>0 and $eliasvalencia->num_rows()>0 and $juancarlos->num_rows()>0 and $marisamesina->num_rows()>0)
+		{
+			//Distrito I
+			$josemanuel = $josemanuel->row();
+			$enriquerojas = $enriquerojas->row();
+			$indiravizcaino = $indiravizcaino->row();
+			$silviadias = $silviadias->row();
+			$angelesmarquez = $angelesmarquez->row();
+			$rosalinagarcia = $rosalinagarcia->row();
+			$claudiaibarra = $claudiaibarra->row();
+			//Distrito II
+			$normagalindo = $normagalindo->row();
+			$pedrofernandez = $pedrofernandez->row();
+			$eliasvalencia = $eliasvalencia->row();
+			$juancarlos = $juancarlos->row();
+			$marisamesina = $marisamesina->row();
+
+			$a = array(
+                "josemanuel" => $josemanuel,
+                "enriquerojas" => $enriquerojas,
+                "indiravizcaino" => $indiravizcaino,
+                "silviadias" => $silviadias,
+                "angelesmarquez" => $angelesmarquez,
+				"rosalinagarcia" => $rosalinagarcia,
+				"claudiaibarra" => $claudiaibarra,
+				"normagalindo" => $normagalindo,
+				"pedrofernandez" => $pedrofernandez,
+				"eliasvalencia" => $eliasvalencia,
+				"juancarlos" => $juancarlos,
+				"marisamesina" => $marisamesina
+            );
+            return $a;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+	//Obtener datos de los partidos politicos ACOMODARLA BIEN
+	public function obtener_cuenta_partidos()
+	{
+		$pri = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+								  where Partido = 'PRI' ORDER BY fecha ASC");
+		$pan = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'PAN' ORDER BY fecha ASC");
+		$pna = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'NUEVA ALIANZA' ORDER BY fecha ASC");
+		$pv = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'VERDE' ORDER BY fecha ASC");
+		$prd = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'PRD' ORDER BY fecha ASC");
+		$pt = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'PT' ORDER BY fecha ASC");
+		$pmc = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'MOVIMIENTO CIUDADANO' ORDER BY fecha ASC");
+		$pm = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'MORENA' ORDER BY fecha ASC");
+		$pes = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'ENCUENTRO SOCIAL' ORDER BY fecha ASC");
+		$ph = $this->db->query("SELECT Megusta, PersonasHablan from partido 
+								  where Partido = 'PARTIDO HUMANISTA' ORDER BY fecha ASC");
+
+		if($pri->num_rows()>0)
+		{
+			// $pri = $pri->result(),
+			// $pan = $pan->result();
+			// $pna = $pna->result();
+			// $pv = $pv->result();
+			// $prd = $prd->result();
+			// $pt = $pt->result();
+			// $pmc = $pmc->result();
+			// $pm = $pm->result();			
+			// $pes = $pes->result();
+			// $ph = $ph->result();						
+			$a = array(
+                "pri" => $pri->result(),
+                "pan" => $pan->result(),
+                "pna" => $pna->result(),
+                "pv" => $pv->result(),
+                "prd" => $prd->result(),
+                "pt" => $pt->result(),
+                "pmc" => $pmc->result(),
+                "pm" => $pm->result(),
+                "pes" => $pes->result(),
+                "ph" => $ph->result()
+            );
+            return $a;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}	
 }	

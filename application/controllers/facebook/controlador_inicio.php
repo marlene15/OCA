@@ -21,7 +21,9 @@ class Controlador_inicio extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('url');		
 		$this->load->model('facebook/modelo_inicio');
+		$this->load->model('facebook/modelo_consultas');
 		$this->load->database('facebook');
 		$this->verificar_sesion();
 	}
@@ -48,65 +50,95 @@ class Controlador_inicio extends CI_Controller {
 //CANDIDATOS A GOBERNADOR
 	public function gobernadores()
 	{
-		$ignacioperalta = $this->modelo_inicio->Obtener_CGIgnacioPeralta();
-		$jorgepreciado = $this->modelo_inicio->Obtener_CGJorgeLuis();
-		$leonciomoran = $this->modelo_inicio->Obtener_CGLeoncioMoran();
-		$marthazepeda = $this->modelo_inicio->Obtener_CGMarthaZepeda();
-		$davidmunro = $this->modelo_inicio->Obtener_CGDavidMunro();
-		$franciscogallardo = $this->modelo_inicio->Obtener_CGFranciscoGallardo();
-		$gerardogalvan = $this->modelo_inicio->Obtener_CGGerardoGalvan();
-		$carlosbarbazan = $this->modelo_inicio->Obtener_CGCarlosBarbazan();
+		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
+		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 		
+		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+		$mes='03';
+		$data = array(
+			                "megustaci" => $gobernadores['nacho']->Megusta,
+			                "seguidoresci" => $gobernadores['nacho']->PersonasHablan,
+			                
+			                "megustacj" => $gobernadores['jorge']->Megusta,
+			                "seguidorescj" => $gobernadores['jorge']->PersonasHablan,
 
-		if($ignacioperalta != FALSE and $jorgepreciado != FALSE and $leonciomoran != FALSE and $marthazepeda != FALSE and $davidmunro != FALSE and $franciscogallardo != FALSE and $gerardogalvan != FALSE and $carlosbarbazan != FALSE)
-		{
-			$data = array('megustaci' => $ignacioperalta->Megusta, 'seguidoresci' => $ignacioperalta->PersonasHablan, 
-				          'megustacj' => $jorgepreciado->Megusta, 'seguidorescj' => $jorgepreciado->PersonasHablan,
-				          'megustacm' => $marthazepeda->Megusta, 'seguidorescm' => $marthazepeda->PersonasHablan,
-				          'megustacd' => $davidmunro->Megusta, 'seguidorescd' => $davidmunro->PersonasHablan,
-				          'megustacl' => $leonciomoran->Megusta, 'seguidorescl' => $leonciomoran->PersonasHablan,				          
-				          'megustacf' => $franciscogallardo->Megusta, 'seguidorescf' => $franciscogallardo->PersonasHablan,
-				          'megustacg' => $gerardogalvan->Megusta, 'seguidorescg' => $gerardogalvan->PersonasHablan,
-				          'megustacc' => $carlosbarbazan->Megusta, 'seguidorescc' => $carlosbarbazan->PersonasHablan);
+			                "megustacm" => $gobernadores['martha']->Megusta,
+			                "seguidorescm" => $gobernadores['martha']->PersonasHablan,
+
+			                "megustacd" => $gobernadores['david']->Megusta,
+			                "seguidorescd" => $gobernadores['david']->PersonasHablan,
+			                
+			                "megustacl" => $gobernadores['locho']->Megusta,
+			                "seguidorescl" => $gobernadores['locho']->PersonasHablan,
+			                
+			                "megustacf" => $gobernadores['francisco']->Megusta,
+			                "seguidorescf" => $gobernadores['francisco']->PersonasHablan,
+
+			                "megustacg" => $gobernadores['gerardo']->Megusta,
+			                "seguidorescg" => $gobernadores['gerardo']->PersonasHablan,
+
+			                "megustacc" => $gobernadores['carlos']->Megusta,
+			                "seguidorescc" => $gobernadores['carlos']->PersonasHablan,			                
+
+			                'ultima_fecha' => $fecha
+			            );
 			$this->load->view('facebook/gobernador',$data);
-		}
 	}
 
 //CANDIDATO A DIPUTADOS FEDERAL DISTRITIO I y DITRITO II
 	public function DFDistritoI()
-		{
-			//Distrito I
-			$josemanuel = $this->modelo_inicio->Obtener_CDFDIJosemanuel();
-			$enriquerojas = $this->modelo_inicio->Obtener_CDFDIEnriquerojas();
-			$indiravizcaino = $this->modelo_inicio->Obtener_CDFDIIndiravizcaino();
-			$silviadias = $this->modelo_inicio->Obtener_CDFDISilviaDias();
-			$angelesmarquez = $this->modelo_inicio->Obtener_CDFDIAngelesMarquez();
-			$rosalinagarcia = $this->modelo_inicio->Obtener_CDFDIRosalindaGarcia();
-			$claudiaibarra = $this->modelo_inicio->Obtener_CDFDIClaudiaIbarra();
+	{
+		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
+		// echo $ultima_fecha;	
+		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 		
+		$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 				
+		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);				
+		$data = array(
+			                //Distrito I
+			                "megustacj" => $dip1['josemanuel']->Megusta,
+			                "seguidorescj" => $dip1['josemanuel']->PersonasHablan,
+			                
+			                "megustace" => $dip1['enriquerojas']->Megusta,
+			                "seguidoresce" => $dip1['enriquerojas']->PersonasHablan,
 
-			//Distrito II
-			$normagalindo = $this->modelo_inicio->Obtener_CDFDIINormagalindo();
-			$pedrofernandez = $this->modelo_inicio->Obtener_CDFDIIPedrofernandez();
-			$eliasvalencia = $this->modelo_inicio->Obtener_CDFDIIEliasvalencia();
-			$juancarlos = $this->modelo_inicio->Obtener_CDFDIIJuancarlos();
-			$marisamesina = $this->modelo_inicio->Obtener_CDFDIIMarisamesina();			
+			                "megustaci" => $dip1['indiravizcaino']->Megusta,
+			                "seguidoresci" => $dip1['indiravizcaino']->PersonasHablan,
 
-			if($josemanuel != FALSE and $enriquerojas != FALSE and $indiravizcaino != FALSE and $silviadias != FALSE and $angelesmarquez != FALSE and $rosalinagarcia != FALSE and $claudiaibarra  != FALSE and $normagalindo != FALSE and $pedrofernandez != FALSE and $eliasvalencia != FALSE and $juancarlos != FALSE and $marisamesina != FALSE)
-			{
-				$data = array('megustaci' => $josemanuel->Megusta, 'seguidoresci' => $josemanuel->PersonasHablan,
-					          'megustacj' => $enriquerojas->Megusta, 'seguidorescj' => $enriquerojas->PersonasHablan,
-					          'megustacl' => $indiravizcaino->Megusta, 'seguidorescl' => $indiravizcaino->PersonasHablan,
-					          'megustacm' => $silviadias->Megusta, 'seguidorescm' => $silviadias->PersonasHablan,
-					          'megustacd' => $angelesmarquez->Megusta, 'seguidorescd' => $angelesmarquez->PersonasHablan,
-					          'megustacf' => $rosalinagarcia->Megusta, 'seguidorescf' => $rosalinagarcia->PersonasHablan,
-					          'megustacg' => $claudiaibarra->Megusta, 'seguidorescg' => $claudiaibarra->PersonasHablan,
-					          'megustacdn' => $normagalindo->Megusta, 'seguidorescdn' => $normagalindo->PersonasHablan,
-					          'megustacdp' => $pedrofernandez->Megusta, 'seguidorescdp' => $pedrofernandez->PersonasHablan,
-					          'megustacde' => $eliasvalencia->Megusta, 'seguidorescde' => $eliasvalencia->PersonasHablan,
-					          'megustacdj' => $juancarlos->Megusta, 'seguidorescdj' => $juancarlos->PersonasHablan,
-					          'megustacdm' => $marisamesina->Megusta, 'seguidorescdm' => $marisamesina->PersonasHablan);
-				$this->load->view('facebook/diputadofederal',$data);
-			}
-		}
+			                "megustacs" => $dip1['silviadias']->Megusta,
+			                "seguidorescs" => $dip1['silviadias']->PersonasHablan,
+			                
+			                "megustaca" => $dip1['angelesmarquez']->Megusta,
+			                "seguidoresca" => $dip1['angelesmarquez']->PersonasHablan,
+			                
+			                "megustacr" => $dip1['rosalinagarcia']->Megusta,
+			                "seguidorescr" => $dip1['rosalinagarcia']->PersonasHablan,
+
+			                "megustacc" => $dip1['claudiaibarra']->Megusta,
+			                "seguidorescc" => $dip1['claudiaibarra']->PersonasHablan,
+
+			                //Distrito II
+			                "megustacn" => $dip2['normagalindo']->Megusta,
+			                "seguidorescn" => $dip2['normagalindo']->PersonasHablan,			                
+
+			                "megustacp" => $dip2['pedrofernandez']->Megusta,
+			                "seguidorescp" => $dip2['pedrofernandez']->PersonasHablan,
+
+			                "megustacev" => $dip2['eliasvalencia']->Megusta,
+			                "seguidorescev" => $dip2['eliasvalencia']->PersonasHablan,	
+
+			                "megustacju" => $dip2['juancarlos']->Megusta,
+			                "seguidorescju" => $dip2['juancarlos']->PersonasHablan,		
+
+			                "megustacm" => $dip2['marisamesina']->Megusta,
+			                "seguidorescm" => $dip2['marisamesina']->PersonasHablan,							                					                						                			                					                
+
+			                'ultima_fecha' => $fecha
+			            );
+			$this->load->view('facebook/diputadofederal',$data);								
+	}
 
 //CANDIDATO A PRESIDENTE MUNICIPAL (ALCALDIA)
 	public function CAlcaldias()
@@ -447,55 +479,25 @@ class Controlador_inicio extends CI_Controller {
 	//CANDIDATOS POR PARTIDO
 	public function partidost()
 	{
-		//1ra Fecha
-		$pan = $this->modelo_inicio->Obtener_CPAN();
-		$pri = $this->modelo_inicio->Obtener_CPRI();
-		$pna = $this->modelo_inicio->Obtener_CPNA();
-		$pv = $this->modelo_inicio->Obtener_CPV();
-		$prd = $this->modelo_inicio->Obtener_CPRD();
-		$pt = $this->modelo_inicio->Obtener_CPT();
-		$pmc = $this->modelo_inicio->Obtener_CPMC();
-		$pm = $this->modelo_inicio->Obtener_CPM();
-		$pes = $this->modelo_inicio->Obtener_CPES();
-		$ph = $this->modelo_inicio->Obtener_CPH();		
-		//2da Fecha
-		$pan2 = $this->modelo_inicio->Obtener_CPAN2();
-		$pri2 = $this->modelo_inicio->Obtener_CPRI2();
-		$pna2 = $this->modelo_inicio->Obtener_CPNA2();
-		$pv2 = $this->modelo_inicio->Obtener_CPV2();
-		$prd2 = $this->modelo_inicio->Obtener_CPRD2();
-		$pt2 = $this->modelo_inicio->Obtener_CPT2();
-		$pmc2 = $this->modelo_inicio->Obtener_CPMC2();
-		$pm2 = $this->modelo_inicio->Obtener_CPM2();
-		$pes2 = $this->modelo_inicio->Obtener_CPES2();
-		$ph2 = $this->modelo_inicio->Obtener_CPH2();
-		
-		if($pan != FALSE and $pri != FALSE and $pna != FALSE and $pv != FALSE and $prd != FALSE and $pt != FALSE and $pmc != FALSE and $pm != FALSE and $pes != FALSE and $ph != FALSE)
-		{
-			$data = array('megustac1' => $pri->Megusta, 'seguidoresc1' => $pri->PersonasHablan, 
-				          'megustac2' => $pan->Megusta, 'seguidoresc2' => $pan->PersonasHablan,
-				          'megustac3' => $pna->Megusta, 'seguidoresc3' => $pna->PersonasHablan,
-				          'megustac4' => $pv->Megusta, 'seguidoresc4' => $pv->PersonasHablan,
-				          'megustac5' => $prd->Megusta, 'seguidoresc5' => $prd->PersonasHablan,				          
-				          'megustac6' => $pt->Megusta, 'seguidoresc6' => $pt->PersonasHablan,
-				          'megustac7' => $pmc->Megusta, 'seguidoresc7' => $pmc->PersonasHablan,
-				          'megustac8' => $pm->Megusta, 'seguidoresc8' => $pm->PersonasHablan,
-				          'megustac9' => $pes->Megusta, 'seguidoresc9' => $pes->PersonasHablan,
-				          'megustac10' => $ph->Megusta, 'seguidoresc10' => $ph->PersonasHablan,
-				          //2da Fecha
-				          'megustacc1' => $pri2->Megusta, 'seguidorescc1' => $pri2->PersonasHablan, 
-				          'megustacc2' => $pan2->Megusta, 'seguidorescc2' => $pan2->PersonasHablan,
-				          'megustacc3' => $pna2->Megusta, 'seguidorescc3' => $pna2->PersonasHablan,
-				          'megustacc4' => $pv2->Megusta, 'seguidorescc4' => $pv2->PersonasHablan,
-				          'megustacc5' => $prd2->Megusta, 'seguidorescc5' => $prd2->PersonasHablan,				          
-				          'megustacc6' => $pt2->Megusta, 'seguidorescc6' => $pt2->PersonasHablan,
-				          'megustacc7' => $pmc2->Megusta, 'seguidorescc7' => $pmc2->PersonasHablan,
-				          'megustacc8' => $pm2->Megusta, 'seguidorescc8' => $pm2->PersonasHablan,
-				          'megustacc9' => $pes2->Megusta, 'seguidorescc9' => $pes2->PersonasHablan,
-				          'megustacc10' => $ph2->Megusta, 'seguidorescc10' => $ph2->PersonasHablan
-				          );
+		// $this->load->library('fechas'); //Cargar la librería que convierte las fechas			
+		// $ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha2();
+		// echo $ultima_fecha;	
+		// $ultima_fecha = $ultima_fecha->ultima_fecha;
+		$gobernadores = $this->modelo_inicio->obtener_cuenta_partidos(); 		
+		// $fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+		$data = array(
+			                "pri" => $gobernadores['pri'],
+			                "pan" => $gobernadores['pan'],
+			                "pna" => $gobernadores['pna'],
+			                "pv" => $gobernadores['pv'],
+			                "prd" => $gobernadores['prd'],
+			                "pt" => $gobernadores['pt'],
+			                "pmc" => $gobernadores['pmc'],
+			                "pm" => $gobernadores['pm'],
+			                "pes" => $gobernadores['pes'],
+			                "ph" => $gobernadores['ph']
+			            );
 			$this->load->view('facebook/partidos',$data);
-		}
 	}		
 	//Valoracion de comentarios para gobernador
 	public function valoracion_gobernadores()

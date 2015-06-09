@@ -1,10 +1,23 @@
 <html>
 <head lang="es">
-  <title>Candidatos a Presidente Municipal</title> 
+  <title>Candidatos a Gobernador</title>   
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.min.js"></script>
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
-  <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script> 
+  <script src="<?php echo base_url()?>assets/facebook/vk.js"></script> 
+  <script src="<?php echo base_url()?>assets/facebook/d3/d3.layout.cloud.js"></script>
+    <!--Se usa para la primera gráfica-->
+    <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script> 
+    <script src="<?php echo base_url()?>assets/facebook/tabsDL.js"></script> 
+    <!--Para poder usar el calendario, importar las librerias-->
+    <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!--Para usar los contenedores widget-->
+    <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css">        
+  <style type="text/css">   
+      #myTab{
+        margin-top: 2px;
+      }
+  </style>  
 </head>
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
@@ -57,54 +70,211 @@
                             <li class=""><a data-toggle="tab" href="#barras9">Tecomán</a></li>
                             <li class=""><a data-toggle="tab" href="#barras10">Villa de Álvarez</a></li>                                                                                                                                                                                                    
                           </ul>
-                            <div class="tab-content" id="tabs">
-                              
-                              <div id="barras1" class="tab-pane fade active in"> 
-                                <br> 
-                                  <div id="chart_div"></div>
+                          <div class="tab-content" id="tabs">
+                            <!--Primer tab-->
+                              <div id="barras1" class="tab-pane fade active in">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor"></h3>                                                    
+                                          25 de Mayo 2015
+                                          <!-- <?php echo $ultima_fecha ?> -->
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div"></div>                            
+                                          <div id="con"></div>  <!--Grafica despues de la consulta-->
+                                        </div>
+                                      </div> 
+                                    </div>
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-calendar"></i>
+                                          <h3>Fecha a consulta</h3>                                                   
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div> 
+                                                <input type="hidden" name="vtab" id="vtab1" value="1">
+                                                <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Facebook</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>                         
+                                        <!-- Aplicadas en las celdas (<td> o <th>) -->
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Esperanza Alcaraz</center></td>                                      
+                                          </tr>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/MORENA.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Miguel Ruelas</center></td>                                        
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/HUMANISTA.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Salvador Bueno</center></td>
+                                          </tr>                                         
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>                                  
+                                </div>
                               </div>
-
-                              <div id="barras2" class="tab-pane fade">
-                                <br> 
-                                  <div id="chart_div2"></div>                                   
-                              </div>
-                              <div id="barras3" class="tab-pane fade"> 
-                                <br> 
-                                  <div id="chart_div3"></div>
-                              </div>
-
-                              <div id="barras4" class="tab-pane fade">
-                                <br> 
-                                  <div id="chart_div4"></div>                                   
-                              </div>                              
-                              <div id="barras5" class="tab-pane fade"> 
-                                <br> 
-                                  <div id="chart_div5"></div>
-                              </div>
-
-                              <div id="barras6" class="tab-pane fade">
-                                <br> 
-                                  <div id="chart_div6"></div>                                   
-                              </div>          
-                              <div id="barras7" class="tab-pane fade"> 
-                                <br> 
-                                  <div id="chart_div7"></div>
-                              </div>
-
-                              <div id="barras8" class="tab-pane fade">
-                                <br> 
-                                  <div id="chart_div8"></div>                                   
-                              </div>                              
-                              <div id="barras9" class="tab-pane fade"> 
-                                <br> 
-                                  <div id="chart_div9"></div>
-                              </div>
-
-                              <div id="barras10" class="tab-pane fade">
-                                <br> 
-                                  <div id="chart_div10"></div>                                   
-                              </div>                                                                                                                                            
-                            </div>
+                            <!--Segundo tab-->
+                              <div id="barras2" class="tab-pane">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor"></h3>                                                    
+                                          25 de Mayo 2015
+                                          <!-- <?php echo $ultima_fecha ?> -->
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div2"></div>                            
+                                          <div id="con"></div>  <!--Grafica despues de la consulta-->
+                                        </div>
+                                      </div> 
+                                    </div>
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-calendar"></i>
+                                          <h3>Fecha a consulta</h3>                                                   
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div> 
+                                                <input type="hidden" name="vtab" id="vtab1" value="1">
+                                                <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Facebook</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>                         
+                                        <!-- Aplicadas en las celdas (<td> o <th>) -->
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Héctor Insúa</center></td>                                      
+                                          </tr>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Oscar Valdovinos</center></td>                                        
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRD.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Juan Vázquez</center></td>
+                                          </tr>                                         
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Paulo Vélazquez</center></td>
+                                          </tr>                                                                                   
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PMC.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Elena Abaroa</center></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/HUMANISTA.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Brenda Mayoral</center></td>
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Esmeralda Cárdenas</center></td>
+                                          </tr>                                                                                                                                                                                                                                                              
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>                                  
+                                </div>
+                              </div>  
+                            <!--Tercera tab-->
+                              <div id="barras3" class="tab-pane">
+                                <div class="row-fluid">
+                                  <div class="span12">  
+                                    <div class="span9">  
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-bar-chart"></i>
+                                          <h3 id="fecha_contenedor"></h3>                                                    
+                                          25 de Mayo 2015
+                                          <!-- <?php echo $ultima_fecha ?> -->
+                                        </div>
+                                        <div class="widget-content">                                          
+                                          <div id="chart_div3"></div>                            
+                                          <div id="con"></div>  <!--Grafica despues de la consulta-->
+                                        </div>
+                                      </div> 
+                                    </div>
+                                    <div class="span3">
+                                      <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                        <div class="widget-header" style="background: #B20034" align="left">
+                                          <i class="icon-calendar"></i>
+                                          <h3>Fecha a consulta</h3>                                                   
+                                        </div>
+                                        <div class="widget-content">
+                                          <center>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div> 
+                                                <input type="hidden" name="vtab" id="vtab1" value="1">
+                                                <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                          </center>
+                                        </div> 
+                                      </div>  
+                                    </div>
+                                    <!--Tabla con candidatos con cuentas-->
+                                    <div class="span3">
+                                      <div class="span12">Candidatos que tienen cuenta de Facebook</div>
+                                      <table class="table table-hover table-bordered">
+                                        <tbody>                         
+                                        <!-- Aplicadas en las celdas (<td> o <th>) -->
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Zenaida Vicente</center></td>
+                                          </tr>                                                                                                                             
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PES.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Mario Carrillo</center></td>                                      
+                                          </tr>
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Mario Peña</center></td>                                        
+                                          </tr> 
+                                          <tr>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/MORENA.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="success"><center>Salomón Salazar</center></td>
+                                          </tr>                                         
+                                        </tbody>
+                                      </table>                                      
+                                    </div>
+                                  </div>                                  
+                                </div>
+                              </div>                                                                                                                                                                                                                            
+                          </div>
                         </div> 
                       </div>
                     </center>
@@ -114,6 +284,22 @@
     </div>
   <?php $this->load->view('comunes/footer'); ?> 
 </body>
+<!--Para poder usar el calendario, importar las librerias-->
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.es.js" charset="UTF-8"></script> 
+
+  <script type="text/javascript">
+    $('.form_date').datetimepicker({
+          language:  'es',
+          weekStart: 1,
+          todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      minView: 2,
+      forceParse: 0
+      });
+  </script> 
 
 <!--GRAFICA ARMERÍA-->
   <script type="text/javascript">
@@ -126,9 +312,9 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PRI\nEsperanza Alcaraz',<?php echo $megustac40 ?>, <?php echo $seguidoresc40 ?>],
-        ['PM\nMiguel Ruelas',<?php echo $megustac41 ?>, <?php echo $seguidoresc41 ?>],
-        ['PH\nSalvador Bueno',<?php echo $megustac42 ?>, <?php echo $seguidoresc42 ?>]
+        ['PRI',<?php echo $megustac40 ?>, <?php echo $seguidoresc40 ?>],
+        ['PM',<?php echo $megustac41 ?>, <?php echo $seguidoresc41 ?>],
+        ['PH',<?php echo $megustac42 ?>, <?php echo $seguidoresc42 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -181,13 +367,13 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PH\nBrenda\nMayoral',<?php echo $megustac7 ?>, <?php echo $seguidoresc7 ?>],        
-        ['PMC\nElena\nAbaroa',<?php echo $megustac6 ?>, <?php echo $seguidoresc6 ?>],        
-        ['VERDE\nEsmeralda\nCárdenas',<?php echo $megustac3 ?>, <?php echo $seguidoresc3 ?>],
-        ['PAN\nHéctor\nInsúa',<?php echo $megustac1 ?>, <?php echo $seguidoresc1 ?>],
-        ['PRD\nJuan\nVázquez',<?php echo $megustac4 ?>, <?php echo $seguidoresc4 ?>],        
-        ['PRI\nOscar\nValdovinos',<?php echo $megustac2 ?>, <?php echo $seguidoresc2 ?>],
-        ['PT\nPaulo\nVélazquez',<?php echo $megustac5 ?>, <?php echo $seguidoresc5 ?>]
+        ['PAN',<?php echo $megustac1 ?>, <?php echo $seguidoresc1 ?>],
+        ['PRI',<?php echo $megustac2 ?>, <?php echo $seguidoresc2 ?>],
+        ['PRD',<?php echo $megustac4 ?>, <?php echo $seguidoresc4 ?>],
+        ['PT',<?php echo $megustac5 ?>, <?php echo $seguidoresc5 ?>],
+        ['MC',<?php echo $megustac6 ?>, <?php echo $seguidoresc6 ?>],   
+        ['PH',<?php echo $megustac7 ?>, <?php echo $seguidoresc7 ?>],             
+        ['PV',<?php echo $megustac3 ?>, <?php echo $seguidoresc3 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -241,11 +427,10 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PES\nMario Carrillo',<?php echo $megustac25 ?>, <?php echo $seguidoresc25 ?>],
-        ['PT\nMario Peña',<?php echo $megustac23 ?>, <?php echo $seguidoresc23 ?>],
-        ['PRI\nSalomón Salazar',<?php echo $megustac22 ?>, <?php echo $seguidoresc22 ?>],
-        ['PM\nZenaida Vicente',<?php echo $megustac24 ?>, <?php echo $seguidoresc24 ?>]
-        
+        ['PRI',<?php echo $megustac22 ?>, <?php echo $seguidoresc22 ?>],
+        ['PES',<?php echo $megustac25 ?>, <?php echo $seguidoresc25 ?>],
+        ['PT',<?php echo $megustac23 ?>, <?php echo $seguidoresc23 ?>],
+        ['PM',<?php echo $megustac24 ?>, <?php echo $seguidoresc24 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);

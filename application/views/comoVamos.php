@@ -58,8 +58,54 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </ul>
                           <div class="tab-content" id="myTabContent"> 
                             <div id="barras1" class="tab-pane fade active in"> 
-                                <div id="chart_div" style="height: 400px;"></div>   
+                                <div class="container-fluid">
+                                    <div class="row-fluid">
+                                      <div class="span12">
+                                        <div class="span9">                                          
+                                            <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                <div class="widget-header" style="background: #B20034">
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>ComoVamosColima</h3>                                                    
+                                                </div>
+                                                <div class="widget-content">                                          
+                                                    <center>
+                                                        <div id="chart_div" style="height: 400px;"></div>
+                                                    </center> 
+                                                </div>
+                                            </div> 
+                                        </div>
+
+                                        <div class="span3">
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                            <div class="widget-header" style="background: #B20034" align="left">
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
+                                            </div>
+                                            <div class="widget-content">
+                                              <center>
+                                                <label>Fecha de inicio</label>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div> 
+                                                <label>Fecha de término</label>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div>
+                                                <input type="hidden" name="vtab" id="vtab1" value="1">
+                                                <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                              </center>
+                                            </div> 
+                                          </div>  
+                                        </div>
+                                      </div> 
+                                    </div>
+                                </div>
                             </div>
+
 
                             <div id="barras2" class="tab-pane fade"> 
                                 <div class="container-fluid">

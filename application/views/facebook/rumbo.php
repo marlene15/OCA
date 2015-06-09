@@ -15,6 +15,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
   <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>  
+  <!--Para poder usar el calendario, importar las librerias-->
+  <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <!--Para usar los contenedores widget-->
+  <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css">
 </head>
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
@@ -42,18 +46,78 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </ul>
                           <div class="tab-content" id="myTabContent">
                             <div id="barras1" class="tab-pane fade active in"> 
-                                <div id="chart_div" style="height: 400px;"></div>   
+                              <div class="container-fluid">
+                                  <div class="row-fluid">
+                                    <div class="span12">
+                                      <div class="span9">                                          
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                              <div class="widget-header" style="background: #B20034">
+                                                  <i class="icon-bar-chart"></i>
+                                                  <h3></h3>                                                    
+                                              </div>
+                                              <div class="widget-content">                                          
+                                                  <div id="chart_div" style="height: 400px;"></div> 
+                                              </div>
+                                          </div> 
+                                      </div> 
+
+                                      <div class="span3">
+                                        <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                          <div class="widget-header" style="background: #B20034" align="left">
+                                              <i class="icon-calendar"></i>
+                                              <h3>Fechas a consultar</h3>                                                    
+                                          </div>
+                                          <div class="widget-content">
+                                            <center>
+                                              <label>Fecha de inicio</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                              </div> 
+                                              <label>Fecha de término</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                              </div>
+                                              <input type="hidden" name="vtab" id="vtab1" value="1">
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                            </center>
+                                          </div> 
+                                        </div>  
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
                             </div>
-                        </div>
+                          </div>
                       </div> <!--Cierra div del tab de pestañas-->        
                     </div>
                 </div>              
             </div>
         </div>
     </div>
-
   <?php $this->load->view('comunes/footer'); ?>      
- 
+  
+<!--Para poder usar el calendario, importar las librerias-->
+<script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>  
+
+<!--Para usar el calendario-->
+<script type="text/javascript">
+  $('.form_date').datetimepicker({
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+    });
+</script>  
+
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});     
     ////////rumbo al 7 de junio
@@ -62,7 +126,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         foreach ($rumbo as $rumbo) 
         {
             $a2[] = array(
-                "Fecha" => $rumbo->Fecha,
+                "fecha" => $rumbo->fecha,
                 "Megusta" => $rumbo->Megusta,
                 "PersonasHablan" => $rumbo->PersonasHablan
             );
@@ -77,12 +141,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           ['Fecha', 'Likes', 'Posts'],
           <?php for ($i=0; $i<count($a2); $i++) {
               ?>
-              ['<?php echo $a2[$i]['Fecha'] ?>', <?php echo $a2[$i]['Megusta'] ?>, <?php echo $a2[$i]['PersonasHablan'] ?>],
+              ['<?php echo $a2[$i]['fecha'] ?>', <?php echo $a2[$i]['Megusta'] ?>, <?php echo $a2[$i]['PersonasHablan'] ?>],
           <?php } ?>
         ]
       );  
       var options = {
-        title: '',
+        title: 'Rumboal7deJunio2015',
         hAxis: {title: "Fecha"},
         seriesType: "bars",
         series: {3: {type: "line"}}

@@ -67,9 +67,13 @@
 				</div>
 			</div>
 			<div class="form-actions">
-				<button type="submit" class="btn green pull-right">
+				<button type="" class="btn green pull-right" style="float:left">
+				Registrarte <i class="m-icon-swapright m-icon-white"></i>
+				</button>            				
+				<button type="submit" class="btn green pull-right" >
 				Ingresar <i class="m-icon-swapright m-icon-white"></i>
-				</button>            
+				</button>
+
 			</div>
 		</form>
 		<?php echo form_close();?>

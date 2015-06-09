@@ -13,6 +13,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <head>
 	<title>Inicio</title> 
 	<?php $this->load->view('comunes/header'); ?>
+    <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script> 
     <script src="<?php echo base_url()?>assets/facebook/d3/d3.min.js"></script>
     <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
     <script src="<?php echo base_url()?>assets/facebook/d3/liquidFillGauge.js"></script> 
@@ -20,7 +21,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
     </style>
     <!--Estilo para la gráfica de pastel-->
-    <link href="<?= base_url();?>assets/facebook/d3/estilo_pastel.css" rel="stylesheet" type="text/css"/>
+    <link href="<?= base_url();?>assets/twitter/d3/estilo_pastel.css" rel="stylesheet" type="text/css"/>
+    <!--Para usar los contenedores widget-->
+    <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css"> 
 </head>
 <body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
@@ -71,29 +74,91 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                               <div class="tab-content" id="myTabContent">
 
                                 <div id="jorge" class="tab-pane fade active in"> 
-                                    <center> 
-                                        <svg id="fillgauge1"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox"=22 -22 300 300"></svg>
-                                        <svg id="fillgauge2" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                        <svg id="fillgauge3" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                        <br>
-                                        <div id='pastel'></div>  
-                                    </center>                                                                 
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-comments-alt"></i>
+                                                        <h3>Valoración de Comentarios</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge1" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Positivos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge2" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Negativos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge3" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Neutros</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                            <br/>
+                                                        </div>   
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>                                                               
                                 </div>
 
-                                <div id="nacho" class="tab-pane fade ">
-                                    <center>
-                                        <svg id="fillgauge4"  width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300"></svg>
-                                        <svg id="fillgauge5" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                        <svg id="fillgauge6" width="300" height="261" preserveAspectRatio="xMidYMid" viewBox="22 -22 300 300" ></svg>
-                                    </center>                                     
+                                <div id="nacho" class="tab-pane">
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-comments-alt"></i>
+                                                        <h3>Valoración de Comentarios</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge4" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Positivos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge5" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Negativos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge6" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Neutros</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                            <br/>
+                                                        </div>   
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>  <!--Cierra div de los tabs-->                                            
-                    </div>
-                </div>              
+                             </div>  <!--Cierra div de los tabs-->                                            
+                        </div>
+                    </div>              
+                </div>
             </div>
         </div>
-    </div>
+    </div>        
 
 	<?php $this->load->view('comunes/footer'); ?> 
 
@@ -132,6 +197,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     config3.textSize = 0.75;
     config3.waveHeight = 0.15;   
 
+
     //Datos jorge
     loadLiquidFillGauge("fillgauge1", <?php echo $nachoP; ?>, config1);
     loadLiquidFillGauge("fillgauge2", <?php echo $nachoNe; ?>, config2);
@@ -141,6 +207,16 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     loadLiquidFillGauge("fillgauge5", <?php echo $jorgeNe; ?>, config2);
     loadLiquidFillGauge("fillgauge6", <?php echo $jorgeN; ?>, config3);
 </script>
+    <!--Funcion para ajustar la grafica al expander el menú-->
+      <script type="text/javascript">
+        function recarga()
+        {
+          setTimeout(function(){
+            drawChart();
+          },100)    
+          $('#chart_div').width('100%');   
+        }
+      </script>
 </body>
 </html>
 

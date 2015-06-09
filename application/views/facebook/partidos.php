@@ -6,6 +6,10 @@
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script> 
   <script src="<?php echo base_url()?>assets/facebook/vk.js"></script>  
+  <!--Para poder usar el calendario, importar las librerias-->
+  <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <!--Para usar los contenedores widget-->
+  <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css">   
 </head>
 <body class="page-header-fixed">
     <!--Carga la barra superior-->
@@ -45,7 +49,7 @@
                             <li class="active"><a data-toggle="tab" href="#barras1">PRI</a></li> 
                             <li class=""><a data-toggle="tab" href="#barras2">PAN</a></li>                            
                             <li class=""><a data-toggle="tab" href="#barras3">PRD</a></li>                            
-                            <li class=""><a data-toggle="tab" href="#barras4">PMC</a></li>                                                        
+                            <li class=""><a data-toggle="tab" href="#barras4">MC</a></li>                                                        
                             <li class=""><a data-toggle="tab" href="#barras5">PV</a></li>                                                        
                             <li class=""><a data-toggle="tab" href="#barras6">PT</a></li>
                             <li class=""><a data-toggle="tab" href="#barras7">PM</a></li>                                                                                                                
@@ -56,9 +60,53 @@
                           </ul>
                             <div class="tab-content" id="tabs">
                               <div id="barras1" class="tab-pane fade active in"> 
-                                <br> 
-                                  <div id="chart_div"></div>
+                                <div class="container-fluid">
+                                    <div class="row-fluid">
+                                      <div class="span12">
+                                        <div class="span9">                                          
+                                            <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                <div class="widget-header" style="background: #B20034">
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PRI</h3>                                                    
+                                                </div>
+                                                <div class="widget-content">                                          
+                                                    <div id="chart_div" style="height: 400px;"></div> 
+                                                </div>
+                                            </div> 
+                                        </div> 
+
+                                        <div class="span3">
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                            <div class="widget-header" style="background: #B20034" align="left">
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
+                                            </div>
+                                            <div class="widget-content">
+                                              <center>
+                                                <label>Fecha de inicio</label>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div> 
+                                                <label>Fecha de término</label>
+                                                <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                    <span class="add-on"><i class="icon-th"></i></span>
+                                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                </div>
+                                                <input type="hidden" name="vtab" id="vtab1" value="1">
+                                                <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                              </center>
+                                            </div> 
+                                          </div>  
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                </div>
                               </div>
+
                               <div id="barras2" class="tab-pane fade"> 
                                 <br> 
                                   <div id="chart_div2"></div>
@@ -109,310 +157,61 @@
     </div>
   <?php $this->load->view('comunes/footer'); ?> 
 </body>
+  <!--Para poder usar el calendario, importar las librerias-->
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>  
+
+  <!--Para usar el calendario-->
+  <script type="text/javascript">
+    $('.form_date').datetimepicker({
+          language:  'es',
+          weekStart: 1,
+          todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      minView: 2,
+      forceParse: 0
+      });
+  </script> 
+
 <!--GRÁFICA POR PARTIDO PRI-->
 <script type="text/javascript">
 google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawVisualization);
 
+    ////////PRI
+    <?php //char1  
+        $a = array();
+        foreach ($pri as $pri) 
+        {
+            $a[] = array(
+                "fecha" => $pri->fecha,
+                "Megusta" => $pri->Megusta,
+                "PersonasHablan" => $pri->PersonasHablan
+            );
+        }                       
+    ?>
+
 function drawVisualization() {
   // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac1 ?>,<?php echo $seguidoresc1 ?>],
-    ['06/05/2015', <?php echo $megustacc1 ?>, <?php echo $seguidorescc1?>]    
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-  chart.draw(data, options);
-}
-
-</script>
-<!--GRÁFICA POR PARTIDO PAN-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization2() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac2 ?>, <?php echo $seguidoresc2 ?>],
-    ['06/05/2015', <?php echo $megustacc2 ?>, <?php echo $seguidorescc2 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart2 = new google.visualization.ComboChart(document.getElementById('chart_div2'));
-  chart2.draw(data, options);
-}
-</script>
-
-</script>
-<!--GRÁFICA POR PARTIDO PRD-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization3() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac5 ?>, <?php echo $seguidoresc5 ?>],
-    ['06/05/2015', <?php echo $megustacc5 ?>, <?php echo $seguidorescc5 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart3 = new google.visualization.ComboChart(document.getElementById('chart_div3'));
-  chart3.draw(data, options);
-}
-</script>
-</script>
-<!--GRÁFICA POR PARTIDO PMC-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization4() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac7 ?>, <?php echo $seguidoresc7 ?>],
-    ['06/05/2015', <?php echo $megustacc7 ?>, <?php echo $seguidorescc7 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div4'));
-  chart4.draw(data, options);
-}
-</script>
-<!--GRÁFICA POR PARTIDO PV-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization5() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac4 ?>, <?php echo $seguidoresc4 ?>],
-    ['06/05/2015', <?php echo $megustacc4 ?>, <?php echo $seguidorescc4 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart5 = new google.visualization.ComboChart(document.getElementById('chart_div5'));
-  chart5.draw(data, options);
-}
-</script>
-<!--GRÁFICA POR PARTIDO PT-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization6() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac6 ?>, <?php echo $seguidoresc6 ?>],
-    ['06/05/2015', <?php echo $megustacc6 ?>, <?php echo $seguidorescc6 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart6 = new google.visualization.ComboChart(document.getElementById('chart_div6'));
-  chart6.draw(data, options);
-}
-</script>
-</script>
-<!--GRÁFICA POR PARTIDO PM-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization7() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac8 ?>, <?php echo $seguidoresc8 ?>],
-    ['06/05/2015', <?php echo $megustacc8 ?>, <?php echo $seguidorescc8 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart7 = new google.visualization.ComboChart(document.getElementById('chart_div7'));
-  chart7.draw(data, options);
-}
-</script>
-<!--GRÁFICA POR PARTIDO PNA-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization8() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac3 ?>, <?php echo $seguidoresc3 ?>],
-    ['06/05/2015', <?php echo $megustacc3 ?>, <?php echo $seguidorescc3 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart8 = new google.visualization.ComboChart(document.getElementById('chart_div8'));
-  chart8.draw(data, options);
-}
-</script>
-</script>
-<!--GRÁFICA POR PARTIDO PES-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization9() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac9 ?>, <?php echo $seguidoresc9 ?>],
-    ['06/05/2015', <?php echo $megustacc9 ?>, <?php echo $seguidorescc9 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart9 = new google.visualization.ComboChart(document.getElementById('chart_div9'));
-  chart9.draw(data, options);
-}
-</script>
-</script>
-<!--GRÁFICA POR PARTIDO PH-->
-<script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawVisualization);
-
-function drawVisualization10() {
-  // Some raw data (not necessarily accurate)
-  var data = google.visualization.arrayToDataTable([
-
-    ['Semana', 'Like', 'Post'],
-    ['27/04/2015', <?php echo $megustac10 ?>, <?php echo $seguidoresc10 ?>],
-    ['06/05/2015', <?php echo $megustacc10 ?>, <?php echo $seguidorescc10 ?>]    
-    // ['2005/06',  135,      1120,        599,             1268,          288,      682],
-    // ['2006/07',  157,      1167,        587,             807,           397,      623],
-    // ['2007/08',  139,      1110,        615,             968,           215,      609.4],
-    // ['2008/09',  136,      691,         629,             1026,          366,      569.6]    
-  ]);
-
-  var options = {
-    vAxis: {title: "Partido"},
-    hAxis: {title: "Semana"},
-    seriesType: "bars",
-    height: 600,
-    series: {2: {type: "line"}}
-  };
-
-  var chart10 = new google.visualization.ComboChart(document.getElementById('chart_div10'));
-  chart10.draw(data, options);
+      var data = google.visualization.arrayToDataTable(
+        [
+          ['Fecha', 'Likes', 'Post'],
+          <?php for ($i=0; $i<count($a); $i++) {
+              ?>
+              ['<?php echo $a[$i]['fecha'] ?>', <?php echo $a[$i]['Megusta'] ?>, <?php echo $a[$i]['PersonasHablan'] ?>],
+          <?php } ?>
+        ]
+      );  
+      var options = {
+        title: '',
+        hAxis: {title: "Fecha"},
+        seriesType: "bars",
+        series: {3: {type: "line"}}
+      };
+      var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
 }
 </script>
 </html> 

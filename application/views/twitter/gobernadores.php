@@ -91,15 +91,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 	                            			<div class="span3">
 	                            				<div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
 													<div class="widget-header" style="background: #B20034">
-														<i class="icon-calendar"></i>
-					                                	<h3>Fecha a consultar</h3>						                                				
+														<i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>						                                				
 					                                </div>
 													<div class="widget-content">
 														<center>
 										                    <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
 										                       	<span class="add-on"><i class="icon-th"></i></span>
 										                       	<span class="add-on"><i class="icon-remove"></i></span>
-										                       	<input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
+										                       	<input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
 										                    </div> 
 										                    <input type="hidden" name="vtab" id="vtab1" value="1">
 										                    <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
@@ -118,7 +117,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 													    <td class="success"><center>Jorge Luis Preciado</center></td>
 													  </tr>
 													  <tr>
-													    <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+													    <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
 													    <td class="success"><center>José Ignacio Peralta</center></td>
 													  </tr>	
 													  <tr>
@@ -198,7 +197,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');        
       data.addRows([
       	['PAN', <?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>],
-        ['Coalición \n PRI-PVE-PNA', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
         ['PRD', <?php echo $seguidoresm ?>, <?php echo $siguiendom ?>, <?php echo $tweetsm ?>],
         ['MC', <?php echo $seguidoresl ?>, <?php echo $siguiendol ?>, <?php echo $tweetsl ?>]        
       ]);

@@ -309,30 +309,19 @@ class Controlador_inicio extends CI_Controller {
 		$this->load->view('twitter/alcaldias',$datos);	
 	}
 
-	public function candidatos_valoracion()
-	{		
-		$positivos_nacho = $this->modelo_inicio->positivos_nacho();
-		$negativos_nacho = $this->modelo_inicio->negativos_nacho();
-		$neutros_nacho = $this->modelo_inicio->neutros_nacho();
-		$datos = array('positivos' => $positivos_nacho->positivos,
-					  'negativos' => $negativos_nacho->negativos,
-					  'neutros' => $neutros_nacho->neutros);
-		$this->load->view('twitter/candidatos_valoracion',$datos);	
-	}
-
-	public function prueba()
-	{
-		$consulta = $this->modelo_inicio->prueba();
-		$data = array('neutros' => $consulta->neutros);
-		$this->load->view('twitter/prueba',$data);	
-	}
-
 	public function mapa_coordenadas()
 	{	
 		$colima = $this->modelo_inicio->obtener_coordenadas('Colima'); 
 		$villa = $this->modelo_inicio->obtener_coordenadas('Villa de Álvarez'); 
 		$manzanillo = $this->modelo_inicio->obtener_coordenadas('Manzanillo');
 		$tecoman = $this->modelo_inicio->obtener_coordenadas('Tecomán');
+		$armeria = $this->modelo_inicio->obtener_coordenadas('Armería');
+		$comala = $this->modelo_inicio->obtener_coordenadas('Comala');
+		$coqui = $this->modelo_inicio->obtener_coordenadas('Coquimatlán');
+		$cuau = $this->modelo_inicio->obtener_coordenadas('Cuauhtémoc');
+		$ixtlahuacan = $this->modelo_inicio->obtener_coordenadas('Ixtlahuacán');
+		$mina = $this->modelo_inicio->obtener_coordenadas('Minatitlán');
+
 		$datos = array(
 						"gobernadores_colima" => $colima['gobernadores'],
 						"dipFederales_colima" => $colima['dipFederales'],
@@ -352,7 +341,37 @@ class Controlador_inicio extends CI_Controller {
 						"gobernadores_tecoman" => $tecoman['gobernadores'],
 						"dipFederales_tecoman" => $tecoman['dipFederales'],
 						"dipLocales_tecoman" => $tecoman['dipLocales'],
-						"presidentes_tecoman" => $tecoman['presidentes']
+						"presidentes_tecoman" => $tecoman['presidentes'],
+
+						"gobernadores_armeria" => $armeria['gobernadores'],
+						"dipFederales_armeria" => $armeria['dipFederales'],
+						"dipLocales_armeria" => $armeria['dipLocales'],
+						"presidentes_armeria" => $armeria['presidentes'],
+
+						"gobernadores_comala" => $comala['gobernadores'],
+						"dipFederales_comala" => $comala['dipFederales'],
+						"dipLocales_comala" => $comala['dipLocales'],
+						"presidentes_comala" => $comala['presidentes'],
+
+						"gobernadores_coqui" => $coqui['gobernadores'],
+						"dipFederales_coqui" => $coqui['dipFederales'],
+						"dipLocales_coqui" => $coqui['dipLocales'],
+						"presidentes_coqui" => $coqui['presidentes'],
+
+						"gobernadores_cuau" => $cuau['gobernadores'],
+						"dipFederales_cuau" => $cuau['dipFederales'],
+						"dipLocales_cuau" => $cuau['dipLocales'],
+						"presidentes_cuau" => $cuau['presidentes'],
+
+						"gobernadores_ixtlahuacan" => $ixtlahuacan['gobernadores'],
+						"dipFederales_ixtlahuacan" => $ixtlahuacan['dipFederales'],
+						"dipLocales_ixtlahuacan" => $ixtlahuacan['dipLocales'],
+						"presidentes_ixtlahuacan" => $ixtlahuacan['presidentes'],
+
+						"gobernadores_mina" => $mina['gobernadores'],
+						"dipFederales_mina" => $mina['dipFederales'],
+						"dipLocales_mina" => $mina['dipLocales'],
+						"presidentes_mina" => $mina['presidentes']
 	            	  );
 		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
 	}
@@ -361,36 +380,99 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$nacho = $this->modelo_inicio->valoracion_nacho();
 		$jorge = $this->modelo_inicio->valoracion_jorge();
-		//Cuentas de nacho
-		//$priColima = $this->modelo_inicio->obtener_cuenta_priColima();
-		$jips2015 = $this->modelo_inicio->obtener_cuenta_jips2015();
-		$jipsColima = $this->modelo_inicio->obtener_cuenta_jipsColima();
-		$jipsVilla = $this->modelo_inicio->obtener_cuenta_jipsVilla();
-		$selfieNacho = $this->modelo_inicio->obtener_cuenta_selfieNacho();
+		$locho = $this->modelo_inicio->valoracion_locho();
+		$martha = $this->modelo_inicio->valoracion_martha();
 
-		$resultado = $this->modelo_consultas->obtener_cuenta_partidos(); 
 		$menciones = $this->modelo_consultas->menciones_gobernadores();
 
 		$datos = array('nachoP' => $nacho['positivos'],
 					  'nachoNe' => $nacho['negativos'],
 					  'nachoN' => $nacho['neutros'],
+
 					  'jorgeP' => $jorge['positivos'],
 					  'jorgeNe' => $jorge['negativos'],
 					  'jorgeN' => $jorge['neutros'],
-					  // 'usuario_priColima' => $priColima->usuario, 'seguidores_priColima' => $priColima->seguidores, 
-				   //    'siguiendo_priColima' => $priColima->siguiendo, 'tweets_priColima' => $priColima->tweets,
-				      'usuario_jips2015' => $jips2015->usuario, 'seguidores_jips2015' => $jips2015->seguidores, 
-				      'siguiendo_jips2015' => $jips2015->siguiendo, 'tweets_jips2015' => $jips2015->tweets,
-				      'usuario_jipsColima' => $jipsColima->usuario, 'seguidores_jipsColima' => $jipsColima->seguidores, 
-				      'siguiendo_jipsColima' => $jipsColima->siguiendo, 'tweets_jipsColima' => $jipsColima->tweets,
-				      'usuario_jipsVilla' => $jipsVilla->usuario, 'seguidores_jipsVilla' => $jipsVilla->seguidores, 
-				      'siguiendo_jipsVilla' => $jipsVilla->siguiendo, 'tweets_jipsVilla' => $jipsVilla->tweets,
-				      'usuario_selfieNacho' => $selfieNacho->usuario, 'seguidores_selfieNacho' => $selfieNacho->seguidores, 
-				      'siguiendo_selfieNacho' => $selfieNacho->siguiendo, 'tweets_selfieNacho' => $selfieNacho->tweets,
-				      "jips_2015" => $resultado['jips_2015'],
-				      "nacho" => $menciones['nacho']
+
+					  'lochoP' => $locho['positivos'],
+					  'lochoNe' => $locho['negativos'],
+					  'lochoN' => $locho['neutros'],
+
+					  'marthaP' => $martha['positivos'],
+					  'marthaNe' => $martha['negativos'],
+					  'marthaN' => $martha['neutros'],
+
+				      "nacho" => $menciones['nacho'],
+				      "jorge" => $menciones['jorge'],
+				      "locho" => $menciones['locho'],
+				      "martha" => $menciones['martha']
 					  );
 		$this->load->view('twitter/valoracionGobernadores',$datos);
+	}
+
+	public function valoracion_DipFederales()
+	{
+		$indira = $this->modelo_inicio->valoracion_indira();
+		$kike = $this->modelo_inicio->valoracion_kike();
+		$norma = $this->modelo_inicio->valoracion_norma();
+
+		$menciones = $this->modelo_consultas->menciones_DipFederales();
+
+		$datos = array('indiraP' => $indira['positivos'],
+					  'indiraNe' => $indira['negativos'],
+					  'indiraN' => $indira['neutros'],
+
+					  'kikeP' => $kike['positivos'],
+					  'kikeNe' => $kike['negativos'],
+					  'kikeN' => $kike['neutros'],
+
+					  'normaP' => $norma['positivos'],
+					  'normaNe' => $norma['negativos'],
+					  'normaN' => $norma['neutros'],
+
+				      "indira" => $menciones['indira'],
+				      "kike" => $menciones['kike'],
+				      "norma" => $menciones['norma']
+					  );
+		$this->load->view('twitter/valoracionDipFederales',$datos);
+	}
+
+	public function valoracion_DipLocales()
+	{
+		$hilda = $this->modelo_inicio->valoracion_hilda();
+		$yadira = $this->modelo_inicio->valoracion_yadira();
+		$guillermo = $this->modelo_inicio->valoracion_guillermo();
+		$alma = $this->modelo_inicio->valoracion_alma();
+		$juanita = $this->modelo_inicio->valoracion_juanita();
+
+		$menciones = $this->modelo_consultas->menciones_DipLocales();
+
+		$datos = array('hildaP' => $hilda['positivos'],
+					  'hildaNe' => $hilda['negativos'],
+					  'hildaN' => $hilda['neutros'],
+
+					  'yadiraP' => $yadira['positivos'],
+					  'yadiraNe' => $yadira['negativos'],
+					  'yadiraN' => $yadira['neutros'],
+
+					  'guillermoP' => $guillermo['positivos'],
+					  'guillermoNe' => $guillermo['negativos'],
+					  'guillermoN' => $guillermo['neutros'],
+
+					  'almaP' => $alma['positivos'],
+					  'almaNe' => $alma['negativos'],
+					  'almaN' => $alma['neutros'],
+
+					  'juanitaP' => $juanita['positivos'],
+					  'juanitaNe' => $juanita['negativos'],
+					  'juanitaN' => $juanita['neutros'],
+					  'total' => $juanita['total'],
+
+				      "hilda" => $menciones['hilda'],
+				      "guillermo" => $menciones['guillermo'],
+				      "alma" => $menciones['alma'],
+				      "juanita" => $menciones['juanita']
+					  );
+		$this->load->view('twitter/valoracionDipLocales',$datos);
 	}
 
 	public function partidos()

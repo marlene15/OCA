@@ -68,7 +68,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert fade in"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {

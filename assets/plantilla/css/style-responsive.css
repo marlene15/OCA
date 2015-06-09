@@ -127,6 +127,7 @@ For tablets and phones
 	***/
 	body {
 		margin: 0px !important;
+		width:100%;margin:auto;min-width:600px;max-width:2000px
 	}	
 
 	/***

@@ -1,4 +1,4 @@
-    <div class="page-sidebar-wrapper navbar-fixed-top">
+    <div class="page-sidebar-wrapper">
         <!-- BEGIN SIDEBAR -->
         <div class="page-sidebar nav-collapse collapse">
             <!-- BEGIN SIDEBAR MENU -->        
@@ -140,13 +140,13 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_DipFederales');?>"> 
                                         <span class="title">Diputado Federal</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_DipLocales');?>"> 
                                         <span class="title">Diputado Local</span>
                                         <span class="selected"></span>
                                     </a>
@@ -168,13 +168,6 @@
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon-facebook"></i> 
-                                <span class="title">Facebook</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
                         <li>
                             <a href="<?php echo site_url('twitter/controlador_inicio/mapa_coordenadas');?>">
                                 <i class="icon-twitter"></i> 

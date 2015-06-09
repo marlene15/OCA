@@ -90,8 +90,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor8"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div8"></div>  
@@ -103,15 +102,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                               
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha8">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha8">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab8" value="8">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta8">Consultar</button>
@@ -144,8 +142,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div"></div>  
@@ -157,15 +154,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                    
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab1" value="1">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
@@ -183,7 +179,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             <td class="success"><center>Héctor Insúa García</center></td>
                                           </tr> 
                                           <tr>
-                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"></center></td>
                                             <td class="success"><center>Esmeralda Cárdenas</center></td>
                                           </tr>  
                                           <tr>
@@ -210,8 +206,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor4"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div4"></div>  
@@ -223,15 +218,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                 
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha4">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha4">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab4" value="4">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta4">Consultar</button>
@@ -298,8 +292,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor6"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div6"></div>  
@@ -311,15 +304,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                     
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha6">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha6">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab6" value="6">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta6">Consultar</button>
@@ -333,7 +325,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                       <table class="table table-hover table-bordered">
                                         <tbody> 
                                           <tr>
-                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                             <td class="success"><center>Blanca Rocha</center></td>
                                           </tr>   
                                           <tr>
@@ -356,8 +348,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor9"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div9"></div>  
@@ -369,15 +360,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                     
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha9">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha9">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab9" value="9">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta9">Consultar</button>
@@ -410,8 +400,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor2"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div2"></div>  
@@ -423,15 +412,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                    
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha2">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha2">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab2" value="2">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta2">Consultar</button>
@@ -445,7 +433,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                       <table class="table table-hover table-bordered">
                                         <tbody> 
                                           <tr>
-                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                             <td class="success"><center>Francisco Zepeda</center></td>
                                           </tr> 
                                           <tr>
@@ -472,8 +460,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor7"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                    
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div7"></div>  
@@ -485,15 +472,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                    
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha7">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha7">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab7" value="7">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta7">Consultar</button>
@@ -526,8 +512,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor5"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                    
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div5"></div>  
@@ -539,15 +524,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                            <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                    
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha5">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha5">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab5" value="5">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta5">Consultar</button>
@@ -561,7 +545,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                       <table class="table table-hover table-bordered">
                                         <tbody> 
                                           <tr>
-                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                             <td class="success"><center>Arturo García Arias</center></td>
                                           </tr>                                        
                                         </tbody>
@@ -580,8 +564,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"></i>
-                                          <h3 id="fecha_contenedor3"><?php echo $ultima_fecha ?></h3>                                                    
+                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div3"></div>  
@@ -593,15 +576,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span3">
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                            <i class="icon-calendar"></i>
-                                            <h3>Fecha a consultar</h3>                                                    
+                                          <i class="icon-calendar"> <strong><font size="3">Fecha a consultar</font></strong></i>                                                    
                                         </div>
                                         <div class="widget-content">
                                           <center>
                                             <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                 <span class="add-on"><i class="icon-th"></i></span>
                                                 <span class="add-on"><i class="icon-remove"></i></span>
-                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha3">
+                                                <input class="form-control span7" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha3">
                                             </div> 
                                             <input type="hidden" name="vtab" id="vtab3" value="3">
                                             <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta3">Consultar</button>
@@ -619,7 +601,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             <td class="success"><center>YULENNY CORTÉS</center></td>
                                           </tr> 
                                           <tr>
-                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                            <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                             <td class="success"><center>Oswy Delgado</center></td>
                                           </tr>  
                                           <tr>
@@ -676,7 +658,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         data.addRows([          
           ['PAN', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>],
           ['MC', <?php echo $seguidoresma ?>, <?php echo $siguiendoma ?>, <?php echo $tweetsma ?>],          
-          ['PVE', <?php echo $seguidoreses ?>, <?php echo $siguiendoes ?>, <?php echo $tweetses ?>],
+          ['PVEM', <?php echo $seguidoreses ?>, <?php echo $siguiendoes ?>, <?php echo $tweetses ?>],
           ['PRI', <?php echo $seguidores_oscar ?>, <?php echo $siguiendo_oscar ?>, <?php echo $tweets_oscar ?>]
         ]);
 
@@ -744,7 +726,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         data.addColumn('number', 'Siguiendo');
         data.addColumn('number', 'Tweets');        
         data.addRows([
-          ['Coalición \n PRI-PVE-PNA', <?php echo $seguidoresp ?>, <?php echo $siguiendop ?>, <?php echo $tweetsp ?>],
+          ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidoresp ?>, <?php echo $siguiendop ?>, <?php echo $tweetsp ?>],
           ['PT', <?php echo $seguidoresmarc ?>, <?php echo $siguiendomarc ?>, <?php echo $tweetsmarc ?>],
           ['MC', <?php echo $seguidores_ruben ?>, <?php echo $siguiendo_ruben ?>, <?php echo $tweets_ruben ?>]
         ]);
@@ -814,7 +796,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         data.addColumn('number', 'Tweets');        
         data.addRows([          
           ['PAN', <?php echo $seguidores_yulenny ?>, <?php echo $siguiendo_yulenny ?>, <?php echo $tweets_yulenny ?>],
-          ['Coalición \n PRI-PVE-PNA', <?php echo $seguidores_oswy ?>, <?php echo $siguiendo_oswy ?>, <?php echo $tweets_oswy ?>],
+          ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_oswy ?>, <?php echo $siguiendo_oswy ?>, <?php echo $tweets_oswy ?>],
           ['PRD', <?php echo $seguidores_jaime ?>, <?php echo $siguiendo_jaime ?>, <?php echo $tweets_jaime ?>]          
         ]);
 
@@ -950,7 +932,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         data.addColumn('number', 'Siguiendo');
         data.addColumn('number', 'Tweets');        
         data.addRows([
-          ['Coalición \n PRI-PVE-PNA', <?php echo $seguidores_arturo ?>, <?php echo $siguiendo_arturo ?>, <?php echo $tweets_arturo ?>]
+          ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_arturo ?>, <?php echo $siguiendo_arturo ?>, <?php echo $tweets_arturo ?>]
         ]);
 
         var view = new google.visualization.DataView(data);

@@ -38,7 +38,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12" id="encabezado">
                         <h3 class="page-title" id="titulo">
-                            Gobernador <small>Actividad en Twitter</small>
+                            Diputados Locales <small>Actividad en Twitter</small>
                         </h3>
                         <ul class="breadcrumb" id="ul_menu">
                             <li>
@@ -58,7 +58,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </li>
                             <li>
                                 <i class="icon-briefcase"></i>
-                                <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_gobernadores');?>">Gobernador</a> 
+                                <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_DipLocales');?>">Diputados Locales</a> 
                             </li>
                         </ul>
                     </div>
@@ -69,13 +69,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
-                              <li class="active"><a data-toggle="tab" href="#barras1">Nacho Peralta</a></li>
-                              <li><a data-toggle="tab" href="#barras2">Jorge Luis Preciado</a></li>
-                              <li><a data-toggle="tab" href="#barras3">Locho Morán</a></li>
-                              <li><a data-toggle="tab" href="#barras4">Martha Zepeda</a></li>
+                              <li class="active"><a data-toggle="tab" href="#barras1">Distrito 1. Hilda Ceballos <img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></a></li>
+                              <li><a data-toggle="tab" href="#barras2">Distrito 1. Yadira Carrillo <img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></a></li>
+                              <li><a data-toggle="tab" href="#barras3">Distrito 2. Guillermo Rangel <img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></a></li>
+                              <li><a data-toggle="tab" href="#barras4">Distrito 3. AlmaDeliaArreolaCruz <img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></a></li>
+                              <li><a data-toggle="tab" href="#barras5">Distrito 4. Juanita Andrés <img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></a></li>
                             </ul>
                               <div class="tab-content" id="myTabContent">
-                                <!--Nacho-->
+                                <!--Hilda-->
                                 <div id="barras1" class="tab-pane fade active in"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -131,7 +132,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         </div>
                                     </div>
                                 </div>
-                                <!--Jorge-->
+                                <!--Yadira-->
                                 <div id="barras2" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -180,7 +181,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <h3>Menciones al día</h3>                                                    
                                                     </div>
                                                     <div class="widget-content">   
-                                                        <div id="chart_div2"></div>
+                                                        <div id="chart_div2">Yadira Carrillo No tiene menciones</div>
                                                     </div>
                                                 </div> 
                                             </div>
@@ -188,7 +189,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div>
 
-                                <!--Locho-->
+                                <!--Guillermo-->
                                 <div id="barras3" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -243,9 +244,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>  
 
-                                <!--Martha-->
+                                <!--Alma-->
                                 <div id="barras4" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -300,7 +301,64 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
+
+                                <!--juanita-->
+                                <div id="barras5" class="tab-pane fade"> 
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-comments-alt"></i>
+                                                        <h3>Valoración de Comentarios</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">                                          
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge13" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Positivos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge14" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Negativos</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                                <div class="span4">
+                                                                    <center>
+                                                                        <svg id="fillgauge15" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
+                                                                        <div><strong>Comentarios Neutros</strong></div>
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                            <br/>
+                                                        </div>   
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">                                          
+                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                                    <div class="widget-header" style="background: #B20034">
+                                                        <i class="icon-bar-chart"></i>
+                                                        <h3>Menciones al día</h3>                                                    
+                                                    </div>
+                                                    <div class="widget-content">   
+                                                        <div id="chart_div5"></div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                             
 
                             </div>
                         </div>  <!--Cierra div de los tabs-->                                            
@@ -312,7 +370,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 	<?php $this->load->view('comunes/footer'); ?> 
 
-    <!--Datos de nacho-->
 <script language="JavaScript">
     var config1 = liquidFillGaugeDefaultSettings();
     config1.circleColor = "#178BCA";
@@ -347,69 +404,73 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     config3.textSize = 0.75;
     config3.waveHeight = 0.15;   
 
-    //Datos nacho
-    loadLiquidFillGauge("fillgauge1", <?php echo $nachoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge2", <?php echo $nachoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge3", <?php echo $nachoN; ?>, config3);
-    //Datos jorge
-    loadLiquidFillGauge("fillgauge4", <?php echo $jorgeP; ?>, config1);
-    loadLiquidFillGauge("fillgauge5", <?php echo $jorgeNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge6", <?php echo $jorgeN; ?>, config3);
-    //Datos locho
-    loadLiquidFillGauge("fillgauge7", <?php echo $lochoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge8", <?php echo $lochoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge9", <?php echo $lochoN; ?>, config3);
-    //Datos martha
-    loadLiquidFillGauge("fillgauge10", <?php echo $marthaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge11", <?php echo $marthaNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge12", <?php echo $marthaN; ?>, config3);
+    //Datos Hilda
+    loadLiquidFillGauge("fillgauge1", <?php echo $hildaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge2", <?php echo $hildaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge3", <?php echo $hildaN; ?>, config3);
+    //Datos Yadira
+    loadLiquidFillGauge("fillgauge4", <?php echo $yadiraP; ?>, config1);
+    loadLiquidFillGauge("fillgauge5", <?php echo $yadiraNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge6", <?php echo $yadiraN; ?>, config3);
+    //Datos Guillermo
+    loadLiquidFillGauge("fillgauge7", <?php echo $guillermoP; ?>, config1);
+    loadLiquidFillGauge("fillgauge8", <?php echo $guillermoNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge9", <?php echo $guillermoN; ?>, config3);
+    //Datos Alma Delia
+    loadLiquidFillGauge("fillgauge10", <?php echo $almaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge11", <?php echo $almaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge12", <?php echo $almaN; ?>, config3);
+    //Datos juanita
+    loadLiquidFillGauge("fillgauge13", <?php echo $juanitaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge14", <?php echo $juanitaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge15", <?php echo $juanitaN; ?>, config3);
+    <?php echo $total; ?>
 </script>
 
     <script type="text/javascript">
         google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);    
-        ////////Menciones de gobernadores
-        <?php //nacho nachoperaltacol
+        google.setOnLoadCallback(drawChart);
+        <?php //hilda HildaCeballos01
             $a = array();
-            foreach ($nacho as $nacho) 
+            foreach ($hilda as $hilda) 
             {
                 $a[] = array(
-                    "fecha" => $nacho->fecha,
-                    "cantidad_menciones" => $nacho->cantidad
+                    "fecha" => $hilda->fecha,
+                    "cantidad_menciones" => $hilda->cantidad
+                );
+            } 
+        ?>     
+        <?php //guillermo @Rangel_G_
+            $a3 = array();
+            foreach ($guillermo as $guillermo) 
+            {
+                $a3[] = array(
+                    "fecha" => $guillermo->fecha,
+                    "cantidad_menciones" => $guillermo->cantidad
                 );
             } 
         ?> 
-        <?php //jorge JL_Preciado_  
-            $a2 = array();
-            foreach ($jorge as $jorge) 
+        <?php //alma @AlmaDelia_D3
+            $a4 = array();
+            foreach ($alma as $alma) 
             {
-                $a2[] = array(
-                    "fecha" => $jorge->fecha,
-                    "cantidad_menciones" => $jorge->cantidad
+                $a4[] = array(
+                    "fecha" => $alma->fecha,
+                    "cantidad_menciones" => $alma->cantidad
                 );
             } 
-        ?>
-        <?php //locho leonciomoranL8  
-            $a3 = array();
-            foreach ($locho as $locho) 
+        ?> 
+        <?php //juanita @JuanitaAndres
+            $a5 = array();
+            foreach ($juanita as $juanita) 
             {
-                $a3[] = array(
-                    "fecha" => $locho->fecha,
-                    "cantidad_menciones" => $locho->cantidad
+                $a5[] = array(
+                    "fecha" => $juanita->fecha,
+                    "cantidad_menciones" => $juanita->cantidad
                 );
             } 
         ?>  
-        <?php //martha MarthaZepeda_  
-            $a4 = array();
-            foreach ($martha as $martha) 
-            {
-                $a4[] = array(
-                    "fecha" => $martha->fecha,
-                    "cantidad_menciones" => $martha->cantidad
-                );
-            } 
-        ?> 
-        ////////////////////////////////////////nacho
+        ////////////////////////////////////////hilda
         function drawChart() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -421,7 +482,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@nanchoperaltacol',
+            title: '@HildaCeballos01',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
@@ -438,40 +499,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart();
-        });
-
-        ////////////////////////////////////////jorge
-        function drawChart2() {
-          var data = google.visualization.arrayToDataTable(
-            [
-              ['Fecha', 'Cantidad'],
-              <?php for ($i=0; $i<count($a2); $i++) {
-                  ?>
-                  ['<?php echo $a2[$i]['fecha'] ?>', <?php echo $a2[$i]['cantidad_menciones'] ?>],
-              <?php } ?>
-            ]
-          );  
-          var options = {
-            title: '@JL_Preciado_',
-            hAxis: {title: "Fecha"},
-            seriesType: "bars",
-            series: {2: {type: "line"}},
-            height: 400
-          };
-          var chart2 = new google.visualization.ComboChart(document.getElementById('chart_div2'));
-          chart2.draw(data, options);          
-        }
-        //Sirve para hacer la grafica responsiva
-        var aspect = 1000 / 400,
-          chart = $("#chart_div2");
-        $(window).on("resize", function() {   
-            var targetWidth = chart.width();
-            chart.attr("width", targetWidth);
-            chart.attr("height", targetWidth / aspect);
-            drawChart2();
-        });
-
-        ////////////////////////////////////////locho
+        });  
+        ////////////////////////////////////////guillermo
         function drawChart3() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -483,7 +512,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@leonciomoranL8',
+            title: '@Rangel_G_',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
@@ -500,9 +529,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart3();
-        });
-
-        ////////////////////////////////////////martha
+        });  
+        ////////////////////////////////////////alma
         function drawChart4() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -514,7 +542,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@MarthaZepeda_',
+            title: '@AlmaDelia_D3',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
@@ -531,7 +559,37 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart4();
-        });
+        });   
+        ////////////////////////////////////////juanita
+        function drawChart5() {
+          var data = google.visualization.arrayToDataTable(
+            [
+              ['Fecha', 'Cantidad'],
+              <?php for ($i=0; $i<count($a5); $i++) {
+                  ?>
+                  ['<?php echo $a5[$i]['fecha'] ?>', <?php echo $a5[$i]['cantidad_menciones'] ?>],
+              <?php } ?>
+            ]
+          );  
+          var options = {
+            title: '@JuanitaAndres',
+            hAxis: {title: "Fecha"},
+            seriesType: "bars",
+            series: {2: {type: "line"}},
+            height: 400
+          };
+          var chart5 = new google.visualization.ComboChart(document.getElementById('chart_div5'));
+          chart5.draw(data, options);          
+        }
+        //Sirve para hacer la grafica responsiva
+        var aspect = 1000 / 400,
+          chart = $("#chart_div5");
+        $(window).on("resize", function() {   
+            var targetWidth = chart.width();
+            chart.attr("width", targetWidth);
+            chart.attr("height", targetWidth / aspect);
+            drawChart5();
+        });   
     </script>
 
     <!--Funcion para ajustar la grafica al expander el menú-->
@@ -540,14 +598,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         {
           setTimeout(function(){
             drawChart();
-            drawChart2();
             drawChart3();
             drawChart4();
+            drawChart5();
           },100)    
-          $('#chart_div').width('100%'); 
-          $('#chart_div2').width('100%');   
-          $('#chart_div3').width('100%'); 
-          $('#chart_div4').width('100%'); 
+          $('#chart_div').width('100%');
+          $('#chart_div2').width('100%');
+          $('#chart_div3').width('100%');
+          $('#chart_div5').width('100%');
         }
       </script>
 </body>

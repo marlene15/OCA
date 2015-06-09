@@ -333,31 +333,79 @@
 			$PT_Colima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
 									  where usuario = 'PT_Colima' ORDER BY fecha ASC");
 			$MorenaColima1 = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'MorenaColima1' ORDER BY fecha ASC");
-			
+									  where usuario = 'MorenaColima1' ORDER BY fecha ASC");		
 
-			if($pri->num_rows()>0)
-			{
-				$a = array(
-	                "pri" => $pri->result(),
-	                "jips_2015" => $jips_2015->result(),
-	                "JIPSColima" => $JIPSColima->result(),
-	                "jipsvdea" => $jipsvdea->result(),
-	                "MiSelfiecoNacho" => $MiSelfiecoNacho->result(),
-	                "PANDColima" => $PANDColima->result(),
-	                "cdepancolima" => $cdepancolima->result(),
-	                "PRDcolima" => $PRDcolima->result(),
-	                "MovCiudadanoCol" => $MovCiudadanoCol->result(),
-	                "ColPartidoVerde" => $ColPartidoVerde->result(),
-	                "PT_Colima" => $PT_Colima->result(),
-	                "MorenaColima1" => $MorenaColima1->result()
-	            );
-	            return $a;
-			}
-			else
-			{
-				return FALSE;
-			}
+			$a = array(
+                "pri" => $pri->result(),
+                "jips_2015" => $jips_2015->result(),
+                "JIPSColima" => $JIPSColima->result(),
+                "jipsvdea" => $jipsvdea->result(),
+                "MiSelfiecoNacho" => $MiSelfiecoNacho->result(),
+                "PANDColima" => $PANDColima->result(),
+                "cdepancolima" => $cdepancolima->result(),
+                "PRDcolima" => $PRDcolima->result(),
+                "MovCiudadanoCol" => $MovCiudadanoCol->result(),
+                "ColPartidoVerde" => $ColPartidoVerde->result(),
+                "PT_Colima" => $PT_Colima->result(),
+                "MorenaColima1" => $MorenaColima1->result()
+            );
+            return $a;
+		}
+
+		public function obtener_cuenta_partidos_rango($fecha_inicio,$fecha_fin)
+		{
+			$pri = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'PRI_Colima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin' 
+									  ORDER BY fecha ASC");
+			$jips_2015 = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'JIPS2015' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$JIPSColima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'JIPSColima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$jipsvdea = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'jipsvdea' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$MiSelfiecoNacho = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'MiSelfiecoNacho' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$PANDColima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'PANDColima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$cdepancolima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'cdepancolima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$PRDcolima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'PRDcolima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$MovCiudadanoCol = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'MovCiudadanoCol' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$ColPartidoVerde = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'ColPartidoVerde' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$PT_Colima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'PT_Colima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$MorenaColima1 = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'MorenaColima1' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");		
+
+			$a = array(
+                "pri" => $pri->result(),
+                "jips_2015" => $jips_2015->result(),
+                "JIPSColima" => $JIPSColima->result(),
+                "jipsvdea" => $jipsvdea->result(),
+                "MiSelfiecoNacho" => $MiSelfiecoNacho->result(),
+                "PANDColima" => $PANDColima->result(),
+                "cdepancolima" => $cdepancolima->result(),
+                "PRDcolima" => $PRDcolima->result(),
+                "MovCiudadanoCol" => $MovCiudadanoCol->result(),
+                "ColPartidoVerde" => $ColPartidoVerde->result(),
+                "PT_Colima" => $PT_Colima->result(),
+                "MorenaColima1" => $MorenaColima1->result()
+            );
+            return $a;
 		}
 
 		public function obtener_cuenta_comoVamos()
@@ -382,8 +430,52 @@
 		{
 			$nacho = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
 									WHERE menciones LIKE '%nachoperaltacol%' group by fecha");
+			$jorge = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%JL_Preciado_%' group by fecha");
+			$locho = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%leonciomoranL8%' group by fecha");
+			$martha = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%MarthaZepeda_%' group by fecha");
 			$a = array(
-	            "nacho" => $nacho->result()
+	            "nacho" => $nacho->result(),
+	            "jorge" => $jorge->result(),
+	            "locho" => $locho->result(),
+	            "martha" => $martha->result()
+	        );
+	        return $a;
+		}
+
+		public function menciones_DipFederales()
+		{
+			$indira = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%indira_vizcaino%' group by fecha");
+			$kike = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%kikerojas007%' group by fecha");
+			$norma = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%NormaGdeV%' group by fecha");
+			$a = array(
+	            "indira" => $indira->result(),
+	            "kike" => $kike->result(),
+	            "norma" => $norma->result()
+	        );
+	        return $a;
+		}
+
+		public function menciones_DipLocales()
+		{
+			$hilda = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%HildaCeballos01%' group by fecha");
+			$guillermo = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%Rangel_G_%' group by fecha");
+			$alma = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%AlmaDelia_D3%' group by fecha");
+			$juanita = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%SantiagoCh2Tec%' group by fecha");
+			$a = array(
+	            "hilda" => $hilda->result(),
+	            "guillermo" => $guillermo->result(),
+	            "alma" => $alma->result(),
+	            "juanita" => $juanita->result()
 	        );
 	        return $a;
 		}

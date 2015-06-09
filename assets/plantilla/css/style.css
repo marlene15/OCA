@@ -515,7 +515,7 @@ Page container
 ***/
 .page-container {
   margin: 0px;
-  padding: 0px;
+  padding: 0px;  
 }
 
 .page-header-fixed .page-container {
@@ -1086,6 +1086,7 @@ Footer
 .footer {
   padding: 8px 20px 5px 20px; 
   font-size: 12px;
+  max-height: 400px;
 }
 
 .footer:after,

@@ -505,4 +505,65 @@ class Controlador_consultas extends CI_Controller {
 	            );
 		$this->load->view('twitter/chars/char_nube',$datos);
 	}
+
+	public function partidos_RangoFechas()
+	{
+		$this->load->library('fechas');
+		$fecha_inicio = $this->input->post('fecha_inicio');
+		$fecha_inicio=$this->fechas->fecha_dd_mes_aaaa($fecha_inicio);
+		$ExisteFechaInicio = $this->modelo_consultas->ExisteFecha($fecha_inicio);
+
+		$fecha_fin = $this->input->post('fecha_fin');
+		$fecha_fin=$this->fechas->fecha_dd_mes_aaaa($fecha_fin);
+		$ExisteFechaFin = $this->modelo_consultas->ExisteFecha($fecha_fin);
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
+		$ultima_fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha->ultima_fecha);
+		$vtab = $this->input->post('vtab');
+
+		$fechaInicioMayor = 0;
+		$existe = 1;
+		if ($fecha_inicio>$fecha_fin) {
+			$fechaInicioMayor = 1;
+			$datos = array(
+							"fechaInicioMayor" => $fechaInicioMayor,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"existe" => $existe
+		            	  );
+			$this->load->view('twitter/chars/char_partidosError',$datos);
+		}
+		if ($ExisteFechaInicio==2 or $ExisteFechaFin==2) {
+			$existe = 0;
+			$datos = array(
+							"existe" => $existe,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"fechaInicioMayor" => $fechaInicioMayor
+		            	  );
+			$this->load->view('twitter/chars/char_partidosError',$datos);
+		}
+		if ($fechaInicioMayor!=1 and $existe!=0){			
+			$cuentas = $this->modelo_consultas->obtener_cuenta_partidos_rango($fecha_inicio,$fecha_fin);	
+			$datos = array(
+							"pri" => $cuentas['pri'],
+							"jips_2015" => $cuentas['jips_2015'],
+							"JIPSColima" => $cuentas['JIPSColima'],
+							"jipsvdea" => $cuentas['jipsvdea'],
+							"MiSelfiecoNacho" => $cuentas['MiSelfiecoNacho'],
+							"PANDColima" => $cuentas['PANDColima'],
+							"cdepancolima" => $cuentas['cdepancolima'],
+							"PRDcolima" => $cuentas['PRDcolima'],
+							"MovCiudadanoCol" => $cuentas['MovCiudadanoCol'],
+							"ColPartidoVerde" => $cuentas['ColPartidoVerde'],
+							"PT_Colima" => $cuentas['PT_Colima'],
+							"MorenaColima1" => $cuentas['MorenaColima1'],
+							"fecha_inicio" => $fecha_inicio,
+		                	"fecha_fin" => $fecha_fin,
+		                	"vtab" => $vtab,
+		                	"fechaInicioMayor" => $fechaInicioMayor,
+		                	"existe" => $existe
+		            	  );
+			$this->load->view('twitter/chars/char_partidos',$datos);
+		}				
+	}
 }

@@ -14,7 +14,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   <title>Dip. Federales</title> 
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
-  <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script> 
+  <script src="<?php echo base_url()?>assets/twitter/recarga_partidos.js"></script> 
   <!--Para poder usar el calendario, importar las librerias-->
   <link href="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.min.css" rel="stylesheet">
   <!--Para usar los contenedores widget-->
@@ -58,25 +58,24 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                       <div id="alert"></div>                  
                       <div class="bs-example bs-example-tabs"><!--Código para el tab de pestañas-->   
                         <ul class="nav nav-tabs" id="myTab">
-                          <li class="active"><a data-toggle="tab" href="#barras1" id="tab1">PRI</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras2" id="tab2">PAN</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras3" id="tab3">PRD</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras4" id="tab4">Mov. Ciudadano</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras5" id="tab5">Partido Verde</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras6" id="tab6">PT</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras7" id="tab7">MORENA</a></li>
+                          <li class="active"><a data-toggle="tab" href="#barras2" id="tab2">PAN</a></li>
+                          <li><a data-toggle="tab" href="#barras1" id="tab1">PRI</a></li>                          
+                          <li><a data-toggle="tab" href="#barras3" id="tab3">PRD</a></li>
+                          <li><a data-toggle="tab" href="#barras6" id="tab6">PT</a></li>
+                          <li><a data-toggle="tab" href="#barras5" id="tab5">Partido Verde</a></li>
+                          <li><a data-toggle="tab" href="#barras4" id="tab4">Mov. Ciudadano</a></li>
+                          <li><a data-toggle="tab" href="#barras7" id="tab7">MORENA</a></li>
                         </ul>
                           <div class="tab-content" id="myTabContent"> <!--Inicia tab de pestañas-->
 
-                            <div id="barras1" class="tab-pane fade active in"> 
+                            <div id="barras1" class="tab-pane fade"> 
                               <div class="container-fluid">
                                   <div class="row-fluid">
                                     <div class="span12">
                                       <div class="span9">                                          
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                               <div class="widget-header" style="background: #B20034">
-                                                  <i class="icon-bar-chart"></i>
-                                                  <h3>PRI</h3>                                                    
+                                                  <i class="icon-bar-chart"> <strong><font size="3">PRI</font></strong></i>                                              
                                               </div>
                                               <div class="widget-content">                                          
                                                   <div id="chart_div" style="height: 400px;"></div> 
@@ -84,6 +83,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                   <div id="chart_div3" style="height: 400px;"></div>                       
                                                   <div id="chart_div4" style="height: 400px;"></div> 
                                                   <div id="chart_div5" style="height: 400px;"></div> 
+                                                  <div id="con"></div>  <!--Grafica despues de la consulta-->
                                               </div>
                                           </div> 
                                       </div> 
@@ -91,8 +91,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                       <div class="span3">
                                         <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                           <div class="widget-header" style="background: #B20034" align="left">
-                                              <i class="icon-calendar"></i>
-                                              <h3>Fechas a consultar</h3>                                                    
+                                              <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
                                           </div>
                                           <div class="widget-content">
                                             <center>
@@ -100,16 +99,16 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                               <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                   <span class="add-on"><i class="icon-th"></i></span>
                                                   <span class="add-on"><i class="icon-remove"></i></span>
-                                                  <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_inicio">
                                               </div> 
                                               <label>Fecha de término</label>
                                               <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                   <span class="add-on"><i class="icon-th"></i></span>
                                                   <span class="add-on"><i class="icon-remove"></i></span>
-                                                  <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_fin">
                                               </div>
                                               <input type="hidden" name="vtab" id="vtab1" value="1">
-                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta_pri">Consultar</button>
                                             </center>
                                           </div> 
                                         </div>  
@@ -120,66 +119,289 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                               </div>
                             </div>
 
-                            <div id="barras2" class="tab-pane fade">
+                            <div id="barras2" class="tab-pane fade active in"> 
                               <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div6" style="height: 400px;"></div> 
-                                    <div id="chart_div8" style="height: 400px;"></div> 
+                                  <div class="row-fluid">
+                                    <div class="span12">
+                                      <div class="span9">                                          
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                              <div class="widget-header" style="background: #B20034">
+                                                  <i class="icon-bar-chart"> <strong><font size="3">PAN</font></strong></i>                                              
+                                              </div>
+                                              <div class="widget-content">                                          
+                                                  <div id="chart_div6" style="height: 400px;"></div> 
+                                                  <div id="chart_div8" style="height: 400px;"></div>
+                                                  <div id="con2"></div>  <!--Grafica despues de la consulta-->
+                                              </div>
+                                          </div> 
+                                      </div> 
+
+                                      <div class="span3">
+                                        <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                          <div class="widget-header" style="background: #B20034" align="left">
+                                              <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                          </div>
+                                          <div class="widget-content">
+                                            <center>
+                                              <label>Fecha de inicio</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_inicioPan">
+                                              </div> 
+                                              <label>Fecha de término</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_finPan">
+                                              </div>
+                                              <input type="hidden" name="vtab" id="vtab2" value="2">
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta_pan">Consultar</button>
+                                            </center>
+                                          </div> 
+                                        </div>  
+                                      </div>
+
+                                    </div>
                                   </div>
-                                </div>
-                              </div>                               
+                              </div>
                             </div>
 
-                            <div id="barras3" class="tab-pane fade">
+                            <div id="barras3" class="tab-pane fade"> 
                               <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div7" style="height: 400px;"></div> 
+                                  <div class="row-fluid">
+                                    <div class="span12">
+                                      <div class="span9">                                          
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                              <div class="widget-header" style="background: #B20034">
+                                                  <i class="icon-bar-chart"> <strong><font size="3">PRD</font></strong></i>                                              
+                                              </div>
+                                              <div class="widget-content">                                          
+                                                  <div id="chart_div7" style="height: 400px;"></div> 
+                                                  <div id="con3"></div>  <!--Grafica despues de la consulta-->
+                                              </div>
+                                          </div> 
+                                      </div> 
+
+                                      <div class="span3">
+                                        <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                          <div class="widget-header" style="background: #B20034" align="left">
+                                              <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                          </div>
+                                          <div class="widget-content">
+                                            <center>
+                                              <label>Fecha de inicio</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_inicioPrd">
+                                              </div> 
+                                              <label>Fecha de término</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_finPrd">
+                                              </div>
+                                              <input type="hidden" name="vtab" id="vtab3" value="3">
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta_prd">Consultar</button>
+                                            </center>
+                                          </div> 
+                                        </div>  
+                                      </div>
+
+                                    </div>
                                   </div>
-                                </div>
-                              </div>                               
+                              </div>
                             </div>
 
-                            <div id="barras4" class="tab-pane fade">
+                            <div id="barras4" class="tab-pane fade"> 
                               <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div9" style="height: 400px;"></div> 
+                                  <div class="row-fluid">
+                                    <div class="span12">
+                                      <div class="span9">                                          
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                              <div class="widget-header" style="background: #B20034">
+                                                  <i class="icon-bar-chart"> <strong><font size="3">Movimiento Ciudadano</font></strong></i>                                              
+                                              </div>
+                                              <div class="widget-content">                                          
+                                                  <div id="chart_div9" style="height: 400px;"></div> 
+                                                  <div id="con4"></div>  <!--Grafica despues de la consulta-->
+                                              </div>
+                                          </div> 
+                                      </div> 
+
+                                      <div class="span3">
+                                        <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                          <div class="widget-header" style="background: #B20034" align="left">
+                                              <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                          </div>
+                                          <div class="widget-content">
+                                            <center>
+                                              <label>Fecha de inicio</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_inicioMc">
+                                              </div> 
+                                              <label>Fecha de término</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_finMc">
+                                              </div>
+                                              <input type="hidden" name="vtab" id="vtab4" value="4">
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta_mc">Consultar</button>
+                                            </center>
+                                          </div> 
+                                        </div>  
+                                      </div>
+
+                                    </div>
                                   </div>
-                                </div>
-                              </div>                               
+                              </div>
                             </div>
 
-                            <div id="barras5" class="tab-pane fade">
+                            <div id="barras5" class="tab-pane fade"> 
                               <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div10" style="height: 400px;"></div> 
-                                  </div>
-                                </div>
-                              </div>                               
-                            </div>
+                                  <div class="row-fluid">
+                                    <div class="span12">
+                                      <div class="span9">                                          
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                              <div class="widget-header" style="background: #B20034">
+                                                  <i class="icon-bar-chart"> <strong><font size="3">Partido Verde</font></strong></i>                                              
+                                              </div>
+                                              <div class="widget-content">                                          
+                                                  <div id="chart_div10" style="height: 400px;"></div> 
+                                                  <div id="con5"></div>  <!--Grafica despues de la consulta-->
+                                              </div>
+                                          </div> 
+                                      </div> 
 
-                            <div id="barras6" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div11" style="height: 400px;"></div> 
-                                  </div>
-                                </div>
-                              </div>                               
-                            </div>
+                                      <div class="span3">
+                                        <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                          <div class="widget-header" style="background: #B20034" align="left">
+                                              <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                          </div>
+                                          <div class="widget-content">
+                                            <center>
+                                              <label>Fecha de inicio</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_inicioVerde">
+                                              </div> 
+                                              <label>Fecha de término</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_finVerde">
+                                              </div>
+                                              <input type="hidden" name="vtab" id="vtab5" value="5">
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta_verde">Consultar</button>
+                                            </center>
+                                          </div> 
+                                        </div>  
+                                      </div>
 
-                            <div id="barras7" class="tab-pane fade">
-                              <div class="container-fluid">
-                                <div class="row-fluid">
-                                  <div class="span12">  
-                                    <div id="chart_div12" style="height: 400px;"></div> 
+                                    </div>
                                   </div>
-                                </div>
-                              </div>                               
+                              </div>
+                            </div>         
+
+                            <div id="barras6" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                  <div class="row-fluid">
+                                    <div class="span12">
+                                      <div class="span9">                                          
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                              <div class="widget-header" style="background: #B20034">
+                                                  <i class="icon-bar-chart"> <strong><font size="3">PT</font></strong></i>                                              
+                                              </div>
+                                              <div class="widget-content">                                          
+                                                  <div id="chart_div11" style="height: 400px;"></div> 
+                                                  <div id="con6"></div>  <!--Grafica despues de la consulta-->
+                                              </div>
+                                          </div> 
+                                      </div> 
+
+                                      <div class="span3">
+                                        <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                          <div class="widget-header" style="background: #B20034" align="left">
+                                              <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                          </div>
+                                          <div class="widget-content">
+                                            <center>
+                                              <label>Fecha de inicio</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_inicioPt">
+                                              </div> 
+                                              <label>Fecha de término</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_finPt">
+                                              </div>
+                                              <input type="hidden" name="vtab" id="vtab6" value="6">
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta_pt">Consultar</button>
+                                            </center>
+                                          </div> 
+                                        </div>  
+                                      </div>
+
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>  
+
+                            <div id="barras7" class="tab-pane fade"> 
+                              <div class="container-fluid">
+                                  <div class="row-fluid">
+                                    <div class="span12">
+                                      <div class="span9">                                          
+                                          <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                              <div class="widget-header" style="background: #B20034">
+                                                  <i class="icon-bar-chart"> <strong><font size="3">MORENA</font></strong></i>                                              
+                                              </div>
+                                              <div class="widget-content">                                          
+                                                  <div id="chart_div12" style="height: 400px;"></div> 
+                                                  <div id="con7"></div>  <!--Grafica despues de la consulta-->
+                                              </div>
+                                          </div> 
+                                      </div> 
+
+                                      <div class="span3">
+                                        <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                          <div class="widget-header" style="background: #B20034" align="left">
+                                              <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                          </div>
+                                          <div class="widget-content">
+                                            <center>
+                                              <label>Fecha de inicio</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_inicioMorena">
+                                              </div> 
+                                              <label>Fecha de término</label>
+                                              <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                  <span class="add-on"><i class="icon-th"></i></span>
+                                                  <span class="add-on"><i class="icon-remove"></i></span>
+                                                  <input class="form-control span7" size="15" type="text" value="" readonly id="fecha_finMorena">
+                                              </div>
+                                              <input type="hidden" name="vtab" id="vtab7" value="7">
+                                              <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta_morena">Consultar</button>
+                                            </center>
+                                          </div> 
+                                        </div>  
+                                      </div>
+
+                                    </div>
+                                  </div>
+                              </div>
                             </div>
+                            
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
                     </div>
@@ -209,7 +431,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
    <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(drawChart);    
+    google.setOnLoadCallback(drawChart2);    
 
     ////////PRI
     <?php //char1  
@@ -627,6 +849,169 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     }
   </script>
 
+  <script type="text/javascript">
+    $(document).ready(function(){                                        
+      $("#consulta_pri").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicio").value; 
+        var fecha_fin = document.getElementById("fecha_fin").value;  
+        var vtab = document.getElementById("vtab1").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con').html(html);   
+          }
+        });            
+      });       
+    });
+
+    $(document).ready(function(){                                        
+      $("#consulta_pan").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicioPan").value; 
+        var fecha_fin = document.getElementById("fecha_finPan").value;  
+        var vtab = document.getElementById("vtab2").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con2').html(html);   
+          }
+        });            
+      });       
+    });
+
+    $(document).ready(function(){                                        
+      $("#consulta_prd").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicioPrd").value; 
+        var fecha_fin = document.getElementById("fecha_finPrd").value;  
+        var vtab = document.getElementById("vtab3").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con3').html(html);   
+          }
+        });            
+      });       
+    });
+
+    $(document).ready(function(){                                        
+      $("#consulta_mc").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicioMc").value; 
+        var fecha_fin = document.getElementById("fecha_finMc").value;  
+        var vtab = document.getElementById("vtab4").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con4').html(html);   
+          }
+        });            
+      });       
+    });
+
+    $(document).ready(function(){                                        
+      $("#consulta_verde").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicioVerde").value; 
+        var fecha_fin = document.getElementById("fecha_finVerde").value;  
+        var vtab = document.getElementById("vtab5").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con5').html(html);   
+          }
+        });            
+      });       
+    });
+
+    $(document).ready(function(){                                        
+      $("#consulta_pt").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicioPt").value; 
+        var fecha_fin = document.getElementById("fecha_finPt").value;  
+        var vtab = document.getElementById("vtab6").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con6').html(html);   
+          }
+        });            
+      });       
+    });
+
+    $(document).ready(function(){                                        
+      $("#consulta_morena").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicioMorena").value; 
+        var fecha_fin = document.getElementById("fecha_finMorena").value;  
+        var vtab = document.getElementById("vtab7").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con7').html(html);   
+          }
+        });            
+      });       
+    });
+  </script>
+
   <!--Funcion para ajustar la grafica al expander el menú-->
   <script type="text/javascript">
     function recarga()
@@ -647,7 +1032,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       $('#chart_div5').width('100%');  
       $('#chart_div6').width('100%');
       $('#chart_div7').width('100%');  
-    }
+    }   
   </script>
 
 </body>

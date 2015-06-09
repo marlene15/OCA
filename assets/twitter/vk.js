@@ -9,6 +9,12 @@ $(document).ready(function(){
 		$('#villa').hide(250);
 		$('#manzanillo').hide(250);
 		$('#tecoman').hide(250);
+		$('#armeria').hide(250);
+		$('#comala').hide(250);
+		$('#coqui').hide(250);
+		$('#cuau').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
 	});
 	$('[data-toggle=tab][href=#villa]').on('click',function(){
 		setTimeout(function(){
@@ -19,6 +25,12 @@ $(document).ready(function(){
 		$('#colima').hide(250);
 		$('#manzanillo').hide(250);
 		$('#tecoman').hide(250);
+		$('#armeria').hide(250);
+		$('#comala').hide(250);
+		$('#coqui').hide(250);
+		$('#cuau').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
 	});
 	$('[data-toggle=tab][href=#manzanillo]').on('click',function(){
 		setTimeout(function(){
@@ -29,6 +41,12 @@ $(document).ready(function(){
 		$('#villa').hide(250);
 		$('#colima').hide(250);
 		$('#tecoman').hide(250);
+		$('#armeria').hide(250);
+		$('#comala').hide(250);
+		$('#coqui').hide(250);
+		$('#cuau').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
 	});
 	$('[data-toggle=tab][href=#tecoman]').on('click',function(){
 		setTimeout(function(){
@@ -39,5 +57,108 @@ $(document).ready(function(){
 		$('#villa').hide(250);
 		$('#colima').hide(250);
 		$('#manzanillo').hide(250);
+		$('#armeria').hide(250);
+		$('#comala').hide(250);
+		$('#coqui').hide(250);
+		$('#cuau').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
 	});
+	$('[data-toggle=tab][href=#armeria]').on('click',function(){
+		setTimeout(function(){
+			drawChart5();
+		},550)
+		$('#map_div5').width('100%');
+		$('#armeria').show(500);
+		$('#tecoman').hide(250);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
+		$('#comala').hide(250);
+		$('#coqui').hide(250);
+		$('#cuau').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
+	});
+	$('[data-toggle=tab][href=#comala]').on('click',function(){
+		setTimeout(function(){
+			drawChart6();
+		},550)
+		$('#map_div6').width('100%');
+		$('#comala').show(500);
+		$('#armeria').hide(250);
+		$('#tecoman').hide(250);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
+		$('#coqui').hide(250);
+		$('#cuau').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
+	});
+	$('[data-toggle=tab][href=#coqui]').on('click',function(){
+		setTimeout(function(){
+			drawChart7();
+		},550)
+		$('#map_div7').width('100%');
+		$('#coqui').show(500);
+		$('#comala').hide(250);
+		$('#armeria').hide(250);
+		$('#tecoman').hide(250);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
+		$('#cuau').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
+	});
+	$('[data-toggle=tab][href=#cuau]').on('click',function(){
+		setTimeout(function(){
+			drawChart8();
+		},550)
+		$('#map_div8').width('100%');
+		$('#cuau').show(500);
+		$('#coqui').hide(250);
+		$('#comala').hide(250);
+		$('#armeria').hide(250);
+		$('#tecoman').hide(250);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
+		$('#ixtlahuacan').hide(250);
+		$('#mina').hide(250);
+	});
+	$('[data-toggle=tab][href=#ixtlahuacan]').on('click',function(){
+		setTimeout(function(){
+			drawChart9();
+		},550)
+		$('#map_div9').width('100%');
+		$('#ixtlahuacan').show(500);
+		$('#cuau').hide(250);
+		$('#coqui').hide(250);
+		$('#comala').hide(250);
+		$('#armeria').hide(250);
+		$('#tecoman').hide(250);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
+		$('#mina').hide(250);
+	});
+	$('[data-toggle=tab][href=#mina]').on('click',function(){
+		setTimeout(function(){
+			drawChart10();
+		},550)
+		$('#map_div10').width('100%');
+		$('#mina').show(500);
+		$('#ixtlahuacan').hide(250);
+		$('#cuau').hide(250);
+		$('#coqui').hide(250);
+		$('#comala').hide(250);
+		$('#armeria').hide(250);
+		$('#tecoman').hide(250);
+		$('#villa').hide(250);
+		$('#colima').hide(250);
+		$('#manzanillo').hide(250);
+	});
+
 });

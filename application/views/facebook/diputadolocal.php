@@ -47,9 +47,10 @@
                 </div>
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
+                  <center>
                     <div class="portlet-body form well">
                       <div id="alert"></div>                  
-                    <center>
+                      <div id="alert2"></div>
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                           <ul class="nav nav-tabs" id="myTab">
@@ -183,7 +184,7 @@
                                         <td class="success"><center>Guillermo Rángel</center></td>                                        
                                       </tr> 
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Sandra Ramírez</center></td>
                                       </tr> 
                                       <tr>
@@ -248,28 +249,36 @@
                                     <!-- Aplicadas en las celdas (<td> o <th>) -->
                                       <tr>
                                         <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
-                                        <td class="success"><center>Nicólas Contreras</center></td>                                      
+                                        <td class="success"><center>Crispín Guerra</center></td>                                      
                                       </tr>
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
-                                        <td class="success"><center>Guillermo Rángel</center></td>                                        
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Alma Arreola</center></td>                                        
                                       </tr> 
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
-                                        <td class="success"><center>Sandra Ramírez</center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Martha Farías</center></td>
                                       </tr> 
                                       <tr>
                                         <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>José García</center></td>
                                       </tr>                         
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRD.jpg" class="img-responsive center-block" width="25" height="25"></center></td>
-                                        <td class="success"><center>Arturo García</center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Isis Villaseñor</center></td>
                                       </tr> 
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PES.jpg" class="img-responsive center-block" width="25" height="25"></center></td>
-                                        <td class="success"><center>Liliana Rodríguez</center></td>
-                                      </tr>                                      
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PMC.png" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Octavio Aguilar</center></td>
+                                      </tr> 
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/MORENA.jpg" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Patricia Peregrina</center></td>
+                                      </tr>                                                                             
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/HUMANISTA.png" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Gloria Arceo Chávez</center></td>
+                                      </tr>                                       
                                     </tbody>
                                   </table>                                      
                                 </div>
@@ -387,7 +396,7 @@
                                         <td class="success"><center>Ramiro Toscano</center></td>                                      
                                       </tr>
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>José Benavides</center></td>                                        
                                       </tr> 
                                       <tr>
@@ -447,7 +456,7 @@
                                         <td class="success"><center>Sandra Ramírez</center></td>                                      
                                       </tr>
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Octavio Tintos</center></td>                                        
                                       </tr> 
                                       <tr>
@@ -515,7 +524,7 @@
                                         <td class="success"><center>Francisco Ceballos</center></td>                                      
                                       </tr>
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Alfredo Hernández</center></td>                                        
                                       </tr> 
                                       <tr>
@@ -587,7 +596,7 @@
                                         <td class="success"><center>Meyly Pastora</center></td>                                      
                                       </tr>
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Héctor Magaña</center></td>                                        
                                       </tr> 
                                       <tr>
@@ -659,7 +668,7 @@
                                         <td class="success"><center>Beatríz Isunza</center></td>                                        
                                       </tr> 
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Selene Margarita</center></td>
                                       </tr> 
                                       <tr>
@@ -719,7 +728,7 @@
                                     <tbody>                         
                                     <!-- Aplicadas en las celdas (<td> o <th>) -->
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Juan Pinto</center></td>                                        
                                       </tr> 
                                       <tr>
@@ -791,7 +800,7 @@
                                         <td class="success"><center>Miguel García</center></td>                                      
                                       </tr>                                        
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Armida Nuñez</center></td>                                        
                                       </tr> 
                                       <tr>
@@ -863,7 +872,7 @@
                                         <td class="success"><center>Martha Sosa</center></td>                                      
                                       </tr>                                        
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>Rosario Yeme</center></td>                                        
                                       </tr> 
                                       <tr>
@@ -921,33 +930,226 @@
                                   <div class="span12">Candidatos que tienen cuenta de Facebook</div>
                                   <table class="table table-hover table-bordered">
                                     <tbody>                         
-                                    <!-- Aplicadas en las celdas (<td> o <th>) -->
+                                    <!-- Aplicadas en las celdas (<td> o <th>) -->                           
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
-                                        <td class="success"><center>Martha Sosa</center></td>                                      
-                                      </tr>                                        
-                                      <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
-                                        <td class="success"><center>Rosario Yeme</center></td>                                        
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Sergio Sánchez</center></td>                                        
                                       </tr> 
                                       <tr>
                                         <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="30" height="30"></center></td>
-                                        <td class="success"><center>Nora Ayala</center></td>
-                                      </tr>                         
-                                      <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PMC.png" class="img-responsive center-block" width="25" height="25"></center></td>
-                                        <td class="success"><center>Iveth Noriega</center></td>
-                                      </tr>                                       
+                                        <td class="success"><center>Carlos Villa</center></td>
+                                      </tr>                                                                                                  
                                     </tbody>
                                   </table>                                      
                                 </div>
                               </div>                                  
                             </div>
                           </div>
+                        <!--Catorce tab-->
+                          <div id="barras14" class="tab-pane">
+                            <div class="row-fluid">
+                              <div class="span12">  
+                                <div class="span9">  
+                                  <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                    <div class="widget-header" style="background: #B20034" align="left">
+                                      <i class="icon-bar-chart"></i>
+                                      <h3 id="fecha_contenedor14"></h3>                                                    
+                                      <?php echo $ultima_fecha ?>
+                                    </div>
+                                    <div class="widget-content">                                          
+                                      <div id="chart_div14"></div>                            
+                                      <div id="con14"></div>  <!--Grafica despues de la consulta-->
+                                    </div>
+                                  </div> 
+                                </div>
+                                <div class="span3">
+                                  <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                    <div class="widget-header" style="background: #B20034" align="left">
+                                      <i class="icon-calendar"></i>
+                                      <h3>Fecha a consulta</h3>                                                   
+                                    </div>
+                                    <div class="widget-content">
+                                      <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha14">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab14" value="14">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta14">Consultar</button>
+                                      </center>
+                                    </div> 
+                                  </div>  
+                                </div>
+                                <!--Tabla con candidatos con cuentas-->
+                                <div class="span3">
+                                  <div class="span12">Candidatos que tienen cuenta de Facebook</div>
+                                  <table class="table table-hover table-bordered">
+                                    <tbody>                         
+                                    <!-- Aplicadas en las celdas (<td> o <th>) -->
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/pan.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Luis Ayala</center></td>                                      
+                                      </tr>                                        
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Lilia Figueroa</center></td>                                        
+                                      </tr> 
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Martha Meza</center></td>
+                                      </tr>                         
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Verónica Torres</center></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PMC.png" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Gustavo Rentería</center></td>
+                                      </tr>   
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/MORENA.jpg" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Josefina Roblada</center></td>
+                                      </tr>  
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PES.jpg" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Elías Núñez</center></td>
+                                      </tr>                                                                          
+                                    </tbody>
+                                  </table>                                      
+                                </div>
+                              </div>                                  
+                            </div>
+                          </div>                          
+                        <!--Quinceavo tab-->
+                          <div id="barras15" class="tab-pane">
+                            <div class="row-fluid">
+                              <div class="span12">  
+                                <div class="span9">  
+                                  <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                    <div class="widget-header" style="background: #B20034" align="left">
+                                      <i class="icon-bar-chart"></i>
+                                      <h3 id="fecha_contenedor15"></h3>                                                    
+                                      <?php echo $ultima_fecha ?>
+                                    </div>
+                                    <div class="widget-content">                                          
+                                      <div id="chart_div15"></div>                            
+                                      <div id="con15"></div>  <!--Grafica despues de la consulta-->
+                                    </div>
+                                  </div> 
+                                </div>
+                                <div class="span3">
+                                  <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                    <div class="widget-header" style="background: #B20034" align="left">
+                                      <i class="icon-calendar"></i>
+                                      <h3>Fecha a consulta</h3>                                                   
+                                    </div>
+                                    <div class="widget-content">
+                                      <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha15">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab15" value="15">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta15">Consultar</button>
+                                      </center>
+                                    </div> 
+                                  </div>  
+                                </div>
+                                <!--Tabla con candidatos con cuentas-->
+                                <div class="span3">
+                                  <div class="span12">Candidatos que tienen cuenta de Facebook</div>
+                                  <table class="table table-hover table-bordered">
+                                    <tbody>                         
+                                    <!-- Aplicadas en las celdas (<td> o <th>) -->                                        
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Felícitas Peña</center></td>                                        
+                                      </tr> 
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/MORENA.jpg" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Hilda Moreno</center></td>
+                                      </tr>                         
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/HUMANISTA.png" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Alma Rincón</center></td>
+                                      </tr>                                       
+                                    </tbody>
+                                  </table>                                      
+                                </div>
+                              </div>                                  
+                            </div>
+                          </div>                          
+                        <!--Diesiseisavo tab-->
+                          <div id="barras16" class="tab-pane">
+                            <div class="row-fluid">
+                              <div class="span12">  
+                                <div class="span9">  
+                                  <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
+                                    <div class="widget-header" style="background: #B20034" align="left">
+                                      <i class="icon-bar-chart"></i>
+                                      <h3 id="fecha_contenedor16"></h3>                                                    
+                                      <?php echo $ultima_fecha ?>
+                                    </div>
+                                    <div class="widget-content">                                          
+                                      <div id="chart_div16"></div>                            
+                                      <div id="con16"></div>  <!--Grafica despues de la consulta-->
+                                    </div>
+                                  </div> 
+                                </div>
+                                <div class="span3">
+                                  <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
+                                    <div class="widget-header" style="background: #B20034" align="left">
+                                      <i class="icon-calendar"></i>
+                                      <h3>Fecha a consulta</h3>                                                   
+                                    </div>
+                                    <div class="widget-content">
+                                      <center>
+                                            <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
+                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                <span class="add-on"><i class="icon-remove"></i></span>
+                                                <input class="form-control span9" size="15" type="text" value="<?php echo $ultima_fecha ?>" readonly id="fecha16">
+                                            </div> 
+                                            <input type="hidden" name="vtab" id="vtab16" value="16">
+                                            <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta16">Consultar</button>
+                                      </center>
+                                    </div> 
+                                  </div>  
+                                </div>
+                                <!--Tabla con candidatos con cuentas-->
+                                <div class="span3">
+                                  <div class="span12">Candidatos que tienen cuenta de Facebook</div>
+                                  <table class="table table-hover table-bordered">
+                                    <tbody>                         
+                                    <!-- Aplicadas en las celdas (<td> o <th>) -->                                        
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Santiago Chávez</center></td>                                        
+                                      </tr> 
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PT.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="success"><center>Judith Godínez</center></td>
+                                      </tr>                         
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PES.jpg" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Sergio Mendoza</center></td>
+                                      </tr> 
+                                      <tr>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/HUMANISTA.png" class="img-responsive center-block" width="25" height="25"></center></td>
+                                        <td class="success"><center>Ángeles Rodríguez</center></td>
+                                      </tr>                                                                                                                   
+                                    </tbody>
+                                  </table>                                      
+                                </div>
+                              </div>                                  
+                            </div>
+                          </div> 
 
-                        </div> 
-                      </div>
-                    </center>
+                        </div>
+                      </div> 
+                    </div>
+                  </center>
                 </div>              
             </div>
         </div>
@@ -956,6 +1158,7 @@
    <!--Para poder usar el calendario, importar las librerias-->
   <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.js" charset="UTF-8"></script>
   <script type="text/javascript" src="<?php echo base_url()?>assets/calendar/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>  
+  
   <script type="text/javascript">
     $('.form_date').datetimepicker({
           language:  'es',
@@ -968,6 +1171,7 @@
       forceParse: 0
       });
   </script> 
+
 <!--GRAFICA DISTRITO I-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
@@ -979,9 +1183,9 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PRI\nHilda Ceballos',<?php echo $megustac1 ?>, <?php echo $seguidoresc1 ?>],
-        ['PM\nJosé Cardenas',<?php echo $megustac2 ?>, <?php echo $seguidoresc2 ?>],
-        ['PH\nLeonardo gutiérrez',<?php echo $megustac3 ?>, <?php echo $seguidoresc3 ?>]
+        ['PRI',<?php echo $megustac1 ?>, <?php echo $seguidoresc1 ?>],
+        ['PM',<?php echo $megustac2 ?>, <?php echo $seguidoresc2 ?>],
+        ['PH',<?php echo $megustac3 ?>, <?php echo $seguidoresc3 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1043,12 +1247,12 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nNicolás\nContreras',<?php echo $megustac4 ?>, <?php echo $seguidoresc4 ?>],        
-        ['PNA\nGuillermo\nRángel',<?php echo $megustac5 ?>, <?php echo $seguidoresc5 ?>],        
-        ['VERDE\nSandra\nRamírez',<?php echo $megustac6 ?>, <?php echo $seguidoresc6 ?>],
-        ['PAN\nJosé\nGarcía',<?php echo $megustac7 ?>, <?php echo $seguidoresc7 ?>],
-        ['PRD\nArturo\nGarcía',<?php echo $megustac8 ?>, <?php echo $seguidoresc8 ?>],        
-        ['PRI\nLiliana\nRodríguez',<?php echo $megustac9 ?>, <?php echo $seguidoresc9 ?>]
+        ['PAN',<?php echo $megustac4 ?>, <?php echo $seguidoresc4 ?>],        
+        ['PNA',<?php echo $megustac5 ?>, <?php echo $seguidoresc5 ?>],        
+        ['PVEM',<?php echo $megustac6 ?>, <?php echo $seguidoresc6 ?>],
+        ['PT',<?php echo $megustac7 ?>, <?php echo $seguidoresc7 ?>],
+        ['PRD',<?php echo $megustac8 ?>, <?php echo $seguidoresc8 ?>],        
+        ['PES',<?php echo $megustac9 ?>, <?php echo $seguidoresc9 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1102,7 +1306,7 @@
   <!--GRAFICA DISTRITO III-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart3() {
       var data = new google.visualization.DataTable();
@@ -1110,13 +1314,13 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PES\nCrispín\nGuerra',<?php echo $megustac10 ?>, <?php echo $seguidoresc10 ?>],
-        ['PT\nAlma\nArreola',<?php echo $megustac11 ?>, <?php echo $seguidoresc11 ?>],
-        ['PRI\nMartha\nFarías',<?php echo $megustac12 ?>, <?php echo $seguidoresc12 ?>],
-        ['PM\nIsis\nVillaseñor',<?php echo $megustac13 ?>, <?php echo $seguidoresc13 ?>],
-        ['PT\nOctavio\nAguilar',<?php echo $megustac14 ?>, <?php echo $seguidoresc14 ?>],
-        ['PRI\nPatricia\nPeregrina',<?php echo $megustac15 ?>, <?php echo $seguidoresc14 ?>],
-        ['PM\nGloria\nArceo',<?php echo $megustac16 ?>, <?php echo $seguidoresc16 ?>]
+        ['PAN',<?php echo $megustac10 ?>, <?php echo $seguidoresc10 ?>],
+        ['PRI',<?php echo $megustac11 ?>, <?php echo $seguidoresc11 ?>],
+        ['PNA',<?php echo $megustac12 ?>, <?php echo $seguidoresc12 ?>],
+        ['PVEM',<?php echo $megustac13 ?>, <?php echo $seguidoresc13 ?>],
+        ['PMC',<?php echo $megustac14 ?>, <?php echo $seguidoresc14 ?>],
+        ['PM',<?php echo $megustac15 ?>, <?php echo $seguidoresc14 ?>],
+        ['PH',<?php echo $megustac16 ?>, <?php echo $seguidoresc16 ?>]
      
       ]);
 
@@ -1160,18 +1364,18 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div3");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart3();
     });     
   </script>  
 <!--GRAFICA DISTRITO IV-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart4() {
       var data = new google.visualization.DataTable();
@@ -1179,10 +1383,10 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nJaneth Paz',<?php echo $megustac17 ?>, <?php echo $seguidoresc17 ?>],
-        ['PRI\nJuana Andrés',<?php echo $megustac18 ?>, <?php echo $seguidoresc18 ?>],
-        ['PRD\nSergio Ricardo',<?php echo $megustac19 ?>, <?php echo $seguidoresc19 ?>],
-        ['PT\nAndrés Orozco',<?php echo $megustac20 ?>, <?php echo $seguidoresc20 ?>]        
+        ['PAN',<?php echo $megustac17 ?>, <?php echo $seguidoresc17 ?>],
+        ['PRI',<?php echo $megustac18 ?>, <?php echo $seguidoresc18 ?>],
+        ['PRD',<?php echo $megustac19 ?>, <?php echo $seguidoresc19 ?>],
+        ['PT',<?php echo $megustac20 ?>, <?php echo $seguidoresc20 ?>]        
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1225,18 +1429,18 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div4");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart4();
     });     
   </script>  
 <!--GRAFICA DISTRITO V-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart5() {
       var data = new google.visualization.DataTable();
@@ -1244,9 +1448,9 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nRamiro Toscano',<?php echo $megustac21 ?>, <?php echo $seguidoresc21 ?>],
-        ['PRI-PNA-PV\nJosé Benavides',<?php echo $megustac22 ?>, <?php echo $seguidoresc22 ?>],
-        ['PT\nYuliana Aguilar',<?php echo $megustac23 ?>, <?php echo $seguidoresc23 ?>]
+        ['PAN',<?php echo $megustac21 ?>, <?php echo $seguidoresc21 ?>],
+        ['PRI-PNA-PV',<?php echo $megustac22 ?>, <?php echo $seguidoresc22 ?>],
+        ['PT',<?php echo $megustac23 ?>, <?php echo $seguidoresc23 ?>]
 
       ]);
 
@@ -1290,19 +1494,19 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div5");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart5();
     });     
   </script>
 
 <!--GRAFICA DISTRITO VI-->
  <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart6() {
       var data = new google.visualization.DataTable();
@@ -1310,11 +1514,11 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nSandra Ramírez',<?php echo $megustac24 ?>, <?php echo $seguidoresc24 ?>],
-        ['PRI-PNA-PV\nOctavio Tintos',<?php echo $megustac25 ?>, <?php echo $seguidoresc25 ?>],
-        ['PRD\nSergio Silva',<?php echo $megustac26 ?>, <?php echo $seguidoresc26 ?>],
-        ['PT\nLeticia Mendoza',<?php echo $megustac27 ?>, <?php echo $seguidoresc27 ?>],
-        ['PH\nGetsemani Ibarra',<?php echo $megustac28 ?>, <?php echo $seguidoresc28 ?>]                        
+        ['PAN',<?php echo $megustac24 ?>, <?php echo $seguidoresc24 ?>],
+        ['PRI-PNA-PV',<?php echo $megustac25 ?>, <?php echo $seguidoresc25 ?>],
+        ['PRD',<?php echo $megustac26 ?>, <?php echo $seguidoresc26 ?>],
+        ['PT',<?php echo $megustac27 ?>, <?php echo $seguidoresc27 ?>],
+        ['PH',<?php echo $megustac28 ?>, <?php echo $seguidoresc28 ?>]                        
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1357,18 +1561,18 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div6");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart6();
     });     
   </script>
 <!--GRAFICA DISTRITO VII-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart7() {
       var data = new google.visualization.DataTable();
@@ -1376,12 +1580,12 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nFrancisco\nCeballos',<?php echo $megustac29 ?>, <?php echo $seguidoresc29 ?>],
-        ['PRI-PNA-PV\nAlfredo\nHernández',<?php echo $megustac30 ?>, <?php echo $seguidoresc30 ?>],
-        ['PRD\nSara\nCernas',<?php echo $megustac31 ?>, <?php echo $seguidoresc31 ?>],
-        ['PT\nJoel\nPadilla',<?php echo $megustac32 ?>, <?php echo $seguidoresc32 ?>],
-        ['PMC\nSocorro\nBayardo',<?php echo $megustac33 ?>, <?php echo $seguidoresc33 ?>],
-        ['PH\nErendira\nÁndrade',<?php echo $megustac34 ?>, <?php echo $seguidoresc34 ?>]                                                        
+        ['PAN',<?php echo $megustac29 ?>, <?php echo $seguidoresc29 ?>],
+        ['PRI-PNA-PV',<?php echo $megustac30 ?>, <?php echo $seguidoresc30 ?>],
+        ['PRD',<?php echo $megustac31 ?>, <?php echo $seguidoresc31 ?>],
+        ['PT',<?php echo $megustac32 ?>, <?php echo $seguidoresc32 ?>],
+        ['PMC',<?php echo $megustac33 ?>, <?php echo $seguidoresc33 ?>],
+        ['PH',<?php echo $megustac34 ?>, <?php echo $seguidoresc34 ?>]                                                        
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1424,18 +1628,18 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div7");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart7();
     });     
   </script>
   <!--GRAFICA DISTRITO VIII-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart8() {
       var data = new google.visualization.DataTable();
@@ -1443,11 +1647,11 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nMeyly\nPastora',<?php echo $megustac35 ?>, <?php echo $seguidoresc35 ?>],
-        ['PRI-PNA-PV\nHéctor\nMagaña',<?php echo $megustac36 ?>, <?php echo $seguidoresc36 ?>],
-        ['PT\nAlfredo\nHerrera',<?php echo $megustac37 ?>, <?php echo $seguidoresc37 ?>],
-        ['PMC\nAdelaida\nFernández',<?php echo $megustac38 ?>, <?php echo $seguidoresc38 ?>],
-        ['PH\nJuan\nJuárez',<?php echo $megustac39 ?>, <?php echo $seguidoresc39 ?>]
+        ['PAN',<?php echo $megustac35 ?>, <?php echo $seguidoresc35 ?>],
+        ['PRI-PNA-PV',<?php echo $megustac36 ?>, <?php echo $seguidoresc36 ?>],
+        ['PT',<?php echo $megustac37 ?>, <?php echo $seguidoresc37 ?>],
+        ['PMC',<?php echo $megustac38 ?>, <?php echo $seguidoresc38 ?>],
+        ['PH',<?php echo $megustac39 ?>, <?php echo $seguidoresc39 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1490,18 +1694,18 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div8");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart8();
     });     
   </script>  
    <!--GRAFICA DISTRITO IX-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart9() {
       var data = new google.visualization.DataTable();
@@ -1509,11 +1713,11 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nEusebio\nMesina',<?php echo $megustac40 ?>, <?php echo $seguidoresc40 ?>],
-        ['PRI\nBeatriz\nIsunza',<?php echo $megustac41 ?>, <?php echo $seguidoresc41 ?>],
-        ['VERDE\nSelene\nLópez',<?php echo $megustac42 ?>, <?php echo $seguidoresc42 ?>],
-        ['PMC\nAngelica\nOchoa',<?php echo $megustac43 ?>, <?php echo $seguidoresc43 ?>],
-        ['PM\nMauricio\nBarreto',<?php echo $megustac44 ?>, <?php echo $seguidoresc44 ?>]
+        ['PAN',<?php echo $megustac40 ?>, <?php echo $seguidoresc40 ?>],
+        ['PRI',<?php echo $megustac41 ?>, <?php echo $seguidoresc41 ?>],
+        ['PVEM',<?php echo $megustac42 ?>, <?php echo $seguidoresc42 ?>],
+        ['PMC',<?php echo $megustac43 ?>, <?php echo $seguidoresc43 ?>],
+        ['PM',<?php echo $megustac44 ?>, <?php echo $seguidoresc44 ?>]
         ]);
 
       var view = new google.visualization.DataView(data);
@@ -1556,19 +1760,19 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div9");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart9();
     });     
   </script>        
 
   <!--GRAFICA DISTRITO X-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart10() {
       var data = new google.visualization.DataTable();
@@ -1576,11 +1780,11 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PRI-PNA-PV\nJuan\nPinto',<?php echo $megustac45 ?>, <?php echo $seguidoresc45 ?>],
-        ['PT\nRicardo\nSevilla',<?php echo $megustac46 ?>, <?php echo $seguidoresc46 ?>],
-        ['PMC\nRaquel\nCárdenas',<?php echo $megustac47 ?>, <?php echo $seguidoresc47 ?>],
-        ['PM\nMarco\nRodarte',<?php echo $megustac48 ?>, <?php echo $seguidoresc48 ?>],
-        ['PH\nSalvador\nJuárez',<?php echo $megustac49 ?>, <?php echo $seguidoresc49 ?>]                                                                  
+        ['PRI-PNA-PV',<?php echo $megustac45 ?>, <?php echo $seguidoresc45 ?>],
+        ['PT',<?php echo $megustac46 ?>, <?php echo $seguidoresc46 ?>],
+        ['PMC',<?php echo $megustac47 ?>, <?php echo $seguidoresc47 ?>],
+        ['PM',<?php echo $megustac48 ?>, <?php echo $seguidoresc48 ?>],
+        ['PH',<?php echo $megustac49 ?>, <?php echo $seguidoresc49 ?>]                                                                  
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1623,12 +1827,12 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div10");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart10();
     });     
   </script> 
    <!--GRAFICA DISTRITO XI-->
@@ -1642,12 +1846,12 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nMiguel\nGarcía',<?php echo $megustac50 ?>, <?php echo $seguidoresc50 ?>],
-        ['PRI-PNA-PV\nArmida\nNuñez',<?php echo $megustac51 ?>, <?php echo $seguidoresc51 ?>],
-        ['PRD\nAldo\nVega',<?php echo $megustac52 ?>, <?php echo $seguidoresc52 ?>],
-        ['PT\nSebastián\nEsparza',<?php echo $megustac53 ?>, <?php echo $seguidoresc53 ?>],
-        ['PM\nTeresa\nHernández',<?php echo $megustac54 ?>, <?php echo $seguidoresc54 ?>],
-        ['PM\nDiana\nTopetes',<?php echo $megustac55 ?>, <?php echo $seguidoresc55 ?>]        
+        ['PAN',<?php echo $megustac50 ?>, <?php echo $seguidoresc50 ?>],
+        ['PRI-PNA-PV',<?php echo $megustac51 ?>, <?php echo $seguidoresc51 ?>],
+        ['PRD',<?php echo $megustac52 ?>, <?php echo $seguidoresc52 ?>],
+        ['PT',<?php echo $megustac53 ?>, <?php echo $seguidoresc53 ?>],
+        ['PM',<?php echo $megustac54 ?>, <?php echo $seguidoresc54 ?>],
+        ['PM',<?php echo $megustac55 ?>, <?php echo $seguidoresc55 ?>]        
         ]);
 
       var view = new google.visualization.DataView(data);
@@ -1690,19 +1894,19 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div11");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart11();
     });     
   </script>        
 
   <!--GRAFICA DISTRITO XII-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart12() {
       var data = new google.visualization.DataTable();
@@ -1710,10 +1914,10 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nMartha\nSosa',<?php echo $megustac56 ?>, <?php echo $seguidoresc56 ?>],
-        ['PRI\nRosario\nYema',<?php echo $megustac57 ?>, <?php echo $seguidoresc57 ?>],
-        ['PT\nNora\nAyala',<?php echo $megustac58 ?>, <?php echo $seguidoresc58 ?>],
-        ['PMC\nIveth\nNoriega',<?php echo $megustac59 ?>, <?php echo $seguidoresc59 ?>]
+        ['PAN',<?php echo $megustac56 ?>, <?php echo $seguidoresc56 ?>],
+        ['PRI',<?php echo $megustac57 ?>, <?php echo $seguidoresc57 ?>],
+        ['PT',<?php echo $megustac58 ?>, <?php echo $seguidoresc58 ?>],
+        ['PMC',<?php echo $megustac59 ?>, <?php echo $seguidoresc59 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1756,18 +1960,18 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div12");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart12();
     });     
   </script>   
   <!--GRAFICA DISTRITO XIII-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart13() {
       var data = new google.visualization.DataTable();
@@ -1775,8 +1979,8 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nMartha\nSosa',<?php echo $megustac60 ?>, <?php echo $seguidoresc60 ?>],
-        ['PT\nCarlos\nVilla',<?php echo $megustac61 ?>, <?php echo $seguidoresc61 ?>]
+        ['PAN',<?php echo $megustac60 ?>, <?php echo $seguidoresc60 ?>],
+        ['PT',<?php echo $megustac61 ?>, <?php echo $seguidoresc61 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1819,18 +2023,18 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div13");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart13();
     });     
   </script>     
   <!--GRAFICA DISTRITO XIV-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart14() {
       var data = new google.visualization.DataTable();
@@ -1838,13 +2042,13 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN\nLuis\nAyala',<?php echo $megustac62 ?>, <?php echo $seguidoresc62 ?>],
-        ['PRI\nLilia\nFigueroa',<?php echo $megustac63 ?>, <?php echo $seguidoresc63 ?>],
-        ['VERDE\nMartha\nMeza',<?php echo $megustac64 ?>, <?php echo $seguidoresc64 ?>],
-        ['PT\nVerónica\nTorres',<?php echo $megustac65 ?>, <?php echo $seguidoresc65 ?>],
-        ['PMC\nGustavo\nRentería',<?php echo $megustac66 ?>, <?php echo $seguidoresc66 ?>],        
-        ['PM\nJosefina\nRoblada',<?php echo $megustac67 ?>, <?php echo $seguidoresc67 ?>],
-        ['PES\nElías\nNúñez',<?php echo $megustac68 ?>, <?php echo $seguidoresc68 ?>]
+        ['PAN',<?php echo $megustac62 ?>, <?php echo $seguidoresc62 ?>],
+        ['PRI',<?php echo $megustac63 ?>, <?php echo $seguidoresc63 ?>],
+        ['PVEM',<?php echo $megustac64 ?>, <?php echo $seguidoresc64 ?>],
+        ['PT',<?php echo $megustac65 ?>, <?php echo $seguidoresc65 ?>],
+        ['PMC',<?php echo $megustac66 ?>, <?php echo $seguidoresc66 ?>],        
+        ['PM',<?php echo $megustac67 ?>, <?php echo $seguidoresc67 ?>],
+        ['PES',<?php echo $megustac68 ?>, <?php echo $seguidoresc68 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1887,19 +2091,19 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div14");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart14();
     });     
   </script>       
   </script>     
   <!--GRAFICA DISTRITO XIV-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart15() {
       var data = new google.visualization.DataTable();
@@ -1907,9 +2111,9 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PRI-PNA-PV\nFelícitas\nPeña',<?php echo $megustac69 ?>, <?php echo $seguidoresc69 ?>],
-        ['PT\nHilda\nMoreno',<?php echo $megustac70 ?>, <?php echo $seguidoresc70 ?>],
-        ['PMC\nAlma\nRincón',<?php echo $megustac71 ?>, <?php echo $seguidoresc71 ?>]
+        ['PRI-PNA-PV',<?php echo $megustac69 ?>, <?php echo $seguidoresc69 ?>],
+        ['PT',<?php echo $megustac70 ?>, <?php echo $seguidoresc70 ?>],
+        ['PMC',<?php echo $megustac71 ?>, <?php echo $seguidoresc71 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1952,19 +2156,19 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div15");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart15();
     });     
   </script>         
   </script>     
   <!--GRAFICA DISTRITO XIV-->
   <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});
-    // google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
 
     function drawChart16() {
       var data = new google.visualization.DataTable();
@@ -1972,10 +2176,10 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PRI-PNA-PV\nSantiago\nChávez',<?php echo $megustac72 ?>, <?php echo $seguidoresc72 ?>],
-        ['PT\nJudith\nGodínez',<?php echo $megustac73 ?>, <?php echo $seguidoresc73 ?>],
-        ['PMC\nSergio\nMendoza',<?php echo $megustac74 ?>, <?php echo $seguidoresc74 ?>],
-        ['PH\nÁngeles\nRodríguez',<?php echo $megustac75 ?>, <?php echo $seguidoresc75 ?>]
+        ['PRI-PNA-PV',<?php echo $megustac72 ?>, <?php echo $seguidoresc72 ?>],
+        ['PT',<?php echo $megustac73 ?>, <?php echo $seguidoresc73 ?>],
+        ['PMC',<?php echo $megustac74 ?>, <?php echo $seguidoresc74 ?>],
+        ['PH',<?php echo $megustac75 ?>, <?php echo $seguidoresc75 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2018,12 +2222,12 @@
     }
     //Sirve para hacer la grafica responsiva
     var aspect = 1000 / 400,
-      chart = $("#chart_div2");
+      chart = $("#chart_div16");
     $(window).on("resize", function() {   
         var targetWidth = chart.width();
         chart.attr("width", targetWidth);
         chart.attr("height", targetWidth / aspect);
-        drawChart2();
+        drawChart16();
     });     
   </script>  
 
@@ -2040,7 +2244,7 @@
       forceParse: 0
       });
   </script>
-  
+
   <script type="text/javascript">
     $(document).ready(function(){                                        
       $("#consulta").click(function(event) {
@@ -2053,7 +2257,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('facebook/controlador_consultas/DFDistritoI');?>',                                      
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con').html(html);   
@@ -2071,28 +2275,307 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('facebook/controlador_consultas/DFDistritoI');?>',                                      
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con2').html(html);
           }
         });
       });
+
+      $("#consulta3").click(function(event) {
+        var fecha = document.getElementById("fecha3").value; 
+        var vtab = document.getElementById("vtab3").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con3').html(html);
+          }
+        });
+      });
+
+      $("#consulta4").click(function(event) {
+        var fecha = document.getElementById("fecha4").value; 
+        var vtab = document.getElementById("vtab4").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con4').html(html);
+          }
+        });
+      });
+
+      $("#consulta5").click(function(event) {
+        var fecha = document.getElementById("fecha5").value; 
+        var vtab = document.getElementById("vtab5").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con5').html(html);
+          }
+        });
+      });
+
+      $("#consulta6").click(function(event) {
+        var fecha = document.getElementById("fecha6").value; 
+        var vtab = document.getElementById("vtab6").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con6').html(html);
+          }
+        });
+      });
+
+      $("#consulta7").click(function(event) {
+        var fecha = document.getElementById("fecha7").value; 
+        var vtab = document.getElementById("vtab7").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con7').html(html);
+          }
+        });
+      });
+
+      $("#consulta8").click(function(event) {
+        var fecha = document.getElementById("fecha8").value; 
+        var vtab = document.getElementById("vtab8").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con8').html(html);
+          }
+        });
+      });
+
+      $("#consulta9").click(function(event) {
+        var fecha = document.getElementById("fecha9").value; 
+        var vtab = document.getElementById("vtab9").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con9').html(html);
+          }
+        });
+      });
+
+      $("#consulta10").click(function(event) {
+        var fecha = document.getElementById("fecha10").value; 
+        var vtab = document.getElementById("vtab10").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con10').html(html);
+          }
+        });
+      });
+
+      $("#consulta11").click(function(event) {
+        var fecha = document.getElementById("fecha11").value; 
+        var vtab = document.getElementById("vtab11").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con11').html(html);
+          }
+        });
+      });
+
+      $("#consulta12").click(function(event) {
+        var fecha = document.getElementById("fecha12").value; 
+        var vtab = document.getElementById("vtab12").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con12').html(html);
+          }
+        });
+      });
+
+      $("#consulta13").click(function(event) {
+        var fecha = document.getElementById("fecha13").value; 
+        var vtab = document.getElementById("vtab13").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con13').html(html);
+          }
+        });
+      });
+
+      $("#consulta14").click(function(event) {
+        var fecha = document.getElementById("fecha14").value; 
+        var vtab = document.getElementById("vtab14").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con14').html(html);
+          }
+        });
+      });
+
+      $("#consulta15").click(function(event) {
+        var fecha = document.getElementById("fecha15").value; 
+        var vtab = document.getElementById("vtab15").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con15').html(html);
+          }
+        });
+      });
+
+      $("#consulta16").click(function(event) {
+        var fecha = document.getElementById("fecha16").value; 
+        var vtab = document.getElementById("vtab16").value; 
+        var parametros = {
+                "fecha" : fecha,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con16').html(html);
+          }
+        });
+      });
     });
-  </script>  
+  </script>
 
-
-    <!--Funcion para ajustar la grafica al expander el menú-->
+  <!--Funcion para ajustar la grafica al expander el menú-->
   <script type="text/javascript">
     function recarga()
     {
       setTimeout(function(){
         drawChart();
         drawChart2();
+        drawChart3();
+        drawChart4();
+        drawChart5();
+        drawChart6();
+        drawChart7();
+        drawChart8();
+        drawChart9();
+        drawChart10();
+        drawChart11();
+        drawChart12();
+        drawChart13();
+        drawChart14();
+        drawChart15();
+        drawChart16();
       },100)    
       $('#chart_div').width('100%');  
-      $('#chart_div2').width('100%');  
+      $('#chart_div2').width('100%'); 
+      $('#chart_div3').width('100%');  
+      $('#chart_div4').width('100%');
+      $('#chart_div5').width('100%');  
+      $('#chart_div6').width('100%');
+      $('#chart_div7').width('100%');  
+      $('#chart_div8').width('100%');
+      $('#chart_div9').width('100%');  
+      $('#chart_div10').width('100%');
+      $('#chart_div11').width('100%');  
+      $('#chart_div12').width('100%');
+      $('#chart_div13').width('100%');  
+      $('#chart_div14').width('100%');
+      $('#chart_div15').width('100%');  
+      $('#chart_div16').width('100%'); 
     }
-  </script>    
+  </script>
 </body>     
 </html>

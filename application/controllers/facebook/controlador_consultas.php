@@ -174,7 +174,7 @@ class Controlador_consultas extends CI_Controller {
 		$this->load->view('facebook/chars/char_dipFederales',$datos);
 	}
 
-	public function dip_locales()
+	public function CDLDISTRITOIALXVI()
 	{
 		$this->load->library('fechas');
 		//Colocar nuevo formato a la fecha para guardar en la base como date
@@ -261,113 +261,253 @@ class Controlador_consultas extends CI_Controller {
 			$siguiendo_marthaS=$resultado['marthaS']->siguiendo;
 			$tweets_marthaS=$resultado['marthaS']->tweets;
 		}
+
 		$datos = array(
-	                "seguidoresh" => $resultado['hilda']->seguidores,
-	                "siguiendoh" => $resultado['hilda']->siguiendo,
-	                "tweetsh" => $resultado['hilda']->tweets,
+	                //DISTRITO I
+	                "megustac1" => $resultado['Hildaceballos']->Megusta,
+	                "seguidoresc1" => $resultado['Hildaceballos']->PersonasHablan,
+	                "megustac2" => $resultado['Josecardenas']->Megusta,
+	                "seguidoresc2" => $resultado['Josecardenas']->PersonasHablan,
+	                "megustac3" => $resultado['Leonardogutierrez']->Megusta,
+	                "seguidoresc3" => $resultado['Leonardogutierrez']->PersonasHablan,
 
-	                "seguidores_rangel" => $resultado['rangel']->seguidores,
-	                "siguiendo_rangel" => $resultado['rangel']->siguiendo,
-	                "tweets_rangel" => $resultado['rangel']->tweets,
+	                //DISTRITO II
+	                "megustac4" => $resultado['nicolascontreras']->Megusta,
+	                "seguidoresc4" => $resultado['nicolascontreras']->PersonasHablan,
 
-	                "seguidores_viviana" => $resultado['viviana']->seguidores,
-	                "siguiendo_viviana" => $resultado['viviana']->siguiendo,
-	                "tweets_viviana" => $resultado['viviana']->tweets,
+	                "megustac5" => $resultado['guillermorangel']->Megusta,
+	                "seguidoresc5" => $resultado['guillermorangel']->PersonasHablan,
+	                
+	                "megustac6" => $resultado['SandraRammirez']->Megusta,
+	                "seguidoresc6" => $resultado['SandraRammirez']->PersonasHablan,
 
-	                "seguidores_crispin" => $resultado['crispin']->seguidores,
-	                "siguiendo_crispin" => $resultado['crispin']->siguiendo,
-	                "tweets_crispin" => $resultado['crispin']->tweets,
+	                "megustac7" => $resultado['joseGarcia']->Megusta,
+	                "seguidoresc7" => $resultado['joseGarcia']->PersonasHablan,
 
-	                "seguidores_isis" => $seguidores_isis,
-	                "siguiendo_isis" => $siguiendo_isis,
-	                "tweets_isis" => $tweets_isis,
+	                "megustac8" => $resultado['arturogarcia']->Megusta,
+	                "seguidoresc8" => $resultado['arturogarcia']->PersonasHablan,
 
-	                "seguidores_janeth" => $resultado['janeth']->seguidores,
-	                "siguiendo_janeth" => $resultado['janeth']->siguiendo,
-	                "tweets_janeth" => $resultado['janeth']->tweets,
+	                "megustac9" => $resultado['lilianarodriguez']->Megusta,
+	                "seguidoresc9" => $resultado['lilianarodriguez']->PersonasHablan,
 
-	                "seguidores_juanita" => $resultado['juanita']->seguidores,
-	                "siguiendo_juanita" => $resultado['juanita']->siguiendo,
-	                "tweets_juanita" => $resultado['juanita']->tweets,
+	                //DISTRITO III
+	                "megustac10" => $resultado['crispinguerra']->Megusta,
+	                "seguidoresc10" => $resultado['crispinguerra']->PersonasHablan,
 
-	                "seguidores_lupe" => $resultado['lupe']->seguidores,
-	                "siguiendo_lupe" => $resultado['lupe']->siguiendo,
-	                "tweets_lupe" => $resultado['lupe']->tweets,
+	                "megustac11" => $resultado['almaarreola']->Megusta,
+	                "seguidoresc11" => $resultado['almaarreola']->PersonasHablan,
 
-	                "seguidores_octavio" => $resultado['octavio']->seguidores,
-	                "siguiendo_octavio" => $resultado['octavio']->siguiendo,
-	                "tweets_octavio" => $resultado['octavio']->tweets,
+	                "megustac12" => $resultado['marthafarias']->Megusta,
+	                "seguidoresc12" => $resultado['marthafarias']->PersonasHablan,
 
-	                "seguidores_sara" => $resultado['sara']->seguidores,
-	                "siguiendo_sara" => $resultado['sara']->siguiendo,
-	                "tweets_sara" => $resultado['sara']->tweets,
+	                "megustac13" => $resultado['isisvillasernor']->Megusta,
+	                "seguidoresc13" => $resultado['isisvillasernor']->PersonasHablan,
 
-	                "seguidores_joel" => $resultado['joel']->seguidores,
-	                "siguiendo_joel" => $resultado['joel']->siguiendo,
-	                "tweets_joel" => $resultado['joel']->tweets,
+	                "megustac14" => $resultado['octavioaguilar']->Megusta,
+	                "seguidoresc14" => $resultado['octavioaguilar']->PersonasHablan,
 
-	                "seguidores_meyly" => $resultado['meyly']->seguidores,
-	                "siguiendo_meyly" => $resultado['meyly']->siguiendo,
-	                "tweets_meyly" => $resultado['meyly']->tweets,
+	                "megustac15" => $resultado['patriciaperegrina']->Megusta,
+	                "seguidoresc15" => $resultado['patriciaperegrina']->PersonasHablan,
 
-	                "seguidores_hector" => $resultado['hector']->seguidores,
-	                "siguiendo_hector" => $resultado['hector']->siguiendo,
-	                "tweets_hector" => $resultado['hector']->tweets,
+	                "megustac16" => $resultado['gloriaarceo']->Megusta,
+	                "seguidoresc16" => $resultado['gloriaarceo']->PersonasHablan,
 
-	                "seguidores_eusebio" => $resultado['eusebio']->seguidores,
-	                "siguiendo_eusebio" => $resultado['eusebio']->siguiendo,
-	                "tweets_eusebio" => $resultado['eusebio']->tweets,
+	                //DISTRITO IV
+	                "megustac17" => $resultado['janethpaz']->Megusta,
+	                "seguidoresc17" => $resultado['janethpaz']->Megusta,
 
-	                "seguidores_mesina" => $resultado['mesina']->seguidores,
-	                "siguiendo_mesina" => $resultado['mesina']->siguiendo,
-	                "tweets_mesina" => $resultado['mesina']->tweets,
+	                "megustac18" => $resultado['juanaandres']->PersonasHablan,
+	                "seguidoresc18" => $resultado['juanaandres']->PersonasHablan,
 
-	                "seguidores_pinto" => $resultado['pinto']->seguidores,
-	                "siguiendo_pinto" => $resultado['pinto']->siguiendo,
-	                "tweets_pinto" => $resultado['pinto']->tweets,
+	                "megustac19" => $resultado['sergioricardo']->Megusta,
+	                "seguidoresc19" => $resultado['sergioricardo']->Megusta,
 
-	                "seguidores_armida" => $resultado['armida']->seguidores,
-	                "siguiendo_armida" => $resultado['armida']->siguiendo,
-	                "tweets_armida" => $resultado['armida']->tweets,
+	                "megustac20" => $resultado['andresorozco']->PersonasHablan,
+	                "seguidoresc20" => $resultado['andresorozco']->PersonasHablan,
+	                
+	                //DITRITO V
+	                "megustac21" => $resultado['ramirotoscano']->Megusta,
+	                "seguidoresc21" => $resultado['ramirotoscano']->PersonasHablan,
 
-	                "seguidores_amary" => $resultado['amary']->seguidores,
-	                "siguiendo_amary" => $resultado['amary']->siguiendo,
-	                "tweets_amary" => $resultado['amary']->tweets,
+	                "megustac22" => $resultado['josebenavides']->Megusta,
+	                "seguidoresc22" => $resultado['josebenavides']->PersonasHablan,
 
-	                "seguidores_sergio" => $resultado['sergio']->seguidores,
-	                "siguiendo_sergio" => $resultado['sergio']->siguiendo,
-	                "tweets_sergio" => $resultado['sergio']->tweets,
+	                "megustac23" => $resultado['yulianaaguilar']->Megusta,
+	                "seguidoresc23" => $resultado['yulianaaguilar']->PersonasHablan,
 
-	                "seguidores_martha" => $resultado['martha']->seguidores,
-	                "siguiendo_martha" => $resultado['martha']->siguiendo,
-	                "tweets_martha" => $resultado['martha']->tweets,
+	                //DISTRITO VI
+	                "megustac24" => $resultado['SandrayolandaRammirez']->Megusta,
+	                "seguidoresc24" => $resultado['SandrayolandaRammirez']->PersonasHablan,
 
-	                "seguidores_felicitas" => $seguidores_felicitas,
-	                "siguiendo_felicitas" => $siguiendo_felicitas,
-	                "tweets_felicitas" => $tweets_felicitas,
+	                "megustac25" => $resultado['octaviotintos']->Megusta,
+	                "seguidoresc25" => $resultado['octaviotintos']->PersonasHablan,
+	                
+	                "megustac26" => $resultado['sergiosilva']->Megusta,
+	                "seguidoresc26" => $resultado['sergiosilva']->PersonasHablan,
+	                
+	                "megustac27" => $resultado['leticiamendoza']->Megusta,
+	                "seguidoresc27" => $resultado['leticiamendoza']->PersonasHablan,
 
-	                "seguidores_santiago" => $resultado['santiago']->seguidores,
-	                "siguiendo_santiago" => $resultado['santiago']->siguiendo,
-	                "tweets_santiago" => $resultado['santiago']->tweets,
+	                "megustac28" => $resultado['getzemaniibarra']->Megusta,
+	                "seguidoresc28" => $resultado['getzemaniibarra']->PersonasHablan,
+	                
+	                //DISTRITO VII
+	                "megustac29" => $resultado['franciscoceballo']->Megusta,
+	                "seguidoresc29" => $resultado['franciscoceballo']->PersonasHablan,
+	                
+	                "megustac30" => $resultado['alfredohernandez']->Megusta,
+	                "seguidoresc30" => $resultado['alfredohernandez']->PersonasHablan,
 
-	                "seguidores_yadira" => $seguidores_yadira,
-	                "siguiendo_yadira" => $siguiendo_yadira,
-	                "tweets_yadira" => $tweets_yadira,
+	                "megustac31" => $resultado['saracernas']->Megusta,
+	                "seguidoresc31" => $resultado['saracernas']->PersonasHablan,
+	                
+	                "megustac32" => $resultado['jooelpadilla']->Megusta,
+	                "seguidoresc32" => $resultado['jooelpadilla']->PersonasHablan,
+	                
+	                "megustac33" => $resultado['socorrobayardo']->Megusta,
+	                "seguidoresc33" => $resultado['socorrobayardo']->PersonasHablan,
 
-	                "seguidores_alma" => $seguidores_alma,
-	                "siguiendo_alma" => $siguiendo_alma,
-	                "tweets_alma" => $tweets_alma,
+	                "megustac34" => $resultado['erendiraandrade']->Megusta,
+	                "seguidoresc34" => $resultado['erendiraandrade']->PersonasHablan,
+	                
+	                //DISTRITO VIII
+	                "megustac35" => $resultado['meylypastora']->Megusta,
+	                "seguidoresc35" => $resultado['meylypastora']->PersonasHablan,
+	                
+	                "megustac36" => $resultado['hectormagana']->Megusta,
+	                "seguidoresc36" => $resultado['hectormagana']->PersonasHablan,
 
-	                "seguidores_marthaS" => $seguidores_marthaS,
-	                "siguiendo_marthaS" => $siguiendo_marthaS,
-	                "tweets_marthaS" => $tweets_marthaS,
+	                "megustac37" => $resultado['alfredoherrera']->Megusta,
+	                "seguidoresc37" => $resultado['alfredoherrera']->PersonasHablan,
+	                
+	                "megustac38" => $resultado['adelaidafernandez']->Megusta,
+	                "seguidoresc38" => $resultado['adelaidafernandez']->PersonasHablan,
+
+	                "megustac39" => $resultado['juanjuarez']->Megusta,
+	                "seguidoresc39" => $resultado['juanjuarez']->PersonasHablan,
+
+	                //DISTRITO IX
+	                "megustac40" => $resultado['eusebiomesina']->Megusta,
+	                "seguidoresc40" => $resultado['eusebiomesina']->PersonasHablan,
+
+	                "megustac41" => $resultado['beatrizinsunza']->Megusta,
+	                "seguidoresc41" => $resultado['beatrizinsunza']->PersonasHablan,
+
+	                "megustac42" => $resultado['selenelopez']->Megusta,
+	                "seguidoresc42" => $resultado['selenelopez']->PersonasHablan,
+
+	                "megustac43" => $resultado['angelicaochoa']->Megusta,
+	                "seguidoresc43" => $resultado['angelicaochoa']->PersonasHablan,
+	                
+	                "megustac44" => $resultado['mauriciobarreto']->Megusta,
+	                "seguidoresc44" => $resultado['mauriciobarreto']->PersonasHablan,
+
+	                //DISTRITO X
+	                "megustac45" => $resultado['juanpinto']->Megusta,
+	                "seguidoresc45" => $resultado['juanpinto']->PersonasHablan,
+
+	                "megustac46" => $resultado['ricardosevilla']->Megusta,
+	                "seguidoresc46" => $resultado['ricardosevilla']->PersonasHablan,
+	                
+	                "megustac47" => $resultado['raquelcardenas']->Megusta,
+	                "seguidoresc47" => $resultado['raquelcardenas']->PersonasHablan,
+
+	                "megustac48" => $resultado['marcorodarte']->Megusta,
+	                "seguidoresc48" => $resultado['marcorodarte']->PersonasHablan,
+
+	                "megustac49" => $resultado['salvadorjuarez']->Megusta,
+	                "seguidoresc49" => $resultado['salvadorjuarez']->PersonasHablan,		                
+
+	                //DISTRITO XI
+	                "megustac50" => $resultado['miguelgarcia']->Megusta,
+	                "seguidoresc50" => $resultado['miguelgarcia']->PersonasHablan,		                
+
+	                "megustac51" => $resultado['armidanunes']->Megusta,
+	                "seguidoresc51" => $resultado['armidanunes']->PersonasHablan,		                
+
+	                "megustac52" => $resultado['aldovega']->Megusta,
+	                "seguidoresc52" => $resultado['aldovega']->PersonasHablan,		                
+
+	                "megustac53" => $resultado['sebastianesparza']->Megusta,
+	                "seguidoresc53" => $resultado['sebastianesparza']->PersonasHablan,		                
+
+	                "megustac54" => $resultado['teresahernandez']->Megusta,
+	                "seguidoresc54" => $resultado['teresahernandez']->PersonasHablan,	
+
+	                "megustac55" => $resultado['dianatopete']->Megusta,
+	                "seguidoresc55" => $resultado['dianatopete']->PersonasHablan,		                
+
+	                //DISTRITO XII
+	                "megustac56" => $resultado['marthasosa']->Megusta,
+	                "seguidoresc56" => $resultado['marthasosa']->PersonasHablan,		                
+
+	                "megustac57" => $resultado['rosarioyeme']->Megusta,
+	                "seguidoresc57" => $resultado['rosarioyeme']->PersonasHablan,		                
+
+	                "megustac58" => $resultado['noraayala']->Megusta,
+	                "seguidoresc58" => $resultado['noraayala']->PersonasHablan,	
+
+	                "megustac59" => $resultado['sarahinoriega']->Megusta,
+	                "seguidoresc59" => $resultado['sarahinoriega']->PersonasHablan,		                
+
+	                //DISTRITO XIII	
+	                "megustac60" => $resultado['sergiosanchez']->Megusta,
+	                "seguidoresc60" => $resultado['sergiosanchez']->PersonasHablan,		                
+
+	                "megustac61" => $resultado['carlosvilla']->Megusta,
+	                "seguidoresc61" => $resultado['carlosvilla']->PersonasHablan,		                
+
+	                //DISTRITO XIV
+	                "megustac62" => $resultado['luisayala']->Megusta,
+	                "seguidoresc62" => $resultado['luisayala']->PersonasHablan,	
+
+	                "megustac63" => $resultado['lilafigueroa']->Megusta,
+	                "seguidoresc63" => $resultado['lilafigueroa']->PersonasHablan,
+
+	                "megustac64" => $resultado['marthameza']->Megusta,
+	                "seguidoresc64" => $resultado['marthameza']->PersonasHablan,	
+
+	                "megustac65" => $resultado['veronicatorres']->Megusta,
+	                "seguidoresc65" => $resultado['veronicatorres']->PersonasHablan,
+
+	                "megustac66" => $resultado['gustavorerenteria']->Megusta,
+	                "seguidoresc66" => $resultado['gustavorerenteria']->PersonasHablan,	
+
+	                "megustac67" => $resultado['josefinaroblada']->Megusta,
+	                "seguidoresc67" => $resultado['josefinaroblada']->PersonasHablan,
+
+	                "megustac68" => $resultado['eliasnunez']->Megusta,
+	                "seguidoresc68" => $resultado['eliasnunez']->PersonasHablan,	
+
+	                //DISTRITO XV
+	                "megustac69" => $resultado['felicitaspena']->Megusta,
+	                "seguidoresc69" => $resultado['felicitaspena']->PersonasHablan,
+
+					"megustac70" => $resultado['hildamoreno']->Megusta,
+	                "seguidoresc70" => $resultado['hildamoreno']->PersonasHablan,
+
+	                "megustac71" => $resultado['almarincon']->Megusta,
+	                "seguidoresc71" => $resultado['almarincon']->PersonasHablan,		                		                		                		                		                	                		                
+
+	                //DISTRITO XVI
+					"megustac72" => $resultado['santiagochavez']->Megusta,
+	                "seguidoresc72" => $resultado['santiagochavez']->PersonasHablan,
+
+	                "megustac73" => $resultado['judithgodinez']->Megusta,
+	                "seguidoresc73" => $resultado['judithgodinez']->PersonasHablan,
+
+	                "megustac74" => $resultado['sergiomendoza']->Megusta,
+	                "seguidoresc74" => $resultado['sergiomendoza']->PersonasHablan,
+
+	                "megustac75" => $resultado['angelesrodriguez']->Megusta,
+	                "seguidoresc75" => $resultado['angelesrodriguez']->PersonasHablan,
 
 	                'fecha' => $fecha,
 	                'existe' => $existe,
 	                'vtab' => $vtab,
-	                'ultima_fecha' => $ultima_fecha
+	                'ultima_fecha' => $fecha
 	            );
-		$this->load->view('twitter/chars/char_dipLocales',$datos);
+		$this->load->view('facebook/chars/char_dipLocales',$datos);
 	}
 
 	public function alcaldias()
@@ -403,50 +543,6 @@ class Controlador_consultas extends CI_Controller {
 
 		$ultima_fecha=$this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 
-		if($resultado['oscar']=='FALSO'){
-			$seguidores_oscar=0;
-			$siguiendo_oscar=0;
-			$tweets_oscar=0;
-		}
-		else{
-			$seguidores_oscar=$resultado['oscar']->seguidores;
-			$siguiendo_oscar=$resultado['oscar']->siguiendo;
-			$tweets_oscar=$resultado['oscar']->tweets;
-		}	
-
-		if($resultado['jaime']=='FALSO'){
-			$seguidores_jaime=0;
-			$siguiendo_jaime=0;
-			$tweets_jaime=0;
-		}
-		else{
-			$seguidores_jaime=$resultado['jaime']->seguidores;
-			$siguiendo_jaime=$resultado['jaime']->siguiendo;
-			$tweets_jaime=$resultado['jaime']->tweets;
-		}
-
-		if($resultado['ruben']=='FALSO'){
-			$seguidores_ruben=0;
-			$siguiendo_ruben=0;
-			$tweets_ruben=0;
-		}
-		else{
-			$seguidores_ruben=$resultado['ruben']->seguidores;
-			$siguiendo_ruben=$resultado['ruben']->siguiendo;
-			$tweets_ruben=$resultado['ruben']->tweets;
-		}
-
-		if($resultado['blancaU']=='FALSO'){
-			$seguidores_blancaU=0;
-			$siguiendo_blancaU=0;
-			$tweets_blancaU=0;
-		}
-		else{
-			$seguidores_blancaU=$resultado['blancaU']->seguidores;
-			$siguiendo_blancaU=$resultado['blancaU']->siguiendo;
-			$tweets_blancaU=$resultado['blancaU']->tweets;
-		}	
-		
 		$datos = array(
 	                "seguidoresh" => $resultado['hector']->seguidores,
 	                "siguiendoh" => $resultado['hector']->siguiendo,

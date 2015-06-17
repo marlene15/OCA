@@ -70,6 +70,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             <ul class="nav nav-tabs" id="myTab">
                               <li class="active"><a data-toggle="tab" href="#nacho">Nacho Peralta</a></li>
                               <li class=""><a data-toggle="tab" href="#jorge">Jorge Luis Preciado</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Martha Zepeda</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Locho Morán</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">David Munro González</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">José Francisco Gallardo Rodríguez</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Gerardo Galván Pinto</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Carlos Barbazán Martínez</a></li>
                             </ul>
                               <div class="tab-content" id="myTabContent">
 

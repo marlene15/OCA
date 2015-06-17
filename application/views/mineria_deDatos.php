@@ -74,9 +74,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                               </form>  
                               <br/>
                               <br/>
-                              <a href="<?= base_url();?>assets/twitter/cuentasOca/cuentas.php" class="btn btn-primary" role="button" target="_blank">Guarda cuentas</a>  
-                              <a href="<?= base_url();?>assets/twitter/cuentasOca/paginas.php" class="btn btn-success" role="button" target="_blank">Guarda Páginas</a>  
-                              <a href="#" class="btn btn-info" role="button" target="_blank">Guarda Tweets</a>                         
+                              <a href="<?= base_url();?>assets/twitter/cuentasOca/cuentas.php" class="btn btn-primary" role="button" target="_blank">Guardar cuentas</a>                      
                             </div>
 
                         </div>

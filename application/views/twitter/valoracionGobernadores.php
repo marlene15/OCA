@@ -11,7 +11,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	<title>Inicio</title> 
+	<title>Valoración Gobernadores</title> 
 	<?php $this->load->view('comunes/header'); ?>
     <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
     <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>
@@ -85,7 +85,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">                                          
+                                                    <div class="widget-content">    
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span12">
+                                                                    <h3>Total: <?php echo $totalN; ?> comentarios</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                      
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -141,7 +148,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">                                          
+                                                    <div class="widget-content"> 
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span12">
+                                                                    <h3>Total: <?php echo $totalJ; ?> comentarios</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                         
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -198,7 +212,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">                                          
+                                                    <div class="widget-content">   
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span12">
+                                                                    <h3>Total: <?php echo $totalL; ?> comentarios</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                       
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -255,7 +276,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">                                          
+                                                    <div class="widget-content"> 
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span12">
+                                                                    <h3>Total: <?php echo $totalM; ?> comentarios</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                          
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">

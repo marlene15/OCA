@@ -506,6 +506,39 @@ class Controlador_consultas extends CI_Controller {
 		$this->load->view('twitter/chars/char_nube',$datos);
 	}
 
+	public function nube_dipFederales()
+	{
+		$mes = $this->input->post('mes');	
+		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_federales($mes);
+		$datos = array(
+	                "hashtags" => $hashtags,
+	                "mes" => $mes
+	            );
+		$this->load->view('twitter/chars/char_nube',$datos);
+	}
+
+	public function nube_dipLocales()
+	{
+		$mes = $this->input->post('mes');	
+		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_locales($mes);
+		$datos = array(
+	                "hashtags" => $hashtags,
+	                "mes" => $mes
+	            );
+		$this->load->view('twitter/chars/char_nubeDipLocales',$datos);
+	}
+
+	public function nube_Alcaldes()
+	{
+		$mes = $this->input->post('mes');	
+		$hashtags = $this->modelo_inicio->obtener_hashtags_alcaldes($mes);
+		$datos = array(
+	                "hashtags" => $hashtags,
+	                "mes" => $mes
+	            );
+		$this->load->view('twitter/chars/char_nubeDipLocales',$datos);
+	}
+
 	public function partidos_RangoFechas()
 	{
 		$this->load->library('fechas');
@@ -565,5 +598,184 @@ class Controlador_consultas extends CI_Controller {
 		            	  );
 			$this->load->view('twitter/chars/char_partidos',$datos);
 		}				
+	}
+
+	public function rango_comoVamos()
+	{
+		$this->load->library('fechas');
+		$fecha_inicio = $this->input->post('fecha_inicio');
+		$fecha_inicio=$this->fechas->fecha_dd_mes_aaaa($fecha_inicio);
+		$ExisteFechaInicio = $this->modelo_consultas->ExisteFecha($fecha_inicio);
+
+		$fecha_fin = $this->input->post('fecha_fin');
+		$fecha_fin=$this->fechas->fecha_dd_mes_aaaa($fecha_fin);
+		$ExisteFechaFin = $this->modelo_consultas->ExisteFecha($fecha_fin);
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
+		$ultima_fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha->ultima_fecha);
+		$vtab = $this->input->post('vtab');
+
+		$fechaInicioMayor = 0;
+		$existe = 1;
+		if ($fecha_inicio>$fecha_fin) {
+			$fechaInicioMayor = 1;
+			$datos = array(
+							"fechaInicioMayor" => $fechaInicioMayor,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"existe" => $existe
+		            	  );
+			$this->load->view('twitter/chars/char_partidosError',$datos);
+		}
+		if ($ExisteFechaInicio==2 or $ExisteFechaFin==2) {
+			$existe = 0;
+			$datos = array(
+							"existe" => $existe,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"fechaInicioMayor" => $fechaInicioMayor
+		            	  );
+			$this->load->view('twitter/chars/char_partidosError',$datos);
+		}
+		if ($fechaInicioMayor!=1 and $existe!=0){			
+			$cuentas = $this->modelo_consultas->obtener_cuenta_comoVamos_rango($fecha_inicio,$fecha_fin);	
+			$datos = array(
+							"comoVamos" => $cuentas['comoVamos'],
+							"fecha_inicio" => $fecha_inicio,
+		                	"fecha_fin" => $fecha_fin,
+		                	"vtab" => $vtab,
+		                	"fechaInicioMayor" => $fechaInicioMayor,
+		                	"existe" => $existe
+		            	  );
+			$this->load->view('twitter/chars/char_comoVamos',$datos);
+		}
+	}
+
+	public function mapas()
+	{		
+		$armeria = $this->modelo_inicio->obtener_coordenadas('Armería');	
+
+		$datos = array(
+						"gobernadores_armeria" => $armeria['gobernadores'],
+						"dipFederales_armeria" => $armeria['dipFederales'],
+						"dipLocales_armeria" => $armeria['dipLocales'],
+						"presidentes_armeria" => $armeria['presidentes']
+	            	  );
+		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
+	}
+
+	public function mapa_colima()
+	{	
+		$colima = $this->modelo_inicio->obtener_coordenadas('Colima'); 
+
+		$datos = array(
+						"gobernadores_colima" => $colima['gobernadores'],
+						"dipFederales_colima" => $colima['dipFederales'],
+						"dipLocales_colima" => $colima['dipLocales'],
+						"presidentes_colima" => $colima['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_colima',$datos);	
+	}
+	public function mapa_comala()
+	{	
+		$comala = $this->modelo_inicio->obtener_coordenadas('Comala'); 
+
+		$datos = array(
+						"gobernadores_comala" => $comala['gobernadores'],
+						"dipFederales_comala" => $comala['dipFederales'],
+						"dipLocales_comala" => $comala['dipLocales'],
+						"presidentes_comala" => $comala['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_comala',$datos);	
+	}
+
+	public function mapa_coqui()
+	{	
+		$coqui = $this->modelo_inicio->obtener_coordenadas('Coquimatlán');
+
+		$datos = array(
+						"gobernadores_coqui" => $coqui['gobernadores'],
+						"dipFederales_coqui" => $coqui['dipFederales'],
+						"dipLocales_coqui" => $coqui['dipLocales'],
+						"presidentes_coqui" => $coqui['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_coqui',$datos);	
+	}
+
+	public function mapa_cuau()
+	{	
+		$cuau = $this->modelo_inicio->obtener_coordenadas('Cuauhtémoc');
+
+		$datos = array(
+						"gobernadores_cuau" => $cuau['gobernadores'],
+						"dipFederales_cuau" => $cuau['dipFederales'],
+						"dipLocales_cuau" => $cuau['dipLocales'],
+						"presidentes_cuau" => $cuau['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_cuau',$datos);	
+	}
+
+	public function mapa_ixtlahuacan()
+	{	
+		$ixtlahuacan = $this->modelo_inicio->obtener_coordenadas('Ixtlahuacán');
+
+		$datos = array(
+						"gobernadores_ixtlahuacan" => $ixtlahuacan['gobernadores'],
+						"dipFederales_ixtlahuacan" => $ixtlahuacan['dipFederales'],
+						"dipLocales_ixtlahuacan" => $ixtlahuacan['dipLocales'],
+						"presidentes_ixtlahuacan" => $ixtlahuacan['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_ixtlahuacan',$datos);	
+	}
+
+	public function mapa_manzanillo()
+	{	
+		$manzanillo = $this->modelo_inicio->obtener_coordenadas('Manzanillo');
+
+		$datos = array(
+						"gobernadores_manzanillo" => $manzanillo['gobernadores'],
+						"dipFederales_manzanillo" => $manzanillo['dipFederales'],
+						"dipLocales_manzanillo" => $manzanillo['dipLocales'],
+						"presidentes_manzanillo" => $manzanillo['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_manzanillo',$datos);	
+	}
+
+	public function mapa_mina()
+	{	
+		$mina = $this->modelo_inicio->obtener_coordenadas('Minatitlán');
+
+		$datos = array(
+						"gobernadores_mina" => $mina['gobernadores'],
+						"dipFederales_mina" => $mina['dipFederales'],
+						"dipLocales_mina" => $mina['dipLocales'],
+						"presidentes_mina" => $mina['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_mina',$datos);	
+	}
+
+	public function mapa_tecoman()
+	{	
+		$tecoman = $this->modelo_inicio->obtener_coordenadas('Tecomán');
+
+		$datos = array(
+						"gobernadores_tecoman" => $tecoman['gobernadores'],
+						"dipFederales_tecoman" => $tecoman['dipFederales'],
+						"dipLocales_tecoman" => $tecoman['dipLocales'],
+						"presidentes_tecoman" => $tecoman['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_tecoman',$datos);	
+	}
+
+	public function mapa_villa()
+	{	
+		$villa = $this->modelo_inicio->obtener_coordenadas('Villa de Álvarez'); 
+
+		$datos = array(
+						"gobernadores_villa" => $villa['gobernadores'],
+						"dipFederales_villa" => $villa['dipFederales'],
+						"dipLocales_villa" => $villa['dipLocales'],
+						"presidentes_villa" => $villa['presidentes']
+	            	  );
+		$this->load->view('twitter/chars/mapas/char_mapa_villa',$datos);	
 	}
 }

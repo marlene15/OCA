@@ -49,11 +49,6 @@ class Inicio extends CI_Controller {
 	{
 		$resultado = $this->modelo_consultas->obtener_cuenta_comoVamos();	
 		$resultado2 = $this->otra();
-		// $datosF = array(
-		// 				"Fecha" => $resultado2['comoVamos2'][0]->Fecha,
-		// 				"Megusta" => $resultado2['comoVamos2'][0]->Megusta,		
-		// 				"PersonasHablan" => $resultado2['comoVamos2'][0]->PersonasHablan						
-		// 	);
 		$datos = array(
 						"comoVamos" => $resultado['comoVamos'],
 						"comoVamos2" => $resultado2['comoVamos2']
@@ -63,7 +58,18 @@ class Inicio extends CI_Controller {
 	//Para agregar los datos de minería, datos que no verán los usuarios comunes
 	public function mineria_deDatos()
 	{
-		$this->load->view('mineria_deDatos');	
+		$username = $this->session->userdata('username');
+		$password = $this->session->userdata('password');
+		$verifica = $this->modelo_consultas->verificaUsuario($username,$password);
+
+		if ($verifica==1)
+		{
+			$this->load->view('mineria_deDatos');
+		}
+		else
+		{
+			$this->load->view('mineria_error');		
+		}
 	}
 }
 

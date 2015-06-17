@@ -85,8 +85,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                    
-                                        </div>
+                                            <i class="icon-bar-chart"></i>
+                                            <h3 id="fecha_contenedor"><?php echo $ultima_fecha ?></h3>                                                    
+                                          </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div"></div>                            
                                           <div id="con"></div>  <!--Grafica despues de la consulta-->
@@ -145,7 +146,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                    
+                                            <i class="icon-bar-chart"></i>
+                                            <h3 id="fecha_contenedor2"><?php echo $ultima_fecha ?></h3>                                                    
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div2"></div>                            
@@ -194,18 +196,28 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </div>
 
                             <div id="nube" class="tab-pane fade ">  
-                                <div class="container-fluid">
-                                   <div class="row-fluid">
-                                      <div class="span12">  
-                                        <button id="go" type="submit" onclick="nube();" class="btn btn-success btn-lg" title="Actualizar">Actualizar</button>
-                                        <br/><br/>
-                                        <div id="container">
-                                          <!-- <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>   -->  
-                                        </div>                           
-                                      </div>
+                              <div class="row-fluid">
+                                <div class="span10">
+                                  <div id="container">
+                                    <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>  
+                                    <center><div id="nube_consulta" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>           
+                                  </div>                           
+                                </div>
+
+                                <div class="span2">
+                                  </br></br>
+                                  <div class="btn-toolbar" align="left"> 
+                                    <div class="btn-group-vertical">
+                                      <a class="btn btn-success btn-lg active" id="consulta_nube"> Marzo</a>
+                                      <a class="btn btn-primary btn-lg" id="consulta_nube2"> Abril</a>
+                                      <a class="btn btn-primary btn-lg" id="consulta_nube3"> Mayo</a>
+                                      <a class="btn btn-primary btn-lg" id="consulta_nube4"> Junio</a>
                                     </div>
-                                </div>                          
+                                  </div>
+                                </div>                    
+                              </div>                                                  
                             </div>
+
                         </div>
                       </div> <!--Cierra div del tab de pestañas-->        
                     </div>
@@ -230,7 +242,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');        
       data.addRows([
         ['PAN', <?php echo $seguidoresjm ?>, <?php echo $siguiendojm ?>, <?php echo $tweetsjm ?>],
-        ['Coalición \n PRI-PVEMM', <?php echo $seguidoresk ?>, <?php echo $siguiendok ?>, <?php echo $tweetsk ?>],
+        ['Coalición \n PRI-PVEM', <?php echo $seguidoresk ?>, <?php echo $siguiendok ?>, <?php echo $tweetsk ?>],
         ['PRD', <?php echo $seguidoresi ?>, <?php echo $siguiendoi ?>, <?php echo $tweetsi ?>]
       ]);
 
@@ -303,7 +315,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');        
       data.addRows([
-        ['Coalición \n PRI-PVEMM', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
+        ['Coalición \n PRI-PVEM', <?php echo $seguidoresn ?>, <?php echo $siguiendon ?>, <?php echo $tweetsn ?>],
         ['MC', <?php echo $seguidoresj ?>, <?php echo $siguiendoj ?>, <?php echo $tweetsj ?>]
       ]);
 
@@ -420,7 +432,85 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     });
   </script>
 
- 
+  <script type="text/javascript">
+    function nube()
+    {
+      //Limpiar div
+      var d = document.getElementById("contenido_nube");
+      while (d.hasChildNodes())
+      {
+        d.removeChild(d.firstChild);
+      }
+
+      <?php //Llenamos el array con las coordenadas        
+            $aux=""; 
+            for ($i=0; $i<count($hashtags); $i++)
+            {
+                $porciones = explode(" ", $hashtags[$i]->hashtags);
+                for ($j=0; $j<count($porciones); $j++)
+              {
+                if ($porciones[$j] != "") 
+                {
+                  $aux = $aux." ".$porciones[$j]; 
+                };
+                
+              };                    
+            };    
+
+          $test = preg_split('/[\s,]+/', $aux); //Coloca los hashtags en una sola línea, el separador son los espacios
+          $palabras_contadas = array_count_values($test); //Cuenta la cantidad de veces que se repite una palabra
+
+          $a2 = array();
+          foreach ($palabras_contadas as $key => $value) { //Llena el array para convertirlo a json
+              if($key != "")
+              {
+                $a2[] = array(
+                      "text" => $key,
+                      "size" => $value*10
+                );
+              }       
+        };
+        $palabras_JSON = json_encode($a2); //Convertimos el array a Json para poderlo colocar en la nube de palabras                   
+        ?>
+      var fill = d3.scale.category20();
+      d3.layout.cloud().size([1000, 400])
+          .words(<?php echo $palabras_JSON ?>)
+          .padding(3)
+          .rotate(function() { return ~~(Math.random() * 2) * 90; })
+          .font("Impact")
+          .fontSize(function(d) { return d.size; })
+          .on("end", draw)
+          .start();
+
+      function draw(words) 
+      {
+          d3.select("#contenido_nube").append("svg")
+              .attr("viewBox", "-15 0 " + 1000 + " " + 500 )
+                .attr("preserveAspectRatio", "xMidYMid meet")
+            .append("g")
+              .attr("transform", "translate(472,250)")
+            .selectAll("text")
+              .data(words)
+            .enter().append("text")
+              .style("font-size", function(d) { return d.size + "px"; })
+              .style("font-family", "Impact")
+              .style("fill", function(d, i) { return fill(i); })
+              .attr("text-anchor", "middle")
+              .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+              })
+              .text(function(d) { return d.text; });
+      }
+    }
+    //Sirve para hacer la nube de palabars responsiva
+    var aspect = 1000 / 400,
+      chart = $("#contenido_nube");
+    $(window).on("resize", function() {
+        var targetWidth = chart.parent().width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+    });
+  </script>
 
   <!--Funcion para ajustar la grafica al expander el menú-->
   <script type="text/javascript">
@@ -434,6 +524,93 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       $('#chart_div2').width('100%');  
     }
   </script>
+
+  <!--Consulta de la nube de palabras-->
+  <script type="text/javascript">
+    $(document).ready(function(){ 
+
+      $("#consulta_nube").click(function(event) {
+        $("#consulta_nube").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');       
+        var parametros = {
+                "mes" : '03'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      }); 
+
+      $("#consulta_nube2").click(function(event) {
+        $("#consulta_nube2").addClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');         
+        var parametros = {
+                "mes" : '04'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube3").click(function(event) {
+        $("#consulta_nube3").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube4").removeClass('active btn-success'); 
+        var parametros = {
+                "mes" : '05'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube4").click(function(event) {
+        $("#consulta_nube4").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success'); 
+        $("#consulta_nube").addClass('btn-primary');
+        var parametros = {
+                "mes" : '06'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+    });
+  </script>
+
 </body>
 </html>
 

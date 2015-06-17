@@ -50,6 +50,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <!--CONTENIDO DE LA PÁGINA -->
                 <div id="dashboard">
                     <div class="portlet-body form well">
+                      <div id="alert"></div>  
                       <!--Código para el tab de pestañas-->   
                       <div class="bs-example bs-example-tabs">
                         <ul class="nav nav-tabs" id="myTab">                          
@@ -87,15 +88,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                 <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha_inicio">
                                                 </div> 
                                                 <label>Fecha de término</label>
                                                 <div class="controls input-append date form_date span12"  data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="float:left">
                                                     <span class="add-on"><i class="icon-th"></i></span>
                                                     <span class="add-on"><i class="icon-remove"></i></span>
-                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha">
+                                                    <input class="form-control span9" size="15" type="text" value="" readonly id="fecha_fin">
                                                 </div>
-                                                <input type="hidden" name="vtab" id="vtab1" value="1">
+                                                <input type="hidden" name="vtab" id="vtab2" value="2">
                                                 <button type="submit" class="btn btn-primary btn-lg" title="Consultar" id="consulta">Consultar</button>
                                               </center>
                                             </div> 
@@ -120,6 +121,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                 <div class="widget-content">                                          
                                                     <center>
                                                         <div id="chart_div2" style="height: 400px;"></div>
+                                                        <div id="con"></div>  <!--Grafica despues de la consulta-->
                                                     </center> 
                                                 </div>
                                             </div> 
@@ -186,7 +188,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <script type="text/javascript">
     google.load("visualization", "1", {packages: ["corechart"]});     
     ////////comoVamos
-    <?php //char2 
+    <?php //char2 TWITTER
         $a = array();
         foreach ($comoVamos as $comoVamos) 
         {
@@ -234,7 +236,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       chart.draw(data, options);  
     }
 
-    ////////////////////////////////////////comoVamos
+    ////////////////////////////////////////comoVamos TWITTER
     function drawChart2() {
       var data = google.visualization.arrayToDataTable(
         [
@@ -277,6 +279,32 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       $('#chart_div2').width('100%');  
     }
   </script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){                                        
+      $("#consulta").click(function(event) {
+        var fecha_inicio = document.getElementById("fecha_inicio").value; 
+        var fecha_fin = document.getElementById("fecha_fin").value;  
+        var vtab = document.getElementById("vtab2").value;
+                
+        var parametros = {
+                "fecha_inicio": fecha_inicio,
+                "fecha_fin": fecha_fin,
+                "vtab" : vtab
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/rango_comoVamos');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#con').html(html);   
+          }
+        });            
+      });       
+    });
+</script>
 
 </body>
 </html>

@@ -11,7 +11,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	<title>Valoración Dip. Locales</title> 
+	<title>Valoración Presidente</title> 
 	<?php $this->load->view('comunes/header'); ?>
     <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
     <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>
@@ -38,7 +38,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12" id="encabezado">
                         <h3 class="page-title" id="titulo">
-                            Diputado Local <small>Actividad en Twitter</small>
+                            Presidente Municipal <small>Actividad en Twitter</small>
                         </h3>
                         <ul class="breadcrumb" id="ul_menu">
                             <li>
@@ -58,7 +58,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </li>
                             <li>
                                 <i class="icon-briefcase"></i>
-                                <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_DipLocales');?>">Diputados Locales</a> 
+                                <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_Presidentes');?>">Presidente Municipal</a> 
                             </li>
                         </ul>
                     </div>
@@ -69,23 +69,20 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
-                              <li class="active"><a data-toggle="tab" href="#barras1">Distrito 1. Hilda Ceballos (PRI)</a></li>
-                              <li><a data-toggle="tab" href="#barras2">Distrito 1. Yadira Carrillo (PNA)</a></li>
-                              <li><a data-toggle="tab" href="#barras3">Distrito 2. Guillermo Rangel (PNA)</a></li>
-                              <li><a data-toggle="tab" href="#barras4">Distrito 3. AlmaDeliaArreolaCruz (PRI)</a></li>
-                              <li><a data-toggle="tab" href="#barras5">Distrito 4. Janeth Paz (PAN)</a></li>
-                              <li><a data-toggle="tab" href="#barras6">Distrito 4. Juanita Andrés (PRI)</a></li>
-                              <li><a data-toggle="tab" href="#barras7">Distrito 5. Lupe Benavides (PRI-PVEM-PNAL)</a></li>
-                              <li><a data-toggle="tab" href="#barras8">Distrito 6. Octavio Tintos (PRI-PVEM-PNAL)</a></li>
-                              <li><a data-toggle="tab" href="#barras9">Distrito 7. Sara Cernas (PRD)</a></li>
-                              <li><a data-toggle="tab" href="#barras10">Distrito 8. Meyly Meyly (PAN)</a></li>
-                              <li><a data-toggle="tab" href="#barras11">Distrito 8. Héctor Magaña (PRI-PVEM-PNAL)</a></li>
-                              <li><a data-toggle="tab" href="#barras12">Distrito 10. Juan Carlos Pinto (PRI-PVEM-PNAL)</a></li>
-                              <li><a data-toggle="tab" href="#barras13">Distrito 11. Armida Núñez (PRI-PVEM-PNAL)</a></li>
-                              <li><a data-toggle="tab" href="#barras14">Distrito 12. Martha Sosa (PAN)</a></li>
+                              <li class="active"><a data-toggle="tab" href="#barras1">Armería. Esperanza Alcaraz (PRI)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras2">Colima. Héctor Insúa García (PAN)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras3">Colima. Esmeralda Cárdenas (PVEM)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras4">Colima. María Elena Abaroa (MC)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras5">Colima. Oscar Valdovinos (PRI)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras6">Comala. Salomón Salazar (PRI)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras7">Comala. Mario Carrillo (PES)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras8">Cuauhtémoc. Blanca Rocha (PRI-PVEM-PNA)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras9">Manzanillo. Francisco Zepeda (PRI-PVEM-PNA)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras10">Tecomán. Arturo García Arias (PRI-PVEM-PNA)</a></li>
+                              <li class=""><a data-toggle="tab" href="#barras11">Villa de Á. Oswy Delgado (PRI-PVEM-PNA)</a></li>
                             </ul>
                               <div class="tab-content" id="myTabContent">
-                                <!--Hilda-->
+                                <!--Esperanza-->
                                 <div id="barras1" class="tab-pane fade active in"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -95,14 +92,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">
+                                                    <div class="widget-content"> 
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalH; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalE; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                           
+                                                        </div>                                          
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -148,7 +145,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         </div>
                                     </div>
                                 </div>
-                                <!--Yadira-->
+                                <!--Héctor-->
                                 <div id="barras2" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -158,14 +155,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">  
+                                                    <div class="widget-content"> 
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalY; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalH; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                         
+                                                        </div>                                          
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -204,7 +201,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <h3>Menciones al día</h3>                                                    
                                                     </div>
                                                     <div class="widget-content">   
-                                                        <div id="chart_div2">Yadira Carrillo No tiene menciones</div>
+                                                        <div id="chart_div2"></div>
                                                     </div>
                                                 </div> 
                                             </div>
@@ -212,7 +209,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div>
 
-                                <!--Guillermo-->
+                                <!--Esmeralda-->
                                 <div id="barras3" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -226,7 +223,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalG; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalES; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
                                                         </div>                                          
@@ -276,7 +273,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div>  
 
-                                <!--Alma-->
+                                <!--Abaroa-->
                                 <div id="barras4" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -286,14 +283,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">
+                                                    <div class="widget-content">  
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
                                                                     <h3>Total: <?php echo $totalA; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                           
+                                                        </div>                                         
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -340,7 +337,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div> 
 
-                                <!--janeth-->
+                                <!--Oscar-->
                                 <div id="barras5" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -350,14 +347,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content"> 
+                                                    <div class="widget-content">
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalJ; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalO; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                          
+                                                        </div>                                           
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -396,15 +393,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <h3>Menciones al día</h3>                                                    
                                                     </div>
                                                     <div class="widget-content">   
-                                                        <div id="chart_div5">Janeth Paz No tiene menciones</div>
+                                                        <div id="chart_div5"></div>
                                                     </div>
                                                 </div> 
                                             </div>
                                         </div>
                                     </div>
-                                </div> 
+                                </div>   
 
-                                <!--juanita-->
+                                <!--salomon-->
                                 <div id="barras6" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -414,14 +411,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content"> 
+                                                    <div class="widget-content">
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalJU; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalS; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                          
+                                                        </div>                                           
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -468,7 +465,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div>  
 
-                                <!--lupe benavides-->
+                                <!--mario-->
                                 <div id="barras7" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -478,14 +475,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">
+                                                    <div class="widget-content">  
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalL; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalM; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                           
+                                                        </div>                                         
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -524,7 +521,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <h3>Menciones al día</h3>                                                    
                                                     </div>
                                                     <div class="widget-content">   
-                                                        <div id="chart_div7"></div>
+                                                        <div id="chart_div7"> Mario Carrillo No tiene menciones</div>
                                                     </div>
                                                 </div> 
                                             </div>
@@ -532,7 +529,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div> 
 
-                                <!--octavio-->
+                                <!--blanca-->
                                 <div id="barras8" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -542,14 +539,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content"> 
+                                                    <div class="widget-content">   
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalO; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalB; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                          
+                                                        </div>                                        
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -594,9 +591,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div>
                                         </div>
                                     </div>
-                                </div>           
+                                </div>  
 
-                                <!--sara-->
+                                <!--pico-->
                                 <div id="barras9" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -606,14 +603,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">  
+                                                    <div class="widget-content"> 
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalS; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalP; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                         
+                                                        </div>                                          
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -660,7 +657,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>
                                 </div>  
 
-                                <!--meyly-->
+                                <!--arturo-->
                                 <div id="barras10" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -670,14 +667,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">
+                                                    <div class="widget-content"> 
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalM; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalAR; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                           
+                                                        </div>                                          
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -716,15 +713,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <h3>Menciones al día</h3>                                                    
                                                     </div>
                                                     <div class="widget-content">   
-                                                        <div id="chart_div10">Meyly No tiene menciones</div>
+                                                        <div id="chart_div10"></div>
                                                     </div>
                                                 </div> 
                                             </div>
                                         </div>
                                     </div>
-                                </div>   
+                                </div>  
 
-                                <!--hector-->
+                                <!--oswy-->
                                 <div id="barras11" class="tab-pane fade"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
@@ -734,14 +731,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content"> 
+                                                    <div class="widget-content">
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span12">
-                                                                    <h3>Total: <?php echo $totalHE; ?> comentarios</h3>
+                                                                    <h3>Total: <?php echo $totalOS; ?> comentarios</h3>
                                                                 </div>
                                                             </div>
-                                                        </div>                                          
+                                                        </div>                                           
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -786,200 +783,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div>
                                         </div>
                                     </div>
-                                </div>  
-
-                                <!--juan-->
-                                <div id="barras12" class="tab-pane fade"> 
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-comments-alt"></i>
-                                                        <h3>Valoración de Comentarios</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content">  
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span12">
-                                                                    <h3>Total: <?php echo $totalJUA; ?> comentarios</h3>
-                                                                </div>
-                                                            </div>
-                                                        </div>                                         
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge34" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Positivos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge35" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Negativos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge36" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Neutros</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                            <br/>
-                                                        </div>   
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                        </div>
-                                    </div>
-
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-bar-chart"></i>
-                                                        <h3>Menciones al día</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content">   
-                                                        <div id="chart_div12"></div>
-                                                    </div>
-                                                </div> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
-
-                                <!--armida-->
-                                <div id="barras13" class="tab-pane fade"> 
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-comments-alt"></i>
-                                                        <h3>Valoración de Comentarios</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content"> 
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span12">
-                                                                    <h3>Total: <?php echo $totalAR; ?> comentarios</h3>
-                                                                </div>
-                                                            </div>
-                                                        </div>                                          
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge37" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Positivos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge38" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Negativos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge39" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Neutros</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                            <br/>
-                                                        </div>   
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                        </div>
-                                    </div>
-
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-bar-chart"></i>
-                                                        <h3>Menciones al día</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content">   
-                                                        <div id="chart_div13"></div>
-                                                    </div>
-                                                </div> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>  
-
-                                <!--martha-->
-                                <div id="barras14" class="tab-pane fade"> 
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-comments-alt"></i>
-                                                        <h3>Valoración de Comentarios</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content"> 
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span12">
-                                                                    <h3>Total: <?php echo $totalMAR; ?> comentarios</h3>
-                                                                </div>
-                                                            </div>
-                                                        </div>                                          
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge40" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Positivos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge41" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Negativos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge42" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Neutros</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                            <br/>
-                                                        </div>   
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                        </div>
-                                    </div>
-
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-bar-chart"></i>
-                                                        <h3>Menciones al día</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content">   
-                                                        <div id="chart_div14"></div>
-                                                    </div>
-                                                </div> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>               
-              
+                                </div>                      
 
                             </div>
                         </div>  <!--Cierra div de los tabs-->                                            
@@ -991,6 +795,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 	<?php $this->load->view('comunes/footer'); ?> 
 
+    <!--Datos de nacho-->
 <script language="JavaScript">
     var config1 = liquidFillGaugeDefaultSettings();
     config1.circleColor = "#178BCA";
@@ -1025,178 +830,157 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     config3.textSize = 0.75;
     config3.waveHeight = 0.15;   
 
-    //Datos Hilda
-    loadLiquidFillGauge("fillgauge1", <?php echo $hildaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge2", <?php echo $hildaNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge3", <?php echo $hildaN; ?>, config3);
-    //Datos Yadira
-    loadLiquidFillGauge("fillgauge4", <?php echo $yadiraP; ?>, config1);
-    loadLiquidFillGauge("fillgauge5", <?php echo $yadiraNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge6", <?php echo $yadiraN; ?>, config3);
-    //Datos Guillermo
-    loadLiquidFillGauge("fillgauge7", <?php echo $guillermoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge8", <?php echo $guillermoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge9", <?php echo $guillermoN; ?>, config3);
-    //Datos Alma Delia
-    loadLiquidFillGauge("fillgauge10", <?php echo $almaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge11", <?php echo $almaNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge12", <?php echo $almaN; ?>, config3);
-    //Datos janeth
-    loadLiquidFillGauge("fillgauge13", <?php echo $janethP; ?>, config1);
-    loadLiquidFillGauge("fillgauge14", <?php echo $janethNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge15", <?php echo $janethN; ?>, config3);
-    //Datos juanita
-    loadLiquidFillGauge("fillgauge16", <?php echo $juanitaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge17", <?php echo $juanitaNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge18", <?php echo $juanitaN; ?>, config3);
-    //Datos lupe benavides
-    loadLiquidFillGauge("fillgauge19", <?php echo $lupeP; ?>, config1);
-    loadLiquidFillGauge("fillgauge20", <?php echo $lupeNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge21", <?php echo $lupeN; ?>, config3);
-    //Datos octavio
-    loadLiquidFillGauge("fillgauge22", <?php echo $octavioP; ?>, config1);
-    loadLiquidFillGauge("fillgauge23", <?php echo $octavioNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge24", <?php echo $octavioN; ?>, config3);
-    //Datos sara
-    loadLiquidFillGauge("fillgauge25", <?php echo $saraP; ?>, config1);
-    loadLiquidFillGauge("fillgauge26", <?php echo $saraNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge27", <?php echo $saraN; ?>, config3);
-    //Datos meyly
-    loadLiquidFillGauge("fillgauge28", <?php echo $meylyP; ?>, config1);
-    loadLiquidFillGauge("fillgauge29", <?php echo $meylyNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge30", <?php echo $meylyN; ?>, config3);
-    //Datos hector
-    loadLiquidFillGauge("fillgauge31", <?php echo $hectorP; ?>, config1);
-    loadLiquidFillGauge("fillgauge32", <?php echo $hectorNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge33", <?php echo $hectorN; ?>, config3);
-    //Datos juan
-    loadLiquidFillGauge("fillgauge34", <?php echo $juanP; ?>, config1);
-    loadLiquidFillGauge("fillgauge35", <?php echo $juanNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge36", <?php echo $juanN; ?>, config3);
-    //Datos armida
-    loadLiquidFillGauge("fillgauge37", <?php echo $armidaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge38", <?php echo $armidaNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge39", <?php echo $armidaN; ?>, config3);
-    //Datos martha
-    loadLiquidFillGauge("fillgauge40", <?php echo $marthaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge41", <?php echo $marthaNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge42", <?php echo $marthaN; ?>, config3);
+    //Datos Esperanza
+    loadLiquidFillGauge("fillgauge1", <?php echo $esperanzaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge2", <?php echo $esperanzaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge3", <?php echo $esperanzaN; ?>, config3);
+    //Datos Héctor
+    loadLiquidFillGauge("fillgauge4", <?php echo $hectorP; ?>, config1);
+    loadLiquidFillGauge("fillgauge5", <?php echo $hectorNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge6", <?php echo $hectorN; ?>, config3);
+    //Datos Esmeralda
+    loadLiquidFillGauge("fillgauge7", <?php echo $esmeraldaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge8", <?php echo $esmeraldaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge9", <?php echo $esmeraldaN; ?>, config3);
+    //Datos Abaroa
+    loadLiquidFillGauge("fillgauge10", <?php echo $abaroaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge11", <?php echo $abaroaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge12", <?php echo $abaroaN; ?>, config3);
+    //Datos Oscar
+    loadLiquidFillGauge("fillgauge13", <?php echo $oscarP; ?>, config1);
+    loadLiquidFillGauge("fillgauge14", <?php echo $oscarNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge15", <?php echo $oscarN; ?>, config3);
+    //Datos salomon
+    loadLiquidFillGauge("fillgauge16", <?php echo $salomonP; ?>, config1);
+    loadLiquidFillGauge("fillgauge17", <?php echo $salomonNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge18", <?php echo $salomonN; ?>, config3);
+    //Datos mario
+    loadLiquidFillGauge("fillgauge19", <?php echo $marioP; ?>, config1);
+    loadLiquidFillGauge("fillgauge20", <?php echo $marioNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge21", <?php echo $marioN; ?>, config3);
+    //Datos blanca
+    loadLiquidFillGauge("fillgauge22", <?php echo $blancaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge23", <?php echo $blancaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge24", <?php echo $blancaN; ?>, config3);
+    //Datos pico
+    loadLiquidFillGauge("fillgauge25", <?php echo $picoP; ?>, config1);
+    loadLiquidFillGauge("fillgauge26", <?php echo $picoNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge27", <?php echo $picoN; ?>, config3);
+    //Datos arturo
+    loadLiquidFillGauge("fillgauge28", <?php echo $arturoP; ?>, config1);
+    loadLiquidFillGauge("fillgauge29", <?php echo $arturoNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge30", <?php echo $arturoN; ?>, config3);
+    //Datos oswy
+    loadLiquidFillGauge("fillgauge31", <?php echo $oswyP; ?>, config1);
+    loadLiquidFillGauge("fillgauge32", <?php echo $oswyNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge33", <?php echo $oswyN; ?>, config3);
 </script>
 
     <script type="text/javascript">
         google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);
-        <?php //hilda HildaCeballos01
+        google.setOnLoadCallback(drawChart);    
+        ////////Menciones de gobernadores
+        <?php //esperanza @DipEsperanzaA
             $a = array();
-            foreach ($hilda as $hilda) 
+            foreach ($esperanza as $esperanza) 
             {
                 $a[] = array(
-                    "fecha" => $hilda->fecha,
-                    "cantidad_menciones" => $hilda->cantidad
+                    "fecha" => $esperanza->fecha,
+                    "cantidad_menciones" => $esperanza->cantidad
                 );
             } 
-        ?>     
-        <?php //guillermo @Rangel_G_
-            $a3 = array();
-            foreach ($guillermo as $guillermo) 
-            {
-                $a3[] = array(
-                    "fecha" => $guillermo->fecha,
-                    "cantidad_menciones" => $guillermo->cantidad
-                );
-            } 
-        ?> 
-        <?php //alma @AlmaDelia_D3
-            $a4 = array();
-            foreach ($alma as $alma) 
-            {
-                $a4[] = array(
-                    "fecha" => $alma->fecha,
-                    "cantidad_menciones" => $alma->cantidad
-                );
-            } 
-        ?> 
-        <?php //juanita @JuanitaAndres
-            $a5 = array();
-            foreach ($juanita as $juanita) 
-            {
-                $a5[] = array(
-                    "fecha" => $juanita->fecha,
-                    "cantidad_menciones" => $juanita->cantidad
-                );
-            } 
-        ?> 
-        <?php //lupe @LupeBenavidesF
-            $a6 = array();
-            foreach ($lupe as $lupe) 
-            {
-                $a6[] = array(
-                    "fecha" => $lupe->fecha,
-                    "cantidad_menciones" => $lupe->cantidad
-                );
-            } 
-        ?>
-        <?php //octavio @octaviotintos
-            $a7 = array();
-            foreach ($octavio as $octavio) 
-            {
-                $a7[] = array(
-                    "fecha" => $octavio->fecha,
-                    "cantidad_menciones" => $octavio->cantidad
-                );
-            } 
-        ?>
-        <?php //sara @saracernas
-            $a8 = array();
-            foreach ($sara as $sara) 
-            {
-                $a8[] = array(
-                    "fecha" => $sara->fecha,
-                    "cantidad_menciones" => $sara->cantidad
-                );
-            } 
-        ?>
-        <?php //hector @hectormlara
-            $a9 = array();
+        ?>        
+        <?php //héctor @hectorinsua
+            $a2 = array();
             foreach ($hector as $hector) 
             {
-                $a9[] = array(
+                $a2[] = array(
                     "fecha" => $hector->fecha,
                     "cantidad_menciones" => $hector->cantidad
                 );
             } 
         ?>
-        <?php //juan @PintoRgz
+        <?php //esmeralda @EsmePresidenta
+            $a3 = array();
+            foreach ($esmeralda as $esmeralda) 
+            {
+                $a3[] = array(
+                    "fecha" => $esmeralda->fecha,
+                    "cantidad_menciones" => $esmeralda->cantidad
+                );
+            } 
+        ?>
+        <?php //abaroa @meabaroa
+            $a4 = array();
+            foreach ($abaroa as $abaroa) 
+            {
+                $a4[] = array(
+                    "fecha" => $abaroa->fecha,
+                    "cantidad_menciones" => $abaroa->cantidad
+                );
+            } 
+        ?>
+        <?php //oscar @OVPresidente
+            $a5 = array();
+            foreach ($oscar as $oscar) 
+            {
+                $a5[] = array(
+                    "fecha" => $oscar->fecha,
+                    "cantidad_menciones" => $oscar->cantidad
+                );
+            } 
+        ?>
+        <?php //salomón @salo_salazar1
+            $a6 = array();
+            foreach ($salomon as $salomon) 
+            {
+                $a6[] = array(
+                    "fecha" => $salomon->fecha,
+                    "cantidad_menciones" => $salomon->cantidad
+                );
+            } 
+        ?>
+        <?php //blanca @BlancaPRI2015
+            $a7 = array();
+            foreach ($blanca as $blanca) 
+            {
+                $a7[] = array(
+                    "fecha" => $blanca->fecha,
+                    "cantidad_menciones" => $blanca->cantidad
+                );
+            } 
+        ?>
+        <?php //pico @PicoZepeda
+            $a8 = array();
+            foreach ($pico as $pico) 
+            {
+                $a8[] = array(
+                    "fecha" => $pico->fecha,
+                    "cantidad_menciones" => $pico->cantidad
+                );
+            } 
+        ?>
+        <?php //arturo @DipArturoGarcia
+            $a9 = array();
+            foreach ($arturo as $arturo) 
+            {
+                $a9[] = array(
+                    "fecha" => $arturo->fecha,
+                    "cantidad_menciones" => $arturo->cantidad
+                );
+            } 
+        ?>
+        <?php //oswy @OswyDelgado
             $a10 = array();
-            foreach ($juan as $juan) 
+            foreach ($oswy as $oswy) 
             {
                 $a10[] = array(
-                    "fecha" => $juan->fecha,
-                    "cantidad_menciones" => $juan->cantidad
+                    "fecha" => $oswy->fecha,
+                    "cantidad_menciones" => $oswy->cantidad
                 );
             } 
         ?>
-        <?php //armida @Armida_NG
-            $a11 = array();
-            foreach ($armida as $armida) 
-            {
-                $a11[] = array(
-                    "fecha" => $armida->fecha,
-                    "cantidad_menciones" => $armida->cantidad
-                );
-            } 
-        ?>
-        <?php //martha @martha_sosa1
-            $a12 = array();
-            foreach ($martha as $martha) 
-            {
-                $a12[] = array(
-                    "fecha" => $martha->fecha,
-                    "cantidad_menciones" => $martha->cantidad
-                );
-            } 
-        ?>
-        ////////////////////////////////////////hilda
+        ////////////////////////////////////////esperanza
         function drawChart() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -1208,7 +992,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@HildaCeballos01',
+            title: '@DipEsperanzaA',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
@@ -1226,8 +1010,40 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart();
-        });  
-        ////////////////////////////////////////guillermo
+        });   
+
+        ////////////////////////////////////////héctor
+        function drawChart2() {
+          var data = google.visualization.arrayToDataTable(
+            [
+              ['Fecha', 'Cantidad'],
+              <?php for ($i=0; $i<count($a2); $i++) {
+                  ?>
+                  ['<?php echo $a2[$i]['fecha'] ?>', <?php echo $a2[$i]['cantidad_menciones'] ?>],
+              <?php } ?>
+            ]
+          );  
+          var options = {
+            title: '@hectorinsua',
+            hAxis: {title: "Fecha"},
+            seriesType: "bars",
+            series: {2: {type: "line"}},
+            height: 400
+          };
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+          chart.draw(data, options);          
+        }
+        //Sirve para hacer la grafica responsiva
+        var aspect = 1000 / 400,
+          chart = $("#chart_div2");
+        $(window).on("resize", function() {   
+            var targetWidth = chart.width();
+            chart.attr("width", targetWidth);
+            chart.attr("height", targetWidth / aspect);
+            drawChart2();
+        });     
+
+        ////////////////////////////////////////esmeralda
         function drawChart3() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -1239,15 +1055,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@Rangel_G_',
+            title: '@EsmePresidenta',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
-            colors: ['#4DA6AE']
+            colors: ['green']
           };
-          var chart3 = new google.visualization.ComboChart(document.getElementById('chart_div3'));
-          chart3.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div3'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
@@ -1257,8 +1073,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart3();
-        });  
-        ////////////////////////////////////////alma
+        });   
+
+        ////////////////////////////////////////abaroa
         function drawChart4() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -1270,15 +1087,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@AlmaDelia_D3',
+            title: '@meabaroa',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
-            colors: ['red']
+            colors: ['#C8711A']
           };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div4'));
-          chart4.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div4'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
@@ -1288,10 +1105,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart4();
-        });    
+        }); 
 
-        ////////////////////////////////////////juanita
-        function drawChart6() {
+        ////////////////////////////////////////oscar
+        function drawChart5() {
           var data = google.visualization.arrayToDataTable(
             [
               ['Fecha', 'Cantidad'],
@@ -1302,28 +1119,28 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@JuanitaAndres',
+            title: '@OVPresidente',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
             colors: ['red']
           };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div6'));
-          chart4.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div5'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
-          chart = $("#chart_div6");
+          chart = $("#chart_div5");
         $(window).on("resize", function() {   
             var targetWidth = chart.width();
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
-            drawChart6();
-        });  
+            drawChart5();
+        });
 
-        ////////////////////////////////////////lupe benavides
-        function drawChart7() {
+        ////////////////////////////////////////salomón
+        function drawChart6() {
           var data = google.visualization.arrayToDataTable(
             [
               ['Fecha', 'Cantidad'],
@@ -1334,27 +1151,27 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@LupeBenavidesF',
+            title: '@salo_salazar1',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
             colors: ['red']
           };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div7'));
-          chart4.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div6'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
-          chart = $("#chart_div7");
+          chart = $("#chart_div6");
         $(window).on("resize", function() {   
             var targetWidth = chart.width();
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
-            drawChart7();
-        });  
+            drawChart6();
+        });
 
-        ////////////////////////////////////////octavio
+        ////////////////////////////////////////blanca
         function drawChart8() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -1366,15 +1183,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@octaviotintos',
+            title: '@BlancaPRI2015',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
             colors: ['red']
           };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div8'));
-          chart4.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div8'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
@@ -1384,9 +1201,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart8();
-        });  
+        });
 
-        ////////////////////////////////////////sara
+        ////////////////////////////////////////pico
         function drawChart9() {
           var data = google.visualization.arrayToDataTable(
             [
@@ -1398,15 +1215,15 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@saracernas',
+            title: '@PicoZepeda',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
-            colors: ['#FFCB01']
+            colors: ['red']
           };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div9'));
-          chart4.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div9'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
@@ -1416,9 +1233,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
             drawChart9();
-        }); 
-        ////////////////////////////////////////hector
-        function drawChart11() {
+        });
+
+        ////////////////////////////////////////arturo
+        function drawChart10() {
           var data = google.visualization.arrayToDataTable(
             [
               ['Fecha', 'Cantidad'],
@@ -1429,27 +1247,28 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@hectormlara',
+            title: '@DipArturoGarcia',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
             colors: ['red']
           };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div11'));
-          chart4.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div10'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
-          chart = $("#chart_div11");
+          chart = $("#chart_div10");
         $(window).on("resize", function() {   
             var targetWidth = chart.width();
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
-            drawChart11();
-        });  
-        ////////////////////////////////////////juan
-        function drawChart12() {
+            drawChart10();
+        });
+
+        ////////////////////////////////////////oswy
+        function drawChart11() {
           var data = google.visualization.arrayToDataTable(
             [
               ['Fecha', 'Cantidad'],
@@ -1460,87 +1279,25 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             ]
           );  
           var options = {
-            title: '@PintoRgz',
+            title: '@OswyDelgado',
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
             height: 400,
             colors: ['red']
           };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div12'));
-          chart4.draw(data, options);          
+          var chart = new google.visualization.ComboChart(document.getElementById('chart_div11'));
+          chart.draw(data, options);          
         }
         //Sirve para hacer la grafica responsiva
         var aspect = 1000 / 400,
-          chart = $("#chart_div12");
+          chart = $("#chart_div11");
         $(window).on("resize", function() {   
             var targetWidth = chart.width();
             chart.attr("width", targetWidth);
             chart.attr("height", targetWidth / aspect);
-            drawChart12();
-        });  
-        ////////////////////////////////////////armida
-        function drawChart13() {
-          var data = google.visualization.arrayToDataTable(
-            [
-              ['Fecha', 'Cantidad'],
-              <?php for ($i=0; $i<count($a11); $i++) {
-                  ?>
-                  ['<?php echo $a11[$i]['fecha'] ?>', <?php echo $a11[$i]['cantidad_menciones'] ?>],
-              <?php } ?>
-            ]
-          );  
-          var options = {
-            title: '@Armida_NG',
-            hAxis: {title: "Fecha"},
-            seriesType: "bars",
-            series: {2: {type: "line"}},
-            height: 400,
-            colors: ['red']
-          };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div13'));
-          chart4.draw(data, options);          
-        }
-        //Sirve para hacer la grafica responsiva
-        var aspect = 1000 / 400,
-          chart = $("#chart_div13");
-        $(window).on("resize", function() {   
-            var targetWidth = chart.width();
-            chart.attr("width", targetWidth);
-            chart.attr("height", targetWidth / aspect);
-            drawChart13();
-        }); 
-
-        ////////////////////////////////////////martha
-        function drawChart14() {
-          var data = google.visualization.arrayToDataTable(
-            [
-              ['Fecha', 'Cantidad'],
-              <?php for ($i=0; $i<count($a12); $i++) {
-                  ?>
-                  ['<?php echo $a12[$i]['fecha'] ?>', <?php echo $a12[$i]['cantidad_menciones'] ?>],
-              <?php } ?>
-            ]
-          );  
-          var options = {
-            title: '@martha_sosa1',
-            hAxis: {title: "Fecha"},
-            seriesType: "bars",
-            series: {2: {type: "line"}},
-            height: 400
-          };
-          var chart4 = new google.visualization.ComboChart(document.getElementById('chart_div14'));
-          chart4.draw(data, options);          
-        }
-        //Sirve para hacer la grafica responsiva
-        var aspect = 1000 / 400,
-          chart = $("#chart_div14");
-        $(window).on("resize", function() {   
-            var targetWidth = chart.width();
-            chart.attr("width", targetWidth);
-            chart.attr("height", targetWidth / aspect);
-            drawChart14();
-        }); 
+            drawChart11();
+        });
     </script>
 
     <!--Funcion para ajustar la grafica al expander el menú-->
@@ -1549,28 +1306,28 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         {
           setTimeout(function(){
             drawChart();
+            drawChart2();
             drawChart3();
             drawChart4();
+            drawChart5();
             drawChart6();
             drawChart7();
             drawChart8();
             drawChart9();
+            drawChart10();
             drawChart11();
-            drawChart12();
-            drawChart13();
-            drawChart14();
           },100)    
           $('#chart_div').width('100%');
           $('#chart_div2').width('100%');
           $('#chart_div3').width('100%');
+          $('#chart_div4').width('100%');
+          $('#chart_div5').width('100%');
           $('#chart_div6').width('100%');
           $('#chart_div7').width('100%');
           $('#chart_div8').width('100%');
           $('#chart_div9').width('100%');
+          $('#chart_div10').width('100%');
           $('#chart_div11').width('100%');
-          $('#chart_div12').width('100%');
-          $('#chart_div13').width('100%');
-          $('#chart_div14').width('100%');
         }
       </script>
 </body>

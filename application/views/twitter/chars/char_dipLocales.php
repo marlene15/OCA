@@ -20,7 +20,7 @@
         ]);         
       }else{
         $('#alert').show();
-        $('#alert').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Yadira Carrillo!</strong> Se encuentra disponible a partir de la fecha: 14 Mayo 2015 hasta el <?php echo $ultima_fecha ?></div>'); 
+        $('#alert').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Yadira Carrillo!</strong> Se encuentra disponible a partir de la fecha: 14 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $ultima_fecha ?></div>'); 
       } 
 
       var view = new google.visualization.DataView(data);
@@ -76,7 +76,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     $('#fecha_contenedor').html('<?php echo $fecha ?>'); 
   };   
@@ -148,7 +148,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -178,7 +178,7 @@
           ]);
         }else{
           $('#alert').show();
-          $('#alert').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Isis Villaseñor!</strong> Se encuentra disponible a partir de la fecha: 14 Mayo 2015 hasta el <?php echo $ultima_fecha ?></div>'); 
+          $('#alert').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Isis Villaseñor!</strong> Se encuentra disponible a partir de la fecha: 14 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $ultima_fecha ?></div>'); 
         } 
         if(<?php echo $seguidores_alma ?>!=0 && <?php echo $siguiendo_alma ?>!=0 && <?php echo $tweets_alma ?>!=0)
         {
@@ -189,7 +189,7 @@
         }
         else{
           $('#alert2').show();
-          $('#alert2').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Alma Delia Arreola!</strong> Se encuentra disponible a partir de la fecha: 19 Mayo 2015 hasta el <?php echo $ultima_fecha ?></div>'); 
+          $('#alert2').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Alma Delia Arreola!</strong> Se encuentra disponible a partir de la fecha: 19 Mayo 2015 al 3 de Junio 2015 </div>'); 
         } 
         
         var view = new google.visualization.DataView(data);
@@ -244,7 +244,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     $('#fecha_contenedor3').html('<?php echo $fecha ?>'); 
   };   
@@ -316,7 +316,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -390,7 +390,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -464,7 +464,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -539,7 +539,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -614,7 +614,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -689,7 +689,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -765,7 +765,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -839,7 +839,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -865,7 +865,7 @@
           ]);
         }else{
           $('#alert').show();
-          $('#alert').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Martha Sosa!</strong> Se encuentra disponible a partir de la fecha: 14 Mayo 2015 hasta el <?php echo $ultima_fecha ?></div>'); 
+          $('#alert').html('<div id="alert" class="alert alert-block"><button type="button" class="close" data-dismiss="alert"></button><strong>La información de Martha Sosa!</strong> Se encuentra disponible a partir de la fecha: 14 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $ultima_fecha ?></div>'); 
         }
         data.addRows([
           ['PRD', <?php echo $seguidores_amary ?>, <?php echo $siguiendo_amary ?>, <?php echo $tweets_amary ?>]
@@ -922,7 +922,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     $('#fecha_contenedor12').html('<?php echo $fecha ?>');  
   }; 
@@ -992,7 +992,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -1066,7 +1066,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {
@@ -1143,7 +1143,7 @@
     }
     else{
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong>Fecha No Encontrada!</strong> Se encuentra disponible a partir de la fecha: 19 Mayo 2015 hasta el <?php echo $ultima_fecha ?> <br/> Se cargaron los datos de la última fecha encontrada</div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong>Fecha No Encontrada!</strong> Se encuentra disponible a partir de la fecha: 19 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $ultima_fecha ?> <br/> Se cargaron los datos de la última fecha encontrada</div>');
     }
     $('#fecha_contenedor15').html('<?php echo $fecha ?>');
   }; 
@@ -1214,7 +1214,7 @@
 
     if (<?php echo $existe ?> ==2) {
       $('#alert').show();
-      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 hasta el <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
+      $('#alert').html('<div id="alert" class="alert alert-error"><button type="button" class="close" data-dismiss="alert"></button><strong><center>Fecha No Encontrada!</strong> La información se encuentra disponible a partir de la fecha: 4 Mayo 2015 al 3 de Junio 2015 y del 8 de Junio 2015 al <?php echo $fecha ?><br/>Se colocó la última fecha encontrada</center></div>');
     }
     else
     {

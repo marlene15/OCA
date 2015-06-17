@@ -990,17 +990,26 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </div>                           
 
                             <div id="nube" class="tab-pane fade ">  
-                                <div class="container-fluid">
-                                   <div class="row-fluid">
-                                      <div class="span12">  
-                                        <button id="go" type="submit" onclick="nube();" class="btn btn-success btn-lg" title="Actualizar" style="float:left">Actualizar</button>
-                                        <br/><br/>
-                                        <div id="container">
-                                          <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>    
-                                        </div>                           
-                                      </div>
+                              <div class="row-fluid">
+                                <div class="span10">
+                                  <div id="container">
+                                    <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>  
+                                    <center><div id="nube_consulta" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>           
+                                  </div>                           
+                                </div>
+
+                                <div class="span2">
+                                  </br></br>
+                                  <div class="btn-toolbar" align="left"> 
+                                    <div class="btn-group-vertical">
+                                      <a class="btn btn-success btn-lg active" id="consulta_nube"> Marzo</a>
+                                      <a class="btn btn-primary btn-lg" id="consulta_nube2"> Abril</a>
+                                      <a class="btn btn-primary btn-lg" id="consulta_nube3"> Mayo</a>
+                                      <a class="btn btn-primary btn-lg" id="consulta_nube4"> Junio</a>
                                     </div>
-                                </div>                          
+                                  </div>
+                                </div>                    
+                              </div>                                                  
                             </div>
 
                         </div>
@@ -1029,7 +1038,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');      
       data.addRows([
         ['PRI', <?php echo $seguidoresh ?>, <?php echo $siguiendoh ?>, <?php echo $tweetsh ?>],
-        ['PNAL', <?php echo $seguidores_yadira ?>, <?php echo $siguiendo_yadira ?>, <?php echo $tweets_yadira ?>]
+        ['PNA', <?php echo $seguidores_yadira ?>, <?php echo $siguiendo_yadira ?>, <?php echo $tweets_yadira ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1102,7 +1111,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PVEM', <?php echo $seguidores_viviana ?>, <?php echo $siguiendo_viviana ?>, <?php echo $tweets_viviana ?>],
-        ['PNAL', <?php echo $seguidores_rangel ?>, <?php echo $siguiendo_rangel ?>, <?php echo $tweets_rangel ?>]        
+        ['PNA', <?php echo $seguidores_rangel ?>, <?php echo $siguiendo_rangel ?>, <?php echo $tweets_rangel ?>]        
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1316,7 +1325,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_lupe ?>, <?php echo $siguiendo_lupe ?>, <?php echo $tweets_lupe ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_lupe ?>, <?php echo $siguiendo_lupe ?>, <?php echo $tweets_lupe ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1386,7 +1395,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_octavio ?>, <?php echo $siguiendo_octavio ?>, <?php echo $tweets_octavio ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_octavio ?>, <?php echo $siguiendo_octavio ?>, <?php echo $tweets_octavio ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1528,7 +1537,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PAN', <?php echo $seguidores_meyly ?>, <?php echo $siguiendo_meyly ?>, <?php echo $tweets_meyly ?>],
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_hector ?>, <?php echo $siguiendo_hector ?>, <?php echo $tweets_hector ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_hector ?>, <?php echo $siguiendo_hector ?>, <?php echo $tweets_hector ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1673,7 +1682,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Tweets');     
       data.addRows([
         ['PAN', <?php echo $seguidores_mesina ?>, <?php echo $siguiendo_mesina ?>, <?php echo $tweets_mesina ?>],
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_pinto ?>, <?php echo $siguiendo_pinto ?>, <?php echo $tweets_pinto ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_pinto ?>, <?php echo $siguiendo_pinto ?>, <?php echo $tweets_pinto ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1744,7 +1753,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_armida ?>, <?php echo $siguiendo_armida ?>, <?php echo $tweets_armida ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_armida ?>, <?php echo $siguiendo_armida ?>, <?php echo $tweets_armida ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1886,7 +1895,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');    
       data.addRows([
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_sergio ?>, <?php echo $siguiendo_sergio ?>, <?php echo $tweets_sergio ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_sergio ?>, <?php echo $siguiendo_sergio ?>, <?php echo $tweets_sergio ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2028,7 +2037,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_felicitas ?>, <?php echo $siguiendo_felicitas ?>, <?php echo $tweets_felicitas ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_felicitas ?>, <?php echo $siguiendo_felicitas ?>, <?php echo $tweets_felicitas ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2100,7 +2109,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       data.addColumn('number', 'Siguiendo');
       data.addColumn('number', 'Tweets');     
       data.addRows([
-        ['Coalición \n PRI-PVEM-PNAL', <?php echo $seguidores_santiago ?>, <?php echo $siguiendo_santiago ?>, <?php echo $tweets_santiago ?>]
+        ['Coalición \n PRI-PVEM-PNA', <?php echo $seguidores_santiago ?>, <?php echo $siguiendo_santiago ?>, <?php echo $tweets_santiago ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2161,7 +2170,85 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     });
   </script>
 
-  
+  <script type="text/javascript">
+    function nube()
+    {
+      //Limpiar div
+      var d = document.getElementById("contenido_nube");
+      while (d.hasChildNodes())
+      {
+        d.removeChild(d.firstChild);
+      }
+
+      <?php //Llenamos el array con las coordenadas        
+            $aux=""; 
+            for ($i=0; $i<count($hashtags); $i++)
+            {
+                $porciones = explode(" ", $hashtags[$i]->hashtags);
+                for ($j=0; $j<count($porciones); $j++)
+              {
+                if ($porciones[$j] != "") 
+                {
+                  $aux = $aux." ".$porciones[$j]; 
+                };
+                
+              };                    
+            };    
+
+          $test = preg_split('/[\s,]+/', $aux); //Coloca los hashtags en una sola línea, el separador son los espacios
+          $palabras_contadas = array_count_values($test); //Cuenta la cantidad de veces que se repite una palabra
+
+          $a2 = array();
+          foreach ($palabras_contadas as $key => $value) { //Llena el array para convertirlo a json
+              if($key != "")
+              {
+                $a2[] = array(
+                      "text" => $key,
+                      "size" => $value*25
+                );
+              }       
+        };
+        $palabras_JSON = json_encode($a2); //Convertimos el array a Json para poderlo colocar en la nube de palabras                   
+      ?>
+      var fill = d3.scale.category20();
+      d3.layout.cloud().size([1000, 400])
+          .words(<?php echo $palabras_JSON ?>)
+          .padding(3)
+          .rotate(function() { return ~~(Math.random() * 2) * 90; })
+          .font("Impact")
+          .fontSize(function(d) { return d.size; })
+          .on("end", draw)
+          .start();
+
+      function draw(words) 
+      {
+          d3.select("#contenido_nube").append("svg")
+              .attr("viewBox", "-15 0 " + 1000 + " " + 500 )
+                .attr("preserveAspectRatio", "xMidYMid meet")
+            .append("g")
+              .attr("transform", "translate(472,250)")
+            .selectAll("text")
+              .data(words)
+            .enter().append("text")
+              .style("font-size", function(d) { return d.size + "px"; })
+              .style("font-family", "Impact")
+              .style("fill", function(d, i) { return fill(i); })
+              .attr("text-anchor", "middle")
+              .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+              })
+              .text(function(d) { return d.text; });
+      }
+    }
+    //Sirve para hacer la nube de palabars responsiva
+    var aspect = 1000 / 400,
+      chart = $("#contenido_nube");
+    $(window).on("resize", function() {
+        var targetWidth = chart.parent().width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+    });
+  </script>
 
   <!--Para usar el calendario-->
   <script type="text/javascript">
@@ -2508,6 +2595,92 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       $('#chart_div15').width('100%');  
       $('#chart_div16').width('100%'); 
     }
+  </script>
+
+  <!--Consulta de la nube de palabras-->
+  <script type="text/javascript">
+    $(document).ready(function(){ 
+
+      $("#consulta_nube").click(function(event) {
+        $("#consulta_nube").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');       
+        var parametros = {
+                "mes" : '03'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipLocales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      }); 
+
+      $("#consulta_nube2").click(function(event) {
+        $("#consulta_nube2").addClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');         
+        var parametros = {
+                "mes" : '04'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipLocales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube3").click(function(event) {
+        $("#consulta_nube3").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube4").removeClass('active btn-success'); 
+        var parametros = {
+                "mes" : '05'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipLocales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube4").click(function(event) {
+        $("#consulta_nube4").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success'); 
+        $("#consulta_nube").addClass('btn-primary');
+        var parametros = {
+                "mes" : '06'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipLocales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+    });
   </script>
 
 </html>

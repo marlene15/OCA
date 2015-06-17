@@ -81,7 +81,8 @@ class Controlador_inicio extends CI_Controller {
 		$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 
 		$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 			
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
-		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_federales();
+		$mes='03';
+		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_federales($mes);
 		
 		$datos = array(
 	                "seguidoresjm" => $dip1['jose']->seguidores,
@@ -112,7 +113,8 @@ class Controlador_inicio extends CI_Controller {
 		$ultima_fecha = $ultima_fecha->ultima_fecha;
 		$resultado = $this->modelo_consultas->obtener_cuenta_dip_locales($ultima_fecha); 	
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
-		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_locales();
+		$mes='03';
+		$hashtags = $this->modelo_inicio->obtener_hashtags_dip_locales($mes);
 		
 		$datos = array(
 	                "seguidoresh" => $resultado['hilda']->seguidores,
@@ -228,7 +230,8 @@ class Controlador_inicio extends CI_Controller {
 		$ultima_fecha = $ultima_fecha->ultima_fecha;
 		$resultado = $this->modelo_consultas->obtener_cuenta_alcaldias($ultima_fecha); 	
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
-		$hashtags = $this->modelo_inicio->obtener_hashtags_alcaldes();
+		$mes='03';
+		$hashtags = $this->modelo_inicio->obtener_hashtags_alcaldes($mes);
 		
 		$datos = array(
 	                "seguidoresh" => $resultado['hector']->seguidores,
@@ -309,73 +312,6 @@ class Controlador_inicio extends CI_Controller {
 		$this->load->view('twitter/alcaldias',$datos);	
 	}
 
-	public function mapa_coordenadas()
-	{	
-		$colima = $this->modelo_inicio->obtener_coordenadas('Colima'); 
-		$villa = $this->modelo_inicio->obtener_coordenadas('Villa de Álvarez'); 
-		$manzanillo = $this->modelo_inicio->obtener_coordenadas('Manzanillo');
-		$tecoman = $this->modelo_inicio->obtener_coordenadas('Tecomán');
-		$armeria = $this->modelo_inicio->obtener_coordenadas('Armería');
-		$comala = $this->modelo_inicio->obtener_coordenadas('Comala');
-		$coqui = $this->modelo_inicio->obtener_coordenadas('Coquimatlán');
-		$cuau = $this->modelo_inicio->obtener_coordenadas('Cuauhtémoc');
-		$ixtlahuacan = $this->modelo_inicio->obtener_coordenadas('Ixtlahuacán');
-		$mina = $this->modelo_inicio->obtener_coordenadas('Minatitlán');
-
-		$datos = array(
-						"gobernadores_colima" => $colima['gobernadores'],
-						"dipFederales_colima" => $colima['dipFederales'],
-						"dipLocales_colima" => $colima['dipLocales'],
-						"presidentes_colima" => $colima['presidentes'],
-
-						"gobernadores_villa" => $villa['gobernadores'],
-						"dipFederales_villa" => $villa['dipFederales'],
-						"dipLocales_villa" => $villa['dipLocales'],
-						"presidentes_villa" => $villa['presidentes'],
-
-						"gobernadores_manzanillo" => $manzanillo['gobernadores'],
-						"dipFederales_manzanillo" => $manzanillo['dipFederales'],
-						"dipLocales_manzanillo" => $manzanillo['dipLocales'],
-						"presidentes_manzanillo" => $manzanillo['presidentes'],
-
-						"gobernadores_tecoman" => $tecoman['gobernadores'],
-						"dipFederales_tecoman" => $tecoman['dipFederales'],
-						"dipLocales_tecoman" => $tecoman['dipLocales'],
-						"presidentes_tecoman" => $tecoman['presidentes'],
-
-						"gobernadores_armeria" => $armeria['gobernadores'],
-						"dipFederales_armeria" => $armeria['dipFederales'],
-						"dipLocales_armeria" => $armeria['dipLocales'],
-						"presidentes_armeria" => $armeria['presidentes'],
-
-						"gobernadores_comala" => $comala['gobernadores'],
-						"dipFederales_comala" => $comala['dipFederales'],
-						"dipLocales_comala" => $comala['dipLocales'],
-						"presidentes_comala" => $comala['presidentes'],
-
-						"gobernadores_coqui" => $coqui['gobernadores'],
-						"dipFederales_coqui" => $coqui['dipFederales'],
-						"dipLocales_coqui" => $coqui['dipLocales'],
-						"presidentes_coqui" => $coqui['presidentes'],
-
-						"gobernadores_cuau" => $cuau['gobernadores'],
-						"dipFederales_cuau" => $cuau['dipFederales'],
-						"dipLocales_cuau" => $cuau['dipLocales'],
-						"presidentes_cuau" => $cuau['presidentes'],
-
-						"gobernadores_ixtlahuacan" => $ixtlahuacan['gobernadores'],
-						"dipFederales_ixtlahuacan" => $ixtlahuacan['dipFederales'],
-						"dipLocales_ixtlahuacan" => $ixtlahuacan['dipLocales'],
-						"presidentes_ixtlahuacan" => $ixtlahuacan['presidentes'],
-
-						"gobernadores_mina" => $mina['gobernadores'],
-						"dipFederales_mina" => $mina['dipFederales'],
-						"dipLocales_mina" => $mina['dipLocales'],
-						"presidentes_mina" => $mina['presidentes']
-	            	  );
-		$this->load->view('twitter/maps/mapa_coordenadas',$datos);	
-	}
-
 	public function valoracion_gobernadores()
 	{
 		$nacho = $this->modelo_inicio->valoracion_nacho();
@@ -388,18 +324,22 @@ class Controlador_inicio extends CI_Controller {
 		$datos = array('nachoP' => $nacho['positivos'],
 					  'nachoNe' => $nacho['negativos'],
 					  'nachoN' => $nacho['neutros'],
+					  'totalN' => $nacho['total'],
 
 					  'jorgeP' => $jorge['positivos'],
 					  'jorgeNe' => $jorge['negativos'],
 					  'jorgeN' => $jorge['neutros'],
+					  'totalJ' => $jorge['total'],
 
 					  'lochoP' => $locho['positivos'],
 					  'lochoNe' => $locho['negativos'],
 					  'lochoN' => $locho['neutros'],
+					  'totalL' => $locho['total'],
 
 					  'marthaP' => $martha['positivos'],
 					  'marthaNe' => $martha['negativos'],
 					  'marthaN' => $martha['neutros'],
+					  'totalM' => $martha['total'],
 
 				      "nacho" => $menciones['nacho'],
 				      "jorge" => $menciones['jorge'],
@@ -420,14 +360,17 @@ class Controlador_inicio extends CI_Controller {
 		$datos = array('indiraP' => $indira['positivos'],
 					  'indiraNe' => $indira['negativos'],
 					  'indiraN' => $indira['neutros'],
+					  'totalI' => $indira['total'],
 
 					  'kikeP' => $kike['positivos'],
 					  'kikeNe' => $kike['negativos'],
 					  'kikeN' => $kike['neutros'],
+					  'totalK' => $kike['total'],
 
 					  'normaP' => $norma['positivos'],
 					  'normaNe' => $norma['negativos'],
 					  'normaN' => $norma['neutros'],
+					  'totalN' => $norma['total'],
 
 				      "indira" => $menciones['indira'],
 				      "kike" => $menciones['kike'],
@@ -442,37 +385,188 @@ class Controlador_inicio extends CI_Controller {
 		$yadira = $this->modelo_inicio->valoracion_yadira();
 		$guillermo = $this->modelo_inicio->valoracion_guillermo();
 		$alma = $this->modelo_inicio->valoracion_alma();
+		$janeth = $this->modelo_inicio->valoracion_janeth();
 		$juanita = $this->modelo_inicio->valoracion_juanita();
+		$lupe = $this->modelo_inicio->valoracion_lupe();
+		$octavio = $this->modelo_inicio->valoracion_octavio();
+		$sara = $this->modelo_inicio->valoracion_sara();
+		$meyly = $this->modelo_inicio->valoracion_meyly();
+		$hector = $this->modelo_inicio->valoracion_hector();
+		$juan = $this->modelo_inicio->valoracion_juan();
+		$armida = $this->modelo_inicio->valoracion_armida();
+		$martha = $this->modelo_inicio->valoracion_marthaS();
 
 		$menciones = $this->modelo_consultas->menciones_DipLocales();
 
 		$datos = array('hildaP' => $hilda['positivos'],
 					  'hildaNe' => $hilda['negativos'],
 					  'hildaN' => $hilda['neutros'],
+					  'totalH' => $hilda['total'],
 
 					  'yadiraP' => $yadira['positivos'],
 					  'yadiraNe' => $yadira['negativos'],
 					  'yadiraN' => $yadira['neutros'],
+					  'totalY' => $yadira['total'],
 
 					  'guillermoP' => $guillermo['positivos'],
 					  'guillermoNe' => $guillermo['negativos'],
 					  'guillermoN' => $guillermo['neutros'],
+					  'totalG' => $guillermo['total'],
 
 					  'almaP' => $alma['positivos'],
 					  'almaNe' => $alma['negativos'],
 					  'almaN' => $alma['neutros'],
+					  'totalA' => $alma['total'],
+
+					  'janethP' => $janeth['positivos'],
+					  'janethNe' => $janeth['negativos'],
+					  'janethN' => $janeth['neutros'],
+					  'totalJ' => $janeth['total'],
 
 					  'juanitaP' => $juanita['positivos'],
 					  'juanitaNe' => $juanita['negativos'],
 					  'juanitaN' => $juanita['neutros'],
-					  'total' => $juanita['total'],
+					  'totalJU' => $juanita['total'],
+
+					  'lupeP' => $lupe['positivos'],
+					  'lupeNe' => $lupe['negativos'],
+					  'lupeN' => $lupe['neutros'],
+					  'totalL' => $lupe['total'],
+
+					  'octavioP' => $octavio['positivos'],
+					  'octavioNe' => $octavio['negativos'],
+					  'octavioN' => $octavio['neutros'],
+					  'totalO' => $octavio['total'],
+
+					  'saraP' => $sara['positivos'],
+					  'saraNe' => $sara['negativos'],
+					  'saraN' => $sara['neutros'],
+					  'totalS' => $sara['total'],
+
+					  'meylyP' => $meyly['positivos'],
+					  'meylyNe' => $meyly['negativos'],
+					  'meylyN' => $meyly['neutros'],
+					  'totalM' => $meyly['total'],
+
+					  'hectorP' => $hector['positivos'],
+					  'hectorNe' => $hector['negativos'],
+					  'hectorN' => $hector['neutros'],
+					  'totalHE' => $hector['total'],
+
+					  'juanP' => $juan['positivos'],
+					  'juanNe' => $juan['negativos'],
+					  'juanN' => $juan['neutros'],
+					  'totalJUA' => $juan['total'],
+
+					  'armidaP' => $armida['positivos'],
+					  'armidaNe' => $armida['negativos'],
+					  'armidaN' => $armida['neutros'],
+					  'totalAR' => $armida['total'],
+
+					  'marthaP' => $martha['positivos'],
+					  'marthaNe' => $martha['negativos'],
+					  'marthaN' => $martha['neutros'],
+					  'totalMAR' => $martha['total'],
 
 				      "hilda" => $menciones['hilda'],
 				      "guillermo" => $menciones['guillermo'],
 				      "alma" => $menciones['alma'],
-				      "juanita" => $menciones['juanita']
+				      "janeth" => $menciones['janeth'],
+				      "juanita" => $menciones['juanita'],
+				      "lupe" => $menciones['lupe'],
+				      "octavio" => $menciones['octavio'],
+				      "sara" => $menciones['sara'],
+				      "hector" => $menciones['hector'],
+				      "juan" => $menciones['juan'],
+				      "armida" => $menciones['armida'],
+				      "martha" => $menciones['martha']
 					  );
 		$this->load->view('twitter/valoracionDipLocales',$datos);
+	}
+
+	public function valoracion_Presidentes()
+	{
+		$esperanza = $this->modelo_inicio->valoracion_esperanza();
+		$oscar = $this->modelo_inicio->valoracion_oscar();
+		$hector = $this->modelo_inicio->valoracion_hectorI();
+		$abaroa = $this->modelo_inicio->valoracion_abaroa();
+		$esmeralda = $this->modelo_inicio->valoracion_esmeralda();
+		$salomon = $this->modelo_inicio->valoracion_salomon();
+		$mario = $this->modelo_inicio->valoracion_mario();
+		$blanca = $this->modelo_inicio->valoracion_blanca();
+		$pico = $this->modelo_inicio->valoracion_pico();
+		$arturo = $this->modelo_inicio->valoracion_arturo();
+		$oswy = $this->modelo_inicio->valoracion_oswy();
+
+		$menciones = $this->modelo_consultas->menciones_Presidentes();
+
+		$datos = array('esperanzaP' => $esperanza['positivos'],
+					  'esperanzaNe' => $esperanza['negativos'],
+					  'esperanzaN' => $esperanza['neutros'],
+					  'totalE' => $esperanza['total'],
+
+					  'oscarP' => $oscar['positivos'],
+					  'oscarNe' => $oscar['negativos'],
+					  'oscarN' => $oscar['neutros'],
+					  'totalO' => $oscar['total'],
+
+					  'hectorP' => $hector['positivos'],
+					  'hectorNe' => $hector['negativos'],
+					  'hectorN' => $hector['neutros'],
+					  'totalH' => $hector['total'],
+
+					  'abaroaP' => $abaroa['positivos'],
+					  'abaroaNe' => $abaroa['negativos'],
+					  'abaroaN' => $abaroa['neutros'],
+					  'totalA' => $abaroa['total'],
+
+					  'esmeraldaP' => $esmeralda['positivos'],
+					  'esmeraldaNe' => $esmeralda['negativos'],
+					  'esmeraldaN' => $esmeralda['neutros'],
+					  'totalES' => $esmeralda['total'],
+
+					  'salomonP' => $salomon['positivos'],
+					  'salomonNe' => $salomon['negativos'],
+					  'salomonN' => $salomon['neutros'],
+					  'totalS' => $salomon['total'],
+
+					  'marioP' => $mario['positivos'],
+					  'marioNe' => $mario['negativos'],
+					  'marioN' => $mario['neutros'],
+					  'totalM' => $mario['total'],
+
+					  'blancaP' => $blanca['positivos'],
+					  'blancaNe' => $blanca['negativos'],
+					  'blancaN' => $blanca['neutros'],
+					  'totalB' => $blanca['total'],
+
+					  'picoP' => $pico['positivos'],
+					  'picoNe' => $pico['negativos'],
+					  'picoN' => $pico['neutros'],
+					  'totalP' => $pico['total'],
+
+					  'arturoP' => $arturo['positivos'],
+					  'arturoNe' => $arturo['negativos'],
+					  'arturoN' => $arturo['neutros'],
+					  'totalAR' => $arturo['total'],
+
+					  'oswyP' => $oswy['positivos'],
+					  'oswyNe' => $oswy['negativos'],
+					  'oswyN' => $oswy['neutros'],
+					  'totalOS' => $oswy['total'],
+
+				      "esperanza" => $menciones['esperanza'],
+				      "oscar" => $menciones['oscar'],
+				      "hector" => $menciones['hector'],
+				      "abaroa" => $menciones['abaroa'],
+				      "esmeralda" => $menciones['esmeralda'],
+				      "salomon" => $menciones['salomon'],
+				      "blanca" => $menciones['blanca'],
+				      "pico" => $menciones['pico'],
+				      "arturo" => $menciones['arturo'],
+				      "oswy" => $menciones['oswy']
+					  );
+		$this->load->view('twitter/valoracionPresidentes',$datos);
 	}
 
 	public function partidos()

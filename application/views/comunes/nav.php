@@ -152,7 +152,7 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('twitter/controlador_inicio/valoracion_Presidentes');?>"> 
                                         <span class="title">Presidente Municipal</span>
                                         <span class="selected"></span>
                                     </a>
@@ -169,7 +169,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="<?php echo site_url('twitter/controlador_inicio/mapa_coordenadas');?>">
+                            <a href="<?php echo site_url('twitter/controlador_consultas/mapas');?>">
                                 <i class="icon-twitter"></i> 
                                 <span class="title">Twitter</span>
                                 <span class="selected"></span>

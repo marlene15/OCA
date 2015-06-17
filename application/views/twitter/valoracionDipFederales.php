@@ -11,7 +11,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	<title>Inicio</title> 
+	<title>Valoración Dip. Federales</title> 
 	<?php $this->load->view('comunes/header'); ?>
     <script src="<?php echo base_url()?>assets/twitter/jsapi.js"></script> 
     <script src="<?php echo base_url()?>assets/twitter/tabsDL.js"></script>
@@ -38,7 +38,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12" id="encabezado">
                         <h3 class="page-title" id="titulo">
-                            Diputados Federales <small>Actividad en Twitter</small>
+                            Diputado Federal <small>Actividad en Twitter</small>
                         </h3>
                         <ul class="breadcrumb" id="ul_menu">
                             <li>
@@ -69,9 +69,9 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
-                              <li class="active"><a data-toggle="tab" href="#barras1">Distrito 1. Indira Vizcaino <img src="<?php echo base_url()?>assets/logos_partidos/PRD.jpg" class="img-responsive center-block" width="30" height="30"></a></li>
-                              <li><a data-toggle="tab" href="#barras2">Distrito 1. Kike Rojas <img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"></a></li>
-                              <li><a data-toggle="tab" href="#barras3">Distrito 2. Norma Galindo <img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"></a></li>
+                              <li class="active"><a data-toggle="tab" href="#barras1">Distrito 1. Indira Vizcaino (PRD)</a></li>
+                              <li><a data-toggle="tab" href="#barras2">Distrito 1. Kike Rojas (PRI-PVEM)</a></li>
+                              <li><a data-toggle="tab" href="#barras3">Distrito 2. Norma Galindo (PRI-PVEM)</a></li>
                             </ul>
                               <div class="tab-content" id="myTabContent">
                                 <!--Indira-->
@@ -84,7 +84,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">                                          
+                                                    <div class="widget-content">  
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span12">
+                                                                    <h3>Total: <?php echo $totalI; ?> comentarios</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                         
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -140,7 +147,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">                                          
+                                                    <div class="widget-content"> 
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span12">
+                                                                    <h3>Total: <?php echo $totalK; ?> comentarios</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                          
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -197,7 +211,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                                         <i class="icon-comments-alt"></i>
                                                         <h3>Valoración de Comentarios</h3>                                                    
                                                     </div>
-                                                    <div class="widget-content">                                          
+                                                    <div class="widget-content">  
+                                                        <div class="container-fluid">
+                                                            <div class="row-fluid">
+                                                                <div class="span12">
+                                                                    <h3>Total: <?php echo $totalN; ?> comentarios</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                         
                                                         <div class="container-fluid">
                                                             <div class="row-fluid">
                                                                 <div class="span4">
@@ -353,7 +374,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
-            height: 400
+            height: 400,
+            colors: ['#FFCB01']
           };
           var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
           chart.draw(data, options);          
@@ -384,7 +406,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
-            height: 400
+            height: 400,
+            colors: ['red']
           };
           var chart2 = new google.visualization.ComboChart(document.getElementById('chart_div2'));
           chart2.draw(data, options);          
@@ -415,7 +438,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             hAxis: {title: "Fecha"},
             seriesType: "bars",
             series: {2: {type: "line"}},
-            height: 400
+            height: 400,
+            colors: ['red']
           };
           var chart3 = new google.visualization.ComboChart(document.getElementById('chart_div3'));
           chart3.draw(data, options);          

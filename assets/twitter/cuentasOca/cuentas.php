@@ -365,10 +365,10 @@
         $j_siguiendo = $string3[0]['user']['friends_count'];
         $j_tweets = $string3[0]['user']['statuses_count'];
 
-        $m_usuario = $string4[0]['user']['screen_name'];
-        $m_seguidores = $string4[0]['user']['followers_count'];
-        $m_siguiendo = $string4[0]['user']['friends_count'];
-        $m_tweets = $string4[0]['user']['statuses_count'];
+        // $m_usuario = $string4[0]['user']['screen_name'];
+        // $m_seguidores = $string4[0]['user']['followers_count'];
+        // $m_siguiendo = $string4[0]['user']['friends_count'];
+        // $m_tweets = $string4[0]['user']['statuses_count'];
 
         #Diputados Federales
         $jm_usuario = $string5[0]['user']['screen_name'];
@@ -418,15 +418,15 @@
         $es_siguiendo = $string12[0]['user']['friends_count'];
         $es_tweets = $string12[0]['user']['statuses_count'];
 
-        $OVPresidente_usuario = $OVPresidente[0]['user']['screen_name'];
-        $OVPresidente_seguidores = $OVPresidente[0]['user']['followers_count'];
-        $OVPresidente_siguiendo = $OVPresidente[0]['user']['friends_count'];
-        $OVPresidente_tweets = $OVPresidente[0]['user']['statuses_count'];
+        // $OVPresidente_usuario = $OVPresidente[0]['user']['screen_name'];
+        // $OVPresidente_seguidores = $OVPresidente[0]['user']['followers_count'];
+        // $OVPresidente_siguiendo = $OVPresidente[0]['user']['friends_count'];
+        // $OVPresidente_tweets = $OVPresidente[0]['user']['statuses_count'];
         //Manzanillo
-        $p_usuario = $string13[0]['user']['screen_name'];
-        $p_seguidores = $string13[0]['user']['followers_count'];
-        $p_siguiendo = $string13[0]['user']['friends_count'];
-        $p_tweets = $string13[0]['user']['statuses_count'];
+        // $p_usuario = $string13[0]['user']['screen_name'];
+        // $p_seguidores = $string13[0]['user']['followers_count'];
+        // $p_siguiendo = $string13[0]['user']['friends_count'];
+        // $p_tweets = $string13[0]['user']['statuses_count'];
 
         $mar_usuario = $string14[0]['user']['screen_name'];
         $mar_seguidores = $string14[0]['user']['followers_count'];
@@ -453,10 +453,10 @@
         $JaimeSoteloG_siguiendo = $JaimeSoteloG[0]['user']['friends_count'];
         $JaimeSoteloG_tweets = $JaimeSoteloG[0]['user']['statuses_count'];
         //Comala
-        $sa_usuario = $string17[0]['user']['screen_name'];
-        $sa_seguidores = $string17[0]['user']['followers_count'];
-        $sa_siguiendo = $string17[0]['user']['friends_count'];
-        $sa_tweets = $string17[0]['user']['statuses_count'];
+        // $sa_usuario = $string17[0]['user']['screen_name'];
+        // $sa_seguidores = $string17[0]['user']['followers_count'];
+        // $sa_siguiendo = $string17[0]['user']['friends_count'];
+        // $sa_tweets = $string17[0]['user']['statuses_count'];
 
         $mario_usuario = $string18[0]['user']['screen_name'];
         $mario_seguidores = $string18[0]['user']['followers_count'];
@@ -468,10 +468,10 @@
         $ar_siguiendo = $string19[0]['user']['friends_count'];
         $ar_tweets = $string19[0]['user']['statuses_count'];
         //Cuahutemoc
-        $bl_usuario = $blanca[0]['user']['screen_name'];
-        $bl_seguidores = $blanca[0]['user']['followers_count'];
-        $bl_siguiendo = $blanca[0]['user']['friends_count'];
-        $bl_tweets = $blanca[0]['user']['statuses_count'];
+        // $bl_usuario = $blanca[0]['user']['screen_name'];
+        // $bl_seguidores = $blanca[0]['user']['followers_count'];
+        // $bl_siguiendo = $blanca[0]['user']['friends_count'];
+        // $bl_tweets = $blanca[0]['user']['statuses_count'];
 
         $UrsuaBlanca_usuario = $UrsuaBlanca[0]['user']['screen_name'];
         $UrsuaBlanca_seguidores = $UrsuaBlanca[0]['user']['followers_count'];
@@ -530,25 +530,25 @@
         $isis2_siguiendo = $isis2[0]['user']['friends_count'];
         $isis2_tweets = $isis2[0]['user']['statuses_count'];
 
-        $alma_deliaA_usuario = $alma_deliaA[0]['user']['screen_name'];
-        $alma_deliaA_seguidores = $alma_deliaA[0]['user']['followers_count'];
-        $alma_deliaA_siguiendo = $alma_deliaA[0]['user']['friends_count'];
-        $alma_deliaA_tweets = $alma_deliaA[0]['user']['statuses_count'];
+        // $alma_deliaA_usuario = $alma_deliaA[0]['user']['screen_name'];
+        // $alma_deliaA_seguidores = $alma_deliaA[0]['user']['followers_count'];
+        // $alma_deliaA_siguiendo = $alma_deliaA[0]['user']['friends_count'];
+        // $alma_deliaA_tweets = $alma_deliaA[0]['user']['statuses_count'];
         //Distrito 4
-        $jan_usuario = $janeth[0]['user']['screen_name'];
-        $jan_seguidores = $janeth[0]['user']['followers_count'];
-        $jan_siguiendo = $janeth[0]['user']['friends_count'];
-        $jan_tweets = $janeth[0]['user']['statuses_count'];
+        // $jan_usuario = $janeth[0]['user']['screen_name'];
+        // $jan_seguidores = $janeth[0]['user']['followers_count'];
+        // $jan_siguiendo = $janeth[0]['user']['friends_count'];
+        // $jan_tweets = $janeth[0]['user']['statuses_count'];
 
-        $jua_usuario = $juanita[0]['user']['screen_name'];
-        $jua_seguidores = $juanita[0]['user']['followers_count'];
-        $jua_siguiendo = $juanita[0]['user']['friends_count'];
-        $jua_tweets = $juanita[0]['user']['statuses_count'];
+        // $jua_usuario = $juanita[0]['user']['screen_name'];
+        // $jua_seguidores = $juanita[0]['user']['followers_count'];
+        // $jua_siguiendo = $juanita[0]['user']['friends_count'];
+        // $jua_tweets = $juanita[0]['user']['statuses_count'];
         //Distrito 5
-        $jos_g_usuario = $jose_guadalupe[0]['user']['screen_name'];
-        $jos_g_seguidores = $jose_guadalupe[0]['user']['followers_count'];
-        $jos_g_siguiendo = $jose_guadalupe[0]['user']['friends_count'];
-        $jos_g_tweets = $jose_guadalupe[0]['user']['statuses_count'];
+        // $jos_g_usuario = $jose_guadalupe[0]['user']['screen_name'];
+        // $jos_g_seguidores = $jose_guadalupe[0]['user']['followers_count'];
+        // $jos_g_siguiendo = $jose_guadalupe[0]['user']['friends_count'];
+        // $jos_g_tweets = $jose_guadalupe[0]['user']['statuses_count'];
         //Distrito 6
         $oc_usuario = $octavio[0]['user']['screen_name'];
         $oc_seguidores = $octavio[0]['user']['followers_count'];
@@ -585,20 +585,20 @@
         $adr_siguiendo = $adriana[0]['user']['friends_count'];
         $adr_tweets = $adriana[0]['user']['statuses_count'];
 
-        $jua_ca_usuario = $juan_carlos[0]['user']['screen_name'];
-        $jua_ca_seguidores = $juan_carlos[0]['user']['followers_count'];
-        $jua_ca_siguiendo = $juan_carlos[0]['user']['friends_count'];
-        $jua_ca_tweets = $juan_carlos[0]['user']['statuses_count'];
+        // $jua_ca_usuario = $juan_carlos[0]['user']['screen_name'];
+        // $jua_ca_seguidores = $juan_carlos[0]['user']['followers_count'];
+        // $jua_ca_siguiendo = $juan_carlos[0]['user']['friends_count'];
+        // $jua_ca_tweets = $juan_carlos[0]['user']['statuses_count'];
         //Distrito 11
         $arm_usuario = $armida[0]['user']['screen_name'];
         $arm_seguidores = $armida[0]['user']['followers_count'];
         $arm_siguiendo = $armida[0]['user']['friends_count'];
         $arm_tweets = $armida[0]['user']['statuses_count'];
         //Distrito 12
-        $ana_maria_usuario = $ana_maria[0]['user']['screen_name'];
-        $ana_maria_seguidores = $ana_maria[0]['user']['followers_count'];
-        $ana_maria_siguiendo = $ana_maria[0]['user']['friends_count'];
-        $ana_maria_tweets = $ana_maria[0]['user']['statuses_count'];
+        // $ana_maria_usuario = $ana_maria[0]['user']['screen_name'];
+        // $ana_maria_seguidores = $ana_maria[0]['user']['followers_count'];
+        // $ana_maria_siguiendo = $ana_maria[0]['user']['friends_count'];
+        // $ana_maria_tweets = $ana_maria[0]['user']['statuses_count'];
 
         $martha_sosa_usuario = $martha_sosa[0]['user']['screen_name'];
         $martha_sosa_seguidores = $martha_sosa[0]['user']['followers_count'];
@@ -644,9 +644,9 @@
                             VALUES ('','$j_usuario','$j_seguidores','$j_siguiendo','$j_tweets','$fecha','$hora')");
         echo "ERROR MYSQL jorge: ".mysql_error()."<br>";
 
-        $martha = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$m_usuario','$m_seguidores','$m_siguiendo','$m_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL martha: ".mysql_error()."<br>";
+        // $martha = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$m_usuario','$m_seguidores','$m_siguiendo','$m_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL martha: ".mysql_error()."<br>";
 
         #Diputados Federales
         echo "<br> Diputados Federales <br>";
@@ -689,14 +689,14 @@
                             VALUES ('','$es_usuario','$es_seguidores','$es_siguiendo','$es_tweets','$fecha','$hora')");
         echo "ERROR MYSQL esmeralda: ".mysql_error()."<br>";
 
-        $OVPresidente = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$OVPresidente_usuario','$OVPresidente_seguidores','$OVPresidente_siguiendo','$OVPresidente_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL OVPresidente: ".mysql_error()."<br>";
+        // $OVPresidente = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$OVPresidente_usuario','$OVPresidente_seguidores','$OVPresidente_siguiendo','$OVPresidente_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL OVPresidente: ".mysql_error()."<br>";
         
         //Manzanillo
-        $pico = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$p_usuario','$p_seguidores','$p_siguiendo','$p_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL pico: ".mysql_error()."<br>";
+        // $pico = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$p_usuario','$p_seguidores','$p_siguiendo','$p_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL pico: ".mysql_error()."<br>";
 
         $marcos = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
                             VALUES ('','$mar_usuario','$mar_seguidores','$mar_siguiendo','$mar_tweets','$fecha','$hora')");
@@ -718,9 +718,9 @@
                             VALUES ('','$JaimeSoteloG_usuario','$JaimeSoteloG_seguidores','$JaimeSoteloG_siguiendo','$JaimeSoteloG_tweets','$fecha','$hora')");
         echo "ERROR MYSQL JaimeSoteloG: ".mysql_error()."<br>";
         //Comala
-        $salomon = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$sa_usuario','$sa_seguidores','$sa_siguiendo','$sa_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL salomon: ".mysql_error()."<br>";
+        // $salomon = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$sa_usuario','$sa_seguidores','$sa_siguiendo','$sa_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL salomon: ".mysql_error()."<br>";
 
         $mario = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
                             VALUES ('','$mario_usuario','$mario_seguidores','$mario_siguiendo','$mario_tweets','$fecha','$hora')");
@@ -730,9 +730,9 @@
                             VALUES ('','$ar_usuario','$ar_seguidores','$ar_siguiendo','$ar_tweets','$fecha','$hora')");
         echo "ERROR MYSQL arturo: ".mysql_error()."<br>";
         //Cuahutemoc
-        $blanca = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$bl_usuario','$bl_seguidores','$bl_siguiendo','$bl_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL blanca: ".mysql_error()."<br>";
+        // $blanca = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$bl_usuario','$bl_seguidores','$bl_siguiendo','$bl_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL blanca: ".mysql_error()."<br>";
 
         $UrsuaBlanca = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
                             VALUES ('','$UrsuaBlanca_usuario','$UrsuaBlanca_seguidores','$UrsuaBlanca_siguiendo','$UrsuaBlanca_tweets','$fecha','$hora')");
@@ -780,21 +780,21 @@
                             VALUES ('','$isis2_usuario','$isis2_seguidores','$isis2_siguiendo','$isis2_tweets','$fecha','$hora')");
         echo "ERROR MYSQL isis2: ".mysql_error()."<br>";
 
-        $alma_deliaA = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$alma_deliaA_usuario','$alma_deliaA_seguidores','$alma_deliaA_siguiendo','$alma_deliaA_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL alma_deliaA: ".mysql_error()."<br>";
+        // $alma_deliaA = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$alma_deliaA_usuario','$alma_deliaA_seguidores','$alma_deliaA_siguiendo','$alma_deliaA_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL alma_deliaA: ".mysql_error()."<br>";
         //Distrito 4
-        $janeth = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$jan_usuario','$jan_seguidores','$jan_siguiendo','$jan_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL janeth: ".mysql_error()."<br>";
+        // $janeth = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$jan_usuario','$jan_seguidores','$jan_siguiendo','$jan_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL janeth: ".mysql_error()."<br>";
 
-        $juanita = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$jua_usuario','$jua_seguidores','$jua_siguiendo','$jua_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL juanita: ".mysql_error()."<br>";
+        // $juanita = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$jua_usuario','$jua_seguidores','$jua_siguiendo','$jua_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL juanita: ".mysql_error()."<br>";
         //Distrito 5
-        $jose_guadalupe = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$jos_g_usuario','$jos_g_seguidores','$jos_g_siguiendo','$jos_g_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL jose_guadalupe: ".mysql_error()."<br>";
+        // $jose_guadalupe = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$jos_g_usuario','$jos_g_seguidores','$jos_g_siguiendo','$jos_g_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL jose_guadalupe: ".mysql_error()."<br>";
         //Distrito 6
         $octavio = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
                             VALUES ('','$oc_usuario','$oc_seguidores','$oc_siguiendo','$oc_tweets','$fecha','$hora')");
@@ -824,9 +824,9 @@
                             VALUES ('','$adr_usuario','$adr_seguidores','$adr_siguiendo','$adr_tweets','$fecha','$hora')");
         echo "ERROR MYSQL adriana: ".mysql_error()."<br>";
 
-        $juan_carlos = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
-                            VALUES ('','$jua_ca_usuario','$jua_ca_seguidores','$jua_ca_siguiendo','$jua_ca_tweets','$fecha','$hora')");
-        echo "ERROR MYSQL juan_carlos: ".mysql_error()."<br>";
+        // $juan_carlos = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
+        //                     VALUES ('','$jua_ca_usuario','$jua_ca_seguidores','$jua_ca_siguiendo','$jua_ca_tweets','$fecha','$hora')");
+        // echo "ERROR MYSQL juan_carlos: ".mysql_error()."<br>";
         //Distrito 11
         $armida = mysql_query("INSERT INTO cuentas (id,usuario,seguidores,siguiendo,tweets,fecha,hora) 
                             VALUES ('','$arm_usuario','$arm_seguidores','$arm_siguiendo','$arm_tweets','$fecha','$hora')");

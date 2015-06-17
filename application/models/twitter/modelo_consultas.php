@@ -18,6 +18,19 @@
 				return 2;
 			}
 		}
+
+		public function verificaUsuario($username, $password)
+		{
+			$passwordC = $this->db->query("SELECT password from login WHERE usuario = 'administrador'");
+
+			if ($password==$passwordC->row('password') and $username=='administrador') {
+				return 1;
+			}
+			else{
+				return 2;
+			}
+		}
+
 		#Gobernadores
 		public function obtener_cuenta_gobernadores($fecha)
 		{
@@ -28,7 +41,7 @@
 			$locho = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 										where fecha = '$fecha'  and usuario = 'leonciomoranL8'");
 			$martha = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-										where fecha = '$fecha'  and usuario = 'MarthaZepeda_'");
+										where fecha = '2015-06-03'  and usuario = 'MarthaZepeda_'");
 		
 			if($nacho->num_rows()>0 and $jorge->num_rows()>0 and $locho->num_rows()>0 and $martha->num_rows()>0)
 			{
@@ -113,11 +126,11 @@
 			$isis = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'IsisColimaVerde'");
 			$janeth = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'JanethPazPonce'");
+									  where fecha = '2015-06-03' and usuario = 'JanethPazPonce'");
 			$juanita = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'JuanitaAndres'");
+									  where fecha = '2015-06-03' and usuario = 'JuanitaAndres'");
 			$lupe = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'LupeBenavidesF'");
+									  where fecha = '2015-06-03' and usuario = 'LupeBenavidesF'");
 			$octavio = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'octaviotintos'");
 			$sara = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
@@ -133,7 +146,7 @@
 			$mesina = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'MesinaTena'");
 			$pinto = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'PintoRgz'");
+									  where fecha = '2015-06-03' and usuario = 'PintoRgz'");
 			$armida = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'Armida_NG'");
 			$amary = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
@@ -149,7 +162,7 @@
 			$yadira = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'yadiraturquesa'");
 			$alma = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'AlmaDelia_D3'");
+									  where fecha = '2015-06-03' and usuario = 'AlmaDelia_D3'");
 			$marthaS = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'martha_sosa1'");
 
@@ -227,7 +240,7 @@
 			$esmeralda = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'EsmePresidenta'");
 			$pico = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'PicoZepeda'");
+									  where fecha = '2015-06-03' and usuario = 'PicoZepeda'");
 			$marcos = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'BarajasYescas'");
 			$yulenny = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
@@ -235,13 +248,13 @@
 			$oswy = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'OswyDelgado'");
 			$salomon = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'salo_salazar1'");
+									  where fecha = '2015-06-03' and usuario = 'salo_salazar1'");
 			$mario = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'MarioCarrillo01'");
 			$arturo = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'DipArturoGarcia'");
 			$blanca = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'BlancaPRI2015'");
+									  where fecha = '2015-06-03' and usuario = 'BlancaPRI2015'");
 			$manuel = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'DipManuelPR'");
 			$esperanza = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
@@ -250,7 +263,7 @@
 									  where fecha = '$fecha' and usuario = 'hiram1447'");
 			#NUEVOS
 			$oscar = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
-									  where fecha = '$fecha' and usuario = 'OVPresidente'");
+									  where fecha = '2015-06-03' and usuario = 'OVPresidente'");
 			$jaime = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
 									  where fecha = '$fecha' and usuario = 'JaimeSoteloG'");
 			$ruben = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets from cuentas 
@@ -426,6 +439,17 @@
 			}
 		}
 
+		public function obtener_cuenta_comoVamos_rango($fecha_inicio,$fecha_fin)
+		{
+			$comoVamos = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
+									  where usuario = 'Comovamoscolima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin' 
+									  ORDER BY fecha ASC");
+			$a = array(
+                "comoVamos" => $comoVamos->result()
+            );
+            return $a;
+		}
+
 		public function menciones_gobernadores()
 		{
 			$nacho = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
@@ -469,13 +493,74 @@
 									WHERE menciones LIKE '%Rangel_G_%' group by fecha");
 			$alma = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
 									WHERE menciones LIKE '%AlmaDelia_D3%' group by fecha");
+			$janeth = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%JanethPazPonce%' group by fecha");
 			$juanita = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%SantiagoCh2Tec%' group by fecha");
+									WHERE menciones LIKE '%JuanitaAndres%' group by fecha");
+			$lupe = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%LupeBenavidesF%' group by fecha");
+			$octavio = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%octaviotintos%' group by fecha");
+			$sara = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%saracernas%' group by fecha");
+			$hector = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%hectormlara%' group by fecha");
+			$juan = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%PintoRgz%' group by fecha");
+			$armida = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%Armida_NG%' group by fecha");
+			$martha = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%martha_sosa1%' group by fecha");
 			$a = array(
 	            "hilda" => $hilda->result(),
 	            "guillermo" => $guillermo->result(),
 	            "alma" => $alma->result(),
-	            "juanita" => $juanita->result()
+	            "janeth" => $janeth->result(),
+	            "juanita" => $juanita->result(),
+	            "lupe" => $lupe->result(),
+	            "octavio" => $octavio->result(),
+	            "sara" => $sara->result(),
+	            "hector" => $hector->result(),
+	            "juan" => $juan->result(),
+	            "armida" => $armida->result(),
+	            "martha" => $martha->result()
+	        );
+	        return $a;
+		}
+
+		public function menciones_Presidentes()
+		{
+			$esperanza = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%DipEsperanzaA%' group by fecha");
+			$oscar = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%OVPresidente%' group by fecha");
+			$hector = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%hectorinsua%' group by fecha");
+			$abaroa = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%meabaroa%' group by fecha");
+			$esmeralda = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%EsmePresidenta%' group by fecha");
+			$salomon = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%salo_salazar1%' group by fecha");
+			$blanca = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%BlancaPRI2015%' group by fecha");
+			$pico = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%PicoZepeda%' group by fecha");
+			$arturo = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%DipArturoGarcia%' group by fecha");
+			$oswy = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
+									WHERE menciones LIKE '%OswyDelgado%' group by fecha");
+			$a = array(
+	            "esperanza" => $esperanza->result(),
+	            "oscar" => $oscar->result(),
+	            "hector" => $hector->result(),
+	            "abaroa" => $abaroa->result(),
+	            "esmeralda" => $esmeralda->result(),
+	            "salomon" => $salomon->result(),
+	            "blanca" => $blanca->result(),
+	            "pico" => $pico->result(),
+	            "arturo" => $arturo->result(),
+	            "oswy" => $oswy->result()
 	        );
 	        return $a;
 		}

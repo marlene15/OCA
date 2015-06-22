@@ -59,7 +59,7 @@
                       <div class="bs-example bs-example-tabs">
                         <ul class="nav nav-tabs" id="myTab">
                           <li class="active"><a data-toggle="tab" href="#barras1">Gráfica</a></li>
-                          <li class=""><a data-toggle="tab" href="#barras2">Nube de Palabras</a></li>
+                          <li class=""><a data-toggle="tab" href="#nube">Nube de Palabras</a></li>
                         </ul>
                         <div class="tab-content" id="tabs">
                         <!--Primer tab-->
@@ -104,7 +104,7 @@
                                     <tbody>                         
                                     <!-- Aplicadas en las celdas (<td> o <th>) -->
                                       <tr>
-                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVE.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
+                                        <td class="active"><center><img src="<?php echo base_url()?>assets/logos_partidos/PRI.jpg" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PVEM.gif" class="img-responsive center-block" width="30" height="30"><img src="<?php echo base_url()?>assets/logos_partidos/PNAL.png" class="img-responsive center-block" width="30" height="30"></center></td>
                                         <td class="success"><center>José Ignacio Peralta</center></td>                                      
                                       </tr>
                                       <tr>
@@ -144,15 +144,26 @@
                         <!--Segundo tab-->
                           <div id="nube" class="tab-pane fade ">  
                             <div class="row-fluid">
-                              <div class="span12">  
-                                <button id="go" type="submit" onclick="nube();" class="btn btn-success btn-lg" title="Actualizar">Actualizar</button>
-                                <br/><br/>
+                              <div class="span10">  
                                 <div id="container">
                                   <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>    
+                                  <center><div id="nube_consulta" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>
                                 </div>                           
                               </div>
+                              <div class="span2">
+                                </br></br>
+                                <div class="btn-toolbar" align="left"> 
+                                  <div class="btn-group-vertical">
+                                    <a class="btn btn-success btn-lg active" id="consulta_nube"> Marzo</a>
+                                    <a class="btn btn-primary btn-lg" id="consulta_nube2"> Abril</a>
+                                    <a class="btn btn-primary btn-lg" id="consulta_nube3"> Mayo</a>
+                                    <a class="btn btn-primary btn-lg" id="consulta_nube4"> Junio</a>
+                                  </div>
+                                </div>
+                              </div>                               
                             </div>                      
-                          </div>                                                                                                                                  
+                          </div>
+
                         </div>
                       </div>
                     </center>
@@ -268,6 +279,86 @@
           }
         });            
       });
+
+      $("#consulta_nube").click(function(event) {
+        $("#consulta_nube").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');       
+        var parametros = {
+                "mes" : '03'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      }); 
+
+      $("#consulta_nube2").click(function(event) {
+        $("#consulta_nube2").addClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');         
+        var parametros = {
+                "mes" : '04'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube3").click(function(event) {
+        $("#consulta_nube3").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube4").removeClass('active btn-success'); 
+        var parametros = {
+                "mes" : '05'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube4").click(function(event) {
+        $("#consulta_nube4").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success'); 
+        $("#consulta_nube").addClass('btn-primary');
+        var parametros = {
+                "mes" : '06'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_gobernadores');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+      
     });           
   </script>
 

@@ -53,9 +53,14 @@ class Controlador_inicio extends CI_Controller {
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
 		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha2 = $this->fechas->fecha_dd_mes_aaaa2($ultima_fecha);
 		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 		
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+		
 		$mes='03';
+		// echo "a =".$ultima_fecha;
+		// print_r($gobernadores);
+		// echo "a2 =".$ultima_fecha2;
 		$data = array(
 			                "megustaci" => $gobernadores['nacho']->Megusta,
 			                "seguidoresci" => $gobernadores['nacho']->PersonasHablan,
@@ -91,11 +96,11 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
-		// echo $ultima_fecha;	
 		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha2 = $this->fechas->fecha_dd_mes_aaaa2($ultima_fecha);
 		$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 		
 		$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 				
-		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);				
+		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);	
 		$data = array(
 			                //Distrito I
 			                "megustacj" => $dip1['josemanuel']->Megusta,
@@ -287,6 +292,7 @@ class Controlador_inicio extends CI_Controller {
 			$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 			$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
 			$ultima_fecha = $ultima_fecha->ultima_fecha;
+			$ultima_fecha2 = $this->fechas->fecha_dd_mes_aaaa2($ultima_fecha);
 			$resultado = $this->modelo_consultas->obtener_cuenta_dip_locales($ultima_fecha); 	
 			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 			
@@ -539,12 +545,7 @@ class Controlador_inicio extends CI_Controller {
 	//CANDIDATOS POR PARTIDO
 	public function partidost()
 	{
-		// $this->load->library('fechas'); //Cargar la librería que convierte las fechas			
-		// $ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha2();
-		// echo $ultima_fecha;	
-		// $ultima_fecha = $ultima_fecha->ultima_fecha;
-		$gobernadores = $this->modelo_inicio->obtener_cuenta_partidos(); 		
-		// $fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+		$gobernadores = $this->modelo_consultas->obtener_cuenta_partidos(); 
 		$data = array(
 			                "pri" => $gobernadores['pri'],
 			                "pan" => $gobernadores['pan'],
@@ -558,12 +559,20 @@ class Controlador_inicio extends CI_Controller {
 			                "ph" => $gobernadores['ph']
 			            );
 			$this->load->view('facebook/partidos',$data);
-	}		
+	}
+
+
 	//Valoracion de comentarios para gobernador
 	public function valoracion_gobernadores()
 	{
 		$nacho = $this->modelo_inicio->valoracion_nacho();
 		$jorge = $this->modelo_inicio->valoracion_jorge();
+		$martha = $this->modelo_inicio->valoracion_martha();
+		$locho = $this->modelo_inicio->valoracion_locho();
+		$david = $this->modelo_inicio->valoracion_david();
+		$jose = $this->modelo_inicio->valoracion_jose();
+		$gerardo = $this->modelo_inicio->valoracion_gerardo();
+		$carlos = $this->modelo_inicio->valoracion_carlos();						
 
 		$datos = array(
 					  'nachoP' => $nacho['positivos'],
@@ -571,10 +580,118 @@ class Controlador_inicio extends CI_Controller {
 					  'nachoN' => $nacho['neutros'],
 					  'jorgeP' => $jorge['positivos'],
 					  'jorgeNe' => $jorge['negativos'],
-					  'jorgeN' => $jorge['neutros']
+					  'jorgeN' => $jorge['neutros'],
+					  'marthaP' => $martha['positivos'],
+					  'marthaNE' => $martha['negativos'],
+					  'marthaN' => $martha['neutros'],
+					  'lochoP' => $locho['positivos'],
+					  'lochoNe' => $locho['negativos'],
+					  'lochoN' => $locho['neutros'],
+					  'davidP' => $david['positivos'],
+					  'davidNe' => $david['negativos'],
+					  'davidN' => $david['neutros'],
+					  'joseP' => $jose['positivos'],
+					  'joseNe' => $jose['negativos'],
+					  'joseN' => $jose['neutros'],
+					  'gerardoP' => $gerardo['positivos'],
+					  'gerardoNe' => $gerardo['negativos'],
+					  'gerardoN' => $gerardo['neutros'],
+					  'carlosP' => $carlos['positivos'],
+					  'carlosNe' => $carlos['negativos'],
+					  'carlosN' => $carlos['neutros']
 					  );
 		$this->load->view('facebook/valoracionGobernadores',$datos);
-	}		
+	}	
+	public function valoracion_DF()
+	{
+		$enriquerojas = $this->modelo_inicio->valoracion_enrique();
+		$josemanuel = $this->modelo_inicio->valoracion_josemanuel();
+		$indiravizcaino = $this->modelo_inicio->valoracion_indira();
+		$silviadias = $this->modelo_inicio->valoracion_silvia();
+
+		$datos = array(
+					  'enriqueP' => $enriquerojas['positivos'],
+					  'enriqueNe' => $enriquerojas['negativos'],
+					  'enriqueN' => $enriquerojas['neutros'],
+					  'joseP' => $josemanuel['positivos'],
+					  'joseNe' => $josemanuel['negativos'],
+					  'joseN' => $josemanuel['neutros'],
+					  'indiraP' => $indiravizcaino['positivos'],
+					  'indiraNE' => $indiravizcaino['negativos'],
+					  'indiraN' => $indiravizcaino['neutros'],
+					  'silviaP' => $silviadias['positivos'],
+					  'silviaNe' => $silviadias['negativos'],
+					  'silviaN' => $silviadias['neutros']
+					  );
+		$this->load->view('facebook/valoracionDF',$datos);
+	}
+	public function valoracion_DL()
+		{
+			$hildamoreno = $this->modelo_inicio->valoracion_hilda();
+			$jose = $this->modelo_inicio->valoracion_jose2();
+			$Leonardo = $this->modelo_inicio->valoracion_leonardo();
+			$nicolas = $this->modelo_inicio->valoracion_nicolas();
+			$guillermo = $this->modelo_inicio->valoracion_guillermo();
+
+			$datos = array(
+						  'hildaP' => $hildamoreno['positivos'],
+						  'hildaNe' => $hildamoreno['negativos'],
+						  'hildaN' => $hildamoreno['neutros'],
+						  'joseP' => $jose['positivos'],
+						  'joseNe' => $jose['negativos'],
+						  'joseN' => $jose['neutros'],
+						  'leonardoP' => $Leonardo['positivos'],
+						  'leonardoNE' => $Leonardo['negativos'],
+						  'leonardoN' => $Leonardo['neutros'],
+						  'nicolasP' => $nicolas['positivos'],
+						  'nicolasNe' => $nicolas['negativos'],
+						  'nicolasN' => $nicolas['neutros'],
+						  'guillermoP' => $guillermo['positivos'],
+						  'guillermoNe' => $guillermo['negativos'],
+						  'guillermoN' => $guillermo['neutros']						  
+						  );
+			$this->load->view('facebook/valoracionDL',$datos);
+		}			
+
+	public function valoracion_PM()
+	{
+		$esperanzapm = $this->modelo_inicio->valoracion_pm1();
+		$Miguelpm = $this->modelo_inicio->valoracion_pm2();
+		$Héctorpm = $this->modelo_inicio->valoracion_pm3();
+		$Oscarpm = $this->modelo_inicio->valoracion_pm4();
+		$Zenaidapm = $this->modelo_inicio->valoracion_pm5();
+		$Mariopm1 = $this->modelo_inicio->valoracion_pm6();
+		$Mariopm2 = $this->modelo_inicio->valoracion_pm7();
+		$salomonpm = $this->modelo_inicio->valoracion_pm8();
+
+		$datos = array(
+					  'cpm1P' => $esperanzapm['positivos'],
+					  'cpm1Ne' => $esperanzapm['negativos'],
+					  'cpm1N' => $esperanzapm['neutros'],
+					  'cpm2P' => $Miguelpm['positivos'],
+					  'cpm2Ne' => $Miguelpm['negativos'],
+					  'cpm2N' => $Miguelpm['neutros'],
+					  'cpm3P' => $Héctorpm['positivos'],
+					  'cpm3NE' => $Héctorpm['negativos'],
+					  'cpm3N' => $Héctorpm['neutros'],
+					  'cpm4P' => $Oscarpm['positivos'],
+					  'cpm4Ne' => $Oscarpm['negativos'],
+					  'cpm4N' => $Oscarpm['neutros'],
+					  'cpm5P' => $Zenaidapm['positivos'],
+					  'cpm5Ne' => $Zenaidapm['negativos'],
+					  'cpm1N' => $Zenaidapm['neutros'],
+					  'cpm6P' => $Mariopm1['positivos'],
+					  'cpm6Ne' => $Mariopm1['negativos'],
+					  'cpm6N' => $Mariopm1['neutros'],	
+					  'cpm7P' => $Mariopm2['positivos'],
+					  'cpm7Ne' => $Mariopm2['negativos'],
+					  'cpm7N' => $Mariopm2['neutros'],		
+					  'cpm8P' => $salomonpm['positivos'],
+					  'cpm8Ne' => $salomonpm['negativos'],
+					  'cpm8N' => $salomonpm['neutros']							  					  							  
+					  );
+		$this->load->view('facebook/valoracionPM',$datos);
+	}
 	//Rumbo al 7 de Junio
 	public function rumbo()
 	{

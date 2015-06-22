@@ -47,18 +47,17 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </li>
                             <li>
                                 <i class="icon-user"></i>
-                                Candidato
+                                <a href="javascript:;">Candidato</a> 
                                 <i class="icon-angle-right"></i>
                             </li>
                             <li>
                                 <i class="icon-twitter"></i>
-                                Facebook
+                                <a href="javascript:;">Facebook</a> 
                                 <i class="icon-angle-right"></i>
                             </li>
                             <li>
                                 <i class="icon-briefcase"></i>
-                                Gobernador
-                                <i class="icon-angle-right"></i>
+                                <a href="javascript:;">Diputado Local</a> 
                             </li>
                         </ul>
                     </div>
@@ -69,18 +68,29 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
-                              <li class="active"><a data-toggle="tab" href="#nacho">Nacho Peralta</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Jorge Luis Preciado</a></li>
-                              <li class=""><a data-toggle="tab" href="#martha">Martha Zepeda</a></li>
-                              <li class=""><a data-toggle="tab" href="#locho">Locho Morán</a></li>
-                              <li class=""><a data-toggle="tab" href="#david">David Munro González</a></li>
-                              <li class=""><a data-toggle="tab" href="#jose">José Francisco Gallardo Rodríguez</a></li>
-                              <li class=""><a data-toggle="tab" href="#gerardo">Gerardo Galván Pinto</a></li>
-                              <li class=""><a data-toggle="tab" href="#carlos">Carlos Barbazán Martínez</a></li>
+                              <li class="active"><a data-toggle="tab" href="#cd1">Esperanza Alcaraz</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd2">Miguel Ruelas</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd3">Héctor Insúa</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd4">Oscar Valdovinos</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd5">Zenaida Vicente</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd6">Mario Carrillo</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd7">Mario Peña</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd8">Salomón Salazar</a></li>
+                              <!-- <li class=""><a data-toggle="tab" href="#jorge">Guillermo Rángel</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Sandra Ramírez</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">José García</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Arturo García</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Liliana Rodríguez</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Janeth Paz Ponce</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Juana Andrés Rivera</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Sergio Ricardo Ruiz</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Andrés Fernando Orozco Soto</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Ramiro Toscano</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">José Benavides</a></li> -->
                             </ul>
                               <div class="tab-content" id="myTabContent">
 
-                                <div id="jorge" class="tab-pane fade"> 
+                                <div id="cd1" class="tab-pane fade active in"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -120,7 +130,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>                                                               
                                 </div>
 
-                                <div id="nacho" class="tab-pane active in">
+                                <div id="cd2" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -158,9 +168,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div> 
                                         </div>
                                     </div>
-                                </div>
-
-                                <div id="martha" class="tab-pane">
+                                 </div>   
+                                <div id="cd3" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -198,9 +207,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div> 
                                         </div>
                                     </div>
-                                </div>   
-                               
-                                <div id="locho" class="tab-pane">
+                                </div>
+                                <div id="cd4" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -239,8 +247,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         </div>
                                     </div>
                                 </div>
-
-                                <div id="david" class="tab-pane">
+                                <div id="cd5" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -279,8 +286,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         </div>
                                     </div>
                                 </div>
-
-                                <div id="jose" class="tab-pane">
+                                <div id="cd6" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -318,9 +324,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div> 
                                         </div>
                                     </div>
-                                </div>
-
-                                <div id="gerardo" class="tab-pane">
+                                </div> 
+                                <div id="cd7" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -358,9 +363,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div> 
                                         </div>
                                     </div>
-                                </div>
-
-                                <div id="carlos" class="tab-pane">
+                                </div> 
+                                <div id="cd8" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -398,8 +402,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div> 
                                         </div>
                                     </div>
-                                </div>
-
+                                </div>                                                                                              
                              </div>  <!--Cierra div de los tabs-->                                            
                         </div>
                     </div>              
@@ -446,38 +449,39 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     config3.waveHeight = 0.15;   
 
 
-    //Datos jorge
-    loadLiquidFillGauge("fillgauge1", <?php echo $nachoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge2", <?php echo $nachoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge3", <?php echo $nachoN; ?>, config3);
-    //Datos nacho
-    loadLiquidFillGauge("fillgauge4", <?php echo $jorgeP; ?>, config1);
-    loadLiquidFillGauge("fillgauge5", <?php echo $jorgeNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge6", <?php echo $jorgeN; ?>, config3);
-    //Datos martha
-    loadLiquidFillGauge("fillgauge7", <?php echo $marthaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge8", <?php echo $marthaNE; ?>, config2);
-    loadLiquidFillGauge("fillgauge9", <?php echo $marthaN; ?>, config3);    
-    //Datos locho
-    loadLiquidFillGauge("fillgauge10", <?php echo $lochoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge11", <?php echo $lochoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge12", <?php echo $lochoN; ?>, config3);    
-    //Datos david
-    loadLiquidFillGauge("fillgauge13", <?php echo $davidP; ?>, config1);
-    loadLiquidFillGauge("fillgauge14", <?php echo $davidNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge15", <?php echo $davidN; ?>, config3);    
+    //Datos hilda
+    loadLiquidFillGauge("fillgauge1", <?php echo $cpm1P; ?>, config1);
+    loadLiquidFillGauge("fillgauge2", <?php echo $cpm1Ne; ?>, config2);
+    loadLiquidFillGauge("fillgauge3", <?php echo $cpm1N; ?>, config3);
     //Datos jose
-    loadLiquidFillGauge("fillgauge16", <?php echo $joseP; ?>, config1);
-    loadLiquidFillGauge("fillgauge17", <?php echo $joseNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge18", <?php echo $joseN; ?>, config3);    
-    //Datos gerardo
-    loadLiquidFillGauge("fillgauge19", <?php echo $gerardoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge20", <?php echo $gerardoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge21", <?php echo $gerardoN; ?>, config3);    
-    //Datos carlos
-    loadLiquidFillGauge("fillgauge22", <?php echo $carlosP; ?>, config1);
-    loadLiquidFillGauge("fillgauge23", <?php echo $carlosNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge24", <?php echo $carlosN; ?>, config3);    
+    loadLiquidFillGauge("fillgauge4", <?php echo $cpm2P; ?>, config1);
+    loadLiquidFillGauge("fillgauge5", <?php echo $cpm2Ne; ?>, config2);
+    loadLiquidFillGauge("fillgauge6", <?php echo $cpm2N; ?>, config3);
+    //Datos leonardo
+    loadLiquidFillGauge("fillgauge7", <?php echo $cpm3P; ?>, config1);
+    loadLiquidFillGauge("fillgauge8", <?php echo $cpm3NE; ?>, config2);
+    loadLiquidFillGauge("fillgauge9", <?php echo $cpm3N; ?>, config3);     
+    //Datos nicolas
+    loadLiquidFillGauge("fillgauge10", <?php echo $cpm4P; ?>, config1);
+    loadLiquidFillGauge("fillgauge11", <?php echo $cpm4Ne; ?>, config2);
+    loadLiquidFillGauge("fillgauge12", <?php echo $cpm4N; ?>, config3); 
+    //Datos guillermo
+    loadLiquidFillGauge("fillgauge13", <?php echo $cpm5P; ?>, config1);
+    loadLiquidFillGauge("fillgauge14", <?php echo $cpm5Ne; ?>, config2);
+    loadLiquidFillGauge("fillgauge15", <?php echo $cpm1N; ?>, config3);              
+
+    //Datos leonardo
+    loadLiquidFillGauge("fillgauge16", <?php echo $cpm6P; ?>, config1);
+    loadLiquidFillGauge("fillgauge17", <?php echo $cpm6Ne; ?>, config2);
+    loadLiquidFillGauge("fillgauge18", <?php echo $cpm6N; ?>, config3);     
+    //Datos nicolas
+    loadLiquidFillGauge("fillgauge19", <?php echo $cpm7P; ?>, config1);
+    loadLiquidFillGauge("fillgauge20", <?php echo $cpm7Ne; ?>, config2);
+    loadLiquidFillGauge("fillgauge21", <?php echo $cpm7N; ?>, config3); 
+    //Datos guillermo
+    loadLiquidFillGauge("fillgauge22", <?php echo $cpm8P; ?>, config1);
+    loadLiquidFillGauge("fillgauge23", <?php echo $cpm8Ne; ?>, config2);
+    loadLiquidFillGauge("fillgauge24", <?php echo $cpm8N; ?>, config3);     
 </script>
     <!--Funcion para ajustar la grafica al expander el menú-->
       <script type="text/javascript">

@@ -47,18 +47,17 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </li>
                             <li>
                                 <i class="icon-user"></i>
-                                Candidato
+                                <a href="javascript:;">Candidato</a> 
                                 <i class="icon-angle-right"></i>
                             </li>
                             <li>
                                 <i class="icon-twitter"></i>
-                                Facebook
+                                <a href="javascript:;">Facebook</a> 
                                 <i class="icon-angle-right"></i>
                             </li>
                             <li>
                                 <i class="icon-briefcase"></i>
-                                Gobernador
-                                <i class="icon-angle-right"></i>
+                                <a href="javascript:;">Diputado Local</a> 
                             </li>
                         </ul>
                     </div>
@@ -69,18 +68,31 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
-                              <li class="active"><a data-toggle="tab" href="#nacho">Nacho Peralta</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Jorge Luis Preciado</a></li>
-                              <li class=""><a data-toggle="tab" href="#martha">Martha Zepeda</a></li>
-                              <li class=""><a data-toggle="tab" href="#locho">Locho Morán</a></li>
-                              <li class=""><a data-toggle="tab" href="#david">David Munro González</a></li>
-                              <li class=""><a data-toggle="tab" href="#jose">José Francisco Gallardo Rodríguez</a></li>
-                              <li class=""><a data-toggle="tab" href="#gerardo">Gerardo Galván Pinto</a></li>
-                              <li class=""><a data-toggle="tab" href="#carlos">Carlos Barbazán Martínez</a></li>
+                              <li class="active"><a data-toggle="tab" href="#hilda">Hilda Ceballos</a></li>
+                              <li class=""><a data-toggle="tab" href="#jose">José Cardenas</a></li>
+                              <li class=""><a data-toggle="tab" href="#leonardo">Leonardo Gutiérrez</a></li>
+                              <li class=""><a data-toggle="tab" href="#nicolas">Nicólas Contreras</a></li>
+                              <li class=""><a data-toggle="tab" href="#guillermo">Guillermo Rángel</a></li>
+<!--                               <li class=""><a data-toggle="tab" href="#jorge">Sandra Ramírez</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">José García</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Arturo García</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Liliana Rodríguez</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Nicólas Contreras</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Guillermo Rángel</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Sandra Ramírez</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">José García</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Arturo García</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Liliana Rodríguez</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Janeth Paz Ponce</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Juana Andrés Rivera</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Sergio Ricardo Ruiz</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Andrés Fernando Orozco Soto</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">Ramiro Toscano</a></li>
+                              <li class=""><a data-toggle="tab" href="#jorge">José Benavides</a></li> -->
                             </ul>
                               <div class="tab-content" id="myTabContent">
 
-                                <div id="jorge" class="tab-pane fade"> 
+                                <div id="hilda" class="tab-pane fade active in"> 
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -120,7 +132,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     </div>                                                               
                                 </div>
 
-                                <div id="nacho" class="tab-pane active in">
+                                <div id="jose" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -158,9 +170,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div> 
                                         </div>
                                     </div>
-                                </div>
-
-                                <div id="martha" class="tab-pane">
+                                 </div>   
+                                <div id="leonardo" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -198,9 +209,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                             </div> 
                                         </div>
                                     </div>
-                                </div>   
-                               
-                                <div id="locho" class="tab-pane">
+                                </div>
+                                <div id="nicolas" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -239,8 +249,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         </div>
                                     </div>
                                 </div>
-
-                                <div id="david" class="tab-pane">
+                                <div id="guillermo" class="tab-pane">
                                     <div class="container-fluid">
                                         <div class="row-fluid">
                                             <div class="span12">                                          
@@ -279,127 +288,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                         </div>
                                     </div>
                                 </div>
-
-                                <div id="jose" class="tab-pane">
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-comments-alt"></i>
-                                                        <h3>Valoración de Comentarios</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content">                                          
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge16" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Positivos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge17" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Negativos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge18" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Neutros</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                            <br/>
-                                                        </div>   
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="gerardo" class="tab-pane">
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-comments-alt"></i>
-                                                        <h3>Valoración de Comentarios</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content">                                          
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge19" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Positivos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge20" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Negativos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge21" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Neutros</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                            <br/>
-                                                        </div>   
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="carlos" class="tab-pane">
-                                    <div class="container-fluid">
-                                        <div class="row-fluid">
-                                            <div class="span12">                                          
-                                                <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
-                                                    <div class="widget-header" style="background: #B20034">
-                                                        <i class="icon-comments-alt"></i>
-                                                        <h3>Valoración de Comentarios</h3>                                                    
-                                                    </div>
-                                                    <div class="widget-content">                                          
-                                                        <div class="container-fluid">
-                                                            <div class="row-fluid">
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge22" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Positivos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge23" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Negativos</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                                <div class="span4">
-                                                                    <center>
-                                                                        <svg id="fillgauge24" width="250" height="200" preserveAspectRatio="xMidYMid" viewBox="-22 -41 300 300"></svg>
-                                                                        <div><strong>Comentarios Neutros</strong></div>
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                            <br/>
-                                                        </div>   
-                                                    </div>
-                                                </div> 
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div>
-
                              </div>  <!--Cierra div de los tabs-->                                            
                         </div>
                     </div>              
@@ -446,38 +334,26 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     config3.waveHeight = 0.15;   
 
 
-    //Datos jorge
-    loadLiquidFillGauge("fillgauge1", <?php echo $nachoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge2", <?php echo $nachoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge3", <?php echo $nachoN; ?>, config3);
-    //Datos nacho
-    loadLiquidFillGauge("fillgauge4", <?php echo $jorgeP; ?>, config1);
-    loadLiquidFillGauge("fillgauge5", <?php echo $jorgeNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge6", <?php echo $jorgeN; ?>, config3);
-    //Datos martha
-    loadLiquidFillGauge("fillgauge7", <?php echo $marthaP; ?>, config1);
-    loadLiquidFillGauge("fillgauge8", <?php echo $marthaNE; ?>, config2);
-    loadLiquidFillGauge("fillgauge9", <?php echo $marthaN; ?>, config3);    
-    //Datos locho
-    loadLiquidFillGauge("fillgauge10", <?php echo $lochoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge11", <?php echo $lochoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge12", <?php echo $lochoN; ?>, config3);    
-    //Datos david
-    loadLiquidFillGauge("fillgauge13", <?php echo $davidP; ?>, config1);
-    loadLiquidFillGauge("fillgauge14", <?php echo $davidNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge15", <?php echo $davidN; ?>, config3);    
+    //Datos hilda
+    loadLiquidFillGauge("fillgauge1", <?php echo $hildaP; ?>, config1);
+    loadLiquidFillGauge("fillgauge2", <?php echo $hildaNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge3", <?php echo $hildaN; ?>, config3);
     //Datos jose
-    loadLiquidFillGauge("fillgauge16", <?php echo $joseP; ?>, config1);
-    loadLiquidFillGauge("fillgauge17", <?php echo $joseNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge18", <?php echo $joseN; ?>, config3);    
-    //Datos gerardo
-    loadLiquidFillGauge("fillgauge19", <?php echo $gerardoP; ?>, config1);
-    loadLiquidFillGauge("fillgauge20", <?php echo $gerardoNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge21", <?php echo $gerardoN; ?>, config3);    
-    //Datos carlos
-    loadLiquidFillGauge("fillgauge22", <?php echo $carlosP; ?>, config1);
-    loadLiquidFillGauge("fillgauge23", <?php echo $carlosNe; ?>, config2);
-    loadLiquidFillGauge("fillgauge24", <?php echo $carlosN; ?>, config3);    
+    loadLiquidFillGauge("fillgauge4", <?php echo $joseP; ?>, config1);
+    loadLiquidFillGauge("fillgauge5", <?php echo $joseNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge6", <?php echo $joseN; ?>, config3);
+    //Datos leonardo
+    loadLiquidFillGauge("fillgauge7", <?php echo $leonardoP; ?>, config1);
+    loadLiquidFillGauge("fillgauge8", <?php echo $leonardoNE; ?>, config2);
+    loadLiquidFillGauge("fillgauge9", <?php echo $leonardoN; ?>, config3);     
+    //Datos nicolas
+    loadLiquidFillGauge("fillgauge10", <?php echo $nicolasP; ?>, config1);
+    loadLiquidFillGauge("fillgauge11", <?php echo $nicolasNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge12", <?php echo $nicolasN; ?>, config3); 
+    //Datos guillermo
+    loadLiquidFillGauge("fillgauge13", <?php echo $guillermoP; ?>, config1);
+    loadLiquidFillGauge("fillgauge14", <?php echo $guillermoNe; ?>, config2);
+    loadLiquidFillGauge("fillgauge15", <?php echo $guillermoN; ?>, config3);              
 </script>
     <!--Funcion para ajustar la grafica al expander el menú-->
       <script type="text/javascript">

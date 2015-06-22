@@ -1120,6 +1120,606 @@ class Modelo_inicio extends CI_Model
             );
             return $a;
 		}	
+		//Obtener valoracion de comentarios de martha zepeda
+		public function valoracion_martha()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Martha Zepeda'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Martha Zepeda'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Martha Zepeda'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+		//Obtener valoracion de comentarios de locho
+		public function valoracion_locho()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Locho Morán'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Locho Morán'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Locho Morán'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de locho
+		public function valoracion_david()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'David Munro González'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'David Munro González'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'David Munro González'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de jose
+		public function valoracion_jose()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'José Gallardo'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'José Gallardo'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'José Gallardo'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}		
+		//Obtener valoracion de comentarios de gerardo
+		public function valoracion_gerardo()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Gerardo Galván'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Gerardo Galván'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Gerardo Galván'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de carlos
+		public function valoracion_carlos()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Carlos Barbazán'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Carlos Barbazán'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Carlos Barbazán'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de enrique
+		public function valoracion_enrique()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Enrique Rojas'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Enrique Rojas'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Enrique Rojas'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de josemanuel
+		public function valoracion_josemanuel()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Jose Manuel'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Jose Manuel'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Jose Manuel'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de indira
+		public function valoracion_indira()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Indira Vizcaíno'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Indira Vizcaíno'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Indira Vizcaíno'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}		
+		//Obtener valoracion de comentarios de silvia
+		public function valoracion_silvia()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Silvía Díaz'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Silvía Díaz'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Silvía Díaz'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de hilda
+		public function valoracion_hilda()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Hilda Ceballos'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Hilda Ceballos'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Hilda Ceballos'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de jose
+		public function valoracion_jose2()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'José Cardenas'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'José Cardenas'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'José Cardenas'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+		//Obtener valoracion de comentarios de leoanrdo
+		public function valoracion_leonardo()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Leonardo Gutiérrez'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Leonardo Gutiérrez'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Leonardo Gutiérrez'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+		//Obtener valoracion de comentarios de nicolas
+		public function valoracion_nicolas()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Nicólas Contreras'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Nicólas Contreras'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Nicólas Contreras'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}		
+		//Obtener valoracion de comentarios de nicolas
+		public function valoracion_guillermo()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Guillermo Rángel'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Guillermo Rángel'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Guillermo Rángel'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+
+		//Obtener valoracion de comentarios de pm1
+		public function valoracion_pm1()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Esperanza Alcaraz'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Esperanza Alcaraz'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Esperanza Alcaraz'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+
+		//Obtener valoracion de comentarios de pm2
+		public function valoracion_pm2()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Miguel Ruelas'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Miguel Ruelas'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Miguel Ruelas'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de pm3
+		public function valoracion_pm3()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Héctor Insúa'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Héctor Insúa'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Héctor Insúa'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de pm4
+		public function valoracion_pm4()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Oscar Valdovinos'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Oscar Valdovinos'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Oscar Valdovinos'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de pm5
+		public function valoracion_pm5()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Zenaida Vicente'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Zenaida Vicente'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Zenaida Vicente'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de pm6
+		public function valoracion_pm6()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Mario Carrillo'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Mario Carrillo'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Mario Carrillo'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}		
+		//Obtener valoracion de comentarios de pm7
+		public function valoracion_pm7()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Mario Peña'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Mario Peña'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Mario Peña'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}		
+		//Obtener valoracion de comentarios de pm8
+		public function valoracion_pm8()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Salomón Salazar'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Salomón Salazar'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Salomón Salazar'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}		
 		//Obtener cuenta de Comovamoscolima
 		public function obtener_cuenta_comoVamos()
 		{

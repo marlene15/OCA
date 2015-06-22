@@ -24,6 +24,16 @@ class Fechas
         $fecha_date = $anio.'-'.$mes.'-'.$dia;
         return $fecha_date;
     }
+    public function fecha_dd_mes_aaaa2($string_fecha)
+    {
+        //Colocar nuevo formato a la fecha para guardar en la base como date
+        $fecha_separada = explode("-", $string_fecha);
+        $dia = $fecha_separada[0];
+        $mes = $fecha_separada[1]; //Utilizo el método mes de la librería de fecha para convertirlo a número
+        $anio = $fecha_separada[2];
+        $fecha_date = $anio.'-'.$mes.'-'.$dia;
+        return $fecha_date;
+    }    
     public function fecha_dd_mes_aaaa_edita($string_fecha)
     {
         $fecha_separada = explode("-",$string_fecha);

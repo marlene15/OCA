@@ -18,6 +18,19 @@
 				return 2;
 			}
 		}
+
+		public function ExisteFecha2($fecha)
+		{
+			$usuarios_fechas = $this->db->query("SELECT Partido From partido WHERE fecha = '$fecha'");
+			if($usuarios_fechas->num_rows()>0)
+			{
+				return 1;
+			}
+			else
+			{
+				return 2;
+			}
+		}		
 		#Gobernadores
 		public function obtener_cuenta_gobernadores($fecha)
 		{
@@ -38,8 +51,7 @@
 			$carlos = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Carlos Barbazán Martínez'");
 
-			if($nacho->num_rows()>0 and $jorge->num_rows()>0 and $locho->num_rows()>0 and $martha->num_rows()>0 and $david->num_rows()>0 and $francisco->num_rows()>0 and $gerardo->num_rows()>0 and $carlos->num_rows()>0)
-			{
+			
 				$nacho = $nacho->row();
 				$jorge = $jorge->row();
 				$locho = $locho->row();
@@ -59,11 +71,7 @@
 					"carlos" => $carlos
 	            );
 	            return $a;
-			}
-			else
-			{
-				return FALSE;
-			}
+			
 		}
 
 		#Diputados federales
@@ -606,47 +614,40 @@
 
 		public function obtener_cuenta_partidos()
 		{
-			$pri = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PRI_Colima' ORDER BY fecha ASC");
-			$jips_2015 = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'JIPS2015' ORDER BY fecha ASC");
-			$JIPSColima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'JIPSColima' ORDER BY fecha ASC");
-			$jipsvdea = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'jipsvdea' ORDER BY fecha ASC");
-			$MiSelfiecoNacho = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'MiSelfiecoNacho' ORDER BY fecha ASC");
-			$PANDColima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PANDColima' ORDER BY fecha ASC");
-			$cdepancolima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'cdepancolima' ORDER BY fecha ASC");
-			$PRDcolima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PRDcolima' ORDER BY fecha ASC");
-			$MovCiudadanoCol = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'MovCiudadanoCol' ORDER BY fecha ASC");
-			$ColPartidoVerde = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'ColPartidoVerde' ORDER BY fecha ASC");
-			$PT_Colima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PT_Colima' ORDER BY fecha ASC");
-			$MorenaColima1 = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'MorenaColima1' ORDER BY fecha ASC");
+			$pri = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PRI' ORDER BY fecha ASC");
+			$pan = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PAN' ORDER BY fecha ASC");
+			$pna = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'NUEVA ALIANZA' ORDER BY fecha ASC");
+			$pv = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'VERDE' ORDER BY fecha ASC");
+			$prd = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PRD' ORDER BY fecha ASC");
+			$pt = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PT' ORDER BY fecha ASC");
+			$pmc = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'MOVIMIENTO CIUDADANO' ORDER BY fecha ASC");
+			$pm = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'MORENA' ORDER BY fecha ASC");
+			$pes = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'ENCUENTRO SOCIAL' ORDER BY fecha ASC");
+			$ph = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PARTIDO HUMANISTA' ORDER BY fecha ASC");
 			
-
 			if($pri->num_rows()>0)
 			{
 				$a = array(
 	                "pri" => $pri->result(),
-	                "jips_2015" => $jips_2015->result(),
-	                "JIPSColima" => $JIPSColima->result(),
-	                "jipsvdea" => $jipsvdea->result(),
-	                "MiSelfiecoNacho" => $MiSelfiecoNacho->result(),
-	                "PANDColima" => $PANDColima->result(),
-	                "cdepancolima" => $cdepancolima->result(),
-	                "PRDcolima" => $PRDcolima->result(),
-	                "MovCiudadanoCol" => $MovCiudadanoCol->result(),
-	                "ColPartidoVerde" => $ColPartidoVerde->result(),
-	                "PT_Colima" => $PT_Colima->result(),
-	                "MorenaColima1" => $MorenaColima1->result()
+	                "pan" => $pan->result(),
+	                "pna" => $pna->result(),
+	                "pv" => $pv->result(),
+	                "prd" => $prd->result(),
+	                "pt" => $pt->result(),
+	                "pmc" => $pmc->result(),
+	                "pm" => $pm->result(),
+	                "pes" => $pes->result(),
+	                "ph" => $ph->result()
 	            );
 	            return $a;
 			}
@@ -655,6 +656,54 @@
 				return FALSE;
 			}
 		}
+		public function obtener_cuenta_partidos_rango($fecha_inicio,$fecha_fin)
+		{
+			$pri = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PRI' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin' 
+									  ORDER BY fecha ASC");
+			$pan = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PAN' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$pna = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'NUEVA ALIANZA' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$pv = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'VERDE' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$prd = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PRD' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$pt = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PT' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$pmc = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'MOVIMIENTO CIUDADANO' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$pm = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'MORENA' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$pes = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'ENCUENTRO SOCIAL' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+			$ph = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+									  where Partido = 'PARTIDO HUMANISTA' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  ORDER BY fecha ASC");
+		
+			$a = array(
+                "pri" => $pri->result(),
+                "pan" => $pan->result(),
+                "pna" => $pna->result(),
+                "pv" => $pv->result(),
+                "prd" => $prd->result(),
+                "pt" => $pt->result(),
+                "pmc" => $pmc->result(),
+                "pm" => $pm->result(),
+                "pes" => $pes->result(),
+                "ph" => $ph->result()
+            );
+            return $a;
+		}
+
 
 		public function obtener_cuenta_comoVamos()
 		{
@@ -672,16 +721,6 @@
 			{
 				return FALSE;
 			}
-		}
-
-		public function menciones_gobernadores()
-		{
-			$nacho = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%nachoperaltacol%' group by fecha");
-			$a = array(
-	            "nacho" => $nacho->result()
-	        );
-	        return $a;
 		}
 	}
 

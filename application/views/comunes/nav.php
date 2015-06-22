@@ -107,19 +107,19 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#);?>"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/valoracion_DF');?>"> 
                                         <span class="title">Diputado Federal</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/valoracion_DL');?>"> 
                                         <span class="title">Diputado Local</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
                                 <li >
-                                    <a href="#"> 
+                                    <a href="<?php echo site_url('facebook/controlador_inicio/valoracion_PM');?>"> 
                                         <span class="title">Presidente Municipal</span>
                                         <span class="selected"></span>
                                     </a>

@@ -15,41 +15,47 @@ class Login extends CI_Controller
        
         public function index()
         {
-     
             if(!isset($_POST['username']))
             {
                 $this->load->view('comunes/login');
             }
             else
             {
-            $this->form_validation->set_rules('username','Usuario','required|min_lenght[5]|max_lenght[20]');
-            $this->form_validation->set_rules('password','Password','required');
-           
-                if($this->form_validation->run() == FALSE) //si no supera las reglas de validación se recarga la vista del formulario
-                {
-                    $this->load->view('comunes/login');
+                if($_POST['registra']==1){
+                    $this->load->view('comunes/registrarse');
                 }
                 else
                 {
-                $isValidLogin = $this->login_model->getLogin($_POST['username'],$_POST['password']); //pasamos los valores al modelo para que compruebe si existe el usuario con ese password
+                    $this->form_validation->set_rules('username','Usuario','required|min_lenght[5]|max_lenght[20]');
+                    $this->form_validation->set_rules('password','Password','required');
                
-                    if($isValidLogin)
+                    if($this->form_validation->run() == FALSE) //si no supera las reglas de validación se recarga la vista del formulario
                     {
-                        $sesion_data = array(
-                                        'username' => $_POST['username'],
-                                        'password' => $_POST['password'],
-                                        'is_logged_in' => true
-                                            );
-                        $this->session->set_userdata($sesion_data);                     
-                        $this->load->view('inicio');
+                        $this->load->view('comunes/login');
                     }
                     else
                     {
-                        // si es erroneo, devolvemos un mensaje de error
-                        $this->load->view('comunes/login');
-                    }
+                        $isValidLogin = $this->login_model->getLogin($_POST['username'],$_POST['password']); //pasamos los valores al modelo para que compruebe si existe el usuario con ese password
+                   
+                        if($isValidLogin)
+                        {
+                            $sesion_data = array(
+                                            'username' => $_POST['username'],
+                                            'password' => $_POST['password'],
+                                            'is_logged_in' => true
+                                                );
+                            $this->session->set_userdata($sesion_data);                     
+                            $this->load->view('inicio');
+                        }
+                        else
+                        {
+                            // si es erroneo, devolvemos un mensaje de error
+                            $this->load->view('comunes/login');
+                        }
+                    } 
                 }
-            }  
+            
+            } 
         }
              
         public function logout()

@@ -71,6 +71,11 @@ class Inicio extends CI_Controller {
 			$this->load->view('mineria_error');		
 		}
 	}
+
+	public function registra()
+	{
+		$this->load->view('comunes/registrarse');	
+	}
 }
 
 /* End of file welcome.php */

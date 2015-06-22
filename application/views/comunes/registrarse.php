@@ -27,6 +27,17 @@
 	<link href="<?= base_url();?>assets/plantilla/css/pages/login.css" rel="stylesheet" type="text/css"/>
 	<!-- END PAGE LEVEL STYLES -->
 	<link rel="shortcut icon" href="<?= base_url();?>favicon.ico" />
+	<style type="text/css"> 
+		.btn-circle {
+		  width: 30px;
+		  height: 30px;
+		  text-align: center;
+		  padding: 6px 0;
+		  font-size: 12px;
+		  line-height: 1.42;
+		  border-radius: 15px;
+		}
+	</style>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -40,39 +51,61 @@
 	<div class="content">
 		<!-- BEGIN LOGIN FORM -->
 		<?php echo validation_errors(); ?>
-        <?php echo form_open('login'); ?>
-		<form class="form-vertical login-form" action="<?php echo site_url('login'); ?>" method="post">
-			<h3 class="form-title"><center>Ingresa a tu cuenta</center></h3>
+        <?php echo form_open('registro'); ?>
+		<form class="form-vertical login-form" action="<?php echo site_url('registro'); ?>" method="post">
+			<h3 class="form-title"><center>Regístrate</center></h3>
 			<div class="alert alert-error hide">
 				<button class="close" data-dismiss="alert"></button>
 				<span>Ingresa tu Usuario y Contraseña</span>
 			</div>
 			<div class="control-group">
-				<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-				<label class="control-label visible-ie8 visible-ie9">Usuario</label>
-				<div class="controls">
-					<div class="input-icon left">
-						<i class="icon-user"></i>
-						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Usuario" name="username"/>
+				<div class="controls">					
+					<div class="input-icon">
+						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Nombre" name="nombre" title='Nombre'/>
 					</div>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label visible-ie8 visible-ie9">Contraseña</label>
-				<div class="controls">
-					<div class="input-icon left">
-						<i class="icon-lock"></i>
-						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" placeholder="Contraseña" name="password"/>
+				<div class="controls">					
+					<div class="input-icon">
+						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Primer Apellido" name="p_apellido" title='Primer Apellido'/>
 					</div>
 				</div>
 			</div>
+			<div class="control-group">
+				<div class="controls">					
+					<div class="input-icon">
+						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Segundo Apellido" name="s_apellido" title='Segundo Apellido'/>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">					
+					<div class="input-icon">
+						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Correo Electrónico" name="email" title='Email'/>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">					
+					<div class="input-icon">
+						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="off" placeholder="Nombre de usuario" name="usuario" title='Usuario'/>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">					
+					<div class="input-icon">
+						<textarea name="motivos" rows="5" cols="50" autocomplete="off" placeholder="Motivos para obtener cuenta" title='Motivos'></textarea>
+					</div>
+				</div>
+			</div>
+			
 			<div class="form-actions">
-				<button name="registra" class="btn green pull-right" style="float:left" value="1">
-					Registrarte <i class="m-icon-swapright m-icon-white"></i>
-				</button>            				
-				<button type="submit" class="btn green pull-right" name="registra" value="0">
-				Ingresar <i class="m-icon-swapright m-icon-white"></i>
-				</button>
+				<a href="javascript:void(0)" class="btn btn-default btn-fab btn-raised mdi-action-grade"></a>
+				<button type="" class="btn green pull-right">
+					Solicitar cuenta <i class="m-icon-swapright m-icon-white"></i>
+				</button> 
 			</div>
 		</form>
 		<?php echo form_close();?>
@@ -115,17 +148,6 @@
 		
 		});
 	</script>
-
-	<script type="text/javascript">
-	    $(document).ready(function(){                                        
-	      $("#registra").click(function(event) {
-	      	alert("hola");
-	        $.ajax({     
-	          url: '<?php echo site_url('inicio/registra');?>'
-	        });            
-	      });       
-	    });
-    </script>
 	<!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->

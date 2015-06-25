@@ -119,7 +119,6 @@
 	<script type="text/javascript">
 	    $(document).ready(function(){                                        
 	      $("#registra").click(function(event) {
-	      	alert("hola");
 	        $.ajax({     
 	          url: '<?php echo site_url('inicio/registra');?>'
 	        });            

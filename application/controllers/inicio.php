@@ -60,6 +60,7 @@ class Inicio extends CI_Controller {
 	{
 		$username = $this->session->userdata('username');
 		$password = $this->session->userdata('password');
+		$password = md5($password);
 		$verifica = $this->modelo_consultas->verificaUsuario($username,$password);
 
 		if ($verifica==1)

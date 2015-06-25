@@ -22,8 +22,7 @@
 		public function verificaUsuario($username, $password)
 		{
 			$passwordC = $this->db->query("SELECT password from login WHERE usuario = 'administrador'");
-
-			if ($password==$passwordC->row('password') and $username=='administrador') {
+			if ($password==md5($passwordC->row('password')) and $username=='administrador') {
 				return 1;
 			}
 			else{

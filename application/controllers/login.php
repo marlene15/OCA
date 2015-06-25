@@ -35,13 +35,13 @@ class Login extends CI_Controller
                     }
                     else
                     {
-                        $isValidLogin = $this->login_model->getLogin($_POST['username'],$_POST['password']); //pasamos los valores al modelo para que compruebe si existe el usuario con ese password
+                        $isValidLogin = $this->login_model->getLogin($_POST['username'],md5($_POST['password'])); //pasamos los valores al modelo para que compruebe si existe el usuario con ese password
                    
                         if($isValidLogin)
                         {
                             $sesion_data = array(
                                             'username' => $_POST['username'],
-                                            'password' => $_POST['password'],
+                                            'password' => md5($_POST['password']),
                                             'is_logged_in' => true
                                                 );
                             $this->session->set_userdata($sesion_data);                     

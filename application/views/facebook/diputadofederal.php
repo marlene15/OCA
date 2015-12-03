@@ -55,7 +55,7 @@
                           <ul class="nav nav-tabs" id="myTab">
                             <li class="active"><a data-toggle="tab" href="#barras1">Distrito I</a></li>
                             <li class=""><a data-toggle="tab" href="#barras2">Distrito II</a></li>
-                            <li class=""><a data-toggle="tab" href="#barras3">Nube de Palabras</a></li>                            
+                            <li class=""><a data-toggle="tab" href="#nube" onclick="nube();">Nube de Palabras</a></li>
                           </ul>
                         <div class="tab-content" id="tabs">
                         <!--Primer tab-->
@@ -201,7 +201,31 @@
                                 </div>
                               </div>                                  
                             </div>
-                          </div>                                                
+                          </div>   
+                          
+                          <div id="nube" class="tab-pane fade ">  
+                            <div class="row-fluid">
+                              <div class="span10">
+                                <div id="container">
+                                  <center><div id="contenido_nube" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>  
+                                  <center><div id="nube_consulta" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid"></div></center>           
+                                </div>                           
+                              </div>
+
+                              <div class="span2">
+                                </br></br>
+                                <div class="btn-toolbar" align="left"> 
+                                  <div class="btn-group-vertical">
+                                    <a class="btn btn-success btn-lg active" id="consulta_nube"> Marzo</a>
+                                    <a class="btn btn-primary btn-lg" id="consulta_nube2"> Abril</a>
+                                    <a class="btn btn-primary btn-lg" id="consulta_nube3"> Mayo</a>
+                                    <a class="btn btn-primary btn-lg" id="consulta_nube4"> Junio</a>
+                                  </div>
+                                </div>
+                              </div>                    
+                            </div>                                                  
+                          </div>
+
                         </div> 
                       </div>
                     </center>
@@ -427,5 +451,171 @@
       $('#chart_div2').width('100%');  
     }
   </script>
+
+  <script type="text/javascript">
+    function nube()
+    {
+      //Limpiar div
+      var d = document.getElementById("contenido_nube");
+      while (d.hasChildNodes())
+      {
+        d.removeChild(d.firstChild);
+      }
+
+      <?php //Llenamos el array con las coordenadas        
+            $aux=""; 
+            for ($i=0; $i<count($hashtags); $i++)
+            {
+                $porciones = explode(" ", $hashtags[$i]->hashtags);
+                for ($j=0; $j<count($porciones); $j++)
+              {
+                if ($porciones[$j] != "") 
+                {
+                  $aux = $aux." ".$porciones[$j]; 
+                };
+                
+              };                    
+            };    
+
+          $test = preg_split('/[\s,]+/', $aux); //Coloca los hashtags en una sola línea, el separador son los espacios
+          $palabras_contadas = array_count_values($test); //Cuenta la cantidad de veces que se repite una palabra
+
+          $a2 = array();
+          foreach ($palabras_contadas as $key => $value) { //Llena el array para convertirlo a json
+              if($key != "")
+              {
+                $a2[] = array(
+                      "text" => $key,
+                      "size" => $value*10
+                );
+              }       
+        };
+        $palabras_JSON = json_encode($a2); //Convertimos el array a Json para poderlo colocar en la nube de palabras                   
+        ?>
+      var fill = d3.scale.category20();
+      d3.layout.cloud().size([1000, 400])
+          .words(<?php echo $palabras_JSON ?>)
+          .padding(3)
+          .rotate(function() { return ~~(Math.random() * 2) * 90; })
+          .font("Impact")
+          .fontSize(function(d) { return d.size; })
+          .on("end", draw)
+          .start();
+
+      function draw(words) 
+      {
+          d3.select("#contenido_nube").append("svg")
+              .attr("viewBox", "-15 0 " + 1000 + " " + 500 )
+                .attr("preserveAspectRatio", "xMidYMid meet")
+            .append("g")
+              .attr("transform", "translate(472,250)")
+            .selectAll("text")
+              .data(words)
+            .enter().append("text")
+              .style("font-size", function(d) { return d.size + "px"; })
+              .style("font-family", "Impact")
+              .style("fill", function(d, i) { return fill(i); })
+              .attr("text-anchor", "middle")
+              .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+              })
+              .text(function(d) { return d.text; });
+      }
+    }
+    //Sirve para hacer la nube de palabars responsiva
+    var aspect = 1000 / 400,
+      chart = $("#contenido_nube");
+    $(window).on("resize", function() {
+        var targetWidth = chart.parent().width();
+        chart.attr("width", targetWidth);
+        chart.attr("height", targetWidth / aspect);
+    });
+  </script>
+
+    <!--Consulta de la nube de palabras-->
+  <script type="text/javascript">
+    $(document).ready(function(){ 
+
+      $("#consulta_nube").click(function(event) {
+        $("#consulta_nube").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');       
+        var parametros = {
+                "mes" : '03'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      }); 
+
+      $("#consulta_nube2").click(function(event) {
+        $("#consulta_nube2").addClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube4").removeClass('active btn-success');         
+        var parametros = {
+                "mes" : '04'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube3").click(function(event) {
+        $("#consulta_nube3").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success');
+        $("#consulta_nube").addClass('btn-primary');
+        $("#consulta_nube4").removeClass('active btn-success'); 
+        var parametros = {
+                "mes" : '05'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+      $("#consulta_nube4").click(function(event) {
+        $("#consulta_nube4").addClass('active btn-success');
+        $("#consulta_nube2").removeClass('active btn-success');
+        $("#consulta_nube3").removeClass('active btn-success');
+        $("#consulta_nube").removeClass('active btn-success'); 
+        $("#consulta_nube").addClass('btn-primary');
+        var parametros = {
+                "mes" : '06'
+        };
+        $.ajax({                                            
+          type:"post",
+          data:parametros,
+          url: '<?php echo site_url('twitter/controlador_consultas/nube_dipFederales');?>',                                      
+          dataType: 'html',
+          success: function (html) {
+            $('#nube_consulta').html(html);   
+          }
+        });            
+      });
+
+    });
+  </script>  
 </body>   
 </html>

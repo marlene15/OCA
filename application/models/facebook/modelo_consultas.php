@@ -180,46 +180,46 @@
 									  where fecha = '$fecha' and Nombre = 'Liliana Rodríguez Vejar'");
 			
 			$crispinguerra = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Crispín Guerra Cárdenas'");
+									  where fecha = '$fecha' and Nombre = 'Crispin Guerra Cardenas'");
 			$almaarreola = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Alma Delia Arreola Cruz'");
 			$marthafarias = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Martha Elia Farías Ríos'");
+									  where fecha = '$fecha' and Nombre = 'Martha Elia Farias Rios'");
 			$isisvillasernor = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Isis Baudella Guadalupe Villaseñor Silva'");
+									  where fecha = '$fecha' and Nombre = 'Isis Baudella Guadalupe Villasenor Silva'");
 			$octavioaguilar = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Octavio Aguilar Montaño'");
+									  where fecha = '$fecha' and Nombre = 'Octavio Aguilar Montano'");
 			$patriciaperegrina = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Patricia Inés Peregrina Larios'");
+									  where fecha = '$fecha' and Nombre = 'Patricia Ines Peregrina Larios'");
 			$gloriaarceo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Gloria Arceo Chávez'");
+									  where fecha = '$fecha' and Nombre = 'Gloria Arceo Chavez'");
 			
 			$janethpaz = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Janeth Paz Ponce'");
 			$juanaandres = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Juana Andrés Rivera'");
+									  where fecha = '$fecha' and Nombre = 'Juana Andres Rivera'");
 			$sergioricardo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Sergio Ricardo Ruiz'");
 			$andresorozco = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Andrés Fernando Orozco Soto'");
+									  where fecha = '$fecha' and Nombre = 'Andres Fernando Orozco Soto'");
 
 			$ramirotoscano = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Ramiro Toscano Sánchez'");
+									  where fecha = '$fecha' and Nombre = 'Ramiro Toscano Sanchez'");
 			$josebenavides = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'José Guadalupe Benavides Florián'");
+									  where fecha = '$fecha' and Nombre = 'Jose Guadalupe Benavides Florian'");
 			$yulianaaguilar = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Yuliana Lizzet Aguilar Mora'");
 			
 			$SandrayolandaRammirez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Sandra Yolanda Ramírez Santillán'");
+									  where fecha = '$fecha' and Nombre = 'Sandra Ramirez'");
 			$octaviotintos = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Octavio Tintos Trujillo'");
+									  where fecha = '$fecha' and Nombre = 'Octavio Tintos'");
 			$sergiosilva = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Sergio Silva Sánchez'");
+									  where fecha = '$fecha' and Nombre = 'Sergio Silva'");
 			$leticiamendoza = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Leticia Mendoza Gordillo'");
+									  where fecha = '$fecha' and Nombre = 'Leticia Mendoza'");
 			$getzemaniibarra = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Niza Getsemani Ibarra Ávalos'");
+									  where fecha = '$fecha' and Nombre = 'Getsemani Ibarra'");
 			
 			$franciscoceballo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Francisco Javier Ceballos Galindo'");
@@ -228,102 +228,103 @@
 			$saracernas = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Sara Elizabeth Cernas Verduzco'");
 			$jooelpadilla = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Joel Padilla Peña'");
+									  where fecha = '$fecha' and Nombre = 'Joel Padilla Pena'");
 			$socorrobayardo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Socorro Bayardo Gaitán'");
+									  where fecha = '$fecha' and Nombre = 'Socorro Bayardo Gaitan'");
 			$erendiraandrade = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Erendira Noemí Andrade Ochoa'");
+									  where fecha = '$fecha' and Nombre = 'Erendira Noemi Andrade Ochoa'");
 			
+			//DISTRITO VIII
 			$meylypastora = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Meyly Pastora Beltrán rolón'");
+									  where fecha = '$fecha' and Nombre = 'Meyly Pastora Beltran rolon'");
 			$hectormagana = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Héctor Magaña Lara'");
+									  where fecha = '$fecha' and Nombre = 'Hector Magana Lara'");
 			$alfredoherrera = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Alfredo Cuauhtémoc Herrera Díaz'");
+									  where fecha = '$fecha' and Nombre = 'Alfredo Cuauhtemoc Herrera Diaz'");
 			$adelaidafernandez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Adelaida Fernández Ramos'");
+									  where fecha = '$fecha' and Nombre = 'Adelaida Fernandez Ramos'");
 			$juanjuarez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Juan Francisco Juárez Rodríguez'");
-			
+									  where fecha = '$fecha' and Nombre = 'Juan Francisco Juarez Rodriguez'");
+			//DISTRITO IX
 			$eusebiomesina = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Eusebio Mesina Reyes'");
 			$beatrizinsunza = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Beatríz Guadalupe Isunza Burciaga'");
+									  where fecha = '$fecha' and Nombre = 'Beatriz Guadalupe Isunza Burciaga'");
 			$selenelopez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Selene Margarita López'");
+									  where fecha = '$fecha' and Nombre = 'Selene Margarita Lopez'");
 			$angelicaochoa = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Ma Angélica Ochoa Muñoz'");
+									  where fecha = '$fecha' and Nombre = 'Ma Angelica Ochoa Munoz'");
 			$mauriciobarreto = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Mauricio Barreto Peralta'");
-			
+			//DISTRITO X
 			$juanpinto = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Juan Carlos Pinto Rodríguez'");
+									  where fecha = '$fecha' and Nombre = 'Juan Carlos Pinto Rodriguez'");
 			$ricardosevilla = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Ricardo Sevilla Cárdenas'");
+									  where fecha = '$fecha' and Nombre = 'Ricardo Sevilla Cardenas'");
 			$raquelcardenas = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Raquel Cárdenas Corona'");
+									  where fecha = '$fecha' and Nombre = 'Raquel Cardenas Corona'");
 			$marcorodarte = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Marco Antonio Rodarte Quintana'");
 			$salvadorjuarez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Salvador Juárez Figueroa'");
-			
+									  where fecha = '$fecha' and Nombre = 'Salvador Juarez Figueroa'");
+			//DISTRITO XI
 			$miguelgarcia = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Miguel Alejandro García'");
+									  where fecha = '$fecha' and Nombre = 'Miguel Alejandro Garcia'");
 			$armidanunes = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Armida Nuñez García'");
+									  where fecha = '$fecha' and Nombre = 'Armida Nunez Garcia'");
 			$aldovega = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Aldo Leonardo Vega Petriz'");
 			$sebastianesparza = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Sebastián Esparza Hernández'");
+									  where fecha = '$fecha' and Nombre = 'Sebastian Esparza Hernandez'");
 			$teresahernandez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Teresa Hernández Ortiz'");
+									  where fecha = '$fecha' and Nombre = 'Teresa Hernandez Ortiz'");
 			$dianatopete = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Diana Monserrat Topete Vargas'");
-			
+			//DISTRITO XII
 			$marthasosa = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Martha Leticia Sosa'");
 			$rosarioyeme = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Rosario Yeme López'");
+									  where fecha = '$fecha' and Nombre = 'Rosario Yeme Lopez'");
 			$noraayala = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Nora Mireya Ayala Ochoa'");
 			$sarahinoriega = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Iveth Sarahí Noriega Mondragón'");
-			
+									  where fecha = '$fecha' and Nombre = 'Iveth Sarahi Noriega Mondragon'");
+			//DISTRITO XIII
 			$sergiosanchez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Sergio Sánchez Ochoa'");
+									  where fecha = '$fecha' and Nombre = 'Sergio Sanchez Ochoa'");
 			$carlosvilla = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Carlos Iván Villa González'");
-			
+									  where fecha = '$fecha' and Nombre = 'Carlos Ivan Villa Gonzalez'");
+			//DISTRITO XIV
 			$luisayala = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Luis Ayala Campos'");
 			$lilafigueroa = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Lilia Figueroa Larios'");
 			$marthameza = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Martha Alicia Meza Obregón'");
+									  where fecha = '$fecha' and Nombre = 'Martha Alicia Meza Obregon'");
 			$veronicatorres = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Verónica Torres Rolón'");
+									  where fecha = '$fecha' and Nombre = 'Veronica Torres Rolon'");
 			$gustavorerenteria = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Gustavo Rentería Gonzalez'");
+									  where fecha = '$fecha' and Nombre = 'Gustavo Renteria Gonzalez'");
 			$josefinaroblada = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Josefina Roblada Lara'");
 			$eliasnunez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Elías Octavio Núñez Campos'");
-			
+									  where fecha = '$fecha' and Nombre = 'Elias Octavio Nunez Campos'");
+			//DISTRITO XV
 			$felicitaspena = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Felícitas Peña Cisneros'");
+									  where fecha = '$fecha' and Nombre = 'Felícitas Pena Cisneros'");
 			$hildamoreno = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Hilda Moreno Díaz'");
+									  where fecha = '$fecha' and Nombre = 'Hilda Moreno Diaz'");
 			$almarincon = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Alma Elvira Rincón Rodríguez'");
-			
+									  where fecha = '$fecha' and Nombre = 'Alma Elvira Rincon Rodriguez'");
+			//DISTRITO XVI
 			$santiagochavez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Santiago Chávez Chávez'");
+									  where fecha = '$fecha' and Nombre = 'Santiago chavez Chavez'");
 			$judithgodinez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Judith Godínez Cabrera'");
+									  where fecha = '$fecha' and Nombre = 'Judith Godinez Cabrera'");
 			$sergiomendoza = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Sergio Mendoza Lomelí'");
+									  where fecha = '$fecha' and Nombre = 'Sergio Mendoza Lomeli'");
 			$angelesrodriguez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Ma de Los Ángeles Rodríguez Silva'");
+									  where fecha = '$fecha' and Nombre = 'Ma de Los angeles Rodriguez Silva'");
 			
 
 			if ($Leonardogutierrez->num_rows()>0){
@@ -433,7 +434,7 @@
 	              	// "Leonardogutierrez" => $Leonardogutierrez->row(),
 	              	
 	              	"nicolascontreras" => $nicolascontreras->row(),
-	              	"guillermorangel" => $guillermorangel,
+	              	"guillermorangel" => $guillermorangel->row(),
 	              	"SandraRammirez" => $SandraRammirez->row(),
 	              	"joseGarcia" => $joseGarcia->row(),
 	              	"arturogarcia" => $arturogarcia->row(),
@@ -453,71 +454,71 @@
 	              	// "andresorozco" => $andresorozco->row(),
 
 	              	"ramirotoscano" => $ramirotoscano->row(),
-	              	"josebenavides" => $josebenavides,
+	              	"josebenavides" => $josebenavides->row(),
 	              	// "yulianaaguilar" => $yulianaaguilar,
 
-	              	"SandrayolandaRammirez" => $SandrayolandaRammirez,
+	              	"SandrayolandaRammirez" => $SandrayolandaRammirez->row(),
 	              	"octaviotintos" => $octaviotintos->row(),
-	              	"sergiosilva" => $sergiosilva,
-	              	"leticiamendoza" => $leticiamendoza,
+	              	"sergiosilva" => $sergiosilva->row(),
+	              	"leticiamendoza" => $leticiamendoza->row(),
 	              	// "getzemaniibarra" => $getzemaniibarra,
 
 	              	"franciscoceballo" => $franciscoceballo->row(),
-	              	"alfredohernandez" => $alfredohernandez,
-	              	"saracernas" => $saracernas,
-	              	"jooelpadilla" => $jooelpadilla,
+	              	"alfredohernandez" => $alfredohernandez->row(),
+	              	"saracernas" => $saracernas->row(),
+	              	"jooelpadilla" => $jooelpadilla->row(),
 	              	"socorrobayardo" => $socorrobayardo->row(),
-	              	"erendiraandrade" => $erendiraandrade,
+	              	// "erendiraandrade" => $erendiraandrade->row(),
 
-	              	"meylypastora" => $meylypastora,
-	              	"hectormagana" => $hectormagana,
+	              	"meylypastora" => $meylypastora->row(),
+	              	"hectormagana" => $hectormagana->row(),
 	              	"alfredoherrera" => $alfredoherrera->row(),
-	              	"adelaidafernandez" => $adelaidafernandez,
-	              	"juanjuarez" => $juanjuarez,
+	              	"adelaidafernandez" => $adelaidafernandez->row(),
+	              	// "juanjuarez" => $juanjuarez->row(),
 
-	              	"eusebiomesina" => $eusebiomesina,
+	              	"eusebiomesina" => $eusebiomesina->row(),
 	              	"beatrizinsunza" => $beatrizinsunza->row(),
-	              	"selenelopez" => $selenelopez,
-	              	"angelicaochoa" => $angelicaochoa,
-	              	"mauriciobarreto" => $mauriciobarreto,
+	              	"selenelopez" => $selenelopez->row(),
+	              	"angelicaochoa" => $angelicaochoa->row(),
+	              	// "mauriciobarreto" => $mauriciobarreto->row(),
 
 	              	"juanpinto" => $juanpinto->row(),
-	              	"ricardosevilla" => $ricardosevilla,
-	              	"raquelcardenas" => $raquelcardenas,
-	              	"marcorodarte" => $marcorodarte,
+	              	"ricardosevilla" => $ricardosevilla->row(),
+	              	"raquelcardenas" => $raquelcardenas->row(),
+	              	"marcorodarte" => $marcorodarte->row(),
 	              	// "salvadorjuarez" => $salvadorjuarez->row(),
 
-	              	"miguelgarcia" => $miguelgarcia,
-	              	"armidanunes" => $armidanunes,
-	              	"aldovega" => $aldovega,
+	              	"miguelgarcia" => $miguelgarcia->row(),
+	              	"armidanunes" => $armidanunes->row(),
+	              	"aldovega" => $aldovega->row(),
 	              	"sebastianesparza" => $sebastianesparza->row(),
-	              	"teresahernandez" => $teresahernandez,
-	              	"dianatopete" => $dianatopete,
+	              	"teresahernandez" => $teresahernandez->row(),
+	              	// "dianatopete" => $dianatopete->row(),
 
-	              	"marthasosa" => $marthasosa,
+	              	"marthasosa" => $marthasosa->row(),
 	              	"rosarioyeme" => $rosarioyeme->row(),
-	              	"noraayala" => $noraayala,
-	              	"sarahinoriega" => $sarahinoriega,
+	              	"noraayala" => $noraayala->row(),
+	              	// "sarahinoriega" => $sarahinoriega->row(),
 
 	              	"sergiosanchez" => $sergiosanchez,
 	              	// "carlosvilla" => $carlosvilla->row(),
 
-	              	"luisayala" => $luisayala,
-	              	"lilafigueroa" => $lilafigueroa,
-	              	"marthameza" => $marthameza,
+	              	"luisayala" => $luisayala->row(),
+	              	"lilafigueroa" => $lilafigueroa->row(),
+	              	"marthameza" => $marthameza->row(),
 	              	"veronicatorres" => $veronicatorres->row(),
-	              	"gustavorerenteria" => $gustavorerenteria,
-	              	"josefinaroblada" => $josefinaroblada,
-	              	"eliasnunez" => $eliasnunez,
+	              	"gustavorerenteria" => $gustavorerenteria->row(),
+	              	"josefinaroblada" => $josefinaroblada->row(),
+	              	// "eliasnunez" => $eliasnunez->row(),
 
 	              	"felicitaspena" => $felicitaspena->row(),
-	              	"hildamoreno" => $hildamoreno,
-	              	"almarincon" => $almarincon,
+	              	"hildamoreno" => $hildamoreno->row(),
+	              	// "almarincon" => $almarincon->row(),
 	              	
-	               	"santiagochavez" => $santiagochavez,
-	              	"judithgodinez" => $judithgodinez,
-	              	"sergiomendoza" => $sergiomendoza,
-	              	"angelesrodriguez" => $angelesrodriguez
+	               	"santiagochavez" => $santiagochavez->row(),
+	              	"judithgodinez" => $judithgodinez->row(),
+	              	"sergiomendoza" => $sergiomendoza->row(),
+	              	// "angelesrodriguez" => $angelesrodriguez->row()
 	         	);
 	        return $a;			
 		}
@@ -619,21 +620,21 @@
 			$pan = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
 									  where Partido = 'PAN' ORDER BY fecha ASC");
 			$pna = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'NUEVA ALIANZA' ORDER BY fecha ASC");
+									  where Partido = 'PNA' ORDER BY fecha ASC");
 			$pv = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'VERDE' ORDER BY fecha ASC");
+									  where Partido = 'PV' ORDER BY fecha ASC");
 			$prd = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
 									  where Partido = 'PRD' ORDER BY fecha ASC");
 			$pt = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
 									  where Partido = 'PT' ORDER BY fecha ASC");
 			$pmc = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'MOVIMIENTO CIUDADANO' ORDER BY fecha ASC");
+									  where Partido = 'MC' ORDER BY fecha ASC");
 			$pm = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'MORENA' ORDER BY fecha ASC");
+									  where Partido = 'PM' ORDER BY fecha ASC");
 			$pes = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'ENCUENTRO SOCIAL' ORDER BY fecha ASC");
+									  where Partido = 'PES' ORDER BY fecha ASC");
 			$ph = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'PARTIDO HUMANISTA' ORDER BY fecha ASC");
+									  where Partido = 'PH' ORDER BY fecha ASC");
 			
 			if($pri->num_rows()>0)
 			{
@@ -665,10 +666,10 @@
 									  where Partido = 'PAN' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 			$pna = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'NUEVA ALIANZA' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  where Partido = 'PNA' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 			$pv = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'VERDE' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  where Partido = 'PV' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 			$prd = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
 									  where Partido = 'PRD' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
@@ -677,16 +678,16 @@
 									  where Partido = 'PT' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 			$pmc = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'MOVIMIENTO CIUDADANO' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  where Partido = 'MC' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 			$pm = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'MORENA' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  where Partido = 'PM' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 			$pes = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'ENCUENTRO SOCIAL' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  where Partido = 'PES' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 			$ph = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
-									  where Partido = 'PARTIDO HUMANISTA' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
+									  where Partido = 'PH' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin'
 									  ORDER BY fecha ASC");
 		
 			$a = array(
@@ -704,23 +705,26 @@
             return $a;
 		}
 
-
-		public function obtener_cuenta_comoVamos()
+		public function obtener_cuenta_comoVamos_rango($fecha_inicio,$fecha_fin)
 		{
-			$comoVamos = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'Comovamoscolima' ORDER BY fecha ASC");			
+			$comoVamos2 = $this->db->query("SELECT Megusta, PersonasHablan, Fecha from partido 
+									  where Partido='Como Vamos Colima' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin' 
+									  ORDER BY fecha ASC");
+			$a = array(
+                "comoVamos2" => $comoVamos2->result()
+            );
+            return $a;
+		}
 
-			if($comoVamos->num_rows()>0)
-			{
-				$a = array(
-	                "comoVamos" => $comoVamos->result()
-	            );
-	            return $a;
-			}
-			else
-			{
-				return FALSE;
-			}
+		public function obtener_cuenta_rumboal7dejunio_rango($fecha_inicio,$fecha_fin)
+		{
+			$rumbo = $this->db->query("SELECT Megusta, PersonasHablan, Fecha from partido 
+									  where Partido = 'Rumbo al 7 de junio' and fecha BETWEEN '$fecha_inicio' AND '$fecha_fin' 
+									  ORDER BY fecha ASC");
+			$a2 = array(
+                "rumbo" => $rumbo->result()
+            );
+            return $a2;
 		}
 	}
 

@@ -174,7 +174,7 @@ class Controlador_consultas extends CI_Controller {
 		$this->load->view('facebook/chars/char_dipFederales',$datos);
 	}
 
-	public function CDLDISTRITOIALXVI()
+	public function dip_locales()
 	{
 		$this->load->library('fechas');
 		//Colocar nuevo formato a la fecha para guardar en la base como date
@@ -693,4 +693,107 @@ class Controlador_consultas extends CI_Controller {
 			$this->load->view('facebook/chars/char_partidos',$datos);
 		}				
 	}
+
+
+	public function rango_rumboal7dejunio()
+	{
+
+		$this->load->library('fechas');
+		$fecha_inicio = $this->input->post('fecha_inicio');
+		$fecha_inicio=$this->fechas->fecha_dd_mes_aaaa($fecha_inicio);
+		$ExisteFechaInicio = $this->modelo_consultas->ExisteFecha2($fecha_inicio);
+
+		$fecha_fin = $this->input->post('fecha_fin');
+		$fecha_fin=$this->fechas->fecha_dd_mes_aaaa($fecha_fin);
+		$ExisteFechaFin = $this->modelo_consultas->ExisteFecha2($fecha_fin);
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha2();
+		$ultima_fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha->ultima_fecha);
+		$vtab = $this->input->post('vtab');
+
+		$fechaInicioMayor = 0;
+		$existe = 1;
+		if ($fecha_inicio>$fecha_fin) {
+			$fechaInicioMayor = 1;
+			$datos = array(
+							"fechaInicioMayor" => $fechaInicioMayor,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"existe" => $existe
+		            	  );
+			$this->load->view('facebook/chars/char_partidosError',$datos);
+		}
+		if ($ExisteFechaInicio==2 or $ExisteFechaFin==2) {
+			$existe = 0;
+			$datos = array(
+							"existe" => $existe,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"fechaInicioMayor" => $fechaInicioMayor
+		            	  );
+			$this->load->view('facebook/chars/char_partidosError',$datos);
+		}
+		if ($fechaInicioMayor!=1 and $existe!=0){			
+			$cuentas = $this->modelo_consultas->obtener_cuenta_rumboal7dejunio_rango($fecha_inicio,$fecha_fin);	
+			$datos = array(
+							"rumbo" => $cuentas['rumbo'],
+							"fecha_inicio" => $fecha_inicio,
+		                	"fecha_fin" => $fecha_fin,
+		                	"vtab" => $vtab,
+		                	"fechaInicioMayor" => $fechaInicioMayor,
+		                	"existe" => $existe
+		            	  );
+			$this->load->view('facebook/chars/char_rumboal7dejunio',$datos);
+		}
+	}
+
+	public function rango_comoVamos()
+	{
+		$this->load->library('fechas');
+		$fecha_inicio = $this->input->post('fecha_inicio');
+		$fecha_inicio=$this->fechas->fecha_dd_mes_aaaa($fecha_inicio);
+		$ExisteFechaInicio = $this->modelo_consultas->ExisteFecha($fecha_inicio);
+
+		$fecha_fin = $this->input->post('fecha_fin');
+		$fecha_fin=$this->fechas->fecha_dd_mes_aaaa($fecha_fin);
+		$ExisteFechaFin = $this->modelo_consultas->ExisteFecha($fecha_fin);
+		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
+		$ultima_fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha->ultima_fecha);
+		$vtab = $this->input->post('vtab');
+
+		$fechaInicioMayor = 0;
+		$existe = 1;
+		if ($fecha_inicio>$fecha_fin) {
+			$fechaInicioMayor = 1;
+			$datos = array(
+							"fechaInicioMayor" => $fechaInicioMayor,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"existe" => $existe
+		            	  );
+			$this->load->view('facebook/chars/char_partidosError',$datos);
+		}
+		if ($ExisteFechaInicio==2 or $ExisteFechaFin==2) {
+			$existe = 0;
+			$datos = array(
+							"existe" => $existe,
+							"ultima_fecha" => $ultima_fecha,
+							"vtab" => $vtab,
+							"fechaInicioMayor" => $fechaInicioMayor
+		            	  );
+			$this->load->view('facebook/chars/char_partidosError',$datos);
+		}
+		if ($fechaInicioMayor!=1 and $existe!=0){			
+			$cuentas = $this->modelo_consultas->obtener_cuenta_comoVamos_rango($fecha_inicio,$fecha_fin);	
+			$datos = array(
+							"comoVamos" => $cuentas['comoVamos'],
+							"fecha_inicio" => $fecha_inicio,
+		                	"fecha_fin" => $fecha_fin,
+		                	"vtab" => $vtab,
+		                	"fechaInicioMayor" => $fechaInicioMayor,
+		                	"existe" => $existe
+		            	  );
+			$this->load->view('facebook/chars/char_comoVamos',$datos);
+		}
+	}
+
 }

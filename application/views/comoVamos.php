@@ -207,7 +207,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         foreach ($comoVamos2 as $comoVamos2) 
         {
             $a2[] = array(
-                "Fecha" => $comoVamos2->Fecha,
+                "Fecha" => $comoVamos2->fecha,
                 "Megusta" => $comoVamos2->Megusta,
                 "PersonasHablan" => $comoVamos2->PersonasHablan
             );

@@ -37,7 +37,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12" id="encabezado">
                         <h3 class="page-title" id="titulo">
-                            Principal <small>Contenido General</small>
+                            Presidente Municipal <small>Actividad en Facebook</small>
                         </h3>
                         <ul class="breadcrumb" id="ul_menu">
                             <li>
@@ -68,25 +68,14 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                             <ul class="nav nav-tabs" id="myTab">
-                              <li class="active"><a data-toggle="tab" href="#cd1">Esperanza Alcaraz</a></li>
-                              <li class=""><a data-toggle="tab" href="#cd2">Miguel Ruelas</a></li>
-                              <li class=""><a data-toggle="tab" href="#cd3">Héctor Insúa</a></li>
-                              <li class=""><a data-toggle="tab" href="#cd4">Oscar Valdovinos</a></li>
-                              <li class=""><a data-toggle="tab" href="#cd5">Zenaida Vicente</a></li>
-                              <li class=""><a data-toggle="tab" href="#cd6">Mario Carrillo</a></li>
-                              <li class=""><a data-toggle="tab" href="#cd7">Mario Peña</a></li>
-                              <li class=""><a data-toggle="tab" href="#cd8">Salomón Salazar</a></li>
-                              <!-- <li class=""><a data-toggle="tab" href="#jorge">Guillermo Rángel</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Sandra Ramírez</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">José García</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Arturo García</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Liliana Rodríguez</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Janeth Paz Ponce</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Juana Andrés Rivera</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Sergio Ricardo Ruiz</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Andrés Fernando Orozco Soto</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">Ramiro Toscano</a></li>
-                              <li class=""><a data-toggle="tab" href="#jorge">José Benavides</a></li> -->
+                              <li class="active"><a data-toggle="tab" href="#cd1">Armería. Esperanza Alcaraz (PRI)</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd3">Colima. Héctor Insúa (PAN)</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd4">Colima. Oscar Valdovinos (PRI)</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd8">Comala. Salomón Salazar (PRI)</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd5">Comala. Zenaida Vicente (MORENA)</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd6">Manzanillo. Francisco Zepeda (PRI-PVEM-PNA)</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd7">Villa de Á. Yulenny Cortés (PAN)</a></li>
+                              <li class=""><a data-toggle="tab" href="#cd2">Villa de Á. Oswy Delgado (PRI-PVEM-PNA)</a></li>
                             </ul>
                               <div class="tab-content" id="myTabContent">
 

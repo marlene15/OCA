@@ -37,7 +37,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                 <div class="row-fluid">
                     <div class="span12" id="encabezado">
                         <h3 class="page-title" id="titulo">
-                            Principal <small>Contenido General</small>
+                            Gobernador <small>Actividad en Facebook</small>
                         </h3>
                         <ul class="breadcrumb" id="ul_menu">
                             <li>

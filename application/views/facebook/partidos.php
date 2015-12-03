@@ -2,8 +2,6 @@
 <head lang="es">
   <title>Candidatos por Partido</title> 
   <?php $this->load->view('comunes/header'); ?>
-  <script src="<?php echo base_url()?>assets/facebook/d3/d3.min.js"></script>
-  <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/facebook/jsapi.js"></script> 
   <script src="<?php echo base_url()?>assets/facebook/recarga_partidos.js"></script> 
   <!--Para poder usar el calendario, importar las librerias-->
@@ -11,7 +9,7 @@
   <!--Para usar los contenedores widget-->
   <link href="<?php echo base_url()?>assets/bootstrap-widget/css/widget.css" rel="stylesheet" type="text/css">   
 </head>
-<body class="page-header-fixed">
+<body class="page-header-fixed page-sidebar-closed">
     <!--Carga la barra superior-->
     <?php $this->load->view('comunes/barra_superior'); ?>
 
@@ -43,11 +41,12 @@
                 <div id="dashboard">
                     <center>
                       <div class="portlet-body form well">
+                        <div id="alert"></div> 
                         <!--Código para el tap de pestañas-->   
                         <div class="bs-example bs-example-tabs">
                           <ul class="nav nav-tabs" id="myTab">
-                            <li class="active"><a data-toggle="tab" href="#barras1" id="tab1">PRI</a></li> 
-                            <li class=""><a data-toggle="tab" href="#barras2" id="tab2">PAN</a></li>                            
+                            <li class="active"><a data-toggle="tab" href="#barras2" id="tab2">PAN</a></li> 
+                            <li class=""><a data-toggle="tab" href="#barras1" id="tab1">PRI</a></li>                            
                             <li class=""><a data-toggle="tab" href="#barras3"id="tab3">PRD</a></li>                            
                             <li class=""><a data-toggle="tab" href="#barras4" id="tab4">MC</a></li>                                                        
                             <li class=""><a data-toggle="tab" href="#barras5" id="tab5">PV</a></li>                                                        
@@ -59,7 +58,7 @@
                           </ul>
                             <div class="tab-content" id="myTabContent">
                               
-                              <div id="barras1" class="tab-pane fade active in"> 
+                              <div id="barras1" class="tab-pane fade"> 
                                 <div class="container-fluid">
                                     <div class="row-fluid">
                                       <div class="span12">
@@ -115,7 +114,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">PAN</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PAN</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div2" style="height: 400px;"></div>
@@ -127,7 +127,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -162,7 +163,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">PRD</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PRD</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div3" style="height: 400px;"></div> 
@@ -174,7 +176,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -209,7 +212,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">Movimiento Ciudadano</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PMC</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div4" style="height: 400px;"></div> 
@@ -221,7 +225,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -256,7 +261,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">Partido Verde</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PV</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div5" style="height: 400px;"></div> 
@@ -268,7 +274,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -303,7 +310,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">PT</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PT</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div6" style="height: 400px;"></div> 
@@ -315,7 +323,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -350,7 +359,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">Morena</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PM</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div7" style="height: 400px;"></div> 
@@ -362,7 +372,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -397,7 +408,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">Nueva Alianza</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PNA</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div8" style="height: 400px;"></div> 
@@ -409,7 +421,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -444,7 +457,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">Encuentro Social</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PES</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div9" style="height: 400px;"></div> 
@@ -456,7 +470,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -491,7 +506,8 @@
                                         <div class="span9">                                          
                                             <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                                 <div class="widget-header" style="background: #B20034">
-                                                    <i class="icon-bar-chart"> <strong><font size="3">Humanista</font></strong></i>                                              
+                                                    <i class="icon-bar-chart"></i>
+                                                    <h3>PH</h3>                                                    
                                                 </div>
                                                 <div class="widget-content">                                          
                                                     <div id="chart_div10" style="height: 400px;"></div> 
@@ -503,7 +519,8 @@
                                         <div class="span3">
                                           <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary">
                                             <div class="widget-header" style="background: #B20034" align="left">
-                                                <i class="icon-calendar"> <strong><font size="3">Fechas a consultar</font></strong></i>                                                  
+                                                <i class="icon-calendar"></i>
+                                                <h3>Fechas a consultar</h3>                                                    
                                             </div>
                                             <div class="widget-content">
                                               <center>
@@ -963,7 +980,7 @@ function drawChart10(){
       $.ajax({                                            
         type:"post",
         data:parametros,
-        url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+        url: '<?php echo site_url('facebook/controlador_consultas/partidos_RangoFechas');?>',                                      
         dataType: 'html',
         success: function (html) {
           $('#con4').html(html);   
@@ -986,7 +1003,7 @@ function drawChart10(){
       $.ajax({                                            
         type:"post",
         data:parametros,
-        url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+        url: '<?php echo site_url('facebook/controlador_consultas/partidos_RangoFechas');?>',                                      
         dataType: 'html',
         success: function (html) {
           $('#con5').html(html);   
@@ -1032,7 +1049,7 @@ function drawChart10(){
       $.ajax({                                            
         type:"post",
         data:parametros,
-        url: '<?php echo site_url('twitter/controlador_consultas/partidos_RangoFechas');?>',                                      
+        url: '<?php echo site_url('facebook/controlador_consultas/partidos_RangoFechas');?>',                                      
         dataType: 'html',
         success: function (html) {
           $('#con7').html(html);   
@@ -1065,7 +1082,7 @@ function drawChart10(){
   });  
   
   $(document).ready(function(){                                        
-    $("#consulta_na").click(function(event) {
+    $("#consulta_es").click(function(event) {
       var fecha_inicio = document.getElementById("fecha_inicioes").value; 
       var fecha_fin = document.getElementById("fecha_fines").value;  
       var vtab = document.getElementById("vtab9").value;
@@ -1088,7 +1105,7 @@ function drawChart10(){
   });  
 
   $(document).ready(function(){                                        
-    $("#consulta_na").click(function(event) {
+    $("#consulta_h").click(function(event) {
       var fecha_inicio = document.getElementById("fecha_inicioh").value; 
       var fecha_fin = document.getElementById("fecha_finh").value;  
       var vtab = document.getElementById("vtab10").value;

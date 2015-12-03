@@ -2257,7 +2257,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con').html(html);   
@@ -2275,7 +2275,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con2').html(html);
@@ -2293,7 +2293,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con3').html(html);
@@ -2311,7 +2311,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con4').html(html);
@@ -2329,7 +2329,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con5').html(html);
@@ -2347,7 +2347,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con6').html(html);
@@ -2365,7 +2365,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con7').html(html);
@@ -2383,7 +2383,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con8').html(html);
@@ -2401,7 +2401,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con9').html(html);
@@ -2419,7 +2419,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con10').html(html);
@@ -2437,7 +2437,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con11').html(html);
@@ -2455,7 +2455,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con12').html(html);
@@ -2473,7 +2473,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con13').html(html);
@@ -2491,7 +2491,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con14').html(html);
@@ -2509,7 +2509,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con15').html(html);
@@ -2527,7 +2527,7 @@
         $.ajax({                                            
           type:"post",
           data:parametros,
-          url: '<?php echo site_url('twitter/controlador_consultas/dip_locales');?>',                                      
+          url: '<?php echo site_url('facebook/controlador_consultas/dip_locales');?>',                                      
           dataType: 'html',
           success: function (html) {
             $('#con16').html(html);

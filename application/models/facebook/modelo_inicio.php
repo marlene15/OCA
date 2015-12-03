@@ -764,308 +764,6 @@ class Modelo_inicio extends CI_Model
 		}				
 	}
 
-	//***************************PARTIDOS*******************************
-	
-	//Obteniendo los likes y los posts del partido PAN
-	public function Obtener_CPAN()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pan = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PAN'");
-	
-		if($pan->num_rows()>0)
-		{
-			return $pan->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido PRI
-	public function Obtener_CPRI()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pri = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PRI'");
-	
-		if($pri->num_rows()>0)
-		{
-			return $pri->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido PNA
-	public function Obtener_CPNA()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pna = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='NUEVA ALIANZA'");
-	
-		if($pna->num_rows()>0)
-		{
-			return $pna->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}		
-	//Obteniendo los likes y los posts del partido PV
-	public function Obtener_CPV()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pv = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='VERDE'");
-	
-		if($pv->num_rows()>0)
-		{
-			return $pv->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}			
-	//Obteniendo los likes y los posts del partido PRD
-	public function Obtener_CPRD()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$prd = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PRD'");
-	
-		if($prd->num_rows()>0)
-		{
-			return $prd->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}	
-	//Obteniendo los likes y los posts del partido PT
-	public function Obtener_CPT()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pt = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PT'");
-	
-		if($pt->num_rows()>0)
-		{
-			return $pt->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}		
-	//Obteniendo los likes y los posts del partido PMC
-	public function Obtener_CPMC()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pmc = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='MOVIMIENTO CIUDADANO'");
-	
-		if($pmc->num_rows()>0)
-		{
-			return $pmc->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}			
-	//Obteniendo los likes y los posts del partido PM
-	public function Obtener_CPM()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pm = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='MORENA'");
-	
-		if($pm->num_rows()>0)
-		{
-			return $pm->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}	
-	//Obteniendo los likes y los posts del partido PES
-	public function Obtener_CPES()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pes = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='ENCUENTRO SOCIAL'");
-	
-		if($pes->num_rows()>0)
-		{
-			return $pes->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido Ph
-	public function Obtener_CPH()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$ph = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PARTIDO HUMANISTA'");
-	
-		if($ph->num_rows()>0)
-		{
-			return $ph->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido PAN
-	public function Obtener_CPAN2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pan2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PAN2'");
-	
-		if($pan2->num_rows()>0)
-		{
-			return $pan2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}	
-	//Obteniendo los likes y los posts del partido PRI
-	public function Obtener_CPRI2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pri2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PRI2'");
-	
-		if($pri2->num_rows()>0)
-		{
-			return $pri2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido PNA
-	public function Obtener_CPNA2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pna2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='NUEVA ALIANZA2'");
-	
-		if($pna2->num_rows()>0)
-		{
-			return $pna2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}	
-	//Obteniendo los likes y los posts del partido PV
-	public function Obtener_CPV2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pv2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='VERDE2'");
-	
-		if($pv2->num_rows()>0)
-		{
-			return $pv2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}	
-	//Obteniendo los likes y los posts del partido PRD
-	public function Obtener_CPRD2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$prd2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PRD2'");
-	
-		if($prd2->num_rows()>0)
-		{
-			return $prd2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}		
-	//Obteniendo los likes y los posts del partido PT
-	public function Obtener_CPT2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pt2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PT2'");
-	
-		if($pt2->num_rows()>0)
-		{
-			return $pt2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}	
-	//Obteniendo los likes y los posts del partido PMC
-	public function Obtener_CPMC2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pmc2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='MOVIMIENTO CIUDADANO2'");
-	
-		if($pmc2->num_rows()>0)
-		{
-			return $pmc2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido PM
-	public function Obtener_CPM2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pm2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='MORENA2'");
-	
-		if($pm2->num_rows()>0)
-		{
-			return $pm2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido PES
-	public function Obtener_CPES2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$pes2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='ENCUENTRO SOCIAL2'");
-	
-		if($pes2->num_rows()>0)
-		{
-			return $pes2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}
-	//Obteniendo los likes y los posts del partido PH
-	public function Obtener_CPH2()
-	{
-		$db_facebook = $this->load->database('facebook', TRUE);
-		$ph2 = $db_facebook->query("select Megusta, PersonasHablan from partido where (Cargo='Partido') and Partido='PARTIDO HUMANISTA2'");
-	
-		if($ph2->num_rows()>0)
-		{
-			return $ph2->row(); //Con el row solo se obtiene una fila de resultados
-		}
-		else
-		{
-			return FALSE;
-		}				
-	}			
 	//OBTENIENDO LA VALORACION DE LOS CANDIDATOS A GOBERBANDOR	
 	
 	//Obtener valoracion de comentarios de Jorge Luis
@@ -1435,10 +1133,10 @@ class Modelo_inicio extends CI_Model
 		//Obtener valoracion de comentarios de leoanrdo
 		public function valoracion_leonardo()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 2 and 
 										 NombreCandidato = 'Leonardo Gutiérrez'"
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 1 and 
 										 NombreCandidato = 'Leonardo Gutiérrez'"
 										);
 			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
@@ -1461,10 +1159,10 @@ class Modelo_inicio extends CI_Model
 		//Obtener valoracion de comentarios de nicolas
 		public function valoracion_nicolas()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 2 and 
 										 NombreCandidato = 'Nicólas Contreras'"
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 1 and 
 										 NombreCandidato = 'Nicólas Contreras'"
 										);
 			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
@@ -1719,41 +1417,425 @@ class Modelo_inicio extends CI_Model
                 "total" => $total
             );
             return $a;
-		}		
-		//Obtener cuenta de Comovamoscolima
-		public function obtener_cuenta_comoVamos()
+		}	
+		//Obtener valoracion de comentarios de alma
+		public function valoracion_alma()
 		{
-			$comoVamos2 = $this->db->query("select Megusta, PersonasHablan, Fecha from partido where (Cargo='Sociedad') and Partido='Como Vamos Colima' ORDER BY Fecha ASC");
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Alma Arreola'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Alma Arreola'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Alma Arreola'"
+										);
 
-			if($comoVamos2->num_rows()>0)
-			{
-				$a2 = array(
-	                "comoVamos2" => $comoVamos2->result()
-	            );
-	            return $a2;
-			}
-			else
-			{
-				return FALSE;
-			}
-		}		
-		//Obtener cuenta de Comovamoscolima
-		public function obtener_cuenta_rumboal7dejunio()
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}	
+		//Obtener valoracion de comentarios de janeth
+		public function valoracion_janeth()
 		{
-			$rumbo = $this->db->query("select Megusta, PersonasHablan, fecha from partido where (Cargo='Sociedad') and Partido='Rumbo al 7 de junio' ORDER BY Fecha ASC");
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Janeth Paz'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Janeth Paz'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Janeth Paz'"
+										);
 
-			if($rumbo->num_rows()>0)
-			{
-				$a2 = array(
-	                "rumbo" => $rumbo->result()
-	            );
-	            return $a2;
-			}
-			else
-			{
-				return FALSE;
-			}
-		}						
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de juana
+		public function valoracion_juana()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Juana Andr'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Juana Andr'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Juana Andr'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de jose3
+		public function valoracion_jose3()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Jos? Benavides'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Jos? Benavides'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Jos? Benavides'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de sandra
+		public function valoracion_sandra()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Sandra Ram?rez'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Sandra Ram?rez'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Sandra Ram?rez'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de octavio
+		public function valoracion_octavio()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Octavio Tintos'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Octavio Tintos'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Octavio Tintos'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de francisco
+		public function valoracion_francisco()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Francisco Ceballos'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Francisco Ceballos'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Francisco Ceballos'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de alfredo
+		public function valoracion_alfredo()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Alfredo Hern?ndez'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Alfredo Hern?ndez'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Alfredo Hern?ndez'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de meyly
+		public function valoracion_meyly()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Meyly Pastora'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Meyly Pastora'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Meyly Pastora'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de hector
+		public function valoracion_hector()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'H?ctor Maga?a'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'H?ctor Maga?a'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'H?ctor Maga?a'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de rosalina
+		public function valoracion_rosalina()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Rosalina Garc'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Rosalina Garc'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Rosalina Garc'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de juan
+		public function valoracion_juan()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Juan Pinto'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Juan Pinto'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Juan Pinto'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de miguel
+		public function valoracion_miguel()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Miguel Garc'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Miguel Garc'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Miguel Garc'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de armida
+		public function valoracion_armida()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Armida Nu?ez'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Armida Nu?ez'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Armida Nu?ez'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de sergio
+		public function valoracion_sergio()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Sergio S?nchez'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Sergio S?nchez'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Sergio S?nchez'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+		//Obtener valoracion de comentarios de santiago
+		public function valoracion_santiago()
+		{
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM post WHERE Valoracion = 1 and 
+										 NombreCandidato = 'Santiago Ch?vez'"
+										);
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM post WHERE Valoracion = 3 and 
+										 NombreCandidato = 'Santiago Ch?vez'"
+										);
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM post WHERE Valoracion = 2 and 
+										 NombreCandidato = 'Santiago Ch?vez'"
+										);
+
+			$row_positivos = $positivos->row();
+			$row_negativos = $negativos->row();
+			$row_neutros = $neutros->row();
+			$total = $row_positivos->positivos+$row_negativos->negativos+$row_neutros->neutros;
+
+			$a = array(
+                "positivos" => ($row_positivos->positivos*100)/$total,
+                "negativos" => ($row_negativos->negativos*100)/$total,
+                "neutros" => ($row_neutros->neutros*100)/$total,
+                "total" => $total
+            );
+            return $a;
+		}
+
+
 	public function obtener_ultima_fecha()
 	{
 		// $db_facebook = $this->load->database('facebook', TRUE);
@@ -1793,7 +1875,7 @@ class Modelo_inicio extends CI_Model
 		$locho = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 								  where fecha = '$fecha' and Nombre = 'Leoncio Morán Sánchez'");
 		$martha = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-								  where fecha = '$fecha' and Nombre = 'Martha Zepeda del Toro'");
+								  //where fecha = '$fecha' and Nombre = 'Martha Zepeda del Toro'");
 		$david = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 								  where fecha = '$fecha' and Nombre = 'David Munro González'");
 		$francisco = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
@@ -1907,21 +1989,21 @@ class Modelo_inicio extends CI_Model
 		$pan = $this->db->query("SELECT Megusta, PersonasHablan from partido 
 								  where Partido = 'PAN' ORDER BY fecha ASC");
 		$pna = $this->db->query("SELECT Megusta, PersonasHablan from partido 
-								  where Partido = 'NUEVA ALIANZA' ORDER BY fecha ASC");
+								  where Partido = 'PNA' ORDER BY fecha ASC");
 		$pv = $this->db->query("SELECT Megusta, PersonasHablan from partido 
-								  where Partido = 'VERDE' ORDER BY fecha ASC");
+								  where Partido = 'PV' ORDER BY fecha ASC");
 		$prd = $this->db->query("SELECT Megusta, PersonasHablan from partido 
 								  where Partido = 'PRD' ORDER BY fecha ASC");
 		$pt = $this->db->query("SELECT Megusta, PersonasHablan from partido 
 								  where Partido = 'PT' ORDER BY fecha ASC");
 		$pmc = $this->db->query("SELECT Megusta, PersonasHablan from partido 
-								  where Partido = 'MOVIMIENTO CIUDADANO' ORDER BY fecha ASC");
+								  where Partido = 'MC' ORDER BY fecha ASC");
 		$pm = $this->db->query("SELECT Megusta, PersonasHablan from partido 
-								  where Partido = 'MORENA' ORDER BY fecha ASC");
+								  where Partido = 'PM' ORDER BY fecha ASC");
 		$pes = $this->db->query("SELECT Megusta, PersonasHablan from partido 
-								  where Partido = 'ENCUENTRO SOCIAL' ORDER BY fecha ASC");
+								  where Partido = 'PES' ORDER BY fecha ASC");
 		$ph = $this->db->query("SELECT Megusta, PersonasHablan from partido 
-								  where Partido = 'PARTIDO HUMANISTA' ORDER BY fecha ASC");
+								  where Partido = 'PH' ORDER BY fecha ASC");
 
 		if($pri->num_rows()>0)
 		{
@@ -1953,5 +2035,41 @@ class Modelo_inicio extends CI_Model
 		{
 			return FALSE;
 		}
-	}	
+	}
+
+	//Obtener cuenta de Comovamoscolima
+	public function obtener_cuenta_comoVamos()
+	{
+		$comoVamos2 = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+								  where Partido = 'Como Vamos Colima' ORDER BY fecha ASC");
+
+		if($comoVamos2->num_rows()>0)
+		{
+			$a2 = array(
+                "comoVamos2" => $comoVamos2->result()
+            );
+            return $a2;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}		
+	//Obtener cuenta de Comovamoscolima
+	public function obtener_cuenta_rumboal7dejunio()
+	{
+		$rumbo = $this->db->query("SELECT Megusta, PersonasHablan, fecha from partido 
+								  where Partido = 'Rumbo al 7 de junio' ORDER BY fecha ASC");
+		if($rumbo->num_rows()>0)
+		{
+			$a2 = array(
+                "rumbo" => $rumbo->result()
+            );
+            return $a2;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}							
 }	

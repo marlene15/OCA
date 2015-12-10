@@ -256,7 +256,7 @@ class Controlador_inicio extends CI_Controller {
 					          'megustac24' => $zenaidavicente->Megusta, 'seguidoresc24' => $zenaidavicente->PersonasHablan,
 					          'megustac25' => $mariocarrillo->Megusta, 'seguidoresc25' => $mariocarrillo->PersonasHablan,
 					          // //TECOMAN
-					          'megustac26' => $arturogarcia->Megusta, 'seguidoresc26' => $arturogarcia->PersonasHablan,
+					          //'megustac26' => $arturogarcia->Megusta, 'seguidoresc26' => $arturogarcia->PersonasHablan,
 					          'megustac27' => $rubensantos->Megusta, 'seguidoresc27' => $rubensantos->PersonasHablan,
 					          'megustac28' => $angelvenegas->Megusta, 'seguidoresc28' => $angelvenegas->PersonasHablan,
 					          //COQUIMATLAN
@@ -296,246 +296,145 @@ class Controlador_inicio extends CI_Controller {
 			$resultado = $this->modelo_consultas->obtener_cuenta_dip_locales($ultima_fecha); 	
 			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 			
+			$mes='03';
+			 //echo "a =".$ultima_fecha;
+			 //print_r($resultado);
+			 //echo "a2 =".$ultima_fecha2;
 			$datos = array(
 						//DISTRITO I
-		                "megustac1" => $resultado['Hildaceballos']->Megusta,
-		                "seguidoresc1" => $resultado['Hildaceballos']->PersonasHablan,
-		                "megustac2" => $resultado['Josecardenas']->Megusta,
+		                "megustac1" => $resultado['Hildaceballos']->Megusta, 
+		                "seguidoresc1"=>$resultado['Hildaceballos']->PersonasHablan,
+		                "megustac2" => $resultado['Josecardenas']->Megusta, 
 		                "seguidoresc2" => $resultado['Josecardenas']->PersonasHablan,
-		                "megustac3" => $resultado['Leonardogutierrez']->Megusta,
-		                "seguidoresc3" => $resultado['Leonardogutierrez']->PersonasHablan,
-
 		                //DISTRITO II
 		                "megustac4" => $resultado['nicolascontreras']->Megusta,
 		                "seguidoresc4" => $resultado['nicolascontreras']->PersonasHablan,
-
 		                "megustac5" => $resultado['guillermorangel']->Megusta,
 		                "seguidoresc5" => $resultado['guillermorangel']->PersonasHablan,
-		                
 		                "megustac6" => $resultado['SandraRammirez']->Megusta,
 		                "seguidoresc6" => $resultado['SandraRammirez']->PersonasHablan,
-
 		                "megustac7" => $resultado['joseGarcia']->Megusta,
 		                "seguidoresc7" => $resultado['joseGarcia']->PersonasHablan,
-
 		                "megustac8" => $resultado['arturogarcia']->Megusta,
 		                "seguidoresc8" => $resultado['arturogarcia']->PersonasHablan,
-
-		                "megustac9" => $resultado['lilianarodriguez']->Megusta,
-		                "seguidoresc9" => $resultado['lilianarodriguez']->PersonasHablan,
-
 		                //DISTRITO III
 		                "megustac10" => $resultado['crispinguerra']->Megusta,
 		                "seguidoresc10" => $resultado['crispinguerra']->PersonasHablan,
-
 		                "megustac11" => $resultado['almaarreola']->Megusta,
 		                "seguidoresc11" => $resultado['almaarreola']->PersonasHablan,
-
 		                "megustac12" => $resultado['marthafarias']->Megusta,
 		                "seguidoresc12" => $resultado['marthafarias']->PersonasHablan,
-
 		                "megustac13" => $resultado['isisvillasernor']->Megusta,
 		                "seguidoresc13" => $resultado['isisvillasernor']->PersonasHablan,
-
 		                "megustac14" => $resultado['octavioaguilar']->Megusta,
 		                "seguidoresc14" => $resultado['octavioaguilar']->PersonasHablan,
-
 		                "megustac15" => $resultado['patriciaperegrina']->Megusta,
 		                "seguidoresc15" => $resultado['patriciaperegrina']->PersonasHablan,
-
-		                "megustac16" => $resultado['gloriaarceo']->Megusta,
-		                "seguidoresc16" => $resultado['gloriaarceo']->PersonasHablan,
-
 		                //DISTRITO IV
 		                "megustac17" => $resultado['janethpaz']->Megusta,
 		                "seguidoresc17" => $resultado['janethpaz']->Megusta,
-
 		                "megustac18" => $resultado['juanaandres']->PersonasHablan,
 		                "seguidoresc18" => $resultado['juanaandres']->PersonasHablan,
-
 		                "megustac19" => $resultado['sergioricardo']->Megusta,
 		                "seguidoresc19" => $resultado['sergioricardo']->Megusta,
-
-		                "megustac20" => $resultado['andresorozco']->PersonasHablan,
-		                "seguidoresc20" => $resultado['andresorozco']->PersonasHablan,
-		                
 		                //DITRITO V
 		                "megustac21" => $resultado['ramirotoscano']->Megusta,
 		                "seguidoresc21" => $resultado['ramirotoscano']->PersonasHablan,
-
 		                "megustac22" => $resultado['josebenavides']->Megusta,
 		                "seguidoresc22" => $resultado['josebenavides']->PersonasHablan,
-
-		                "megustac23" => $resultado['yulianaaguilar']->Megusta,
-		                "seguidoresc23" => $resultado['yulianaaguilar']->PersonasHablan,
-
 		                //DISTRITO VI
 		                "megustac24" => $resultado['SandrayolandaRammirez']->Megusta,
 		                "seguidoresc24" => $resultado['SandrayolandaRammirez']->PersonasHablan,
-
 		                "megustac25" => $resultado['octaviotintos']->Megusta,
 		                "seguidoresc25" => $resultado['octaviotintos']->PersonasHablan,
-		                
 		                "megustac26" => $resultado['sergiosilva']->Megusta,
-		                "seguidoresc26" => $resultado['sergiosilva']->PersonasHablan,
-		                
+		                "seguidoresc26" => $resultado['sergiosilva']->PersonasHablan,		                
 		                "megustac27" => $resultado['leticiamendoza']->Megusta,
 		                "seguidoresc27" => $resultado['leticiamendoza']->PersonasHablan,
-
-		                "megustac28" => $resultado['getzemaniibarra']->Megusta,
-		                "seguidoresc28" => $resultado['getzemaniibarra']->PersonasHablan,
-		                
 		                //DISTRITO VII
 		                "megustac29" => $resultado['franciscoceballo']->Megusta,
-		                "seguidoresc29" => $resultado['franciscoceballo']->PersonasHablan,
-		                
+		                "seguidoresc29" => $resultado['franciscoceballo']->PersonasHablan,		                
 		                "megustac30" => $resultado['alfredohernandez']->Megusta,
 		                "seguidoresc30" => $resultado['alfredohernandez']->PersonasHablan,
-
 		                "megustac31" => $resultado['saracernas']->Megusta,
-		                "seguidoresc31" => $resultado['saracernas']->PersonasHablan,
-		                
+		                "seguidoresc31" => $resultado['saracernas']->PersonasHablan,		                
 		                "megustac32" => $resultado['jooelpadilla']->Megusta,
-		                "seguidoresc32" => $resultado['jooelpadilla']->PersonasHablan,
-		                
+		                "seguidoresc32" => $resultado['jooelpadilla']->PersonasHablan,		               
 		                "megustac33" => $resultado['socorrobayardo']->Megusta,
 		                "seguidoresc33" => $resultado['socorrobayardo']->PersonasHablan,
-
-		                "megustac34" => $resultado['erendiraandrade']->Megusta,
-		                "seguidoresc34" => $resultado['erendiraandrade']->PersonasHablan,
-		                
 		                //DISTRITO VIII
 		                "megustac35" => $resultado['meylypastora']->Megusta,
-		                "seguidoresc35" => $resultado['meylypastora']->PersonasHablan,
-		                
+		                "seguidoresc35" => $resultado['meylypastora']->PersonasHablan,		                
 		                "megustac36" => $resultado['hectormagana']->Megusta,
 		                "seguidoresc36" => $resultado['hectormagana']->PersonasHablan,
-
 		                "megustac37" => $resultado['alfredoherrera']->Megusta,
-		                "seguidoresc37" => $resultado['alfredoherrera']->PersonasHablan,
-		                
+		                "seguidoresc37" => $resultado['alfredoherrera']->PersonasHablan,		                
 		                "megustac38" => $resultado['adelaidafernandez']->Megusta,
 		                "seguidoresc38" => $resultado['adelaidafernandez']->PersonasHablan,
-
-		                "megustac39" => $resultado['juanjuarez']->Megusta,
-		                "seguidoresc39" => $resultado['juanjuarez']->PersonasHablan,
-
 		                //DISTRITO IX
 		                "megustac40" => $resultado['eusebiomesina']->Megusta,
 		                "seguidoresc40" => $resultado['eusebiomesina']->PersonasHablan,
-
 		                "megustac41" => $resultado['beatrizinsunza']->Megusta,
 		                "seguidoresc41" => $resultado['beatrizinsunza']->PersonasHablan,
-
 		                "megustac42" => $resultado['selenelopez']->Megusta,
 		                "seguidoresc42" => $resultado['selenelopez']->PersonasHablan,
-
 		                "megustac43" => $resultado['angelicaochoa']->Megusta,
 		                "seguidoresc43" => $resultado['angelicaochoa']->PersonasHablan,
-		                
-		                "megustac44" => $resultado['mauriciobarreto']->Megusta,
-		                "seguidoresc44" => $resultado['mauriciobarreto']->PersonasHablan,
-
 		                //DISTRITO X
 		                "megustac45" => $resultado['juanpinto']->Megusta,
 		                "seguidoresc45" => $resultado['juanpinto']->PersonasHablan,
-
 		                "megustac46" => $resultado['ricardosevilla']->Megusta,
-		                "seguidoresc46" => $resultado['ricardosevilla']->PersonasHablan,
-		                
+		                "seguidoresc46" => $resultado['ricardosevilla']->PersonasHablan,		                
 		                "megustac47" => $resultado['raquelcardenas']->Megusta,
 		                "seguidoresc47" => $resultado['raquelcardenas']->PersonasHablan,
-
 		                "megustac48" => $resultado['marcorodarte']->Megusta,
 		                "seguidoresc48" => $resultado['marcorodarte']->PersonasHablan,
-
-		                "megustac49" => $resultado['salvadorjuarez']->Megusta,
-		                "seguidoresc49" => $resultado['salvadorjuarez']->PersonasHablan,		                
-
 		                //DISTRITO XI
 		                "megustac50" => $resultado['miguelgarcia']->Megusta,
 		                "seguidoresc50" => $resultado['miguelgarcia']->PersonasHablan,		                
-
 		                "megustac51" => $resultado['armidanunes']->Megusta,
 		                "seguidoresc51" => $resultado['armidanunes']->PersonasHablan,		                
-
 		                "megustac52" => $resultado['aldovega']->Megusta,
 		                "seguidoresc52" => $resultado['aldovega']->PersonasHablan,		                
-
 		                "megustac53" => $resultado['sebastianesparza']->Megusta,
 		                "seguidoresc53" => $resultado['sebastianesparza']->PersonasHablan,		                
-
 		                "megustac54" => $resultado['teresahernandez']->Megusta,
 		                "seguidoresc54" => $resultado['teresahernandez']->PersonasHablan,	
-
-		                "megustac55" => $resultado['dianatopete']->Megusta,
-		                "seguidoresc55" => $resultado['dianatopete']->PersonasHablan,		                
-
 		                //DISTRITO XII
 		                "megustac56" => $resultado['marthasosa']->Megusta,
 		                "seguidoresc56" => $resultado['marthasosa']->PersonasHablan,		                
-
 		                "megustac57" => $resultado['rosarioyeme']->Megusta,
 		                "seguidoresc57" => $resultado['rosarioyeme']->PersonasHablan,		                
-
 		                "megustac58" => $resultado['noraayala']->Megusta,
 		                "seguidoresc58" => $resultado['noraayala']->PersonasHablan,	
-
-		                "megustac59" => $resultado['sarahinoriega']->Megusta,
-		                "seguidoresc59" => $resultado['sarahinoriega']->PersonasHablan,		                
-
 		                //DISTRITO XIII	
 		                "megustac60" => $resultado['sergiosanchez']->Megusta,
 		                "seguidoresc60" => $resultado['sergiosanchez']->PersonasHablan,		                
-
-		                "megustac61" => $resultado['carlosvilla']->Megusta,
-		                "seguidoresc61" => $resultado['carlosvilla']->PersonasHablan,		                
-
 		                //DISTRITO XIV
 		                "megustac62" => $resultado['luisayala']->Megusta,
 		                "seguidoresc62" => $resultado['luisayala']->PersonasHablan,	
-
 		                "megustac63" => $resultado['lilafigueroa']->Megusta,
 		                "seguidoresc63" => $resultado['lilafigueroa']->PersonasHablan,
-
 		                "megustac64" => $resultado['marthameza']->Megusta,
 		                "seguidoresc64" => $resultado['marthameza']->PersonasHablan,	
-
 		                "megustac65" => $resultado['veronicatorres']->Megusta,
 		                "seguidoresc65" => $resultado['veronicatorres']->PersonasHablan,
-
 		                "megustac66" => $resultado['gustavorerenteria']->Megusta,
 		                "seguidoresc66" => $resultado['gustavorerenteria']->PersonasHablan,	
-
 		                "megustac67" => $resultado['josefinaroblada']->Megusta,
 		                "seguidoresc67" => $resultado['josefinaroblada']->PersonasHablan,
-
-		                "megustac68" => $resultado['eliasnunez']->Megusta,
-		                "seguidoresc68" => $resultado['eliasnunez']->PersonasHablan,	
-
 		                //DISTRITO XV
 		                "megustac69" => $resultado['felicitaspena']->Megusta,
 		                "seguidoresc69" => $resultado['felicitaspena']->PersonasHablan,
-
 						"megustac70" => $resultado['hildamoreno']->Megusta,
 		                "seguidoresc70" => $resultado['hildamoreno']->PersonasHablan,
-
-		                "megustac71" => $resultado['almarincon']->Megusta,
-		                "seguidoresc71" => $resultado['almarincon']->PersonasHablan,		                		                		                		                		                	                		                
-
 		                //DISTRITO XVI
 						"megustac72" => $resultado['santiagochavez']->Megusta,
 		                "seguidoresc72" => $resultado['santiagochavez']->PersonasHablan,
-
 		                "megustac73" => $resultado['judithgodinez']->Megusta,
 		                "seguidoresc73" => $resultado['judithgodinez']->PersonasHablan,
-
 		                "megustac74" => $resultado['sergiomendoza']->Megusta,
 		                "seguidoresc74" => $resultado['sergiomendoza']->PersonasHablan,
-
-		                "megustac75" => $resultado['angelesrodriguez']->Megusta,
-		                "seguidoresc75" => $resultado['angelesrodriguez']->PersonasHablan,
-
 		                'ultima_fecha' => $fecha
 		            );
 			$this->load->view('facebook/diputadolocal',$datos);	

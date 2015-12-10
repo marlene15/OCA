@@ -1,5 +1,5 @@
 <head lang="es">
-  <title>Diputado Federal</title>   
+  <title>Diputado Local</title>   
   <?php $this->load->view('comunes/header'); ?>
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.js"></script> 
   <script src="<?php echo base_url()?>assets/facebook/d3/d3.layout.cloud.js"></script>
@@ -1184,8 +1184,7 @@
       data.addColumn('number', 'Posts');       
       data.addRows([
         ['PRI',<?php echo $megustac1 ?>, <?php echo $seguidoresc1 ?>],
-        ['PM',<?php echo $megustac2 ?>, <?php echo $seguidoresc2 ?>],
-        ['PH',<?php echo $megustac3 ?>, <?php echo $seguidoresc3 ?>]
+        ['PM',<?php echo $megustac2 ?>, <?php echo $seguidoresc2 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1251,8 +1250,7 @@
         ['PNA',<?php echo $megustac5 ?>, <?php echo $seguidoresc5 ?>],        
         ['PVEM',<?php echo $megustac6 ?>, <?php echo $seguidoresc6 ?>],
         ['PT',<?php echo $megustac7 ?>, <?php echo $seguidoresc7 ?>],
-        ['PRD',<?php echo $megustac8 ?>, <?php echo $seguidoresc8 ?>],        
-        ['PES',<?php echo $megustac9 ?>, <?php echo $seguidoresc9 ?>]
+        ['PRD',<?php echo $megustac8 ?>, <?php echo $seguidoresc8 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1319,9 +1317,7 @@
         ['PNA',<?php echo $megustac12 ?>, <?php echo $seguidoresc12 ?>],
         ['PVEM',<?php echo $megustac13 ?>, <?php echo $seguidoresc13 ?>],
         ['PMC',<?php echo $megustac14 ?>, <?php echo $seguidoresc14 ?>],
-        ['PM',<?php echo $megustac15 ?>, <?php echo $seguidoresc14 ?>],
-        ['PH',<?php echo $megustac16 ?>, <?php echo $seguidoresc16 ?>]
-     
+        ['PM',<?php echo $megustac15 ?>, <?php echo $seguidoresc14 ?>]  
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1385,8 +1381,7 @@
       data.addRows([
         ['PAN',<?php echo $megustac17 ?>, <?php echo $seguidoresc17 ?>],
         ['PRI',<?php echo $megustac18 ?>, <?php echo $seguidoresc18 ?>],
-        ['PRD',<?php echo $megustac19 ?>, <?php echo $seguidoresc19 ?>],
-        ['PT',<?php echo $megustac20 ?>, <?php echo $seguidoresc20 ?>]        
+        ['PRD',<?php echo $megustac19 ?>, <?php echo $seguidoresc19 ?>]       
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1449,9 +1444,7 @@
       data.addColumn('number', 'Posts');       
       data.addRows([
         ['PAN',<?php echo $megustac21 ?>, <?php echo $seguidoresc21 ?>],
-        ['PRI-PNA-PV',<?php echo $megustac22 ?>, <?php echo $seguidoresc22 ?>],
-        ['PT',<?php echo $megustac23 ?>, <?php echo $seguidoresc23 ?>]
-
+        ['PRI-PNA-PV',<?php echo $megustac22 ?>, <?php echo $seguidoresc22 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1517,8 +1510,7 @@
         ['PAN',<?php echo $megustac24 ?>, <?php echo $seguidoresc24 ?>],
         ['PRI-PNA-PV',<?php echo $megustac25 ?>, <?php echo $seguidoresc25 ?>],
         ['PRD',<?php echo $megustac26 ?>, <?php echo $seguidoresc26 ?>],
-        ['PT',<?php echo $megustac27 ?>, <?php echo $seguidoresc27 ?>],
-        ['PH',<?php echo $megustac28 ?>, <?php echo $seguidoresc28 ?>]                        
+        ['PT',<?php echo $megustac27 ?>, <?php echo $seguidoresc27 ?>]                        
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1584,8 +1576,7 @@
         ['PRI-PNA-PV',<?php echo $megustac30 ?>, <?php echo $seguidoresc30 ?>],
         ['PRD',<?php echo $megustac31 ?>, <?php echo $seguidoresc31 ?>],
         ['PT',<?php echo $megustac32 ?>, <?php echo $seguidoresc32 ?>],
-        ['PMC',<?php echo $megustac33 ?>, <?php echo $seguidoresc33 ?>],
-        ['PH',<?php echo $megustac34 ?>, <?php echo $seguidoresc34 ?>]                                                        
+        ['PMC',<?php echo $megustac33 ?>, <?php echo $seguidoresc33 ?>]                                                       
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1650,8 +1641,7 @@
         ['PAN',<?php echo $megustac35 ?>, <?php echo $seguidoresc35 ?>],
         ['PRI-PNA-PV',<?php echo $megustac36 ?>, <?php echo $seguidoresc36 ?>],
         ['PT',<?php echo $megustac37 ?>, <?php echo $seguidoresc37 ?>],
-        ['PMC',<?php echo $megustac38 ?>, <?php echo $seguidoresc38 ?>],
-        ['PH',<?php echo $megustac39 ?>, <?php echo $seguidoresc39 ?>]
+        ['PMC',<?php echo $megustac38 ?>, <?php echo $seguidoresc38 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1716,8 +1706,7 @@
         ['PAN',<?php echo $megustac40 ?>, <?php echo $seguidoresc40 ?>],
         ['PRI',<?php echo $megustac41 ?>, <?php echo $seguidoresc41 ?>],
         ['PVEM',<?php echo $megustac42 ?>, <?php echo $seguidoresc42 ?>],
-        ['PMC',<?php echo $megustac43 ?>, <?php echo $seguidoresc43 ?>],
-        ['PM',<?php echo $megustac44 ?>, <?php echo $seguidoresc44 ?>]
+        ['PMC',<?php echo $megustac43 ?>, <?php echo $seguidoresc43 ?>]
         ]);
 
       var view = new google.visualization.DataView(data);
@@ -1783,8 +1772,7 @@
         ['PRI-PNA-PV',<?php echo $megustac45 ?>, <?php echo $seguidoresc45 ?>],
         ['PT',<?php echo $megustac46 ?>, <?php echo $seguidoresc46 ?>],
         ['PMC',<?php echo $megustac47 ?>, <?php echo $seguidoresc47 ?>],
-        ['PM',<?php echo $megustac48 ?>, <?php echo $seguidoresc48 ?>],
-        ['PH',<?php echo $megustac49 ?>, <?php echo $seguidoresc49 ?>]                                                                  
+        ['PM',<?php echo $megustac48 ?>, <?php echo $seguidoresc48 ?>]                                                                 
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1850,8 +1838,7 @@
         ['PRI-PNA-PV',<?php echo $megustac51 ?>, <?php echo $seguidoresc51 ?>],
         ['PRD',<?php echo $megustac52 ?>, <?php echo $seguidoresc52 ?>],
         ['PT',<?php echo $megustac53 ?>, <?php echo $seguidoresc53 ?>],
-        ['PM',<?php echo $megustac54 ?>, <?php echo $seguidoresc54 ?>],
-        ['PM',<?php echo $megustac55 ?>, <?php echo $seguidoresc55 ?>]        
+        ['PM',<?php echo $megustac54 ?>, <?php echo $seguidoresc54 ?>]      
         ]);
 
       var view = new google.visualization.DataView(data);
@@ -1916,8 +1903,7 @@
       data.addRows([
         ['PAN',<?php echo $megustac56 ?>, <?php echo $seguidoresc56 ?>],
         ['PRI',<?php echo $megustac57 ?>, <?php echo $seguidoresc57 ?>],
-        ['PT',<?php echo $megustac58 ?>, <?php echo $seguidoresc58 ?>],
-        ['PMC',<?php echo $megustac59 ?>, <?php echo $seguidoresc59 ?>]
+        ['PT',<?php echo $megustac58 ?>, <?php echo $seguidoresc58 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -1979,8 +1965,7 @@
       data.addColumn('number', 'Likes');
       data.addColumn('number', 'Posts');       
       data.addRows([
-        ['PAN',<?php echo $megustac60 ?>, <?php echo $seguidoresc60 ?>],
-        ['PT',<?php echo $megustac61 ?>, <?php echo $seguidoresc61 ?>]
+        ['PAN',<?php echo $megustac60 ?>, <?php echo $seguidoresc60 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2047,8 +2032,7 @@
         ['PVEM',<?php echo $megustac64 ?>, <?php echo $seguidoresc64 ?>],
         ['PT',<?php echo $megustac65 ?>, <?php echo $seguidoresc65 ?>],
         ['PMC',<?php echo $megustac66 ?>, <?php echo $seguidoresc66 ?>],        
-        ['PM',<?php echo $megustac67 ?>, <?php echo $seguidoresc67 ?>],
-        ['PES',<?php echo $megustac68 ?>, <?php echo $seguidoresc68 ?>]
+        ['PM',<?php echo $megustac67 ?>, <?php echo $seguidoresc67 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2112,8 +2096,7 @@
       data.addColumn('number', 'Posts');       
       data.addRows([
         ['PRI-PNA-PV',<?php echo $megustac69 ?>, <?php echo $seguidoresc69 ?>],
-        ['PT',<?php echo $megustac70 ?>, <?php echo $seguidoresc70 ?>],
-        ['PMC',<?php echo $megustac71 ?>, <?php echo $seguidoresc71 ?>]
+        ['PT',<?php echo $megustac70 ?>, <?php echo $seguidoresc70 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -2178,8 +2161,7 @@
       data.addRows([
         ['PRI-PNA-PV',<?php echo $megustac72 ?>, <?php echo $seguidoresc72 ?>],
         ['PT',<?php echo $megustac73 ?>, <?php echo $seguidoresc73 ?>],
-        ['PMC',<?php echo $megustac74 ?>, <?php echo $seguidoresc74 ?>],
-        ['PH',<?php echo $megustac75 ?>, <?php echo $seguidoresc75 ?>]
+        ['PMC',<?php echo $megustac74 ?>, <?php echo $seguidoresc74 ?>]
       ]);
 
       var view = new google.visualization.DataView(data);

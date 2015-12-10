@@ -204,73 +204,13 @@ class Controlador_consultas extends CI_Controller {
 			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 			$existe = 2;
 		}
-
 		$ultima_fecha=$this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
-
-		if($resultado['isis']=='FALSO'){
-			$seguidores_isis=0;
-			$siguiendo_isis=0;
-			$tweets_isis=0;
-		}
-		else{
-			$seguidores_isis=$resultado['isis']->seguidores;
-			$siguiendo_isis=$resultado['isis']->siguiendo;
-			$tweets_isis=$resultado['isis']->tweets;
-		}
-
-		if($resultado['felicitas']=='FALSO'){
-			$seguidores_felicitas=0;
-			$siguiendo_felicitas=0;
-			$tweets_felicitas=0;
-		}
-		else{
-			$seguidores_felicitas=$resultado['felicitas']->seguidores;
-			$siguiendo_felicitas=$resultado['felicitas']->siguiendo;
-			$tweets_felicitas=$resultado['felicitas']->tweets;
-		}
-		
-		if($resultado['yadira']=='FALSO'){
-			$seguidores_yadira=0;
-			$siguiendo_yadira=0;
-			$tweets_yadira=0;
-		}
-		else{
-			$seguidores_yadira=$resultado['yadira']->seguidores;
-			$siguiendo_yadira=$resultado['yadira']->siguiendo;
-			$tweets_yadira=$resultado['yadira']->tweets;
-		}
-
-		if($resultado['alma']=='FALSO'){
-			$seguidores_alma=0;
-			$siguiendo_alma=0;
-			$tweets_alma=0;
-		}
-		else{
-			$seguidores_alma=$resultado['alma']->seguidores;
-			$siguiendo_alma=$resultado['alma']->siguiendo;
-			$tweets_alma=$resultado['alma']->tweets;
-		}
-
-		if($resultado['marthaS']=='FALSO'){
-			$seguidores_marthaS=0;
-			$siguiendo_marthaS=0;
-			$tweets_marthaS=0;
-		}
-		else{
-			$seguidores_marthaS=$resultado['marthaS']->seguidores;
-			$siguiendo_marthaS=$resultado['marthaS']->siguiendo;
-			$tweets_marthaS=$resultado['marthaS']->tweets;
-		}
-
 		$datos = array(
-	                //DISTRITO I
+                //DISTRITO I
 	                "megustac1" => $resultado['Hildaceballos']->Megusta,
 	                "seguidoresc1" => $resultado['Hildaceballos']->PersonasHablan,
 	                "megustac2" => $resultado['Josecardenas']->Megusta,
 	                "seguidoresc2" => $resultado['Josecardenas']->PersonasHablan,
-	                "megustac3" => $resultado['Leonardogutierrez']->Megusta,
-	                "seguidoresc3" => $resultado['Leonardogutierrez']->PersonasHablan,
-
 	                //DISTRITO II
 	                "megustac4" => $resultado['nicolascontreras']->Megusta,
 	                "seguidoresc4" => $resultado['nicolascontreras']->PersonasHablan,
@@ -286,9 +226,6 @@ class Controlador_consultas extends CI_Controller {
 
 	                "megustac8" => $resultado['arturogarcia']->Megusta,
 	                "seguidoresc8" => $resultado['arturogarcia']->PersonasHablan,
-
-	                "megustac9" => $resultado['lilianarodriguez']->Megusta,
-	                "seguidoresc9" => $resultado['lilianarodriguez']->PersonasHablan,
 
 	                //DISTRITO III
 	                "megustac10" => $resultado['crispinguerra']->Megusta,
@@ -309,9 +246,6 @@ class Controlador_consultas extends CI_Controller {
 	                "megustac15" => $resultado['patriciaperegrina']->Megusta,
 	                "seguidoresc15" => $resultado['patriciaperegrina']->PersonasHablan,
 
-	                "megustac16" => $resultado['gloriaarceo']->Megusta,
-	                "seguidoresc16" => $resultado['gloriaarceo']->PersonasHablan,
-
 	                //DISTRITO IV
 	                "megustac17" => $resultado['janethpaz']->Megusta,
 	                "seguidoresc17" => $resultado['janethpaz']->Megusta,
@@ -321,9 +255,6 @@ class Controlador_consultas extends CI_Controller {
 
 	                "megustac19" => $resultado['sergioricardo']->Megusta,
 	                "seguidoresc19" => $resultado['sergioricardo']->Megusta,
-
-	                "megustac20" => $resultado['andresorozco']->PersonasHablan,
-	                "seguidoresc20" => $resultado['andresorozco']->PersonasHablan,
 	                
 	                //DITRITO V
 	                "megustac21" => $resultado['ramirotoscano']->Megusta,
@@ -331,9 +262,6 @@ class Controlador_consultas extends CI_Controller {
 
 	                "megustac22" => $resultado['josebenavides']->Megusta,
 	                "seguidoresc22" => $resultado['josebenavides']->PersonasHablan,
-
-	                "megustac23" => $resultado['yulianaaguilar']->Megusta,
-	                "seguidoresc23" => $resultado['yulianaaguilar']->PersonasHablan,
 
 	                //DISTRITO VI
 	                "megustac24" => $resultado['SandrayolandaRammirez']->Megusta,
@@ -348,9 +276,6 @@ class Controlador_consultas extends CI_Controller {
 	                "megustac27" => $resultado['leticiamendoza']->Megusta,
 	                "seguidoresc27" => $resultado['leticiamendoza']->PersonasHablan,
 
-	                "megustac28" => $resultado['getzemaniibarra']->Megusta,
-	                "seguidoresc28" => $resultado['getzemaniibarra']->PersonasHablan,
-	                
 	                //DISTRITO VII
 	                "megustac29" => $resultado['franciscoceballo']->Megusta,
 	                "seguidoresc29" => $resultado['franciscoceballo']->PersonasHablan,
@@ -367,9 +292,6 @@ class Controlador_consultas extends CI_Controller {
 	                "megustac33" => $resultado['socorrobayardo']->Megusta,
 	                "seguidoresc33" => $resultado['socorrobayardo']->PersonasHablan,
 
-	                "megustac34" => $resultado['erendiraandrade']->Megusta,
-	                "seguidoresc34" => $resultado['erendiraandrade']->PersonasHablan,
-	                
 	                //DISTRITO VIII
 	                "megustac35" => $resultado['meylypastora']->Megusta,
 	                "seguidoresc35" => $resultado['meylypastora']->PersonasHablan,
@@ -383,9 +305,6 @@ class Controlador_consultas extends CI_Controller {
 	                "megustac38" => $resultado['adelaidafernandez']->Megusta,
 	                "seguidoresc38" => $resultado['adelaidafernandez']->PersonasHablan,
 
-	                "megustac39" => $resultado['juanjuarez']->Megusta,
-	                "seguidoresc39" => $resultado['juanjuarez']->PersonasHablan,
-
 	                //DISTRITO IX
 	                "megustac40" => $resultado['eusebiomesina']->Megusta,
 	                "seguidoresc40" => $resultado['eusebiomesina']->PersonasHablan,
@@ -398,9 +317,6 @@ class Controlador_consultas extends CI_Controller {
 
 	                "megustac43" => $resultado['angelicaochoa']->Megusta,
 	                "seguidoresc43" => $resultado['angelicaochoa']->PersonasHablan,
-	                
-	                "megustac44" => $resultado['mauriciobarreto']->Megusta,
-	                "seguidoresc44" => $resultado['mauriciobarreto']->PersonasHablan,
 
 	                //DISTRITO X
 	                "megustac45" => $resultado['juanpinto']->Megusta,
@@ -414,9 +330,6 @@ class Controlador_consultas extends CI_Controller {
 
 	                "megustac48" => $resultado['marcorodarte']->Megusta,
 	                "seguidoresc48" => $resultado['marcorodarte']->PersonasHablan,
-
-	                "megustac49" => $resultado['salvadorjuarez']->Megusta,
-	                "seguidoresc49" => $resultado['salvadorjuarez']->PersonasHablan,		                
 
 	                //DISTRITO XI
 	                "megustac50" => $resultado['miguelgarcia']->Megusta,
@@ -432,10 +345,7 @@ class Controlador_consultas extends CI_Controller {
 	                "seguidoresc53" => $resultado['sebastianesparza']->PersonasHablan,		                
 
 	                "megustac54" => $resultado['teresahernandez']->Megusta,
-	                "seguidoresc54" => $resultado['teresahernandez']->PersonasHablan,	
-
-	                "megustac55" => $resultado['dianatopete']->Megusta,
-	                "seguidoresc55" => $resultado['dianatopete']->PersonasHablan,		                
+	                "seguidoresc54" => $resultado['teresahernandez']->PersonasHablan,		                
 
 	                //DISTRITO XII
 	                "megustac56" => $resultado['marthasosa']->Megusta,
@@ -445,17 +355,11 @@ class Controlador_consultas extends CI_Controller {
 	                "seguidoresc57" => $resultado['rosarioyeme']->PersonasHablan,		                
 
 	                "megustac58" => $resultado['noraayala']->Megusta,
-	                "seguidoresc58" => $resultado['noraayala']->PersonasHablan,	
-
-	                "megustac59" => $resultado['sarahinoriega']->Megusta,
-	                "seguidoresc59" => $resultado['sarahinoriega']->PersonasHablan,		                
+	                "seguidoresc58" => $resultado['noraayala']->PersonasHablan,			                
 
 	                //DISTRITO XIII	
 	                "megustac60" => $resultado['sergiosanchez']->Megusta,
-	                "seguidoresc60" => $resultado['sergiosanchez']->PersonasHablan,		                
-
-	                "megustac61" => $resultado['carlosvilla']->Megusta,
-	                "seguidoresc61" => $resultado['carlosvilla']->PersonasHablan,		                
+	                "seguidoresc60" => $resultado['sergiosanchez']->PersonasHablan,		                	                
 
 	                //DISTRITO XIV
 	                "megustac62" => $resultado['luisayala']->Megusta,
@@ -476,18 +380,12 @@ class Controlador_consultas extends CI_Controller {
 	                "megustac67" => $resultado['josefinaroblada']->Megusta,
 	                "seguidoresc67" => $resultado['josefinaroblada']->PersonasHablan,
 
-	                "megustac68" => $resultado['eliasnunez']->Megusta,
-	                "seguidoresc68" => $resultado['eliasnunez']->PersonasHablan,	
-
 	                //DISTRITO XV
 	                "megustac69" => $resultado['felicitaspena']->Megusta,
 	                "seguidoresc69" => $resultado['felicitaspena']->PersonasHablan,
 
 					"megustac70" => $resultado['hildamoreno']->Megusta,
-	                "seguidoresc70" => $resultado['hildamoreno']->PersonasHablan,
-
-	                "megustac71" => $resultado['almarincon']->Megusta,
-	                "seguidoresc71" => $resultado['almarincon']->PersonasHablan,		                		                		                		                		                	                		                
+	                "seguidoresc70" => $resultado['hildamoreno']->PersonasHablan,	                		                		                		                		                	                		                
 
 	                //DISTRITO XVI
 					"megustac72" => $resultado['santiagochavez']->Megusta,
@@ -498,10 +396,6 @@ class Controlador_consultas extends CI_Controller {
 
 	                "megustac74" => $resultado['sergiomendoza']->Megusta,
 	                "seguidoresc74" => $resultado['sergiomendoza']->PersonasHablan,
-
-	                "megustac75" => $resultado['angelesrodriguez']->Megusta,
-	                "seguidoresc75" => $resultado['angelesrodriguez']->PersonasHablan,
-
 	                'fecha' => $fecha,
 	                'existe' => $existe,
 	                'vtab' => $vtab,

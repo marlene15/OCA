@@ -163,8 +163,8 @@
 									  where fecha = '$fecha' and Nombre = 'Hilda Ceballos Llerenas'");
 			$Josecardenas = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'José Cárdenas Sánchez'");
-			$Leonardogutierrez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Leonardo Cesar Gutiérrez Chávez'");
+			//$Leonardogutierrez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+			//						  where fecha = '$fecha' and Nombre = 'Leonardo Cesar Gutiérrez Chávez'");
 
 			$nicolascontreras = $this->db->query("SELECT  Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Nicolás Contreras Cortés'");
@@ -176,8 +176,8 @@
 									  where fecha = '$fecha' and Nombre = 'José Luis García Solache'");
 			$arturogarcia = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Arturo García Arias'");
-			$lilianarodriguez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Liliana Rodríguez Vejar'");
+			//$lilianarodriguez = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+			//						  where fecha = '$fecha' and Nombre = 'Liliana Rodríguez Vejar'");
 			
 			$crispinguerra = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Crispin Guerra Cardenas'");
@@ -191,8 +191,8 @@
 									  where fecha = '$fecha' and Nombre = 'Octavio Aguilar Montano'");
 			$patriciaperegrina = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Patricia Ines Peregrina Larios'");
-			$gloriaarceo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Gloria Arceo Chavez'");
+			//$gloriaarceo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+			//						  where fecha = '$fecha' and Nombre = 'Gloria Arceo Chavez'");
 			
 			$janethpaz = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Janeth Paz Ponce'");
@@ -200,11 +200,11 @@
 									  where fecha = '$fecha' and Nombre = 'Juana Andres Rivera'");
 			$sergioricardo = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Sergio Ricardo Ruiz'");
-			$andresorozco = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Andres Fernando Orozco Soto'");
+			//$andresorozco = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
+			//						  where fecha = '$fecha' and Nombre = 'Andres Fernando Orozco Soto'");
 
 			$ramirotoscano = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
-									  where fecha = '$fecha' and Nombre = 'Ramiro Toscano Sanchez'");
+									  where fecha = '$fecha' and Nombre = 'Ramiro Toscano Sánchez'");
 			$josebenavides = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Jose Guadalupe Benavides Florian'");
 			$yulianaaguilar = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
@@ -233,7 +233,7 @@
 									  where fecha = '$fecha' and Nombre = 'Socorro Bayardo Gaitan'");
 			$erendiraandrade = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Erendira Noemi Andrade Ochoa'");
-			
+			//FALTA DESCARGAR DE AQUI
 			//DISTRITO VIII
 			$meylypastora = $this->db->query("SELECT Megusta, PersonasHablan from candidatos 
 									  where fecha = '$fecha' and Nombre = 'Meyly Pastora Beltran rolon'");
@@ -327,107 +327,6 @@
 									  where fecha = '$fecha' and Nombre = 'Ma de Los angeles Rodriguez Silva'");
 			
 
-			if ($Leonardogutierrez->num_rows()>0){
-				$Leonardogutierrez=$Leonardogutierrez->row();
-			}
-			else{
-				$Leonardogutierrez='FALSO';
-			}
-
-			if ($lilianarodriguez->num_rows()>0){
-				$lilianarodriguez=$lilianarodriguez->row();
-			}
-			else{
-				$lilianarodriguez='FALSO';
-			}
-
-			if ($gloriaarceo->num_rows()>0){
-				$gloriaarceo=$gloriaarceo->row();
-			}
-			else{
-				$gloriaarceo='FALSO';
-			}
-
-			if ($andresorozco->num_rows()>0){
-				$andresorozco=$andresorozco->row();
-			}
-			else{
-				$andresorozco='FALSO';
-			}
-
-			if ($yulianaaguilar->num_rows()>0){
-				$yulianaaguilar=$yulianaaguilar->row();
-			}
-			else{
-				$yulianaaguilar='FALSO';
-			}
-			if ($getzemaniibarra->num_rows()>0){
-				$getzemaniibarra=$getzemaniibarra->row();
-			}
-			else{
-				$getzemaniibarra='FALSO';
-			}
-			if ($erendiraandrade->num_rows()>0){
-				$erendiraandrade=$erendiraandrade->row();
-			}
-			else{
-				$erendiraandrade='FALSO';
-			}
-			if ($juanjuarez->num_rows()>0){
-				$juanjuarez=$juanjuarez->row();
-			}
-			else{
-				$juanjuarez='FALSO';
-			}
-			if ($mauriciobarreto->num_rows()>0){
-				$mauriciobarreto=$mauriciobarreto->row();
-			}
-			else{
-				$mauriciobarreto='FALSO';
-			}
-			if ($salvadorjuarez->num_rows()>0){
-				$salvadorjuarez=$salvadorjuarez->row();
-			}
-			else{
-				$salvadorjuarez='FALSO';
-			}
-			if ($dianatopete->num_rows()>0){
-				$dianatopete=$dianatopete->row();
-			}
-			else{
-				$dianatopete='FALSO';
-			}
-			if ($sarahinoriega->num_rows()>0){
-				$sarahinoriega=$sarahinoriega->row();
-			}
-			else{
-				$sarahinoriega='FALSO';
-			}
-			if ($carlosvilla->num_rows()>0){
-				$carlosvilla=$carlosvilla->row();
-			}
-			else{
-				$carlosvilla='FALSO';
-			}
-			if ($eliasnunez->num_rows()>0){
-				$eliasnunez=$eliasnunez->row();
-			}
-			else{
-				$eliasnunez='FALSO';
-			}
-			if ($almarincon->num_rows()>0){
-				$almarincon=$almarincon->row();
-			}
-			else{
-				$almarincon='FALSO';
-			}
-			if ($angelesrodriguez->num_rows()>0){
-				$angelesrodriguez=$angelesrodriguez->row();
-			}
-			else{
-				$angelesrodriguez='FALSO';
-			}
-			
 			$a = array(
 	            	"Hildaceballos" => $Hildaceballos->row(),
 	              	"Josecardenas" => $Josecardenas->row(),
@@ -517,7 +416,7 @@
 	              	
 	               	"santiagochavez" => $santiagochavez->row(),
 	              	"judithgodinez" => $judithgodinez->row(),
-	              	"sergiomendoza" => $sergiomendoza->row(),
+	              	"sergiomendoza" => $sergiomendoza->row()
 	              	// "angelesrodriguez" => $angelesrodriguez->row()
 	         	);
 	        return $a;			

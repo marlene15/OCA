@@ -108,7 +108,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                             </div>
 
 
-                            <div id="barras2" class="tab-pane fade active in"> 
+                            <div id="barras2" class="tab-pane fade"> 
                                 <div class="container-fluid">
                                     <div class="row-fluid">
                                       <div class="span12">

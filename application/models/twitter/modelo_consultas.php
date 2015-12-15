@@ -8,7 +8,7 @@
 
 		public function ExisteFecha($fecha)
 		{
-			$usuarios_fechas = $this->db->query("SELECT usuario From cuentas WHERE fecha = '$fecha'");
+			$usuarios_fechas = $this->db->query("SELECT usuario From cuentas WHERE fecha = '$fecha' and fecha <= '2015-06-19'");
 			if($usuarios_fechas->num_rows()>0)
 			{
 				return 1;
@@ -323,29 +323,29 @@
 		public function obtener_cuenta_partidos()
 		{
 			$pri = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PRI_Colima' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'PRI_Colima' ORDER BY fecha ASC");
 			$jips_2015 = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'JIPS2015' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'JIPS2015' ORDER BY fecha ASC");
 			$JIPSColima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'JIPSColima' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'JIPSColima' ORDER BY fecha ASC");
 			$jipsvdea = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'jipsvdea' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'jipsvdea' ORDER BY fecha ASC");
 			$MiSelfiecoNacho = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'MiSelfiecoNacho' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'MiSelfiecoNacho' ORDER BY fecha ASC");
 			$PANDColima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PANDColima' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'PANDColima' ORDER BY fecha ASC");
 			$cdepancolima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'cdepancolima' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'cdepancolima' ORDER BY fecha ASC");
 			$PRDcolima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PRDcolima' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'PRDcolima' ORDER BY fecha ASC");
 			$MovCiudadanoCol = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'MovCiudadanoCol' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'MovCiudadanoCol' ORDER BY fecha ASC");
 			$ColPartidoVerde = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'ColPartidoVerde' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'ColPartidoVerde' ORDER BY fecha ASC");
 			$PT_Colima = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'PT_Colima' ORDER BY fecha ASC");
+									  where fecha <= '2015-06-19' and usuario = 'PT_Colima' ORDER BY fecha ASC");
 			$MorenaColima1 = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'MorenaColima1' ORDER BY fecha ASC");		
+									  where fecha <= '2015-06-19' and usuario = 'MorenaColima1' ORDER BY fecha ASC");		
 
 			$a = array(
                 "pri" => $pri->result(),
@@ -452,13 +452,13 @@
 		public function menciones_gobernadores()
 		{
 			$nacho = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%nachoperaltacol%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%nachoperaltacol%' group by fecha");
 			$jorge = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%JL_Preciado_%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%JL_Preciado_%' group by fecha");
 			$locho = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%leonciomoranL8%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%leonciomoranL8%' group by fecha");
 			$martha = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%MarthaZepeda_%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%MarthaZepeda_%' group by fecha");
 			$a = array(
 	            "nacho" => $nacho->result(),
 	            "jorge" => $jorge->result(),
@@ -471,11 +471,11 @@
 		public function menciones_DipFederales()
 		{
 			$indira = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%indira_vizcaino%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%indira_vizcaino%' group by fecha");
 			$kike = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%kikerojas007%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%kikerojas007%' group by fecha");
 			$norma = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%NormaGdeV%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%NormaGdeV%' group by fecha");
 			$a = array(
 	            "indira" => $indira->result(),
 	            "kike" => $kike->result(),
@@ -487,29 +487,29 @@
 		public function menciones_DipLocales()
 		{
 			$hilda = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%HildaCeballos01%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%HildaCeballos01%' group by fecha");
 			$guillermo = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%Rangel_G_%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%Rangel_G_%' group by fecha");
 			$alma = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%AlmaDelia_D3%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%AlmaDelia_D3%' group by fecha");
 			$janeth = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%JanethPazPonce%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%JanethPazPonce%' group by fecha");
 			$juanita = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%JuanitaAndres%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%JuanitaAndres%' group by fecha");
 			$lupe = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%LupeBenavidesF%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%LupeBenavidesF%' group by fecha");
 			$octavio = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%octaviotintos%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%octaviotintos%' group by fecha");
 			$sara = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%saracernas%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%saracernas%' group by fecha");
 			$hector = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%hectormlara%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%hectormlara%' group by fecha");
 			$juan = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%PintoRgz%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%PintoRgz%' group by fecha");
 			$armida = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%Armida_NG%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%Armida_NG%' group by fecha");
 			$martha = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%martha_sosa1%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%martha_sosa1%' group by fecha");
 			$a = array(
 	            "hilda" => $hilda->result(),
 	            "guillermo" => $guillermo->result(),
@@ -530,25 +530,25 @@
 		public function menciones_Presidentes()
 		{
 			$esperanza = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%DipEsperanzaA%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%DipEsperanzaA%' group by fecha");
 			$oscar = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%OVPresidente%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%OVPresidente%' group by fecha");
 			$hector = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%hectorinsua%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%hectorinsua%' group by fecha");
 			$abaroa = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%meabaroa%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%meabaroa%' group by fecha");
 			$esmeralda = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%EsmePresidenta%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%EsmePresidenta%' group by fecha");
 			$salomon = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%salo_salazar1%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%salo_salazar1%' group by fecha");
 			$blanca = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%BlancaPRI2015%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%BlancaPRI2015%' group by fecha");
 			$pico = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%PicoZepeda%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%PicoZepeda%' group by fecha");
 			$arturo = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%DipArturoGarcia%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%DipArturoGarcia%' group by fecha");
 			$oswy = $this->db->query("SELECT fecha,count(*) as cantidad FROM twitt 
-									WHERE menciones LIKE '%OswyDelgado%' group by fecha");
+									WHERE fecha <= '2015-06-19' and menciones LIKE '%OswyDelgado%' group by fecha");
 			$a = array(
 	            "esperanza" => $esperanza->result(),
 	            "oscar" => $oscar->result(),

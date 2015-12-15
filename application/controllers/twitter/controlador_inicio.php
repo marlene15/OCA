@@ -47,9 +47,9 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
-		$ultima_fecha = $ultima_fecha->ultima_fecha;
-		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 	
-		//echo "Ultima fecha: ".$ultima_fecha;	
+		//$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha = '2015-06-19';
+		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 		$mes='03';
 		$hashtags = $this->modelo_inicio->obtener_hashtags_gobernadores($mes);
@@ -77,7 +77,8 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
-		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		//$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha = '2015-06-19';
 		$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 
 		$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 			
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
@@ -110,7 +111,8 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
-		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		//$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha = '2015-06-19';
 		$resultado = $this->modelo_consultas->obtener_cuenta_dip_locales($ultima_fecha); 	
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 		$mes='03';
@@ -227,7 +229,8 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
-		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		//$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha = '2015-06-19';
 		$resultado = $this->modelo_consultas->obtener_cuenta_alcaldias($ultima_fecha); 	
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 		$mes='03';

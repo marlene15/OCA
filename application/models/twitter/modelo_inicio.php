@@ -655,15 +655,15 @@
 		//Obtener valoracion de comentarios de nacho
 		public function valoracion_nacho()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%nachoperaltacol%' or texto LIKE '%jips%' 
 										  or texto LIKE '%JoveNachos%' or texto LIKE '%JuntosNadieNosPara%')"
 										);
@@ -685,17 +685,17 @@
 		//Obtener valoracion de comentarios de Jorge Luis
 		public function valoracion_jorge()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JL_Preciado_%' or texto LIKE '%DesdeAbajoConTrabajo%' 
 										  or texto LIKE '%ClaroQuePodemos%' or texto LIKE '%AlegrateYaSeVan%'
 										  or texto LIKE '%JorgeLuis %' or texto LIKE '%YaSeVan%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JL_Preciado_%' or texto LIKE '%DesdeAbajoConTrabajo%' 
 										  or texto LIKE '%ClaroQuePodemos%' or texto LIKE '%AlegrateYaSeVan%'
 										  or texto LIKE '%JorgeLuis %' or texto LIKE '%YaSeVan%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JL_Preciado_%' or texto LIKE '%DesdeAbajoConTrabajo%' 
 										  or texto LIKE '%ClaroQuePodemos%' or texto LIKE '%AlegrateYaSeVan%'
 										  or texto LIKE '%JorgeLuis %' or texto LIKE '%YaSeVan%')"  
@@ -718,17 +718,17 @@
 		//Obtener valoracion de comentarios de Locho
 		public function valoracion_locho()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%leonciomoranL8%' or texto LIKE '%DefiendeColima%' 
 										  or texto LIKE '%MovimientoCiudadano%' or texto LIKE '%CambiarLaHistoria%'
 										  or texto LIKE '%TodosConL8cho%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%leonciomoranL8%' or texto LIKE '%DefiendeColima%' 
 										  or texto LIKE '%MovimientoCiudadano%' or texto LIKE '%CambiarLaHistoria%'
 										  or texto LIKE '%TodosConL8cho%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%leonciomoranL8%' or texto LIKE '%DefiendeColima%' 
 										  or texto LIKE '%MovimientoCiudadano%' or texto LIKE '%CambiarLaHistoria%'
 										  or texto LIKE '%TodosConL8cho%')"
@@ -751,21 +751,21 @@
 		//Obtener valoracion de comentarios de Martha
 		public function valoracion_martha()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MarthaZepeda_%' or texto LIKE '%PRDcolima%' 
 										  or texto LIKE '%PRD%' or texto LIKE '%ComoTú%'
 										  or texto LIKE '%ComoTu%' or texto LIKE '%EsHoraDelPRD%'
 										  or texto LIKE '%SomosPRD%' or texto LIKE '%SabemosGobernar%'
 										  or texto LIKE '%NuevaIzquierda%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MarthaZepeda_%' or texto LIKE '%PRDcolima%' 
 										  or texto LIKE '%PRD%' or texto LIKE '%ComoTú%'
 										  or texto LIKE '%ComoTu%' or texto LIKE '%EsHoraDelPRD%'
 										  or texto LIKE '%SomosPRD%' or texto LIKE '%SabemosGobernar%'
 										  or texto LIKE '%NuevaIzquierda%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MarthaZepeda_%' or texto LIKE '%PRDcolima%' 
 										  or texto LIKE '%PRD%' or texto LIKE '%ComoTú%'
 										  or texto LIKE '%ComoTu%' or texto LIKE '%EsHoraDelPRD%'
@@ -790,15 +790,15 @@
 		//Obtener valoracion de comentarios de Indira
 		public function valoracion_indira()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%indira_vizcaino%' or texto LIKE '%ConIndiraYoSi%' 
 										   or texto LIKE '%ComoTú%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%indira_vizcaino%' or texto LIKE '%ConIndiraYoSi%'
 										   or texto LIKE '%ComoTú%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%indira_vizcaino%' or texto LIKE '%ConIndiraYoSi%'
 										   or texto LIKE '%ComoTú%')"
 										);
@@ -820,15 +820,15 @@
 		//Obtener valoracion de comentarios de Kike
 		public function valoracion_kike()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%kikerojas007%' or texto LIKE '%KikeSí%' 
 										   or texto LIKE '%KikeEsMejor%' or texto LIKE '%PRI_Colima%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%kikerojas007%' or texto LIKE '%KikeSí%' 
 										   or texto LIKE '%KikeEsMejor%' or texto LIKE '%PRI_Colima%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%kikerojas007%' or texto LIKE '%KikeSí%' 
 										   or texto LIKE '%KikeEsMejor%' or texto LIKE '%PRI_Colima%')"
 										);
@@ -850,15 +850,15 @@
 		//Obtener valoracion de comentarios de Norma Galindo
 		public function valoracion_norma()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%NormaGdeV%' or texto LIKE '%NormaGalindo%' 
 										   or texto LIKE '%NormaDiputadaFederal%' or texto LIKE '%TrabajemosyDecidamosJuntos%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%NormaGdeV%' or texto LIKE '%NormaGalindo%' 
 										   or texto LIKE '%NormaDiputadaFederal%' or texto LIKE '%TrabajemosyDecidamosJuntos%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%NormaGdeV%' or texto LIKE '%NormaGalindo%' 
 										   or texto LIKE '%NormaDiputadaFederal%' or texto LIKE '%TrabajemosyDecidamosJuntos%')"
 										);
@@ -880,15 +880,15 @@
 		//Obtener valoracion de comentarios de Hilda
 		public function valoracion_hilda()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%HildaCeballos01%' or texto LIKE '%Distrito1%' 
 										   or texto LIKE '%BrigadaEmetista%' or texto LIKE '%DistritoLocal1%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%HildaCeballos01%' or texto LIKE '%Distrito1%' 
 										   or texto LIKE '%BrigadaEmetista%' or texto LIKE '%DistritoLocal1%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%HildaCeballos01%' or texto LIKE '%Distrito1%' 
 										   or texto LIKE '%BrigadaEmetista%' or texto LIKE '%DistritoLocal1%')"
 										);
@@ -910,15 +910,15 @@
 		//Obtener valoracion de comentarios de Yadira
 		public function valoracion_yadira()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%yadiraturquesa%' or texto LIKE '%juventudturquesa%' 
 										   or texto LIKE '%EligeTurquesa%' or texto LIKE '%VotaNuevaAlianza%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%yadiraturquesa%' or texto LIKE '%juventudturquesa%' 
 										   or texto LIKE '%EligeTurquesa%' or texto LIKE '%VotaNuevaAlianza%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%yadiraturquesa%' or texto LIKE '%juventudturquesa%' 
 										   or texto LIKE '%EligeTurquesa%' or texto LIKE '%VotaNuevaAlianza%')"
 										);
@@ -940,15 +940,15 @@
 		//Obtener valoracion de comentarios de Guillermo
 		public function valoracion_guillermo()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%Rangel_G_%' or texto LIKE '%TUPALABRACUENTA%' 
 										   or texto LIKE '%TuPalabraCuenta%' or texto LIKE '%YoConMemo%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%Rangel_G_%' or texto LIKE '%TUPALABRACUENTA%' 
 										   or texto LIKE '%TuPalabraCuenta%' or texto LIKE '%YoConMemo%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%Rangel_G_%' or texto LIKE '%TUPALABRACUENTA%' 
 										   or texto LIKE '%TuPalabraCuenta%' or texto LIKE '%YoConMemo%')"
 										);
@@ -970,17 +970,17 @@
 		//Obtener valoracion de comentarios de Alma Delia
 		public function valoracion_alma()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%AlmaDelia_D3%' or texto LIKE '%AlmaDeliaVotoSeguro%' 
 										   or texto LIKE '%ConAlmaYCorazónPorTi%' or texto LIKE '%VotaAlmaDelia%'
 										   or texto LIKE '%YoSoyAD3%')"  
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%AlmaDelia_D3%' or texto LIKE '%AlmaDeliaVotoSeguro%' 
 										   or texto LIKE '%ConAlmaYCorazónPorTi%' or texto LIKE '%VotaAlmaDelia%'
 										   or texto LIKE '%YoSoyAD3%')"  
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%AlmaDelia_D3%' or texto LIKE '%AlmaDeliaVotoSeguro%' 
 										   or texto LIKE '%ConAlmaYCorazónPorTi%' or texto LIKE '%VotaAlmaDelia%'
 										   or texto LIKE '%YoSoyAD3%')"
@@ -1003,7 +1003,7 @@
 		//Obtener valoracion de comentarios de Janeth
 		public function valoracion_janeth()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JanethPazPonce%'
 										or texto LIKE '%TrabajamosParaTi%'
 										or texto LIKE '%DistritoIV%'
@@ -1012,7 +1012,7 @@
 										or texto LIKE '%YaGanamos%'
 										or texto LIKE '%EnriquePresidente%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JanethPazPonce%'
 										or texto LIKE '%TrabajamosParaTi%'
 										or texto LIKE '%DistritoIV%'
@@ -1021,7 +1021,7 @@
 										or texto LIKE '%YaGanamos%'
 										or texto LIKE '%EnriquePresidente%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JanethPazPonce%'
 										or texto LIKE '%TrabajamosParaTi%'
 										or texto LIKE '%DistritoIV%'
@@ -1048,15 +1048,15 @@
 		//Obtener valoracion de comentarios de juanita
 		public function valoracion_juanita()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JuanitaAndres%'
 										or texto LIKE '%ResultadosParaTi%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JuanitaAndres%'
 										or texto LIKE '%ResultadosParaTi%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%JuanitaAndres%'
 										or texto LIKE '%ResultadosParaTi%')" 
 										);
@@ -1078,13 +1078,13 @@
 		//Obtener valoracion de comentarios de lupe benavides
 		public function valoracion_lupe()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%LupeBenavidesF%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%LupeBenavidesF%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%LupeBenavidesF%')" 
 										);
 			
@@ -1105,17 +1105,17 @@
 		//Obtener valoracion de comentarios de octavio
 		public function valoracion_octavio()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%octaviotintos%'
 										or texto LIKE '%HonestamenteTeVoyAServir%'
 										or texto LIKE '%YoPropongo%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%octaviotintos%'
 										or texto LIKE '%HonestamenteTeVoyAServir%'
 										or texto LIKE '%YoPropongo%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%octaviotintos%'
 										or texto LIKE '%HonestamenteTeVoyAServir%'
 										or texto LIKE '%YoPropongo%')" 
@@ -1138,19 +1138,19 @@
 		//Obtener valoracion de comentarios de sara
 		public function valoracion_sara()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%saracernas%'
 										or texto LIKE '%TuVozEsMiVoz%'
 										or texto LIKE '%DiputadaDistrito7%'
 										or texto LIKE '%PorLasCausasDeLaGente%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%saracernas%'
 										or texto LIKE '%TuVozEsMiVoz%'
 										or texto LIKE '%DiputadaDistrito7%'
 										or texto LIKE '%PorLasCausasDeLaGente%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%saracernas%'
 										or texto LIKE '%TuVozEsMiVoz%'
 										or texto LIKE '%DiputadaDistrito7%'
@@ -1174,19 +1174,19 @@
 		//Obtener valoracion de comentarios de meyly
 		public function valoracion_meyly()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MeylyPastora%'
 										or texto LIKE '%Atrévete%'
 										or texto LIKE '%MeylyDiputadaLocal%'
 										or texto LIKE '%VIII%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MeylyPastora%'
 										or texto LIKE '%Atrévete%'
 										or texto LIKE '%MeylyDiputadaLocal%'
 										or texto LIKE '%VIII%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MeylyPastora%'
 										or texto LIKE '%Atrévete%'
 										or texto LIKE '%MeylyDiputadaLocal%'
@@ -1210,15 +1210,15 @@
 		//Obtener valoracion de comentarios de hector
 		public function valoracion_hector()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%hectormlara%'
 										or texto LIKE '%DistritoVIII%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%hectormlara%'
 										or texto LIKE '%DistritoVIII%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%hectormlara%'
 										or texto LIKE '%DistritoVIII%')" 
 										);
@@ -1240,15 +1240,15 @@
 		//Obtener valoracion de comentarios de juan carlos
 		public function valoracion_juan()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%PintoRgz%'
 										or texto LIKE '%BeneficiosParaTodos%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%PintoRgz%'
 										or texto LIKE '%BeneficiosParaTodos%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%PintoRgz%'
 										or texto LIKE '%BeneficiosParaTodos%')" 
 										);
@@ -1270,17 +1270,17 @@
 		//Obtener valoracion de comentarios de armida
 		public function valoracion_armida()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%Armida_NG%'
 										or texto LIKE '%ArmidaDiputada%'
 										or texto LIKE '%VotaPRI%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%Armida_NG%'
 										or texto LIKE '%ArmidaDiputada%'
 										or texto LIKE '%VotaPRI%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%Armida_NG%'
 										or texto LIKE '%ArmidaDiputada%'
 										or texto LIKE '%VotaPRI%')" 
@@ -1302,13 +1302,13 @@
 		//Obtener valoracion de comentarios de martha
 		public function valoracion_marthaS()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%martha_sosa1%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%martha_sosa1%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%martha_sosa1%')" 
 										);
 			
@@ -1329,13 +1329,13 @@
 		//Obtener valoracion de comentarios de esperanza
 		public function valoracion_esperanza()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%DipEsperanzaA%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%DipEsperanzaA%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%DipEsperanzaA%')" 
 										);
 			
@@ -1356,21 +1356,21 @@
 		//Obtener valoracion de comentarios de oscar
 		public function valoracion_oscar()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%OVPresidente%' 
 										or texto LIKE '%renovaciondinamica%'
 										or texto LIKE '%vamoscontodo%'
 										or texto LIKE '%RenovarladinamicadelaCiudad%' 										
 										or texto LIKE '%yoconoscarsi%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%OVPresidente%' 
 										or texto LIKE '%renovaciondinamica%'
 										or texto LIKE '%vamoscontodo%'
 										or texto LIKE '%RenovarladinamicadelaCiudad%' 										
 										or texto LIKE '%yoconoscarsi%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%OVPresidente%' 
 										or texto LIKE '%renovaciondinamica%'
 										or texto LIKE '%vamoscontodo%'
@@ -1395,21 +1395,21 @@
 		//Obtener valoracion de comentarios de héctor
 		public function valoracion_hectorI()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%hectorinsua%' 
 										or texto LIKE '%ElCambioQueQuiereLaGente%' 
 										or texto LIKE '%VotaHectorInsua%' 
 										or texto LIKE '%VotaPan%' 
 										or texto LIKE '%VotaUtil%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%hectorinsua%' 
 										or texto LIKE '%ElCambioQueQuiereLaGente%' 
 										or texto LIKE '%VotaHectorInsua%' 
 										or texto LIKE '%VotaPan%' 
 										or texto LIKE '%VotaUtil%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%hectorinsua%' 
 										or texto LIKE '%ElCambioQueQuiereLaGente%' 
 										or texto LIKE '%VotaHectorInsua%' 
@@ -1434,7 +1434,7 @@
 		//Obtener valoracion de comentarios de abaroa
 		public function valoracion_abaroa()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%meabaroa%'
 										or texto LIKE '%ImpactoUrbano%'
 										or texto LIKE '%ImpactoEconómico%'
@@ -1445,7 +1445,7 @@
 										or texto LIKE '%MovimientoCiudadano%'
 										or texto LIKE '%CuentasClaras%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%meabaroa%'
 										or texto LIKE '%ImpactoUrbano%'
 										or texto LIKE '%ImpactoEconómico%'
@@ -1456,7 +1456,7 @@
 										or texto LIKE '%MovimientoCiudadano%'
 										or texto LIKE '%CuentasClaras%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%meabaroa%'
 										or texto LIKE '%ImpactoUrbano%'
 										or texto LIKE '%ImpactoEconómico%'
@@ -1485,7 +1485,7 @@
 		//Obtener valoracion de comentarios de esmeralda
 		public function valoracion_esmeralda()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%EsmePresidenta%'
 										or texto LIKE '%EsNuestroMomento%'
 										or texto LIKE '%YoMeMuevo%'
@@ -1493,7 +1493,7 @@
 										or texto LIKE '%EsmeraldaEsGarantía%'
 										or texto LIKE '%EsmeraldaPresidenta%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%EsmePresidenta%'
 										or texto LIKE '%EsNuestroMomento%'
 										or texto LIKE '%YoMeMuevo%'
@@ -1501,7 +1501,7 @@
 										or texto LIKE '%EsmeraldaEsGarantía%'
 										or texto LIKE '%EsmeraldaPresidenta%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%EsmePresidenta%'
 										or texto LIKE '%EsNuestroMomento%'
 										or texto LIKE '%YoMeMuevo%'
@@ -1527,17 +1527,17 @@
 		//Obtener valoracion de comentarios de salomon
 		public function valoracion_salomon()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%salo_salazar1%'
 										or texto LIKE '%ResultadosParaComala%'
 										or texto LIKE '%ResultadosParaTi%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%salo_salazar1%'
 										or texto LIKE '%ResultadosParaComala%'
 										or texto LIKE '%ResultadosParaTi%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%salo_salazar1%'
 										or texto LIKE '%ResultadosParaComala%'
 										or texto LIKE '%ResultadosParaTi%')" 
@@ -1560,15 +1560,15 @@
 		//Obtener valoracion de comentarios de mario
 		public function valoracion_mario()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MarioCarrillo01%'
 										or texto LIKE '%HagámosloNosotros%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MarioCarrillo01%'
 										or texto LIKE '%HagámosloNosotros%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%MarioCarrillo01%'
 										or texto LIKE '%HagámosloNosotros%')" 
 										);
@@ -1590,17 +1590,17 @@
 		//Obtener valoracion de comentarios de blanca Rocha
 		public function valoracion_blanca()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%BlancaPRI2015%'
 										or texto LIKE '%TeMerecesUnMejorCuauhtémoc%'
 										or texto LIKE '%SeMerecenUnMejorCuauhtémoc%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%BlancaPRI2015%'
 										or texto LIKE '%TeMerecesUnMejorCuauhtémoc%'
 										or texto LIKE '%SeMerecenUnMejorCuauhtémoc%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%BlancaPRI2015%'
 										or texto LIKE '%TeMerecesUnMejorCuauhtémoc%'
 										or texto LIKE '%SeMerecenUnMejorCuauhtémoc%')" 
@@ -1623,17 +1623,17 @@
 		//Obtener valoracion de comentarios de francisco (pico)
 		public function valoracion_pico()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%PicoZepeda%'
 										or texto LIKE '%PicoPresidente%'
 										or texto LIKE '%TeQuieroManzanilloMejor%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%PicoZepeda%'
 										or texto LIKE '%PicoPresidente%'
 										or texto LIKE '%TeQuieroManzanilloMejor%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%PicoZepeda%'
 										or texto LIKE '%PicoPresidente%'
 										or texto LIKE '%TeQuieroManzanilloMejor%')" 
@@ -1656,13 +1656,13 @@
 		//Obtener valoracion de comentarios de arturo
 		public function valoracion_arturo()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%DipArturoGarcia%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%DipArturoGarcia%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%DipArturoGarcia%')" 
 										);
 			
@@ -1683,17 +1683,17 @@
 		//Obtener valoracion de comentarios de oswy
 		public function valoracion_oswy()
 		{
-			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and 
+			$positivos = $this->db->query("SELECT count(*) as positivos FROM twitt WHERE valoracion = 1 and fecha <= '2015-06-19' and
 										  (texto LIKE '%OswyDelgado%'
 										or texto LIKE '%CercaDeTiGanaremos%'
 										or texto LIKE '%CercaDeTi%')" 
 										);
-			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and 
+			$negativos = $this->db->query("SELECT count(*) as negativos FROM twitt WHERE valoracion = 2 and fecha <= '2015-06-19' and
 										  (texto LIKE '%OswyDelgado%'
 										or texto LIKE '%CercaDeTiGanaremos%'
 										or texto LIKE '%CercaDeTi%')"    
 										);
-			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and 
+			$neutros = $this->db->query("SELECT count(*) as neutros FROM twitt WHERE valoracion = 3 and fecha <= '2015-06-19' and
 										  (texto LIKE '%OswyDelgado%'
 										or texto LIKE '%CercaDeTiGanaremos%'
 										or texto LIKE '%CercaDeTi%')" 
@@ -1718,7 +1718,7 @@
 		{
 			$resultado_gobernadores=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='$municipio' and 
+										where twitt.municipio='$municipio' and fecha <= '2015-06-19' and
 										  (texto LIKE '%nachoperaltacol%' or texto 
 										  LIKE '%jips%' or texto LIKE '%JuntosNadieNosPara%' or texto LIKE '%JIPS2015%' 
 										  or texto LIKE '%MiSelfiecoNacho%'or texto LIKE '%DesdeAbajoConTrabajo%' 
@@ -1739,7 +1739,7 @@
 			
 			$resultado_dipFederales=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='$municipio' and 
+										where twitt.municipio='$municipio' and fecha <= '2015-06-19' and
 										(texto LIKE '%soygp%' or texto 
 										LIKE '%kikerojas007%' or texto LIKE '%indira_vizcaino%' or texto LIKE '%NormaGdeV%' 
 										or texto LIKE '%olave_nery%'or texto LIKE '%TrabajandoPorLoQueMásQuieres%' 										
@@ -1750,7 +1750,7 @@
 
 			$resultado_dipLocales=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='$municipio' and 
+										where twitt.municipio='$municipio' and fecha <= '2015-06-19' and
 										(texto LIKE '%HildaCeballos01%' 
 										or texto LIKE '%Distrito1%' 
 										or texto LIKE '%BrigadaEmetista%' 
@@ -1820,7 +1820,7 @@
 
 			$resultado_Presidentes=$this->db->query("SELECT DISTINCT latitud,longitud,municipio from coordenadas 
 										inner join twitt on twitt.id=coordenadas.id_twitt
-										where twitt.municipio='$municipio' and 
+										where twitt.municipio='$municipio' and fecha <= '2015-06-19' and
 										(texto LIKE '%DipEsperanzaA%' 
 										or texto LIKE '%OVPresidente%' 
 										or texto LIKE '%renovaciondinamica%'

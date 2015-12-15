@@ -60,8 +60,9 @@ class Controlador_consultas extends CI_Controller {
 		}
 		else
 		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente
-			$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
-			$ultima_fecha = $ultima_fecha->ultima_fecha;
+			//$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
+			//$ultima_fecha = $ultima_fecha->ultima_fecha;
+			$ultima_fecha = '2015-06-19';
 			$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 		
 			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 			$existe = 2;
@@ -110,8 +111,9 @@ class Controlador_consultas extends CI_Controller {
 		}
 		else
 		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente
-			$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
-			$ultima_fecha = $ultima_fecha->ultima_fecha;
+			//$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
+			//$ultima_fecha = $ultima_fecha->ultima_fecha;
+			$ultima_fecha = '2015-06-19';
 			$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 
 			$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 			
 			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
@@ -166,8 +168,9 @@ class Controlador_consultas extends CI_Controller {
 			$existe = 1;
 		}
 		else
-		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente			
-			$resultado = $this->modelo_consultas->obtener_cuenta_dip_locales($ultima_fecha); 			
+		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente
+			$ultima_fecha = '2015-06-19';				
+			$resultado = $this->modelo_consultas->obtener_cuenta_dip_locales($ultima_fecha); 
 			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 			$existe = 2;
 		}
@@ -344,8 +347,9 @@ class Controlador_consultas extends CI_Controller {
 		$fecha = $this->input->post('fecha');	
 		$vtab = $this->input->post('vtab');
 
-		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
-		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		//$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();	
+		//$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha = '2015-06-19';	
 
 		if($fecha!=null)
 		{
@@ -360,15 +364,17 @@ class Controlador_consultas extends CI_Controller {
 		{ //Si existe la fecha consultada 
 			$resultado = $this->modelo_consultas->obtener_cuenta_alcaldias($fecha_nueva); 
 			$existe = 1;
+			$ultima_fecha = $fecha_nueva;	
 		}
 		else
-		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente			
+		{//Si no existe la fecha consultada se cargan los datos de la ultima fecha existente						
 			$resultado = $this->modelo_consultas->obtener_cuenta_alcaldias($ultima_fecha); 			
 			$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
 			$existe = 2;
+			$ultima_fecha = '2015-06-19';	
 		}
 
-		$ultima_fecha=$this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
+		$ultima_fecha=$this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);		
 
 		if($resultado['oscar']=='FALSO'){
 			$seguidores_oscar=0;

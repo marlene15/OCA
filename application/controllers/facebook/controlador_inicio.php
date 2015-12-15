@@ -52,7 +52,8 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
-		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		//$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha = '2015-06-03';
 		$ultima_fecha2 = $this->fechas->fecha_dd_mes_aaaa2($ultima_fecha);
 		$gobernadores = $this->modelo_consultas->obtener_cuenta_gobernadores($ultima_fecha); 		
 		$fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha);
@@ -96,7 +97,8 @@ class Controlador_inicio extends CI_Controller {
 	{
 		$this->load->library('fechas'); //Cargar la librería que convierte las fechas			
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
-		$ultima_fecha = $ultima_fecha->ultima_fecha;
+		//$ultima_fecha = $ultima_fecha->ultima_fecha;
+		$ultima_fecha = '2015-06-03';
 		$ultima_fecha2 = $this->fechas->fecha_dd_mes_aaaa2($ultima_fecha);
 		$dip1 = $this->modelo_consultas->obtener_cuenta_dip_federales1($ultima_fecha); 		
 		$dip2 = $this->modelo_consultas->obtener_cuenta_dip_federales2($ultima_fecha); 				

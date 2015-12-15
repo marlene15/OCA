@@ -90,7 +90,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor8"><?php echo $ultima_fecha ?></h3>
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div8"></div>  
@@ -142,7 +143,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor"><?php echo $ultima_fecha ?></h3>                     
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div"></div>  
@@ -206,7 +208,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor4"><?php echo $ultima_fecha ?></h3>    
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div4"></div>  
@@ -282,7 +285,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor6"><?php echo $ultima_fecha ?></h3>                  
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div6"></div>  
@@ -338,7 +342,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor9"><?php echo $ultima_fecha ?></h3>                         
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div9"></div>  
@@ -390,7 +395,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor2"><?php echo $ultima_fecha ?></h3>                                     
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div2"></div>  
@@ -450,7 +456,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                    
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor7"><?php echo $ultima_fecha ?></h3>                                      
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div7"></div>  
@@ -502,7 +509,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                    
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor5"><?php echo $ultima_fecha ?></h3>                                          
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div5"></div>  
@@ -554,7 +562,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                                     <div class="span9">  
                                       <div data-fullscreen="false" data-title=".widget .widget-primary" data-icon="icon-facebook" class="widget widget-primary" id="graf">
                                         <div class="widget-header" style="background: #B20034" align="left">
-                                          <i class="icon-bar-chart"> <strong><font size="3"><?php echo $ultima_fecha ?></font></strong></i>                                                   
+                                          <i class="icon-bar-chart"></i>                                                   
+                                          <h3 id="fecha_contenedor3"><?php echo $ultima_fecha ?></h3>                                   
                                         </div>
                                         <div class="widget-content">                                          
                                           <div id="chart_div3"></div>  

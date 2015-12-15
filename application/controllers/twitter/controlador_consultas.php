@@ -609,16 +609,16 @@ class Controlador_consultas extends CI_Controller {
 	public function rango_comoVamos()
 	{
 		$this->load->library('fechas');
-		$fecha_inicio = $this->input->post('fecha_inicio');
-		$fecha_inicio=$this->fechas->fecha_dd_mes_aaaa($fecha_inicio);
+		$fecha_inicio = $this->input->post('fecha_inicioT');		
+		$fecha_inicio=$this->fechas->fecha_dd_mes_aaaa($fecha_inicio);		
 		$ExisteFechaInicio = $this->modelo_consultas->ExisteFecha($fecha_inicio);
 
-		$fecha_fin = $this->input->post('fecha_fin');
+		$fecha_fin = $this->input->post('fecha_finT');
 		$fecha_fin=$this->fechas->fecha_dd_mes_aaaa($fecha_fin);
 		$ExisteFechaFin = $this->modelo_consultas->ExisteFecha($fecha_fin);
 		$ultima_fecha = $this->modelo_inicio->obtener_ultima_fecha();
 		$ultima_fecha = $this->fechas->fecha_dd_mes_aaaa_edita($ultima_fecha->ultima_fecha);
-		$vtab = $this->input->post('vtab');
+		$vtab = $this->input->post('vtab1');
 
 		$fechaInicioMayor = 0;
 		$existe = 1;
@@ -642,7 +642,7 @@ class Controlador_consultas extends CI_Controller {
 		            	  );
 			$this->load->view('twitter/chars/char_partidosError',$datos);
 		}
-		if ($fechaInicioMayor!=1 and $existe!=0){			
+		if ($fechaInicioMayor!=1 and $existe!=0){	
 			$cuentas = $this->modelo_consultas->obtener_cuenta_comoVamos_rango($fecha_inicio,$fecha_fin);	
 			$datos = array(
 							"comoVamos" => $cuentas['comoVamos'],

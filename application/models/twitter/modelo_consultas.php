@@ -423,7 +423,7 @@
 		public function obtener_cuenta_comoVamos()
 		{
 			$comoVamos = $this->db->query("SELECT usuario, seguidores, siguiendo, tweets, fecha from cuentas 
-									  where usuario = 'Comovamoscolima' ORDER BY fecha ASC");			
+									  where fecha <= '2015-06-19' and usuario = 'Comovamoscolima' ORDER BY fecha ASC");			
 
 			if($comoVamos->num_rows()>0)
 			{
